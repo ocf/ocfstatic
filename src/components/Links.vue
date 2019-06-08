@@ -1,0 +1,53 @@
+<template>
+  <div>
+    <div class="is-divider custom" data-content="Links" />
+    <div class="block ">
+      <a href="https://irc.ocf.berkeley.edu/">
+        <hashtag class="item" />
+      </a>
+      <a href="https://fco.slack.com">
+        <slack class="item" />
+      </a>
+      <a href="https://mastodon.ocf.berkeley.edu">
+        <mastodon class="item" />
+      </a>
+      <a href="https://callink.berkeley.edu/organization/ocf">
+        <g-image class="item" src="~/assets/callink.png" />
+      </a>
+      <a href="https://github.com/ocf">
+        <github class="item" />
+      </a>
+    </div>
+  </div>
+</template>
+
+<script>
+import Slack from "~/assets/svg/slack.svg";
+import Github from "~/assets/svg/github.svg";
+import Mastodon from "~/assets/svg/mastodon.svg";
+import Hashtag from "~/assets/svg/hashtag.svg";
+
+export default {
+  components: {
+    Slack,
+    Github,
+    Mastodon,
+    Hashtag
+  },
+  props: {
+    vertical: Boolean
+  }
+};
+</script>
+
+<style scoped>
+.item {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+}
+.custom {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+</style>

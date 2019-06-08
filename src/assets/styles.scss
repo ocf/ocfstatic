@@ -1,0 +1,19 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+// $primary: #9ACA41;
+// $primary-invert: findColorInvert($primary);
+
+// Links
+$link: $primary;
+$link-focus-border: $primary;
+$link-invert: $primary-invert;
+// $link-focus-border: $primary;
+
+$footer-padding: 3rem 1.5rem 3rem;
+// $section-padding: 1.5rem 1.5rem;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
