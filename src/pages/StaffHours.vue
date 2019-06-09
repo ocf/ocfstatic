@@ -15,15 +15,17 @@
     </section>
 
     <section>
-      <vue-cal
-        style="height: 700px"
-        default-view="week"
-        :disable-views="['years', 'year', 'month']"
-        :time-from="8 * 60"
-        :time-to="20 * 60"
-        :time-step="30"
-        hide-weekends
-      />
+      <ClientOnly>
+        <vue-cal
+          style="height: 700px"
+          default-view="week"
+          :disable-views="['years', 'year', 'month']"
+          :time-from="8 * 60"
+          :time-to="20 * 60"
+          :time-step="30"
+          hide-weekends
+        />
+      </ClientOnly>
     </section>
   </Layout>
 </template>
