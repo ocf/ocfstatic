@@ -225,7 +225,10 @@ export default {
     // Scrollreveal is not SSR friendly, must dynamically import
     // See https://vuepress.vuejs.org/guide/using-vue.html#browser-api-access-restrictions
     const ScrollReveal = await import("scrollreveal");
-    ScrollReveal().reveal(".home-content", { interval: 75, origin: "top" });
+    ScrollReveal.default().reveal(".home-content", {
+      interval: 75,
+      origin: "top"
+    });
   }
 };
 </script>
