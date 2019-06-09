@@ -33,9 +33,6 @@ export default {
     Github,
     Mastodon,
     Hashtag
-  },
-  props: {
-    vertical: Boolean
   }
 };
 </script>
@@ -47,7 +44,9 @@ export default {
   margin: 5px;
 }
 .custom {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   margin-bottom: 1rem;
 }
 </style>

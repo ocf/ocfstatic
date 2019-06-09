@@ -21,26 +21,190 @@
         </div>
       </div>
     </section>
-    <section class="section has-text-centered home-content">
+    <div class="has-text-centered home-content">
       <links />
-    </section>
-    <section class="hero has-text-centered has-bg-img">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            Primary title
-          </h1>
-          <h2 class="subtitle">
-            Primary subtitle
-          </h2>
+    </div>
+    <section class="section">
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child box home-content">
+                <p class="title">
+                  Currently <span class="has-text-success">Open</span>
+                </p>
+                <p class="subtitle">
+                  Today's hours: 9AM - 6PM
+                  <g-link to="/staff-hours" class="span">
+                    See more »
+                  </g-link>
+                </p>
+                <div class="content">
+                  <p>
+                    There are currently 5 people in the lab, including 4 staff:
+                  </p>
+                  <p>c⁠ooperc, f⁠ydai, r⁠rchan, v⁠aibhavj</p>
+                </div>
+              </article>
+              <article class="tile is-child box home-content">
+                <p class="title">Staff News</p>
+                <p class="subtitle is-spaced ">
+                  <a href="https://status.ocf.berkeley.edu/">More updates »</a>
+                </p>
+
+                <p class="title is-5">Downtime on May 21, 22:40 to 22:50</p>
+                <p class="subtitle is-6 is-spaced ">2 weeks, 2 days ago</p>
+                <p class="title is-5">Introducing the OCF Mastodon Service!</p>
+                <p class="subtitle is-6">1 month, 1 week ago</p>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box home-content">
+                <p class="title">The Lab</p>
+                <p class="subtitle">Located at 171 MLK Student Union</p>
+                <div class="content">
+                  <p>
+                    Find out how to <a>get there</a>. Just show your Cal ID at
+                    the door!
+                  </p>
+                  <g-image src="~/assets/lab.jpg" />
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box home-content">
+              <g-image
+                class="is-pulled-right"
+                src="~/assets/penguinsticker.png"
+                width="200"
+                inside
+              ></g-image>
+              <p class="title">Join Staff</p>
+              <p class="subtitle">Meetings 8PM every Monday in the lab</p>
+              <div class="content">
+                <p>
+                  We meet every week to talk tech and work on cool projects. All
+                  are welcome to join OCF staff, at any point in the semester!
+                </p>
+                <p class="title is-5">Sound interesting?</p>
+                <ul>
+                  <li>
+                    Subscribe to our <a>mailing list</a> for meeting recaps
+                  </li>
+                  <li>Chat with us on <a>Slack</a> or <a>IRC</a></li>
+                  <li>Drop by and say hello, or <a>email</a> the staff team</li>
+                  <li>See more ways to <a>contribute and get involved</a></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box home-content">
+            <div class="content">
+              <p class="title">About Us</p>
+              <p class="subtitle"><g-link to="/about">See More »</g-link></p>
+              <div class="content">
+                <p>
+                  The Open Computing Facility is an all-volunteer student
+                  organization located at the University of California,
+                  Berkeley. We're passionate about open source and free
+                  software.
+                </p>
+                <p>
+                  Our volunteers maintain services for the Berkeley community.
+                  Among others, we offer:
+                </p>
+                <ul>
+                  <li>
+                    <a href="/docs/services/lab/">A spiffy computer lab</a> in
+                    171 MLK Student Union
+                  </li>
+                  <li>
+                    <a href="/docs/services/web/">Web &amp; email hosting</a>
+                    for thousands of student groups and individuals
+                  </li>
+                  <li>
+                    <a href="/docs/services/lab/printing/">Free printing</a> for
+                    all UC Berkeley students
+                  </li>
+                  <li>
+                    <a href="/docs/services/shell/">Shell accounts</a> on our
+                    powerful
+                    <a href="/docs/staff/backend/servers/">on-campus servers</a>
+                  </li>
+                  <li>
+                    <a href="/docs/services/hpc/">High-performance computing</a>
+                    on our GPU server
+                  </li>
+                  <li>...and <a href="/docs/services/">lots more!</a></li>
+                </ul>
+                <p>
+                  We hold
+                  <g-link to="/staff-hours">weekly staff hours</g-link> to
+                  provide assistance with account issues or with OCF services.
+                  Drop by to ask questions or just to hang out!
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </section>
-    <section class="section ">
-      News From the Staff Team
-    </section>
-    <section class="section ">
-      Join Staff! List some projects
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box home-content">
+            <p class="title">Linux SysAdmin Decal</p>
+            <p class="subtitle">
+              <a href="https://decal.ocf.berkeley.edu/">See More »</a>
+            </p>
+            <div class="content">
+              <p>
+                Whether you are looking to improve your Bash wizardry, just
+                plain GNU, or everything Unix and Unix-like, this is the perfect
+                class for you. We offer a beginner section for those new to Unix
+                and an advanced section for those who have some experience but
+                want to learn more. Both sections are 2 units and be held from
+                8-9pm, the beginner section on Tuesdays and the advanced section
+                on Thursdays, right in the OCF lab.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="tile is-parent is-8">
+          <article class="tile is-child box home-content">
+            <p class="title">This week's stats</p>
+            <p class="subtitle"><g-link to="/stats">See More »</g-link></p>
+
+            <div class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Pages printed</p>
+                  <p class="title">3,456</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Bandwidth Usage</p>
+                  <p class="title">123GB</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Hours Farmed</p>
+                  <p class="title">456</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Accounts Created</p>
+                  <p class="title">9</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
   </Layout>
 </template>
@@ -59,15 +223,7 @@ export default {
     Links
   },
   mounted() {
-    ScrollReveal().reveal(".home-content", { interval: 200, origin: "top" });
+    ScrollReveal().reveal(".home-content", { interval: 75, origin: "top" });
   }
 };
 </script>
-
-<style scoped>
-.has-bg-img {
-  background: url("../assets/lab.jpg") center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-</style>

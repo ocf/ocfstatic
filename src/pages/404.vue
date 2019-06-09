@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="container has-text-centered">
+    <section class="section container has-text-centered">
       <div class="notification">
         The requested URL was not found.
       </div>
@@ -21,7 +21,7 @@
         </g-link>
         page.
       </div>
-    </div>
+    </section>
   </Layout>
 </template>
 

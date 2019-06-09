@@ -1,9 +1,19 @@
 <template>
   <Layout>
-    <section class="section">
-      Staff Hours Have questions or need help? Drop by the lab for one-on-one
-      help from a staffer!
+    <section class="hero has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Staff Hours
+          </h1>
+          <h2 class="subtitle">
+            Have questions or need help? Drop by the lab for one-on-one help
+            from a staffer!
+          </h2>
+        </div>
+      </div>
     </section>
+
     <section>
       <vue-cal
         style="height: 700px"

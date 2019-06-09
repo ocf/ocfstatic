@@ -41,8 +41,11 @@
           <g-link class="navbar-item" to="/docs">
             Documentation
           </g-link>
-          <g-link class="navbar-item" to="/about-us">
-            About Us
+          <g-link class="navbar-item" to="/about">
+            About
+          </g-link>
+          <g-link class="navbar-item" to="/contact">
+            Contact Us
           </g-link>
           <g-link class="navbar-item" to="/login" tag="span">
             <b-button outlined type="is-link">
