@@ -118,27 +118,27 @@
                 </p>
                 <ul>
                   <li>
-                    <a href="/docs/services/lab/">A spiffy computer lab</a> in
-                    171 MLK Student Union
+                    <a href="/services/lab/">A spiffy computer lab</a> in 171
+                    MLK Student Union
                   </li>
                   <li>
-                    <a href="/docs/services/web/">Web &amp; email hosting</a>
+                    <a href="/services/web/">Web &amp; email hosting</a>
                     for thousands of student groups and individuals
                   </li>
                   <li>
-                    <a href="/docs/services/lab/printing/">Free printing</a> for
-                    all UC Berkeley students
+                    <a href="/services/lab/printing/">Free printing</a> for all
+                    UC Berkeley students
                   </li>
                   <li>
-                    <a href="/docs/services/shell/">Shell accounts</a> on our
+                    <a href="/services/shell/">Shell accounts</a> on our
                     powerful
-                    <a href="/docs/staff/backend/servers/">on-campus servers</a>
+                    <a href="/staff/backend/servers/">on-campus servers</a>
                   </li>
                   <li>
-                    <a href="/docs/services/hpc/">High-performance computing</a>
+                    <a href="/services/hpc/">High-performance computing</a>
                     on our GPU server
                   </li>
-                  <li>...and <a href="/docs/services/">lots more!</a></li>
+                  <li>...and <a href="/services/">lots more!</a></li>
                 </ul>
                 <p>
                   We hold
@@ -210,7 +210,6 @@
 </template>
 
 <script>
-import ScrollReveal from "scrollreveal";
 import Logo from "~/components/Logo.vue";
 import Links from "~/components/Links.vue";
 
@@ -222,7 +221,10 @@ export default {
     Logo,
     Links
   },
-  mounted() {
+  async mounted() {
+    // Scrollreveal is not SSR friendly, must dynamically import
+    // See https://vuepress.vuejs.org/guide/using-vue.html#browser-api-access-restrictions
+    const ScrollReveal = await import("scrollreveal");
     ScrollReveal().reveal(".home-content", { interval: 75, origin: "top" });
   }
 };
