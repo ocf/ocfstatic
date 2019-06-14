@@ -5,7 +5,7 @@ A new website for the OCF.
 ## Development
 
 ```
-\\ Run this first
+// Run this first
 npm install
 // Run dev server
 npm run dev
@@ -48,6 +48,8 @@ Read up on Gridsome docs to understand how things are put together, and how to u
 When styling, make sure to read up on Bulma styles, as to reuse as much implementation as possible. Most of the time if you want to center something, resize something, or color something, Bulma has a style for that.
 
 Overall, just try to write as little css, js, and templating as possible. Make sure to utilize Vue slots and the existing file structure.
+
+I hate complexity.
 
 ## Possible pitfalls
 
