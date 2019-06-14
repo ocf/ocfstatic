@@ -7,13 +7,13 @@ A new website for the OCF.
 ```
 \\ Run this first
 npm install
-\\ Run dev server
+// Run dev server
 npm run dev
-\\ Build
+// Build
 npm run build
-\\ Lint
+// Lint
 npm run lint
-\\ View GraphQL schema
+// View GraphQL schema
 npm run explore
 ```
 
