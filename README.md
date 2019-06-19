@@ -5,20 +5,20 @@ A new website for the OCF.
 ## Development
 
 ```bash
-// Getting set up
+# Getting set up
 $ git clone --recursive
 $ cd ocf
-// Or, if you already cloned the repo
+# Or, if you already cloned the repo
 $ git submodule update --init
 
 $ npm install
-// Run dev server
+# Run dev server
 $ npm run dev
-// Build
+# Build
 $ npm run build
-// Lint
+# Lint
 $ npm run lint
-// View GraphQL schema
+# View GraphQL schema
 $ npm run explore
 ```
 
