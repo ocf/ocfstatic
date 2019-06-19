@@ -39,7 +39,7 @@ Using opstaff's old Web Style and Redesign Guides, I implemented my take on what
 
 To address each of the previous points:
 
-- A static site generator, Gridsome, Server Side Renders really fast websites.
+- A static site generator, Gridsome, Server Side Renders really fast websites. Stuff like lazy image loading and other cool features are built in.
 - Built with a modern web framework, Vue, which is both extremely easy to learn and powerful with a large ecosystem (just see our imported packages, like the calendar.)
 - Uses a modern pure css framework, Bulma. Handles mobile and widescreen issues while being very lightweight. Also is completely and easily customizable using SASS variables.
 - The genius of Gridsome is the GraphQL data layer, unifying possibly very different data sources in once place. Remember, static website doesn't mean unchanging. You can hydrate components using the local file system, REST API from ocfweb, external APIs, etc.
