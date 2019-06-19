@@ -1,8 +1,22 @@
 <template>
-  <Layout :search="$static.docs.edges">
+  <Layout>
+    <template v-slot:navItem>
+      <b-autocomplete
+        v-model="search"
+        class="navbar-item search"
+        placeholder="Search docs"
+        icon="magnify"
+        keep-first
+      >
+        <template v-slot:empty
+          >No results found</template
+        >
+      </b-autocomplete>
+    </template>
+
     <div class="columns is-marginless">
       <div class="column is-3 has-background-white-bis">
-        <sidebar :items="tree" />
+        <sidebar :items="tree" :path="path" />
       </div>
       <div class="column">
         <slot />
@@ -20,6 +34,7 @@ query Doc($page: Int) {
         path
         headings(depth: h1) {
           value
+          anchor
         }
         subtitles: headings(depth: h2) {
           value
@@ -36,10 +51,12 @@ import Sidebar from "~/components/Sidebar.vue";
 export default {
   components: { Sidebar },
   props: {
-    path: {
-      type: String,
-      default: ""
-    }
+    path: String
+  },
+  data() {
+    return {
+      search: ""
+    };
   },
   computed: {
     tree() {
@@ -64,3 +81,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.search >>> .input {
+  box-shadow: none;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  flex-shrink: 3;
+}
+</style>

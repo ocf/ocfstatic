@@ -1,6 +1,6 @@
 <template>
   <Documentation>
-    Damn
+    Bruh bruh
   </Documentation>
 </template>
 

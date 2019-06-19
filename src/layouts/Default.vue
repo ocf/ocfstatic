@@ -6,16 +6,7 @@
           <penguin class="penguin" />
           <logo height="30px" class="is-hidden-mobile" />
         </g-link>
-        <b-autocomplete
-          v-if="search"
-          class="navbar-item is-flex-mobile search"
-          placeholder="Search docs"
-          icon="magnify"
-        >
-          <template slot="empty"
-            >No results found</template
-          >
-        </b-autocomplete>
+        <slot name="navItem" />
         <span
           :class="{ 'is-active': isMenuActive }"
           @click="isMenuActive = !isMenuActive"
@@ -65,7 +56,7 @@
         </div>
       </div>
     </nav>
-    <slot :search="search" />
+    <slot />
     <footer class="footer">
       <div class="content has-text-centered is-size-7">
         <!-- Use line breaks to avoid line spacing. -->
@@ -95,14 +86,6 @@ export default {
     Logo,
     Penguin
   },
-  props: {
-    search: {
-      type: Array,
-      default() {
-        return [];
-      }
-    }
-  },
   data() {
     return {
       isMenuActive: false,
@@ -127,12 +110,5 @@ export default {
   width: 1.7rem;
   max-height: 2.5rem;
   margin-right: 5px;
-}
-.search >>> .input {
-  box-shadow: none;
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  flex-shrink: 3;
 }
 </style>

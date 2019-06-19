@@ -1,6 +1,16 @@
 <template>
-  <div class="section">
-    <div class="level"></div>
+  <div class="container">
+    <div v-if="path">
+      <a class="wrapper">
+        <b-icon class="icon" icon="pencil-outline" size="is-small" />
+        <small>Edit this page</small>
+      </a>
+      <a class="wrapper">
+        <b-icon class="icon" icon="history" size="is-small" />
+        <small>Page History</small>
+      </a>
+    </div>
+
     <aside class="menu">
       <ul class="menu-list">
         <li
@@ -55,7 +65,21 @@ export default {
       default() {
         return {};
       }
+    },
+    path: {
+      type: String,
+      default: ""
     }
   }
 };
 </script>
+
+<style scoped>
+.icon {
+  margin-right: 2px;
+}
+.wrapper {
+  /* white-space: nowrap; */
+  padding: 10px;
+}
+</style>

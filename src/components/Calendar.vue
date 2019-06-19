@@ -1,6 +1,8 @@
 <template>
   <div>
     <ClientOnly>
+      <!-- Need to disable eslint because linting changes 12Hour to 12hour -->
+      <!-- eslint-disable -->
       <vue-cal
         :default-view="defaultView"
         :disable-views="['years', 'year', 'month']"
@@ -13,9 +15,10 @@
         selected-date="2018-11-19"
         style="height: 100%"
         hide-weekends
-        12hour
+        12Hour
         time-format="h:mm{am}"
       >
+        <!-- eslint-enable -->
         <div slot="event-renderer" slot-scope="{ event }">
           <div style="padding: 5px;">
             <div class="vuecal__event-title">
@@ -76,7 +79,6 @@ export default {
   },
   methods: {
     onEventClick(event, e) {
-      console.log(event);
       this.selectedEvent = event;
       this.showModal = true;
       // Prevent navigating to narrower view (default vue-cal behavior).
