@@ -1,9 +1,13 @@
 module.exports = {
   root: true,
   parser: "vue-eslint-parser",
-  parserOptions: { ecmaVersion: 6 },
+  parserOptions: {
+    ecmaVersion: 6,
+    // Use this parser on script tags to dodge dynamic import warnings
+    parser: "babel-eslint",
+    sourceType: "module"
+  },
   env: {
-    browser: true,
     node: true,
     es6: true
   },

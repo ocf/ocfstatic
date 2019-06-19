@@ -4,17 +4,22 @@ A new website for the OCF.
 
 ## Development
 
-```
-// Run this first
-npm install
+```bash
+// Getting set up
+$ git clone --recursive
+$ cd ocf
+// Or, if you already cloned the repo
+$ git submodule update --init
+
+$ npm install
 // Run dev server
-npm run dev
+$ npm run dev
 // Build
-npm run build
+$ npm run build
 // Lint
-npm run lint
+$ npm run lint
 // View GraphQL schema
-npm run explore
+$ npm run explore
 ```
 
 ## Berny's thoughts
@@ -23,7 +28,6 @@ npm run explore
 
 A whole set of reasons, primarily being:
 
-- For static content, the site is slow.
 - The site could look better, opstaff even suggested a new look
 - The site sucks on mobile.
 - Django templating is hard to maintain.
@@ -41,13 +45,15 @@ To address each of the previous points:
 - The genius of Gridsome is the GraphQL data layer, unifying possibly very different data sources in once place. Remember, static website doesn't mean unchanging. You can hydrate components using the local file system, REST API from ocfweb, external APIs, etc.
 - Now, adding documentation is easy. Add an markdown file or folder and the sidebar and routes will autogenerate the correct ways to get there when built.
 
+While building the site, I've also realized that the docs themselves could be structured better as well. Some nested folders go too deep, and things aren't all categorized and organized to be found easily. Hopefully this also drives the docs to be fixed in that regard.
+
 ## How to contribute
 
 Read up on Gridsome docs to understand how things are put together, and how to utilize the data layer.
 
 When styling, make sure to read up on Bulma styles, as to reuse as much implementation as possible. Most of the time if you want to center something, resize something, or color something, Bulma has a style for that.
 
-Overall, just try to write as little css, js, and templating as possible. Make sure to utilize Vue slots and the existing file structure.
+Overall, just try to write as little css, js, and templating as possible. Make sure to utilize Vue slots to avoid nesting components too hard and the existing file structure.
 
 I hate complexity.
 

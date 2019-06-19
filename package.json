@@ -9,22 +9,29 @@
     "format": "prettier --write '**/*.{vue,js,scss,css,json,md}'"
   },
   "dependencies": {
+    "@gridsome/remark-prismjs": "0.0.6",
+    "@gridsome/source-filesystem": "^0.5.0",
+    "@gridsome/transformer-remark": "^0.3.2",
+    "@mdi/font": "^3.6.95",
     "buefy": "^0.7.7",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
     "gridsome": "^0.6.4",
+    "md5": "^2.2.1",
     "scrollreveal": "^4.0.5",
-    "vue-cal": "^1.59.0"
+    "vue-cal": "^1.60.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.2",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-gridsome": "^1.2.5",
+    "eslint-plugin-gridsome": "^1.2.6",
     "eslint-plugin-vue": "^5.2.2",
-    "husky": "^2.4.0",
-    "lint-staged": "^8.2.0",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
+    "vue-eslint-parser": "^6.0.4",
     "vue-svg-loader": "^0.12.0"
   },
   "husky": {

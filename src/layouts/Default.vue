@@ -4,12 +4,22 @@
       <div class="navbar-brand">
         <g-link class="navbar-item" to="/">
           <penguin class="penguin" />
-          <logo height="30px" />
+          <logo height="30px" class="is-hidden-mobile" />
         </g-link>
+        <b-autocomplete
+          v-if="search"
+          class="navbar-item is-flex-mobile search"
+          placeholder="Search docs"
+          icon="magnify"
+        >
+          <template slot="empty"
+            >No results found</template
+          >
+        </b-autocomplete>
         <span
-          class="navbar-burger burger"
           :class="{ 'is-active': isMenuActive }"
           @click="isMenuActive = !isMenuActive"
+          class="navbar-burger burger"
         >
           <!-- These extra spans are the three lines in the hamburger
           menu, they make animation possible, do not remove! -->
@@ -18,12 +28,15 @@
           <span />
         </span>
       </div>
-      <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
+      <div :class="{ 'is-active': isMenuActive }" class="navbar-menu">
         <div class="navbar-end">
+          <g-link class="navbar-item" to="/staff-hours">
+            Staff Hours
+          </g-link>
           <div class="navbar-item has-dropdown is-hoverable">
-            <g-link class="navbar-link" to="/services">
+            <div class="navbar-link">
               Services
-            </g-link>
+            </div>
             <div class="navbar-dropdown is-boxed">
               <g-link
                 v-for="(service, index) in services"
@@ -35,9 +48,6 @@
               </g-link>
             </div>
           </div>
-          <g-link class="navbar-item" to="/staff-hours">
-            Staff Hours
-          </g-link>
           <g-link class="navbar-item" to="/docs">
             Documentation
           </g-link>
@@ -55,7 +65,7 @@
         </div>
       </div>
     </nav>
-    <slot />
+    <slot :search="search" />
     <footer class="footer">
       <div class="content has-text-centered is-size-7">
         <!-- Use line breaks to avoid line spacing. -->
@@ -85,19 +95,27 @@ export default {
     Logo,
     Penguin
   },
+  props: {
+    search: {
+      type: Array,
+      default() {
+        return [];
+      }
+    }
+  },
   data() {
     return {
       isMenuActive: false,
       services: [
-        { name: "Lab", route: "/lab" },
-        { name: "Printing", route: "/" },
-        { name: "Web Hosting", route: "/" },
-        { name: "Application Hosting", route: "/" },
-        { name: "SSH/SFTP (Shell)", route: "/" },
-        { name: "Email Hosting", route: "/" },
-        { name: "MySQL Database", route: "/" },
-        { name: "Software Mirrors", route: "/" },
-        { name: "High Performance Computing", route: "/" }
+        { name: "Lab", route: "/docs/services/lab" },
+        { name: "Printing", route: "/docs/services/lab/printing" },
+        { name: "Web Hosting", route: "/docs/services/web" },
+        { name: "Application Hosting", route: "/docs/services/webapps" },
+        { name: "SSH/SFTP (Shell)", route: "/docs/services/shell" },
+        { name: "Email Hosting", route: "/docs/services/mail" },
+        { name: "MySQL Database", route: "/docs/services/mysql" },
+        { name: "Software Mirrors", route: "/docs/services/mirrors" },
+        { name: "High Performance Computing", route: "/docs/services/hpc" }
       ]
     };
   }
@@ -109,5 +127,12 @@ export default {
   width: 1.7rem;
   max-height: 2.5rem;
   margin-right: 5px;
+}
+.search >>> .input {
+  box-shadow: none;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  flex-shrink: 3;
 }
 </style>

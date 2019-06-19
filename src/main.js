@@ -6,6 +6,7 @@ import Vue from "vue";
 import Buefy from "buefy";
 import "~/assets/styles.scss"; // Our css options on top of bulma styles
 import "bulma-divider/dist/css/bulma-divider.min.css";
+import "@mdi/font/css/materialdesignicons.min.css";
 
 Vue.use(Buefy);
 

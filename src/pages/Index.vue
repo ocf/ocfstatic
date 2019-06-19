@@ -67,7 +67,9 @@
                     Find out how to <a>get there</a>. Just show your Cal ID at
                     the door!
                   </p>
-                  <g-image src="~/assets/lab.jpg" />
+                  <g-link to="/lab">
+                    <g-image src="~/assets/lab.jpg" />
+                  </g-link>
                 </div>
               </article>
             </div>
@@ -80,7 +82,7 @@
                 width="200"
                 inside
               ></g-image>
-              <p class="title">Join Staff</p>
+              <p class="title">Join Staff!</p>
               <p class="subtitle">Meetings 8PM every Monday in the lab</p>
               <div class="content">
                 <p>
@@ -221,14 +223,15 @@ export default {
     Logo,
     Links
   },
-  async mounted() {
+  mounted() {
     // Scrollreveal is not SSR friendly, must dynamically import
     // See https://vuepress.vuejs.org/guide/using-vue.html#browser-api-access-restrictions
-    const ScrollReveal = await import("scrollreveal");
-    ScrollReveal.default().reveal(".home-content", {
-      interval: 75,
-      origin: "top"
-    });
+    import("scrollreveal").then(ScrollReveal =>
+      ScrollReveal.default().reveal(".home-content", {
+        interval: 100,
+        origin: "top"
+      })
+    );
   }
 };
 </script>
