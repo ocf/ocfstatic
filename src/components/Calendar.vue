@@ -9,7 +9,7 @@
         :time-from="9 * 60"
         :time-to="20 * 60"
         :time-step="30"
-        :events="events"
+        :events="coloredEvents"
         :on-event-click="onEventClick"
         :min-cell-width="150"
         selected-date="2018-11-19"
@@ -51,6 +51,17 @@ export default {
       selectedEvent: {},
       showModal: false,
       defaultView: "week",
+      colors: [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "turquoise",
+        "cyan",
+        "blue",
+        "purple"
+      ],
+      // To be loaded from endpoint
       events: [
         {
           start: "2018-11-20 14:00",
@@ -67,9 +78,67 @@ export default {
           username: "cooperc",
           email: "cooperc@ocf.berkeley.edu",
           bio: "Fall 2019 General Manager"
+        },
+        {
+          start: "2018-11-21 10:00",
+          end: "2018-11-21 11:00",
+          name: "Derek Phan",
+          username: "dphan",
+          email: "dphan@ocf.berkeley.edu",
+          bio: "Boi"
+        },
+        {
+          start: "2018-11-21 9:00",
+          end: "2018-11-21 12:00",
+          name: "Bernard Zhao",
+          username: "bernardzhao",
+          email: "bernardzhao@ocf.berkeley.edu",
+          bio: "Boi"
+        },
+        {
+          start: "2018-11-23 14:00",
+          end: "2018-11-23 15:00",
+          name: "Benjamin Zhang",
+          username: "bzh",
+          email: "bzh@ocf.berkeley.edu",
+          bio: "Boi"
+        },
+        {
+          start: "2018-11-19 16:00",
+          end: "2018-11-19 17:00",
+          name: "Liam Porr",
+          username: "wporr",
+          email: "wporr@ocf.berkeley.edu",
+          bio: "Boi"
+        }
+      ],
+      staticEvents: [
+        {
+          start: "2018-11-19 18:00",
+          end: "2018-11-19 19:00",
+          name: "Board Meeting",
+          class: "meeting",
+          background: true
+        },
+        {
+          start: "2018-11-19 19:00",
+          end: "2018-11-19 20:00",
+          name: "Staff Meeting",
+          class: "meeting",
+          background: true
         }
       ]
     };
+  },
+  computed: {
+    coloredEvents() {
+      return this.events
+        .map((event, index) => {
+          event.class = this.colors[index % this.colors.length];
+          return event;
+        })
+        .concat(this.staticEvents);
+    }
   },
   mounted() {
     // Defaults to day view on mobile, using Bulma's standard px value for mobile.
@@ -88,29 +157,89 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+@import "~/assets/styles.scss";
 .vuecal__menu,
 .vuecal__cell-events-count {
-  background-color: #42b983;
+  background-color: $primary;
 }
 .vuecal__menu li {
   border-bottom-color: #fff;
   color: #fff;
 }
 .vuecal__menu li.active {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba($primary, 0.2);
 }
 .vuecal__title-bar {
-  background-color: #e4f5ef;
+  background-color: rgba($primary, 0.2);
 }
 .vuecal__cell.today,
 .vuecal__cell.current {
-  background-color: rgba(240, 240, 255, 0.4);
+  background-color: rgba($primary, 0.2);
 }
 .vuecal:not(.vuecal--day-view) .vuecal__cell.selected {
-  background-color: rgba(235, 255, 245, 0.4);
+  background-color: rgba($primary, 0.05);
 }
 .vuecal__cell.selected:before {
-  border-color: rgba(66, 185, 131, 0.5);
+  border-color: $primary;
+}
+
+.vuecal__event.meeting {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    #f2f2f2 10px,
+    #f2f2f2 20px
+  ); /* IE 10+ */
+  color: #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vuecal__event.meeting .vuecal__event-time {
+  display: none;
+  align-items: center;
+}
+
+.vuecal__event.red {
+  background-color: rgba($red, 0.6);
+  border: 1px solid $red;
+  color: #fff;
+}
+.vuecal__event.orange {
+  background-color: rgba($orange, 0.6);
+  border: 1px solid $orange;
+  color: #fff;
+}
+.vuecal__event.yellow {
+  background-color: rgba($yellow, 0.6);
+  border: 1px solid $yellow;
+  color: #fff;
+}
+.vuecal__event.green {
+  background-color: rgba($green, 0.6);
+  border: 1px solid $green;
+  color: #fff;
+}
+.vuecal__event.turquoise {
+  background-color: rgba($turquoise, 0.6);
+  border: 1px solid $turquoise;
+  color: #fff;
+}
+.vuecal__event.cyan {
+  background-color: rgba($cyan, 0.6);
+  border: 1px solid $cyan;
+  color: #fff;
+}
+.vuecal__event.blue {
+  background-color: rgba($blue, 0.6);
+  border: 1px solid $blue;
+  color: #fff;
+}
+.vuecal__event.purple {
+  background-color: rgba($purple, 0.6);
+  border: 1px solid $purple;
+  color: #fff;
 }
 </style>

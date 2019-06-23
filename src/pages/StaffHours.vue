@@ -11,7 +11,7 @@
         </h2>
       </div>
     </section>
-    <section class="container">
+    <section class="container" style="padding-bottom: 3rem">
       <calendar />
     </section>
   </Layout>

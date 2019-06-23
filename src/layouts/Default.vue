@@ -45,7 +45,7 @@
           <g-link class="navbar-item" to="/about">
             About
           </g-link>
-          <g-link class="navbar-item" to="/contact">
+          <g-link class="navbar-item" to="/docs/internal/contact">
             Contact Us
           </g-link>
           <g-link class="navbar-item" to="/login" tag="span">
@@ -57,8 +57,20 @@
       </div>
     </nav>
     <slot />
-    <footer class="footer">
-      <div class="content has-text-centered is-size-7">
+    <footer class="footer columns is-vcentered">
+      <div class="column is-4">
+        <p class="title is-4" style="margin-bottom: 0.5rem">Quick Links</p>
+        <g-link class="subtitle is-6" to="/">Home</g-link>
+        <br />
+        <g-link class="subtitle is-6" to="/docs/faq">FAQ</g-link>
+        <br />
+        <g-link class="subtitle is-6" to="/stats">Stats</g-link>
+        <br />
+        <a class="subtitle is-6">Board Meeting Minutes</a>
+        <br />
+        <g-link class="subtitle is-6" to="/">Manage My Account</g-link>
+      </div>
+      <div class="column content has-text-centered is-size-7">
         <!-- Use line breaks to avoid line spacing. -->
         The Open Computing Facility is run entirely by student volunteers.
         <br />
@@ -67,6 +79,12 @@
         <br />
         The Open Computing Facility is a Chartered Program of the ASUC.
         <br />
+        <br />
+        View the source code on
+        <a href="https://github.com/BernardZhao/ocf">
+          <b-icon icon="github-face" size="is-small"> </b-icon>
+          Github
+        </a>
       </div>
     </footer>
   </div>

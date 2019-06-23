@@ -17,12 +17,12 @@
       </b-autocomplete>
     </template>
 
-    <div class="columns is-marginless">
-      <div class="column is-3 has-background-white-bis">
-        <sidebar :items="tree" :path="path" />
-      </div>
+    <div class="columns is-marginless reverse-row-order">
       <div class="column">
         <slot />
+      </div>
+      <div class="column is-3 has-background-white-bis">
+        <sidebar :items="tree" :path="path" />
       </div>
     </div>
   </Layout>
@@ -96,5 +96,8 @@ export default {
   border-left-color: transparent;
   border-right-color: transparent;
   flex-shrink: 3;
+}
+.reverse-row-order {
+  flex-direction: row-reverse;
 }
 </style>

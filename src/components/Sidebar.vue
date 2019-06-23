@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div v-if="path" class="columns">
-      <a :href="editUrl" class="column wrapper">
+      <a :href="editUrl" class="column has-text-centered">
         <b-icon class="icon" icon="pencil-outline" size="is-small" />
         <small>Edit this page</small>
       </a>
@@ -85,8 +85,5 @@ export default {
 <style scoped>
 .icon {
   margin-right: 2px;
-}
-.wrapper {
-  text-align: center;
 }
 </style>
