@@ -3,10 +3,13 @@
     <template v-slot:navItem>
       <b-autocomplete
         v-model="search"
+        :data="searchedItems"
+        @select="item => $router.push(item.node.path)"
         class="navbar-item search"
         placeholder="Search docs"
         icon="magnify"
         keep-first
+        field="node.title"
       >
         <template v-slot:empty
           >No results found</template
@@ -32,14 +35,6 @@ query Doc($page: Int) {
       node {
         title
         path
-        headings(depth: h1) {
-          value
-          anchor
-        }
-        subtitles: headings(depth: h2) {
-          value
-          anchor
-        }
       }
     }
   }
@@ -51,7 +46,10 @@ import Sidebar from "~/components/Sidebar.vue";
 export default {
   components: { Sidebar },
   props: {
-    path: String
+    path: {
+      type: String,
+      default: ""
+    }
   },
   data() {
     return {
@@ -59,6 +57,16 @@ export default {
     };
   },
   computed: {
+    searchedItems() {
+      return this.$static.docs.edges.filter(item => {
+        return item.node.title
+          .toLowerCase()
+          .includes(this.search.toLowerCase());
+        // || item.node.subtitles.value
+        // .toLowerCase()
+        // .includes(this.search.toLowerCase())
+      });
+    },
     tree() {
       let tree = {};
       for (let item of this.$static.docs.edges) {
@@ -75,7 +83,6 @@ export default {
         currentPath.path = item.node.path;
         currentPath.title = item.node.title;
       }
-      console.log(tree.children);
       return tree.children;
     }
   }

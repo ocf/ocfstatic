@@ -1,16 +1,15 @@
 <template>
   <div class="container">
-    <div v-if="path">
-      <a class="wrapper">
+    <div v-if="path" class="columns">
+      <a :href="editUrl" class="column wrapper">
         <b-icon class="icon" icon="pencil-outline" size="is-small" />
         <small>Edit this page</small>
       </a>
-      <a class="wrapper">
+      <a :href="historyUrl" class="column wrapper">
         <b-icon class="icon" icon="history" size="is-small" />
         <small>Page History</small>
       </a>
     </div>
-
     <aside class="menu">
       <ul class="menu-list">
         <li
@@ -19,46 +18,36 @@
           )"
           :key="index"
         >
-          <g-link :to="item.path">{{ item.title }}</g-link>
+          <g-link :class="{ 'is-active': path === item.path }" :to="item.path"
+            >{{ item.title }}
+          </g-link>
         </li>
       </ul>
       <template
-        v-for="[key1, value1] in Object.entries(items).filter(
+        v-for="[key, value] in Object.entries(items).filter(
           item => 'children' in item[1]
         )"
       >
-        <p :key="'label-' + key1" class="menu-label">
-          {{ key1 }}
+        <p :key="'label-' + key" class="menu-label">
+          {{ key }}
         </p>
-        <ul :key="'list-' + key1" class="menu-list">
-          <li v-for="(value2, key2) in value1.children" :key="key2">
-            <g-link :to="value2.path">{{ value2.title }}</g-link>
-            <!-- <div class="level">
-              <b-icon
-                class="is-pulled-right"
-                icon="chevron-down"
-                size="is-small"
-              />
-            </div> -->
-            <ul v-if="value2.children" class="menu-list">
-              <li v-for="(value3, key3) in value2.children" :key="key3">
-                <g-link :to="value3.path">{{ value3.title }}</g-link>
-                <ul v-if="value3.children" class="menu-list">
-                  <li v-for="(value4, key4) in value3.children" :key="key4">
-                    <g-link :to="value4.path">{{ value4.title }}</g-link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <sidebar-item
+          :items="value.children"
+          :path="path"
+          :key="'list-' + key"
+        />
       </template>
     </aside>
   </div>
 </template>
 
 <script>
+import SidebarItem from "~/components/SidebarItem";
+
 export default {
+  components: {
+    SidebarItem
+  },
   props: {
     items: {
       type: Object,
@@ -70,6 +59,25 @@ export default {
       type: String,
       default: ""
     }
+  },
+  data() {
+    return {
+      docsUrl: "https://github.com/BernardZhao/docs"
+    };
+  },
+  computed: {
+    docPath() {
+      return this.path
+        .split("/")
+        .slice(2)
+        .join("/");
+    },
+    editUrl() {
+      return this.docsUrl + "/edit/master/" + this.docPath + ".md";
+    },
+    historyUrl() {
+      return this.docsUrl + "/commits/master/" + this.docPath + ".md";
+    }
   }
 };
 </script>
@@ -79,7 +87,6 @@ export default {
   margin-right: 2px;
 }
 .wrapper {
-  /* white-space: nowrap; */
-  padding: 10px;
+  text-align: center;
 }
 </style>

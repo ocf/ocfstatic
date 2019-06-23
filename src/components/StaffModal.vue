@@ -39,11 +39,6 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      md5
-    };
-  },
   computed: {
     show: {
       get() {
@@ -54,10 +49,7 @@ export default {
       }
     },
     hash() {
-      if (this.selectedEvent.email) {
-        return md5(this.selectedEvent.email);
-      }
-      return "";
+      return this.selectedEvent.email ? md5(this.selectedEvent.email) : "";
     }
   }
 };

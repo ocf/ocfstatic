@@ -12,6 +12,10 @@ query Doc($path: String!) {
     title
     content
     path
+    subtitles: headings(depth: h2) {
+      value
+      anchor
+    }
   }
 }
 </page-query>
