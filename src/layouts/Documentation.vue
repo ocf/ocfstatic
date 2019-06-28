@@ -11,9 +11,16 @@
         keep-first
         field="node.title"
       >
-        <template v-slot:empty
-          >No results found</template
-        >
+        <template v-slot:empty>
+          No results found
+        </template>
+        <template slot-scope="props">
+          {{ props.option.node.title }}
+          <br />
+          <small>
+            {{ props.option.node.path }}
+          </small>
+        </template>
       </b-autocomplete>
     </template>
 
@@ -22,7 +29,7 @@
         <slot />
       </div>
       <div class="column is-3 has-background-white-bis">
-        <sidebar :items="tree" :path="path" />
+        <sidebar :items="tree" :path="path" :subtitles="subtitles" />
       </div>
     </div>
   </Layout>
@@ -34,6 +41,7 @@ query Doc($page: Int) {
     edges {
       node {
         title
+        content
         path
       }
     }
@@ -42,6 +50,7 @@ query Doc($page: Int) {
 </static-query>
 
 <script>
+import FlexSearch from "flexsearch";
 import Sidebar from "~/components/Sidebar.vue";
 export default {
   components: { Sidebar },
@@ -49,6 +58,10 @@ export default {
     path: {
       type: String,
       default: ""
+    },
+    subtitles: {
+      type: Array,
+      default: () => []
     }
   },
   data() {
@@ -58,14 +71,7 @@ export default {
   },
   computed: {
     searchedItems() {
-      return this.$static.docs.edges.filter(item => {
-        return item.node.title
-          .toLowerCase()
-          .includes(this.search.toLowerCase());
-        // || item.node.subtitles.value
-        // .toLowerCase()
-        // .includes(this.search.toLowerCase())
-      });
+      return this.index.search({ query: this.search });
     },
     tree() {
       let tree = {};
@@ -85,6 +91,18 @@ export default {
       }
       return tree.children;
     }
+  },
+  created() {
+    this.index = new FlexSearch({
+      doc: {
+        id: "id",
+        field: ["node:title", "node:content"]
+      }
+    });
+    this.$static.docs.edges.forEach((element, index) => {
+      element.id = index;
+    });
+    this.index.add(this.$static.docs.edges);
   }
 };
 </script>

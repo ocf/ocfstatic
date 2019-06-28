@@ -69,7 +69,7 @@ export default {
           name: "Patricia Hanus",
           username: "php",
           email: "php@ocf.berkeley.edu",
-          bio: "Fall 2019 General Manager\nLoves cats"
+          info: "Fall 2019 General Manager\nLoves cats"
         },
         {
           start: "2018-11-22 10:00",
@@ -77,7 +77,7 @@ export default {
           name: "Christopher Cooper",
           username: "cooperc",
           email: "cooperc@ocf.berkeley.edu",
-          bio: "Fall 2019 General Manager"
+          info: "Fall 2019 General Manager"
         },
         {
           start: "2018-11-21 10:00",
@@ -85,7 +85,7 @@ export default {
           name: "Derek Phan",
           username: "dphan",
           email: "dphan@ocf.berkeley.edu",
-          bio: "Boi"
+          info: "Boi"
         },
         {
           start: "2018-11-21 9:00",
@@ -93,7 +93,7 @@ export default {
           name: "Bernard Zhao",
           username: "bernardzhao",
           email: "bernardzhao@ocf.berkeley.edu",
-          bio: "Boi"
+          info: "Boi"
         },
         {
           start: "2018-11-23 14:00",
@@ -101,7 +101,7 @@ export default {
           name: "Benjamin Zhang",
           username: "bzh",
           email: "bzh@ocf.berkeley.edu",
-          bio: "Boi"
+          info: "Boi"
         },
         {
           start: "2018-11-19 16:00",
@@ -109,7 +109,7 @@ export default {
           name: "Liam Porr",
           username: "wporr",
           email: "wporr@ocf.berkeley.edu",
-          bio: "Boi"
+          info: "Boi"
         }
       ],
       staticEvents: [
@@ -118,6 +118,7 @@ export default {
           end: "2018-11-19 19:00",
           name: "Board Meeting",
           class: "meeting",
+          info: "Big boi decisions",
           background: true
         },
         {
@@ -125,6 +126,7 @@ export default {
           end: "2018-11-19 20:00",
           name: "Staff Meeting",
           class: "meeting",
+          info: "😀",
           background: true
         }
       ]

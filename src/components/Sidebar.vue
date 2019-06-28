@@ -5,11 +5,16 @@
         <b-icon class="icon" icon="pencil-outline" size="is-small" />
         <small>Edit this page</small>
       </a>
-      <a :href="historyUrl" class="column wrapper">
+      <a :href="historyUrl" class="column has-text-centered">
         <b-icon class="icon" icon="history" size="is-small" />
         <small>Page History</small>
       </a>
     </div>
+    <!-- <ul class="menu-list">
+      <li v-for="(subtitle, index) in subtitles" :key="index">
+        <g-link :to="path + subtitle.anchor"><small>{{subtitle.value}}</small></g-link>
+      </li>
+    </ul> -->
     <aside class="menu">
       <ul class="menu-list">
         <li
@@ -41,6 +46,14 @@
   </div>
 </template>
 
+<static-query>
+query {
+  metaData {
+    docsUrl
+  }
+}
+</static-query>
+
 <script>
 import SidebarItem from "~/components/SidebarItem";
 
@@ -58,12 +71,11 @@ export default {
     path: {
       type: String,
       default: ""
+    },
+    subtitles: {
+      type: Array,
+      default: () => []
     }
-  },
-  data() {
-    return {
-      docsUrl: "https://github.com/BernardZhao/docs"
-    };
   },
   computed: {
     docPath() {
@@ -73,10 +85,17 @@ export default {
         .join("/");
     },
     editUrl() {
-      return this.docsUrl + "/edit/master/" + this.docPath + ".md";
+      return (
+        this.$static.metaData.docsUrl + "/edit/master/" + this.docPath + ".md"
+      );
     },
     historyUrl() {
-      return this.docsUrl + "/commits/master/" + this.docPath + ".md";
+      return (
+        this.$static.metaData.docsUrl +
+        "/commits/master/" +
+        this.docPath +
+        ".md"
+      );
     }
   }
 };

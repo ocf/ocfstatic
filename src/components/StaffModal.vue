@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-content">
         <div class="media">
-          <div class="media-left">
+          <div v-if="hash" class="media-left">
             <figure class="image is-64x64">
               <g-image
                 :src="'https://www.gravatar.com/avatar/' + hash"
@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="content">
-          <span style="white-space: pre;">{{ selectedEvent.bio }}</span>
+          <span style="white-space: pre;">{{ selectedEvent.info }}</span>
           <br />
           <small
             >{{ selectedEvent.startTime }} - {{ selectedEvent.endTime }}
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-const md5 = require("md5");
+import md5 from "md5";
 export default {
   props: {
     showModal: Boolean,

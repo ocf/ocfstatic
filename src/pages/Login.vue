@@ -23,10 +23,10 @@
               <div class="card-content">
                 <form>
                   <b-field label="Username" message="Not your CalNet or email">
-                    <b-input :value="username"></b-input>
+                    <b-input v-model="username" />>
                   </b-field>
                   <b-field label="Password">
-                    <b-input :value="password" type="password"></b-input>
+                    <b-input v-model="password" type="password" />
                   </b-field>
                   <div class="field">
                     <b-checkbox v-model="remember">
@@ -34,7 +34,7 @@
                     </b-checkbox>
                   </div>
                   <div class="level is-mobile">
-                    <b-button>Login</b-button>
+                    <b-button @click="login">Login</b-button>
                     <a><small>Forgot your password?</small></a>
                   </div>
                 </form>
@@ -58,6 +58,26 @@ export default {
       password: "",
       remember: true
     };
+  },
+  methods: {
+    login() {
+      return fetch("www.ocf.berkeley.edu/login/login", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, cors, *same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json"
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: "follow", // manual, *follow, error
+        referrer: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+          username: this.username,
+          password: this.password
+        }) // body data type must match "Content-Type" header
+      }).then(response => response.json());
+    }
   }
 };
 </script>

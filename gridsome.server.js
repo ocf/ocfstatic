@@ -6,8 +6,9 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function(api) {
-  api.loadSource(({ addContentType }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api
+  api.loadSource(async store => {
+    store.addMetaData("githubUrl", "https://github.com/BernardZhao/ocf");
+    store.addMetaData("docsUrl", "https://github.com/BernardZhao/docs");
   });
 
   api.createPages(({ createPage }) => {

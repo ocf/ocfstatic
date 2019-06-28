@@ -5,7 +5,7 @@
 $primary: #e7717d;
 
 // Setup $colors to use as bulma classes (e.g. 'is-primary')
-$colors: (
+$addColors: (
   "primary": (
     $primary,
     $primary-invert
@@ -15,6 +15,7 @@ $colors: (
     $primary-invert
   )
 );
+$colors: map-merge($colors, $addColors);
 
 // Links
 $link: $primary;
