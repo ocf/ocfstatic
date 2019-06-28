@@ -23,7 +23,7 @@
               <div class="card-content">
                 <form>
                   <b-field label="Username" message="Not your CalNet or email">
-                    <b-input v-model="username" />>
+                    <b-input v-model="username" />
                   </b-field>
                   <b-field label="Password">
                     <b-input v-model="password" type="password" />
