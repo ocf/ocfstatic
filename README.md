@@ -8,7 +8,7 @@ A new website for the OCF.
 # Getting set up
 $ git clone --recursive
 $ cd ocf
-# Or, if you already cloned the repo
+# If you already cloned the repo
 $ git submodule update --init
 
 $ npm install
@@ -29,7 +29,7 @@ $ npm run explore
 A whole set of reasons, primarily being:
 
 - The site could look better, opstaff even suggested a new look
-- The site sucks on mobile.
+- The site (kinda) sucks on mobile.
 - Django templating is hard to maintain.
 - Tied ocfweb and documentation together in one repository.
 - You cannot search the documentation.
@@ -47,15 +47,43 @@ To address each of the previous points:
 
 While building the site, I've also realized that the docs themselves could be structured better as well. Some nested folders go too deep, and things aren't all categorized and organized to be found easily. Hopefully this also drives the docs to be fixed in that regard.
 
+### Post initial feedback
+
+After revealing this project to other staff, these were the main points I heard.
+
+- The design looks pretty good. Doc search and visualized staff hours also good.
+- Why are you using Javascript? (Specifically a JS framework like Vue)
+- Our Django site is already pretty good! It doesn't depend on ANY javascript, and we do not want to replace it or change that.
+
+So for new features like a paginated calendar and doc search, client-side javascript is necessary. Is Vue necessary? No. It's also was heavily emphasized that a JS-less site is required.
+
+Given this feedback, I feel like I've been forced into choosing between the following options:
+
+- Just improve our existing Django templates.
+
+This would not be that hard, as to restyle our existing site all I would need to do is port over the designs here and utilize Bulma, essentially making only CSS and HTML changes. But kind of pointless without adding some JS for search and calendar, but doing so seems non-trivial.
+
+- Embed Vue in our Django templates to replicate this site.
+
+This can actually be done (see https://vsupalov.com/vue-js-in-django-template/), but this also has its own caveats, being that there isn't too much point to it since it's not longer for a SPA. Also is generally extremely confusing with the conflicting delimiters.
+
+- Go full REST and SPA.
+
+This would just require setting up endpoints in ocfweb. Now this site will have to fetch info from ocfweb on mount.
+
+The best way that I feel like I can satisfy all ocfers and also keep the core of my project alive is the to keep both our existing templates and only add to ocfweb, by setting up new endpoints. This way, we can have a site with no JS, one with new JS functionality, so hopefully everyone is happy. Down the line though, things will need to change in ocfweb to separate docs out of it as well.
+
+### Overall Feelings
+
+Who knows if this will ever be adopted, but I hope that it at least forces some improvement in existing architecture, like improving ocfweb's API and separating docs out of ocfweb. If I can at least achieve those things, I think I will be satisfied. In a best case scenario, I can see potential for new things to developed on top of this and an authenticated ocfweb API.
+
 ## How to contribute
 
 Read up on Gridsome docs to understand how things are put together, and how to utilize the data layer.
 
 When styling, make sure to read up on Bulma styles, as to reuse as much implementation as possible. Most of the time if you want to center something, resize something, or color something, Bulma has a style for that.
 
-Overall, just try to write as little css, js, and templating as possible. Make sure to utilize Vue slots to avoid nesting components too hard and the existing file structure.
-
-I hate complexity.
+Overall, just try to write as little css, js, and templating as possible. Make sure to utilize Vue slots & scoped-slots to avoid nesting components too hard.
 
 ## Possible pitfalls
 

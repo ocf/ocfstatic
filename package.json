@@ -13,11 +13,12 @@
     "@gridsome/source-filesystem": "^0.5.0",
     "@gridsome/transformer-remark": "^0.3.2",
     "@mdi/font": "^3.7.95",
+    "axios": "^0.19.0",
     "buefy": "^0.7.8",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
     "flexsearch": "^0.6.22",
-    "gridsome": "^0.6.5",
+    "gridsome": "^0.6.6",
     "md5": "^2.2.1",
     "scrollreveal": "^4.0.5",
     "vue-cal": "^1.61.0"
