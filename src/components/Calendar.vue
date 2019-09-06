@@ -9,7 +9,7 @@
         :time-from="9 * 60"
         :time-to="20 * 60"
         :time-step="30"
-        :events="coloredEvents"
+        :events="processedEvents"
         :on-event-click="onEventClick"
         :min-cell-width="150"
         selected-date="2018-11-19"
@@ -35,6 +35,14 @@
     <staff-modal :show-modal.sync="showModal" :selected-event="selectedEvent" />
   </div>
 </template>
+
+<static-query>
+query {
+  metaData {
+    ocfAPI
+  }
+}
+</static-query>
 
 <script>
 import StaffModal from "~/components/StaffModal.vue";
@@ -129,11 +137,12 @@ export default {
           info: "😀",
           background: true
         }
-      ]
+      ],
+      hours: []
     };
   },
   computed: {
-    coloredEvents() {
+    processedEvents() {
       return this.events
         .map((event, index) => {
           event.class = this.colors[index % this.colors.length];
@@ -143,12 +152,19 @@ export default {
     }
   },
   mounted() {
-    // Defaults to day view on mobile, using Bulma's standard px value for mobile.
+    // Defaults to day view on mobile, using Bulma's standard px value for mobile. (Hardcoded lol)
     // Could be modified to programmatically change the view as users shrink the window,
     // but how often is that actually useful?
     this.defaultView = window.innerWidth <= 768 ? "day" : "week";
+    this.setStaffHours();
   },
   methods: {
+    async setStaffHours() {
+      this.hours = await this.$http
+        .get(this.$static.metaData.ocfAPI + "hours/staff")
+        .then(response => response.data);
+      console.log(this.hours);
+    },
     onEventClick(event, e) {
       this.selectedEvent = event;
       this.showModal = true;

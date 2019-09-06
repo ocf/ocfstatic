@@ -31,10 +31,12 @@
             <div class="tile is-parent is-vertical">
               <article class="tile is-child box home-content">
                 <p class="title">
-                  Currently <span class="has-text-success">Open</span>
+                  Currently
+                  <span v-if="hours.length" class="has-text-success">Open</span>
+                  <span v-else class="has-text-danger">Closed</span>
                 </p>
                 <p class="subtitle">
-                  Today's hours: 9AM - 6PM
+                  Today's hours: {{ hours }}
                   <g-link to="/staff-hours" class="span">
                     See more »
                   </g-link>
@@ -51,11 +53,12 @@
                 <p class="subtitle is-spaced ">
                   <a href="https://status.ocf.berkeley.edu/">More updates »</a>
                 </p>
-
-                <p class="title is-5">Downtime on May 21, 22:40 to 22:50</p>
-                <p class="subtitle is-6 is-spaced ">2 weeks, 2 days ago</p>
-                <p class="title is-5">Introducing the OCF Mastodon Service!</p>
-                <p class="subtitle is-6">1 month, 1 week ago</p>
+                <div v-for="item in blogPosts" :key="item.id">
+                  <p class="title is-5">
+                    <a :href="item.link"></a>{{ item.title }}
+                  </p>
+                  <p class="subtitle is-6 is-spaced ">{{ item.published }}</p>
+                </div>
               </article>
             </div>
             <div class="tile is-parent">
@@ -211,6 +214,14 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+  metaData {
+    ocfAPI
+  }
+}
+</static-query>
+
 <script>
 import Logo from "~/components/Logo.vue";
 import Links from "~/components/Links.vue";
@@ -223,8 +234,14 @@ export default {
     Logo,
     Links
   },
+  data() {
+    return {
+      hours: [],
+      blogPosts: []
+    };
+  },
   mounted() {
-    // Scrollreveal is not SSR friendly, must dynamically import
+    // Scrollreveal is not SSR friendly (it looks for window on load), must dynamically import
     // See https://vuepress.vuejs.org/guide/using-vue.html#browser-api-access-restrictions
     import("scrollreveal").then(ScrollReveal =>
       ScrollReveal.default().reveal(".home-content", {
@@ -232,6 +249,22 @@ export default {
         origin: "top"
       })
     );
+    this.setHoursTextToday();
+    this.setBlogPosts();
+  },
+  methods: {
+    async setHoursTextToday() {
+      this.hours = await this.$http
+        .get(this.$static.metaData.ocfAPI + "hours/today")
+        .then(response => response.data);
+      console.log(this.hours);
+    },
+    async setBlogPosts() {
+      this.blogPosts = await this.$http
+        .get(this.$static.metaData.ocfAPI + "announce/blog")
+        .then(response => response.data.slice(0, 2));
+      console.log(this.blogPosts);
+    }
   }
 };
 </script>
