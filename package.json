@@ -18,7 +18,7 @@
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
     "flexsearch": "^0.6.22",
-    "gridsome": "^0.6.6",
+    "gridsome": "^0.7.10",
     "md5": "^2.2.1",
     "scrollreveal": "^4.0.5",
     "vue-cal": "^1.61.0"
