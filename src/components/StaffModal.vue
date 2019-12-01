@@ -19,8 +19,9 @@
         <div class="content">
           <span style="white-space: pre;">{{ selectedEvent.info }}</span>
           <br />
-          <small
-            >{{ selectedEvent.startTime }} - {{ selectedEvent.endTime }}
+          <small>
+            {{ selectedEvent.startTimeMinutes }}
+            - {{ selectedEvent.endTimeMinutes }}
             {{ selectedEvent.startDate }}</small
           >
         </div>

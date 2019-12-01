@@ -215,11 +215,11 @@
 </template>
 
 <static-query>
-query {
-  metaData {
-    ocfAPI
+  query {
+    metadata {
+      apiUrl
+    }
   }
-}
 </static-query>
 
 <script>
@@ -255,13 +255,13 @@ export default {
   methods: {
     async setHoursTextToday() {
       this.hours = await this.$http
-        .get(this.$static.metaData.ocfAPI + "hours/today")
+        .get(this.$static.metadata.apiUrl + "hours/today")
         .then(response => response.data);
       console.log(this.hours);
     },
     async setBlogPosts() {
       this.blogPosts = await this.$http
-        .get(this.$static.metaData.ocfAPI + "announce/blog")
+        .get(this.$static.metadata.apiUrl + "announce/blog")
         .then(response => response.data.slice(0, 2));
       console.log(this.blogPosts);
     }

@@ -6,9 +6,10 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function(api) {
-  api.loadSource(async store => {
-    store.addMetaData("githubUrl", "https://github.com/BernardZhao/ocf");
-    store.addMetaData("docsUrl", "https://github.com/BernardZhao/docs");
+  api.loadSource(actions => {
+    actions.addMetadata("githubUrl", "https://github.com/BernardZhao/ocf");
+    actions.addMetadata("docsUrl", "https://github.com/BernardZhao/docs");
+    actions.addMetadata("apiUrl", "https://www.ocf.berkeley.edu/api/");
   });
 
   api.createPages(({ createPage }) => {

@@ -37,9 +37,9 @@
           {{ key }}
         </p>
         <sidebar-item
+          :key="'list-' + key"
           :items="value.children"
           :path="path"
-          :key="'list-' + key"
         />
       </template>
     </aside>
@@ -47,11 +47,11 @@
 </template>
 
 <static-query>
-query {
-  metaData {
-    docsUrl
+  query {
+    metadata {
+      docsUrl
+    }
   }
-}
 </static-query>
 
 <script>
@@ -86,12 +86,12 @@ export default {
     },
     editUrl() {
       return (
-        this.$static.metaData.docsUrl + "/edit/master/" + this.docPath + ".md"
+        this.$static.metadata.docsUrl + "/edit/master/" + this.docPath + ".md"
       );
     },
     historyUrl() {
       return (
-        this.$static.metaData.docsUrl +
+        this.$static.metadata.docsUrl +
         "/commits/master/" +
         this.docPath +
         ".md"

@@ -4,12 +4,12 @@
       <b-autocomplete
         v-model="search"
         :data="searchedItems"
-        @select="item => $router.push(item.node.path)"
         class="navbar-item search"
         placeholder="Search docs"
         icon="magnify"
         keep-first
         field="node.title"
+        @select="item => $router.push(item.node.path)"
       >
         <template v-slot:empty>
           No results found
@@ -36,17 +36,17 @@
 </template>
 
 <static-query>
-query Doc($page: Int) {
-  docs: allDoc(page: $page) {
-    edges {
-      node {
-        title
-        content
-        path
+  query Doc($page: Int) {
+    docs: allDoc(page: $page) {
+      edges {
+        node {
+          title
+          content
+          path
+        }
       }
     }
   }
-}
 </static-query>
 
 <script>
@@ -89,6 +89,7 @@ export default {
         currentPath.path = item.node.path;
         currentPath.title = item.node.title;
       }
+      console.log(tree.children);
       return tree.children;
     }
   },

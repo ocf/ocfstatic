@@ -4,6 +4,7 @@
       <!-- Need to disable eslint because linting changes 12Hour to 12hour -->
       <!-- eslint-disable -->
       <vue-cal
+        ref="vuecal"
         :default-view="defaultView"
         :disable-views="['years', 'year', 'month']"
         :time-from="9 * 60"
@@ -15,21 +16,22 @@
         selected-date="2018-11-19"
         style="height: 100%"
         hide-weekends
-        12Hour
-        time-format="h:mm{am}"
+        twelve-hour
+        time-format="h:mm"
       >
         <!-- eslint-enable -->
-        <div slot="event-renderer" slot-scope="{ event }">
+        <template v-slot:event-renderer="{ event }">
           <div style="padding: 5px;">
             <div class="vuecal__event-title">
               <p class="title is-5">{{ event.name }}</p>
             </div>
             <small class="vuecal__event-time subtitle is-6">
-              <nobr>{{ event.startTime }}</nobr> -
-              <nobr>{{ event.endTime }}</nobr>
+              <nobr>{{ $refs.vuecal.formatTime(event.startTimeMinutes) }}</nobr>
+              -
+              <nobr>{{ $refs.vuecal.formatTime(event.endTimeMinutes) }}</nobr>
             </small>
           </div>
-        </div>
+        </template>
       </vue-cal>
     </ClientOnly>
     <staff-modal :show-modal.sync="showModal" :selected-event="selectedEvent" />
@@ -37,11 +39,11 @@
 </template>
 
 <static-query>
-query {
-  metaData {
-    ocfAPI
+  query {
+    metadata {
+      apiUrl
+    }
   }
-}
 </static-query>
 
 <script>
@@ -161,7 +163,7 @@ export default {
   methods: {
     async setStaffHours() {
       this.hours = await this.$http
-        .get(this.$static.metaData.ocfAPI + "hours/staff")
+        .get(this.$static.metadata.apiUrl + "hours/staff")
         .then(response => response.data);
       console.log(this.hours);
     },
