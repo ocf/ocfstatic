@@ -10,23 +10,23 @@
           <li class="is-active"><a href="#" aria-current="page">{{this.$page.doc.title}}</a></li>
         </ul>
       </nav> -->
-      <div v-html="$page.doc.content" class="content" />
+      <div class="content" v-html="$page.doc.content" />
     </section>
   </Documentation>
 </template>
 
 <page-query>
-query Doc($path: String!) {
-  doc(path: $path) {
-    title
-    content
-    path
-    subtitles: headings(depth: h2) {
-      value
-      anchor
+  query Doc($path: String!) {
+    doc(path: $path) {
+      title
+      content
+      path
+      subtitles: headings(depth: h2) {
+        value
+        anchor
+      }
     }
   }
-}
 </page-query>
 
 <script>

@@ -19,6 +19,19 @@ module.exports = {
         typeName: "Doc",
         path: "docs/**/*.md"
       }
+    },
+    {
+      use: "gridsome-plugin-flexsearch",
+      options: {
+        collections: [
+          {
+            typeName: "Doc",
+            indexName: "Doc",
+            fields: ["title", "excerpt"]
+          }
+        ],
+        searchFields: ["title", "content"]
+      }
     }
   ],
   transformers: {

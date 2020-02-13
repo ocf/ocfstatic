@@ -2,23 +2,23 @@
   <Layout>
     <template v-slot:navItem>
       <b-autocomplete
-        v-model="search"
-        :data="searchedItems"
+        v-model="searchTerm"
+        :data="searchResults"
         class="navbar-item search"
         placeholder="Search docs"
         icon="magnify"
         keep-first
-        field="node.title"
-        @select="item => $router.push(item.node.path)"
+        field="title"
+        @select="item => $router.push(item.path)"
       >
         <template v-slot:empty>
           No results found
         </template>
         <template slot-scope="props">
-          {{ props.option.node.title }}
+          {{ props.option.title }}
           <br />
           <small>
-            {{ props.option.node.path }}
+            {{ props.option.path }}
           </small>
         </template>
       </b-autocomplete>
@@ -36,12 +36,11 @@
 </template>
 
 <static-query>
-  query Doc($page: Int) {
-    docs: allDoc(page: $page) {
+  query {
+    docs: allDoc(sortBy: "path", order: ASC) {
       edges {
         node {
           title
-          content
           path
         }
       }
@@ -50,10 +49,13 @@
 </static-query>
 
 <script>
-import FlexSearch from "flexsearch";
+import Search from "gridsome-plugin-flexsearch/SearchMixin";
 import Sidebar from "~/components/Sidebar.vue";
 export default {
   components: { Sidebar },
+  // Normally don't like mixins, but this is simple enough.
+  // searchTerm -> searchResults
+  mixins: [Search],
   props: {
     path: {
       type: String,
@@ -64,20 +66,17 @@ export default {
       default: () => []
     }
   },
-  data() {
-    return {
-      search: ""
-    };
-  },
   computed: {
-    searchedItems() {
-      return this.index.search({ query: this.search });
-    },
     tree() {
-      let tree = {};
+      return this.generateTree();
+    }
+  },
+  methods: {
+    generateTree() {
+      let tree = [];
       for (let item of this.$static.docs.edges) {
         let currentPath = tree;
-        for (let step of item.node.path.split("/").slice(2)) {
+        for (let step of item.node.path.split("/").slice(2, -1)) {
           if ("children" in currentPath === false) {
             currentPath.children = {};
           }
@@ -89,21 +88,8 @@ export default {
         currentPath.path = item.node.path;
         currentPath.title = item.node.title;
       }
-      console.log(tree.children);
       return tree.children;
     }
-  },
-  created() {
-    this.index = new FlexSearch({
-      doc: {
-        id: "id",
-        field: ["node:title", "node:content"]
-      }
-    });
-    this.$static.docs.edges.forEach((element, index) => {
-      element.id = index;
-    });
-    this.index.add(this.$static.docs.edges);
   }
 };
 </script>
