@@ -15,6 +15,7 @@ $addColors: (
     $primary-invert
   )
 );
+// Merge default colors with our custom choices
 $colors: map-merge($colors, $addColors);
 
 // Links
