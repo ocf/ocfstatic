@@ -22,7 +22,7 @@
     "gridsome-plugin-flexsearch": "^0.1.13",
     "md5": "^2.2.1",
     "scrollreveal": "^4.0.5",
-    "vue-cal": "^2.24.0"
+    "vue-cal": "^2.24.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
