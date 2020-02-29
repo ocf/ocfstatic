@@ -20,9 +20,8 @@
           <span style="white-space: pre;">{{ selectedEvent.info }}</span>
           <br />
           <small>
-            {{ selectedEvent.startTimeMinutes }}
-            - {{ selectedEvent.endTimeMinutes }}
-            {{ selectedEvent.startDate }}
+            {{ formatStaffHour(selectedEvent.startDate) }}
+            - {{ formatStaffHour(selectedEvent.endDate) }}
           </small>
         </div>
       </div>
@@ -51,6 +50,11 @@ export default {
     },
     hash() {
       return this.selectedEvent.email ? md5(this.selectedEvent.email) : "";
+    }
+  },
+  methods: {
+    formatStaffHour(date) {
+      return date ? date.formatTime("h:mm{AM}") : "";
     }
   }
 };

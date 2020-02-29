@@ -38,8 +38,10 @@ export default {
 </script>
 
 <style scope>
-/* To properly stack nested menus */
+/* To properly stack nested menus nicely */
 .menu-list li ul {
   margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 </style>

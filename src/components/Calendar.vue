@@ -1,34 +1,36 @@
 <template>
   <div>
-    <vue-cal
-      ref="vuecal"
-      :default-view="defaultView"
-      :disable-views="['years', 'year', 'month']"
-      :time-from="9 * 60"
-      :time-to="20 * 60"
-      :time-step="30"
-      :events="processedEvents"
-      :on-event-click="onEventClick"
-      :min-cell-width="150"
-      selected-date="2018-11-19"
-      style="height: 100%"
-      hide-weekends
-      twelve-hour
-      time-format="h:mm"
-    >
-      <template v-slot:event-renderer="{ event }">
-        <div style="padding: 5px;">
-          <div class="vuecal__event-title">
-            <p class="title is-5">{{ event.name }}</p>
+    <ClientOnly>
+      <vue-cal
+        ref="vuecal"
+        :default-view="defaultView"
+        :disable-views="['years', 'year', 'month']"
+        :time-from="9 * 60"
+        :time-to="20 * 60"
+        :time-step="30"
+        :events="processedEvents"
+        :on-event-click="onEventClick"
+        :min-cell-width="150"
+        selected-date="2018-11-19"
+        style="height: 100%"
+        hide-weekends
+        twelve-hour
+        time-format="h:mm"
+      >
+        <template v-slot:event="{ event }">
+          <div style="padding: 5px;">
+            <div class="vuecal__event-title">
+              <p class="title is-5">{{ event.name }}</p>
+            </div>
+            <small class="vuecal__event-time subtitle is-6">
+              <nobr>{{ event.startDate.formatTime("h:mm{AM}") }}</nobr>
+              -
+              <nobr>{{ event.endDate.formatTime("h:mm{AM}") }}</nobr>
+            </small>
           </div>
-          <small class="vuecal__event-time subtitle is-6">
-            <nobr>{{ event.startDate.formatTime("h:mm{am}") }}</nobr>
-            -
-            <nobr>{{ event.endDate.formatTime("h:mm{am}") }}</nobr>
-          </small>
-        </div>
-      </template>
-    </vue-cal>
+        </template>
+      </vue-cal>
+    </ClientOnly>
     <staff-modal :show-modal.sync="showModal" :selected-event="selectedEvent" />
   </div>
 </template>
@@ -123,7 +125,7 @@ export default {
           end: "2018-11-19 19:00",
           name: "Board Meeting",
           class: "meeting",
-          info: "Big boi decisions",
+          info: "Board of Directors Meeting",
           background: true
         },
         {

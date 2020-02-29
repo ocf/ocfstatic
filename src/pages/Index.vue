@@ -57,7 +57,9 @@
                   <p class="title is-5">
                     <a :href="item.link"></a>{{ item.title }}
                   </p>
-                  <p class="subtitle is-6 is-spaced ">{{ item.published }}</p>
+                  <p class="subtitle is-6 is-spaced ">
+                    {{ formatBlogTime(item.published) }}
+                  </p>
                 </div>
               </article>
             </div>
@@ -95,11 +97,24 @@
                 <p class="title is-5">Sound interesting?</p>
                 <ul>
                   <li>
-                    Subscribe to our <a>mailing list</a> for meeting recaps
+                    Subscribe to our
+                    <a href="https://ocf.io/announce">mailing list</a> for
+                    meeting recaps
                   </li>
-                  <li>Chat with us on <a>Slack</a> or <a>IRC</a></li>
-                  <li>Drop by and say hello, or <a>email</a> the staff team</li>
-                  <li>See more ways to <a>contribute and get involved</a></li>
+                  <li>
+                    Chat with us on <a href="https://fco.slack.com">Slack</a> or
+                    <a href="docs/internal/contact/irc/">IRC</a>
+                  </li>
+                  <li>
+                    Drop by and say hello, or
+                    <a href="docs/internal/contact">email</a> the staff team
+                  </li>
+                  <li>
+                    See more ways to
+                    <a href="docs/staff/getinvolved"
+                      >contribute and get involved</a
+                    >
+                  </li>
                 </ul>
               </div>
             </article>
@@ -123,27 +138,27 @@
                 </p>
                 <ul>
                   <li>
-                    <a href="/services/lab/">A spiffy computer lab</a> in 171
-                    MLK Student Union
+                    <a href="/docs/services/lab/">A spiffy computer lab</a> in
+                    171 MLK Student Union
                   </li>
                   <li>
-                    <a href="/services/web/">Web &amp; email hosting</a>
+                    <a href="/docs/services/web/">Web &amp; email hosting</a>
                     for thousands of student groups and individuals
                   </li>
                   <li>
-                    <a href="/services/lab/printing/">Free printing</a> for all
-                    UC Berkeley students
+                    <a href="/docs/services/lab/printing/">Free printing</a> for
+                    all UC Berkeley students
                   </li>
                   <li>
-                    <a href="/services/shell/">Shell accounts</a> on our
+                    <a href="/docs/services/shell/">Shell accounts</a> on our
                     powerful
-                    <a href="/staff/backend/servers/">on-campus servers</a>
+                    <a href="/docs/staff/backend/servers/">on-campus servers</a>
                   </li>
                   <li>
-                    <a href="/services/hpc/">High-performance computing</a>
+                    <a href="/docs/services/hpc/">High-performance computing</a>
                     on our GPU server
                   </li>
-                  <li>...and <a href="/services/">lots more!</a></li>
+                  <li>...and <a href="/docs/services/">lots more!</a></li>
                 </ul>
                 <p>
                   We hold
@@ -254,16 +269,28 @@ export default {
   },
   methods: {
     async setHoursTextToday() {
-      this.hours = await this.$http
-        .get(this.$static.metadata.apiUrl + "hours/today")
-        .then(response => response.data);
-      console.log(this.hours);
+      this.hours = this.formatHours(
+        await this.$http
+          .get(this.$static.metadata.apiUrl + "hours/today")
+          .then(response => response.data)
+      );
+    },
+    formatHours(hoursList) {
+      return hoursList.map(pair => pair[0] + " - " + pair[1]).join(", ");
     },
     async setBlogPosts() {
       this.blogPosts = await this.$http
         .get(this.$static.metadata.apiUrl + "announce/blog")
         .then(response => response.data.slice(0, 2));
-      console.log(this.blogPosts);
+    },
+    formatBlogTime(date) {
+      const datetime = new Date(date);
+      return datetime.toLocaleString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
     }
   }
 };
