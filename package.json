@@ -43,12 +43,10 @@
   },
   "lint-staged": {
     "*.{vue,js,scss,css,json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{vue,js}": [
-      "eslint --fix --ignore-pattern",
-      "git add"
+      "eslint --fix --ignore-pattern"
     ]
   }
 }
