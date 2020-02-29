@@ -8,7 +8,6 @@
       :time-to="20 * 60"
       :time-step="30"
       :events="processedEvents"
-      s
       :on-event-click="onEventClick"
       :min-cell-width="150"
       selected-date="2018-11-19"

@@ -22,8 +22,8 @@
           <small>
             {{ selectedEvent.startTimeMinutes }}
             - {{ selectedEvent.endTimeMinutes }}
-            {{ selectedEvent.startDate }}</small
-          >
+            {{ selectedEvent.startDate }}
+          </small>
         </div>
       </div>
     </div>

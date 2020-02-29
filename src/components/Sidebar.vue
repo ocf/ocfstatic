@@ -1,15 +1,5 @@
 <template>
   <div class="container">
-    <div v-if="path" class="columns">
-      <a :href="editUrl" class="column has-text-centered">
-        <b-icon class="icon" icon="pencil-outline" size="is-small" />
-        <small>Edit this page</small>
-      </a>
-      <a :href="historyUrl" class="column has-text-centered">
-        <b-icon class="icon" icon="history" size="is-small" />
-        <small>Page History</small>
-      </a>
-    </div>
     <!-- <ul class="menu-list">
       <li v-for="(subtitle, index) in subtitles" :key="index">
         <g-link :to="path + subtitle.anchor"><small>{{subtitle.value}}</small></g-link>
@@ -46,14 +36,6 @@
   </div>
 </template>
 
-<static-query>
-  query {
-    metadata {
-      docsUrl
-    }
-  }
-</static-query>
-
 <script>
 import SidebarItem from "~/components/SidebarItem";
 
@@ -83,19 +65,6 @@ export default {
         .split("/")
         .slice(2)
         .join("/");
-    },
-    editUrl() {
-      return (
-        this.$static.metadata.docsUrl + "/edit/master/" + this.docPath + ".md"
-      );
-    },
-    historyUrl() {
-      return (
-        this.$static.metadata.docsUrl +
-        "/commits/master/" +
-        this.docPath +
-        ".md"
-      );
     }
   }
 };

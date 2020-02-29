@@ -9,8 +9,8 @@
         <slot name="navItem" />
         <span
           :class="{ 'is-active': isMenuActive }"
-          @click="isMenuActive = !isMenuActive"
           class="navbar-burger burger"
+          @click="isMenuActive = !isMenuActive"
         >
           <!-- These extra spans are the three lines in the hamburger
           menu, they make animation possible, do not remove! -->

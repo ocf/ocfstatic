@@ -1,6 +1,20 @@
 <template>
   <Documentation :path="$page.doc.path" :subtitles="$page.doc.subtitles">
     <section class="section">
+      <h1 class="title is-2">
+        {{ $page.doc.title }}
+      </h1>
+      <h2 class="subtitle is-6">
+        <a :href="editUrl">
+          <b-icon class="icon" icon="pencil-outline" size="is-small" />
+          Edit this page
+        </a>
+        -
+        <a :href="historyUrl">
+          <b-icon class="icon" icon="history" size="is-small" />
+          Page History
+        </a>
+      </h2>
       <!-- <nav class="breadcrumb">
         <ul>
           <li
@@ -29,6 +43,14 @@
   }
 </page-query>
 
+<static-query>
+  query {
+    metadata {
+      docsUrl
+    }
+  }
+</static-query>
+
 <script>
 import Documentation from "~/layouts/Documentation.vue";
 
@@ -40,6 +62,30 @@ export default {
   },
   components: {
     Documentation
+  },
+  computed: {
+    editUrl() {
+      return (
+        this.$static.metadata.docsUrl +
+        "/edit/master/" +
+        this.$page.doc.path
+          .split("/")
+          .slice(2, -1)
+          .join("/") +
+        ".md"
+      );
+    },
+    historyUrl() {
+      return (
+        this.$static.metadata.docsUrl +
+        "/commits/master/" +
+        this.$page.doc.path
+          .split("/")
+          .slice(2, -1)
+          .join("/") +
+        ".md"
+      );
+    }
   }
 };
 </script>
