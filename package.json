@@ -14,7 +14,7 @@
     "@gridsome/transformer-remark": "^0.5.0",
     "@mdi/font": "^4.9.95",
     "axios": "^0.19.2",
-    "buefy": "^0.8.12",
+    "buefy": "^0.8.15",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
     "gridsome": "0.7.12",
