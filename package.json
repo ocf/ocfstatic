@@ -17,7 +17,7 @@
     "buefy": "^0.8.12",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
-    "gridsome": "0.7.12",
+    "gridsome": "0.7.14",
     "gridsome-plugin-flexsearch": "^0.1.13",
     "md5": "^2.2.1",
     "scrollreveal": "^4.0.5",
