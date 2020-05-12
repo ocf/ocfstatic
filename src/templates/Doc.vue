@@ -46,7 +46,7 @@
 <static-query>
   query {
     metadata {
-      docsUrl
+      githubUrl
     }
   }
 </static-query>
@@ -66,23 +66,17 @@ export default {
   computed: {
     editUrl() {
       return (
-        this.$static.metadata.docsUrl +
-        "/edit/master/" +
-        this.$page.doc.path
-          .split("/")
-          .slice(2, -1)
-          .join("/") +
+        this.$static.metadata.githubUrl +
+        "/edit/master" +
+        this.$page.doc.path.slice(0, -1) +
         ".md"
       );
     },
     historyUrl() {
       return (
-        this.$static.metadata.docsUrl +
-        "/commits/master/" +
-        this.$page.doc.path
-          .split("/")
-          .slice(2, -1)
-          .join("/") +
+        this.$static.metadata.githubUrl +
+        "/commits/master" +
+        this.$page.doc.path.slice(0, -1) +
         ".md"
       );
     }

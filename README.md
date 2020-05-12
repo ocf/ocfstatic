@@ -19,11 +19,9 @@ $ npm run explore
 
 ## How to contribute
 
-Read up on Gridsome docs to understand how things are put together, and how to utilize the data layer.
+Take a look at the issues, and take your pick!
 
-When styling, make sure to read up on Bulma styles, as to reuse as much implementation as possible. Most of the time if you want to center something, resize something, or color something, Bulma has a style for that.
-
-Overall, just try to write as little css, js, and templating as possible. Make sure to utilize Vue slots & scoped-slots to avoid nesting components too hard.
+I would recommend getting familiar with the Bulma styles included in the project, to reuse them and write as little custom css as possible.
 
 ## Possible pitfalls
 

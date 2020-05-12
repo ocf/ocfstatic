@@ -82,7 +82,7 @@
         <br />
         View the source code on
         <a href="https://github.com/BernardZhao/ocf">
-          <b-icon icon="github-face" size="is-small"> </b-icon>
+          <b-icon icon="github" size="is-small"> </b-icon>
           Github
         </a>
       </div>

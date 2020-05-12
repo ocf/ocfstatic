@@ -8,7 +8,6 @@
 module.exports = function(api) {
   api.loadSource(actions => {
     actions.addMetadata("githubUrl", "https://github.com/BernardZhao/ocf");
-    actions.addMetadata("docsUrl", "https://github.com/BernardZhao/docs");
     actions.addMetadata("apiUrl", "https://www.ocf.berkeley.edu/api/");
   });
 
