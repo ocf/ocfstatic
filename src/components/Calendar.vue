@@ -23,9 +23,9 @@
               <p class="title is-5">{{ event.name }}</p>
             </div>
             <small class="vuecal__event-time subtitle is-6">
-              <nobr>{{ event.startDate.formatTime("h:mm{AM}") }}</nobr>
+              <nobr>{{ event.start.formatTime("h:mm{AM}") }}</nobr>
               -
-              <nobr>{{ event.endDate.formatTime("h:mm{AM}") }}</nobr>
+              <nobr>{{ event.end.formatTime("h:mm{AM}") }}</nobr>
             </small>
           </div>
         </template>

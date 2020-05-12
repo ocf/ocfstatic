@@ -20,8 +20,8 @@
           <span style="white-space: pre;">{{ selectedEvent.info }}</span>
           <br />
           <small>
-            {{ formatStaffHour(selectedEvent.startDate) }}
-            - {{ formatStaffHour(selectedEvent.endDate) }}
+            {{ formatStaffHour(selectedEvent.start) }}
+            - {{ formatStaffHour(selectedEvent.end) }}
           </small>
         </div>
       </div>
