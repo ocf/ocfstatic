@@ -66,63 +66,63 @@ ways to contribute by browsing open issues, but they can sometimes be hard to
 understand if they’re short on context. The following links can be helpful:
 (note that you must be logged in to GitHub to see these links)
 
-* [All OCF GitHub issues][ocf-github-issues]
-* [OCF GitHub issues marked "good first issue"][ocf-github-issues-starter]
+- [All OCF GitHub issues][ocf-github-issues]
+- [OCF GitHub issues marked "good first issue"][ocf-github-issues-starter]
 
 If you'd like, you can also look at issues within specific repos. Here’s a
 list of our most active repos, with some examples of they're used for:
 
-* [puppet][puppet] ([issues][puppet/issues]) - contains Puppet modules, which
+- [puppet][puppet] ([issues][puppet/issues]) - contains Puppet modules, which
   controls the software and configuration on all of our servers.
-   * Install a standard set of software packages on each of the desktops
-     ([ocf_desktop/manifests/packages.pp][puppet-desktop-packages])
-   * Configure Firefox to show the "are you sure you want to quit" dialog
-     ([PR #373][puppet-373])
-   * Monitor our mirrors to see if they’re out of date
-     ([healthcheck script][mirror-healthcheck],
-     [configuring server to call the healtcheck
-     script][mirror-healthcheck-puppet],
-     [Monitoring rules for alerting][prometheus-mirror])
-   * Monitor printers to see if they’re out of paper, toner, or jammed
-     ([printer.rules.yaml][prometheus-printer])
-   * Send a desktop notification if a print jobs fails ([PR #321][puppet-321])
-   * Configure our mail server, including
-     [@ocf.berkeley.edu aliases][puppet-aliases]
-   * Configure our [DHCP server][puppet-dhcp]
-   * Configure our [Apache web server][puppet-www], which serves almost all
-     web requests on our infra
-   * Configure our [internal firewall][puppet-firewall]
-     ([docs](/docs/staff/backend/internal-firewalls))
-* [ocfweb][ocfweb] ([issues][ocfweb/issues]) - the source code for our website,
+  - Install a standard set of software packages on each of the desktops
+    ([ocf_desktop/manifests/packages.pp][puppet-desktop-packages])
+  - Configure Firefox to show the "are you sure you want to quit" dialog
+    ([PR #373][puppet-373])
+  - Monitor our mirrors to see if they’re out of date
+    ([healthcheck script][mirror-healthcheck],
+    [configuring server to call the healtcheck
+    script][mirror-healthcheck-puppet],
+    [Monitoring rules for alerting][prometheus-mirror])
+  - Monitor printers to see if they’re out of paper, toner, or jammed
+    ([printer.rules.yaml][prometheus-printer])
+  - Send a desktop notification if a print jobs fails ([PR #321][puppet-321])
+  - Configure our mail server, including
+    [@ocf.berkeley.edu aliases][puppet-aliases]
+  - Configure our [DHCP server][puppet-dhcp]
+  - Configure our [Apache web server][puppet-www], which serves almost all
+    web requests on our infra
+  - Configure our [internal firewall][puppet-firewall]
+    ([docs](/docs/staff/backend/internal-firewalls))
+- [ocfweb][ocfweb] ([issues][ocfweb/issues]) - the source code for our website,
   www.ocf.berkeley.edu. Written in Python using the Django framework.
-   * Hosts our documentation for users and staffers (including
-     [this page][getinvolved-src]!) ([docs][docs-src])
-   * JSON APIs for lab hours ([api/hours.py][api-hours])
-   * [Account creation][account-register], [password resets][account-chpass],
-     [others][account]
-   * Lab usage statistics ([stats/][ocfweb-stats])
-   * Form for requesting a virtual host ([account/vhost.py][ocfweb-vhost])
-* [ocflib][ocflib] ([issues][ocflib/issues]) - a Python library installed on all
+  - Hosts our documentation for users and staffers (including
+    [this page][getinvolved-src]!) ([docs][docs-src])
+  - JSON APIs for lab hours ([api/hours.py][api-hours])
+  - [Account creation][account-register], [password resets][account-chpass],
+    [others][account]
+  - Lab usage statistics ([stats/][ocfweb-stats])
+  - Form for requesting a virtual host ([account/vhost.py][ocfweb-vhost])
+- [ocflib][ocflib] ([issues][ocflib/issues]) - a Python library installed on all
   servers. Has Python functions for various parts of the lab infrastructure.
-   * Account management, searching ([account/][ocflib-account])
-   * Accessing the database ([infra/mysql.py][ocflib-mysql])
-   * Send automated emails ([misc/mail.py][ocflib-mail])
-   * Printer querying and statistics ([printing/][ocflib-printing])
-* [utils][utils] ([issues][utils/issues]) - similar to ocflib, this contains
+  - Account management, searching ([account/][ocflib-account])
+  - Accessing the database ([infra/mysql.py][ocflib-mysql])
+  - Send automated emails ([misc/mail.py][ocflib-mail])
+  - Printer querying and statistics ([printing/][ocflib-printing])
+- [utils][utils] ([issues][utils/issues]) - similar to ocflib, this contains
   Python scripts that are run by humans.
-   * Paper quota refund ([printing/paper][utils-paper])
-   * Query/search OCF accounts ([acct/][utils-acct])
-   * For users: create MySQL database and HTTP webdir
-     ([makeservices/makemysql-real][utils-makemysql-real],
-     [makeservices/makehttp][utils-makehttp])
-   * Create new virtual machines ([staff/sys/makevm][utils-makevm])
-   * Wake up desktops from sleep ([staff/lab/lab-wakeup][utils-lab-wakeup])
-* [slackbridge][slackbridge] ([issues][slackbridge/issues]) - bridges our IRC
+  - Paper quota refund ([printing/paper][utils-paper])
+  - Query/search OCF accounts ([acct/][utils-acct])
+  - For users: create MySQL database and HTTP webdir
+    ([makeservices/makemysql-real][utils-makemysql-real],
+    [makeservices/makehttp][utils-makehttp])
+  - Create new virtual machines ([staff/sys/makevm][utils-makevm])
+  - Wake up desktops from sleep ([staff/lab/lab-wakeup][utils-lab-wakeup])
+- [slackbridge][slackbridge] ([issues][slackbridge/issues]) - bridges our IRC
   network with our Slack organization, so staff members can exercise choice in
   what chat program they’d like to use. Written in Python.
-* [ircbot][ircbot] ([issues][ircbot/issues]) - a fun chatbot, also used to
+- [ircbot][ircbot] ([issues][ircbot/issues]) - a fun chatbot, also used to
   approve new account requests. Written in Python.
-   * See https://ircbot.ocf.berkeley.edu/ for a listing of IRC bot functionality
+  - See https://ircbot.ocf.berkeley.edu/ for a listing of IRC bot functionality
 
 #### TODOs
 
@@ -159,12 +159,12 @@ During the week, veteran staffers host “staff hours”
 services. Newbies are encouraged to attend staff hours too. For a newbie,
 attending staff hours can serve multiple purposes:
 
-   * Learn by shadowing veteran staffers as they help people out
-   * Talk about your interests so we can help you find stuff to work on
-   * Get one-on-one mentoring so you can learn about the vast complex world of
-     OCF infrastructure
-   * Get context and more information on a particular area you’re interested
-     in contributing in
+- Learn by shadowing veteran staffers as they help people out
+- Talk about your interests so we can help you find stuff to work on
+- Get one-on-one mentoring so you can learn about the vast complex world of
+  OCF infrastructure
+- Get context and more information on a particular area you’re interested
+  in contributing in
 
 ### Slack or IRC
 
@@ -173,9 +173,9 @@ Slack, see [ocf.io/slack][slack]. See [IRC docs](/docs/contact/irc) for how to
 join IRC. Slack and IRC are bridged together, so joining either one lets you
 participate in the same discussions. Some important channels:
 
-   * #rebuild - technical discussion
-   * #administrivia - non-technical discussion
-   * #ocf for off-topic, non-OCF related discussion
+- #rebuild - technical discussion
+- #administrivia - non-technical discussion
+- #ocf for off-topic, non-OCF related discussion
 
 These channels are typically very active, and you shouldn’t feel the need to
 read every line to stay updated. You also aren’t required to understand all the

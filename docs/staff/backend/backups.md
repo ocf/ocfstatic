@@ -1,11 +1,12 @@
 ---
 title: "Backups"
 ---
+
 ## Backup Storage
 
 We currently store our on-site backups across a couple drives on `hal`:
 
-* `hal:/opt/backups` (6 TiB usable; 2x 6-TiB Seagate drives in RAID 1 in an LVM
+- `hal:/opt/backups` (6 TiB usable; 2x 6-TiB Seagate drives in RAID 1 in an LVM
   volume group)
 
   This volume group provides `/dev/vg-backups/backups-live` which contains
@@ -23,7 +24,7 @@ Box.com][upload-to-box]. This takes about 20 hours combined to make and upload,
 and will probably take even longer in the future as backups grow. An email is
 sent out once the backup files are uploaded, and the link provided is shared
 with only OCF officers to make sure the backups are kept as secure as possible,
-since they contain all of the OCF's important data.  The backups are already
+since they contain all of the OCF's important data. The backups are already
 encrypted, but it doesn't hurt to add a little extra security to that.
 
 ### Retention
@@ -91,13 +92,13 @@ take to restore from an offsite backup:
 
 Backups currently include:
 
-* Everything on NFS
-  * User home and web directories
-  * Cronjobs on supported servers (tsunami, supernova, biohazard, etc.)
-* MySQL databases (including user databases, stats, RT, print quotas, IRC data)
-* Everything on GitHub (probably very unnecessary)
-* LDAP and Kerberos data
-* A [smattering of random files on random servers][backed-up-files]
+- Everything on NFS
+  - User home and web directories
+  - Cronjobs on supported servers (tsunami, supernova, biohazard, etc.)
+- MySQL databases (including user databases, stats, RT, print quotas, IRC data)
+- Everything on GitHub (probably very unnecessary)
+- LDAP and Kerberos data
+- A [smattering of random files on random servers][backed-up-files]
 
 ## Backup Procedures
 

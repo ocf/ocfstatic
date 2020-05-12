@@ -8,7 +8,7 @@ intructions should serve as background and to help debug. A
 allowing multiple virtual interfaces to communicate with one another
 at layer 2. LACP, or [interface bonding][linux-wiki-bonding], is a
 protocol that allows the bandwidth of multiple interfaces to be
-aggregated together and treated as a single interface.  The type of
+aggregated together and treated as a single interface. The type of
 bonding we use, 802.3ad, specifies that the bandwidth of the bonded
 interface will be the sum of the bandwidth of each child interface,
 while providing fault-tolerance in case a particular sub interface
@@ -49,7 +49,6 @@ implying "fast", at a PDU sent every second instead of every 30 seconds ("slow")
 If the bond interface is going to be the primary interface on the host, you may want to change
 `manual` to `static` and add addressing information by adding `address`, `gateway`, and `netmask`
 fields to the stanza. If the bond interface is going to be part of a bridge, leave it as `manual`.
-
 
 ### Bridging
 

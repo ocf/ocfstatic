@@ -2,7 +2,6 @@
 title: "Git"
 ---
 
-
 Git is a distributed revision control system used by the OCF. Other version
 control systems include Mercurial (also distributed) and Subversion (not
 distributed).
@@ -14,10 +13,9 @@ Subversion-like workflow with a "central repository" (where you clone/fetch
 from and push to) and linear history makes more sense. The instructions below
 assume that development is happening in a single branch.
 
-**Only commit your own, original work**.  You may commit another staff member's
+**Only commit your own, original work**. You may commit another staff member's
 work if you have permission and change the author appropriately (e.g.,
-`--author="Guest User <guser@ocf.berkeley.edu>"`). When committing, `git config
-user.name` should be your name and `git config user.email` should be your OCF
+`--author="Guest User <guser@ocf.berkeley.edu>"`). When committing, `git config user.name` should be your name and `git config user.email` should be your OCF
 email address -- this should be taken care of by [LDAP](/docs/staff/backend/ldap) and `/etc/mailname` on OCF machines.
 
 ### To "update"
@@ -101,34 +99,34 @@ Advanced:
 
 ## Terminology
 
-* branch
-  * line of changes in a repository, default branch is `master`
-* fast-forward
-  * advance branch forward in a linear sequence
-  * this is usually what we want: the new commit builds directly on the
+- branch
+  - line of changes in a repository, default branch is `master`
+- fast-forward
+  - advance branch forward in a linear sequence
+  - this is usually what we want: the new commit builds directly on the
     previous commit
-* hooks
-  * optional scripts that can be executed during git operations
-  * for example, validate syntax before accepting a commit or deploy code to a
+- hooks
+  - optional scripts that can be executed during git operations
+  - for example, validate syntax before accepting a commit or deploy code to a
     server
-* index (aka staging area)
-  * files that are ready to be stored in your next commit
-* references (aka refs)
-  * SHA-1 hashes that identify commits
-  * `HEAD` points to the latest commit ref in the current branch (`HEAD^` to
+- index (aka staging area)
+  - files that are ready to be stored in your next commit
+- references (aka refs)
+  - SHA-1 hashes that identify commits
+  - `HEAD` points to the latest commit ref in the current branch (`HEAD^` to
     the one before it)
-* remote
-  * upstream repository that you can `git fetch` from or `git push` to, default
+- remote
+  - upstream repository that you can `git fetch` from or `git push` to, default
     is `origin`
-  * local branches can "track" remote branches (e.g., `master` tracking
+  - local branches can "track" remote branches (e.g., `master` tracking
     `origin/master`)
-* working tree (aka workspace or working directory)
-  * directory that checked out files reside
-  * this includes the current branch and any "dirty" uncommitted changes
+- working tree (aka workspace or working directory)
+  - directory that checked out files reside
+  - this includes the current branch and any "dirty" uncommitted changes
     (staged or not)
 
 ## Recommended reading
 
-* [A Visual Git Reference](https://marklodato.github.io/visual-git-guide/)
-* [Git Immersion](http://www.gitimmersion.com/)
-* [The Case for Git Rebase](http://darwinweb.net/articles/the-case-for-git-rebase)
+- [A Visual Git Reference](https://marklodato.github.io/visual-git-guide/)
+- [Git Immersion](http://www.gitimmersion.com/)
+- [The Case for Git Rebase](http://darwinweb.net/articles/the-case-for-git-rebase)

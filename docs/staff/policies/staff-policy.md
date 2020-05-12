@@ -11,7 +11,7 @@ _[The rest of this policy is per Site Manager decision on 8/30/17]_
 
 The [OCF Decision Making Process](/docs/docs/operatingrules/constitution#ocf_decision_making_process) spells out the
 powers of BoD, the GMs, and the SMs; however, it doesn’t explain what powers
-other staffers have.  The main purpose of this policy is to delineate what
+other staffers have. The main purpose of this policy is to delineate what
 things staff can do on their own, what things they must not do, and what things
 they require special permission from the SM to do.
 
@@ -34,10 +34,10 @@ Staffers in the `ocfroot` group are known as Technical Managers.
 To be eligible for Technical Manager status, you must fulfill the following
 criteria:
 
-* A Site Manager must be able to recognize you in person.
-* You must have been a staffer for at least a semester already (although this
+- A Site Manager must be able to recognize you in person.
+- You must have been a staffer for at least a semester already (although this
   requirement can be waived at the discretion of an SM).
-* You must demonstrate a concrete, actual need for root privileges (e.g. a
+- You must demonstrate a concrete, actual need for root privileges (e.g. a
   command you need to run which is blocking your OCF work).
 
 The Site Managers can revoke Technical Manager status. This can happen, for
@@ -46,26 +46,26 @@ example, if root privileges aren’t actively being used.
 If you are a Technical Manager, use your additional powers wisely. Remember
 that you must respect the privacy of other members. In particular:
 
-* Don’t read or modify a member’s files or directories unless one of the
+- Don’t read or modify a member’s files or directories unless one of the
   following is true:
-   * The file or directory’s permissions ordinarily grant you access.
-   * The member has requested it (explicitly or implicitly).
-   * You have probable cause to suspect that the member may be involved in some
-     policy violation (e.g. a security breach).
-* The above restrictions also apply to surveilling members’ private activity
+  - The file or directory’s permissions ordinarily grant you access.
+  - The member has requested it (explicitly or implicitly).
+  - You have probable cause to suspect that the member may be involved in some
+    policy violation (e.g. a security breach).
+- The above restrictions also apply to surveilling members’ private activity
   on the OCF (e.g. by `strace`’ing their processes, recording network packet
   captures, etc.).
-* If you do have to access a member’s files or other private data, limit your
+- If you do have to access a member’s files or other private data, limit your
   accesses to the minimum required to perform your duties.
-* Let other members know when possible if modifying their files.
+- Let other members know when possible if modifying their files.
 
 Here are some additional guidelines to follow:
 
-* If you don’t have to use root for something, don’t use it.
-* Avoid running an interactive shell as another user (or else you may cause
+- If you don’t have to use root for something, don’t use it.
+- Avoid running an interactive shell as another user (or else you may cause
   undesirable side effects like polluting their `bash_history` or updating
   their last login time).
-* Avoid using a root shell (i.e. `sudo -i`).
+- Avoid using a root shell (i.e. `sudo -i`).
 
 ### Abuse of root privileges
 

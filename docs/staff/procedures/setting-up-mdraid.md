@@ -4,7 +4,7 @@ title: "Setting up mdraid on servers"
 
 Setting up a new server involves putting in all its new drives, turning off
 MegaRAID, setting up mdraid (Linux software RAID) on them, and then installing
-the operating system.  It requires quite a few tricky steps.
+the operating system. It requires quite a few tricky steps.
 
 The below steps were written for `jaws`/`pandemic`/`hal` which have LSI RAID
 cards that need to be put into JBOD mode. The intructions will vary without LSI
@@ -14,7 +14,6 @@ Also, MegaCLI isn't very consistent between versions, and in general it's
 extremely buggy and poorly-written. So you might have to modify the
 instructions slightly to get something that works.
 
-
 ### Aside: why software RAID instead of MegaRAID?
 
 Because the software that comes with LSI's RAID controllers is terrible. It's
@@ -22,15 +21,15 @@ called MegaCLI and you will never read anything good about it.
 
 Examples of problems we've had in the past with MegaCLI:
 
-* Random commands just don't work on some versions (but do work on others).
-* Out of the ~5 versions we tried, all segfaulted on at least one of our
+- Random commands just don't work on some versions (but do work on others).
+- Out of the ~5 versions we tried, all segfaulted on at least one of our
   physical servers, so we had to mantain two different versions of MegaCLI.
-* It's ridiculously hard to use and lacking in documentation. The CLI design is
+- It's ridiculously hard to use and lacking in documentation. The CLI design is
   junk. What does "RAID Level: Primary-1, Secondary-0, RAID Lvl Qualifier-0"
   mean without Googling it?
-* Poor insight into drive health (can't just use smartctl/smartd), we had to
+- Poor insight into drive health (can't just use smartctl/smartd), we had to
   write our own tools for it.
-* No TRIM (needed for fast writes on our SSDs).
+- No TRIM (needed for fast writes on our SSDs).
 
 Plus, it's proprietary, which makes getting it installed automatically
 difficult.
@@ -38,7 +37,6 @@ difficult.
 We are sacrificing a bit of measurable performance (mostly because we can't use
 the battery-backed write cache), but we find it to be a small amount (and worth
 the operational benefits of never having to touch MegaCLI again).
-
 
 ### Instructions
 
@@ -50,7 +48,6 @@ MegaRAID setup steps.
 
 These commands work pretty reliably but you should still think before pressing
 enter, because they might need some adjustment.
-
 
 #### MegaRAID setup
 
@@ -66,8 +63,7 @@ enter, because they might need some adjustment.
    $ -PDMakeJBOD -PhysDrv[252:0,252:1,252:2,252:3] -a0
    ```
 
-   *note: I got an error on jaws on the `PDMakeJBOD`, but it worked anyway*
-
+   _note: I got an error on jaws on the `PDMakeJBOD`, but it worked anyway_
 
 #### Software RAID setup
 
@@ -132,7 +128,6 @@ enter, because they might need some adjustment.
 10. When asked, install GRUB on the same disk as in step 5 (I recommend
     `/dev/sda`)
 
-
 #### WebCLI setup
 
 This probably only has to be done if this server is booting into a different
@@ -148,7 +143,6 @@ can't, then try messing with this.
 
    I can't find a way to match drive letters inside WebCLI, so you might just
    need to try all of them in your new array until it works, sorry.
-
 
 #### Cleanup
 

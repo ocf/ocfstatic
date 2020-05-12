@@ -17,36 +17,35 @@ table). [There's a whole page with more details about vhost mail.](/docs/staff/b
 
 Mail originating anywhere inside the OCF relays through anthrax.
 
-
 ## External relations
 
 We maintain relations with external groups for two reasons.
 
- 1. To monitor our mail server reputation and prevent outgoing mail from being
+1.  To monitor our mail server reputation and prevent outgoing mail from being
     blocked by external service providers.
- 2. To monitor abuse and disable compromised accounts.
+2.  To monitor abuse and disable compromised accounts.
 
 When our IP addresses change, we need to update our registrations.
 
 We have [feedback
 loops](https://en.wikipedia.org/wiki/Feedback_loop_%28email%29) with
 
- - AOL (out-of-date)
- - Comcast (out-of-date)
- - Cox (out-of-date)
- - FastMail (out-of-date)
- - Microsoft (Junk Email Reporting Agreement, 2013-03-06) (out-of-date)
- - Rackspace (out-of-date)
- - RoadRunner (out-of-date)
- - Yahoo (out-of-date)
+- AOL (out-of-date)
+- Comcast (out-of-date)
+- Cox (out-of-date)
+- FastMail (out-of-date)
+- Microsoft (Junk Email Reporting Agreement, 2013-03-06) (out-of-date)
+- Rackspace (out-of-date)
+- RoadRunner (out-of-date)
+- Yahoo (out-of-date)
 
 We are whitelisted by
 
- - AOL (out-of-date)
- - [DNSWL](https://www.dnswl.org/s/?s=berkeley.edu) (out-of-date)
- - Verizon (out-of-date)
+- AOL (out-of-date)
+- [DNSWL](https://www.dnswl.org/s/?s=berkeley.edu) (out-of-date)
+- Verizon (out-of-date)
 
 We are also registered with
 
- - [abuse.net](https://www.abuse.net/lookup.phtml?domain=ocf.berkeley.edu)
- - SpamCop (ISP account set to receive summary reports)
+- [abuse.net](https://www.abuse.net/lookup.phtml?domain=ocf.berkeley.edu)
+- SpamCop (ISP account set to receive summary reports)

@@ -28,6 +28,7 @@ note -u new_username
 ```
 
 #### Note
+
 When the user uses certain OCF webpage (e.g. password reset) that uses `calnetUid`
 to find associated OCF accounts, the user will see their old account in the
 list of accounts drop-down menu. However, as the old account has been sorried,

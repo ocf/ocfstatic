@@ -43,7 +43,6 @@ testing and building the website so you can preview your edits before making
 the commit. Also see [our page on Git](/docs/staff/backend/git) for further info
 on working with OCF repos.
 
-
 [markdown]: https://daringfireball.net/projects/markdown/syntax
 [ocfweb]: https://github.com/ocf/ocfweb
 [mistune]: https://github.com/lepture/mistune

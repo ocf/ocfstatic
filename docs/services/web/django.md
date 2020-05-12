@@ -106,8 +106,7 @@ STATIC_ROOT = '/home/u/us/user/public_html/django/static'
 Make sure to change `user` and `app` in `STATIC_URL` to the correct paths, same
 with `u/us/user` and `django` in `STATIC_ROOT`.
 
-Then, to generate assets in `STATIC_ROOT`, run `venv/bin/python manage.py
-collectstatic` from the root of your application, and your assets will be
+Then, to generate assets in `STATIC_ROOT`, run `venv/bin/python manage.py collectstatic` from the root of your application, and your assets will be
 copied to the correct location. This should be done after changing your
 application or adding/removing static assets.
 
@@ -116,8 +115,8 @@ application or adding/removing static assets.
 If you see an error page when trying to load your app, you may find the
 webserver's logs useful. You can access them in the following locations:
 
-* error log: `/opt/httpd/error.log` (most useful)
-* suexec log: `/opt/httpd/suexec.log` (only useful in rare cases)
+- error log: `/opt/httpd/error.log` (most useful)
+- suexec log: `/opt/httpd/suexec.log` (only useful in rare cases)
 
 Once your app has started running, changes you make to the Python code or
 templates won't take effect for a few hours. To apply changes immediately, the
@@ -128,7 +127,6 @@ command:
 ```bash
 user@tsunami:~$ touch ~/public_html/django/run.fcgi
 ```
-
 
 [django-docs]: https://docs.djangoproject.com/en/1.11/intro/tutorial01/
 [pip-docs]: https://packaging.python.org/tutorials/installing-packages/#installing-from-pypi

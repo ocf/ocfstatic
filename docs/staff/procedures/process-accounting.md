@@ -8,20 +8,18 @@ on the web server.
 
 Process accounting lets us look at limited historical data for that. In
 particular, process accounting logs what programs have been executed by what
-user at what time and for how long. Program arguments are *not* logged, which
+user at what time and for how long. Program arguments are _not_ logged, which
 is good for helping ensure privacy.
 
 ## Useful commands
 
 Some useful commands are below; see `man sa` for many more options.
 
-
 ### List recent commands by user
 
 List programs a user has run, along with timestamps and execution time.
 
     lastcomm $user
-
 
 ### Show sorted CPU usage of all users (past day)
 

@@ -2,7 +2,6 @@
 title: "Bylaws"
 ---
 
-
 These are the official **Bylaws of the Open Computing Facility**, as last
 amended at the Board meeting of December 2, 2019.
 
@@ -46,40 +45,40 @@ amended at the Board meeting of December 2, 2019.
 
 12. Deputy Site Managers
 
-   1. Deputy Site Managers shall be appointed and removed by the Site Manager,
-      subject to the OCF Decision Making Process.
+13. Deputy Site Managers shall be appointed and removed by the Site Manager,
+    subject to the OCF Decision Making Process.
 
-   2. Deputy Site Managers shall assist the Site Manager with his or her
-      duties.
+14. Deputy Site Managers shall assist the Site Manager with his or her
+    duties.
 
-   3. The term of office of a Deputy Site Manager shall expire at the beginning
-      of a new term of a Site Manager.
+15. The term of office of a Deputy Site Manager shall expire at the beginning
+    of a new term of a Site Manager.
 
-   4. [Repealed]
+16. [Repealed]
 
-13. Officers
+17. Officers
 
-   1. All Cabinet members shall be Officers of the Open Computing Facility.
+18. All Cabinet members shall be Officers of the Open Computing Facility.
 
-14. Any non-Director member who attends a Board meeting can request to be
+19. Any non-Director member who attends a Board meeting can request to be
     appointed as a Director at that meeting. In that case, they shall be
     automatically appointed unless at the same meeting a Director moves for a
     vote on their appointment, in which case the candidate will be appointed
     unless more than three-fifths of Directors present vote against their
     appointment.
 
-15. The Board of Directors may select and recall a Faculty Sponsor for the OCF.
+20. The Board of Directors may select and recall a Faculty Sponsor for the OCF.
 
-16. During the final meeting of each Fall and Spring semester, each Director
+21. During the final meeting of each Fall and Spring semester, each Director
     will be asked to confirm their ability to serve as a Director during the
     following Fall semester or Spring semester. Directors who do not confirm or
     are not present will be removed from the Board.
 
-17. Any director who is banned from the OCF or has their account disabled due
+22. Any director who is banned from the OCF or has their account disabled due
     to misuse will be removed from the board and is not eligible for
     membership on the Board of Directors.
 
-18. Committees
+23. Committees
 
     1. The Board of Directors includes the following permanent committees:
 
@@ -123,7 +122,6 @@ amended at the Board meeting of December 2, 2019.
        the end of the semester in which they were elected. The terms of ad-hoc
        committees heads will be specified according to the OCF Decision Making
        Process.
-
 
 Bylaws 1–4 amended at the general meeting of March 21, 2008. Bylaws 5–6 from
 the revision of the bylaws last amended February 7, 1995. Bylaw 8 added at the

@@ -44,9 +44,9 @@ where you can ask questions and talk to us about anything HPC.
 As of Fall 2018, the OCF HPC cluster is composed of one server, with the
 following specifications:
 
-* 2 Intel Xeon [E5-2640v4][corruption-cpu] CPUs (10c/20t @ 2.4GHz)
-* 4 NVIDIA 1080Ti GPUs
-* 256GB ECC DDR4-2400 RAM
+- 2 Intel Xeon [E5-2640v4][corruption-cpu] CPUs (10c/20t @ 2.4GHz)
+- 4 NVIDIA 1080Ti GPUs
+- 256GB ECC DDR4-2400 RAM
 
 We have plans to expand the cluster with additional nodes of comparable
 specifications as funding becomes available. The current hardware was
@@ -63,6 +63,7 @@ The only way to access our HPC nodes is through Slurm.
 Detailed documentation for how to access Slurm is [here](/docs/services/hpc/slurm).
 
 ## Dependencies
+
 For managing application dependencies, you currently have two options:
 
 ### Virtual Environments
@@ -108,8 +109,9 @@ look [here][mac_install], or Windows [here][win_install].
 ```bash
 singularity build --sandbox ./my_container docker://ubuntu
 ```
+
 This will create a Singularity container named `my_container`. If you are
-working on our infrastructure you will *not* be able to install non-pip
+working on our infrastructure you will _not_ be able to install non-pip
 packages on your container, because you do not have root privileges.
 
 If you would like to create your own container with new packages, you must
@@ -128,6 +130,7 @@ at `/home/containers` on the Slurm master node.
 ```bash
 singularity shell my_container
 ```
+
 The above command will allow you to shell into your container. By default your
 home directory in the container is linked to your real home directory outside
 of the container environment, which helps you avoid having to transfer files
@@ -136,6 +139,7 @@ in and out of the container.
 ```bash
 singularity exec --nv my_container ./my_executable.sh
 ```
+
 This command will open your container and run the `my_executable.sh` script in
 the container environment. The `--nv` option allows the container to interface with
 the GPU. This command is useful when using `srun` so you can run your program
@@ -147,21 +151,25 @@ If you were using a sandboxed container for testing, we suggest you convert it
 to a Singularity image file. This is because images are more portable and
 easier to interact with than sandboxed containers. You can make this
 conversion using the following command:
+
 ```bash
 sudo singularity build my_image.simg ./my_sandboxed_container
 ```
 
 If you were working on the image on your own computer, you can transfer it over
 to your home directory on our infrastructure using the following command:
+
 ```bash
 scp my_image.simg my_ocf_username@hpcctl.ocf.berkeley.edu:~/
 ```
 
 To actually submit a Slurm job that uses your Singularity container and runs
 your script `my_executable.sh`, run the following command:
+
 ```bash
 srun --gres=gpu --partition=ocf-hpc singularity exec --nv my_image.simg ./my_executable.sh
 ```
+
 This will submit a Slurm job to run your executable on the `ocf-hpc` Slurm
 partition. The `--gres=gpu` option is what allows multiple users to run jobs
 on a single node so it is important to include. Without it, you will not be

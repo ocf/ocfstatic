@@ -13,13 +13,13 @@ we'll cover everything you need to know here.
 Additionally, some of the commands on this page are found in packages not
 typically installed on OCF machines. In order of appearance on this page:
 
-* `dget`: Found in the `devscripts` package
-* `dpkg-checkbuilddeps`: Found in the `dpkg-dev` package
-* `mk-build-deps`: Found in the `devscripts` package
-* `dquilt`: This is [an alias around `quilt`][dquilt], found in the `quilt` package
-* `dch`: Found in the `devscripts` package
-* `dpkg-buildpackage`: Found in the `dpkg-dev` package
-* `scp`: Found in the `openssh-client` package
+- `dget`: Found in the `devscripts` package
+- `dpkg-checkbuilddeps`: Found in the `dpkg-dev` package
+- `mk-build-deps`: Found in the `devscripts` package
+- `dquilt`: This is [an alias around `quilt`][dquilt], found in the `quilt` package
+- `dch`: Found in the `devscripts` package
+- `dpkg-buildpackage`: Found in the `dpkg-dev` package
+- `scp`: Found in the `openssh-client` package
 
 Generally, it's a good idea to build packages in Docker containers so that any
 build dependencies or build tools are not left still installed after the
@@ -35,39 +35,36 @@ packages you are working on might have, but this is discussed more later.
 
 ## Step 1: Find the package you want
 
-* Go to [packages.debian.org](https://packages.debian.org/) and find the
+- Go to [packages.debian.org](https://packages.debian.org/) and find the
   package you desire.
 
-* Find the package info page
+- Find the package info page
   ([example](https://packages.debian.org/stretch/evince)), and make sure you're
   on the correct distribution (select at the top-right, e.g. `stretch`).
 
-* From the sidebar on the right, select under "Download Source Package" the
+- From the sidebar on the right, select under "Download Source Package" the
   link to the `.dsc` file. The URL should look something like:
 
       http://http.debian.net/debian/pool/main/e/evince/evince_3.14.2-1.dsc
 
-
 ## Step 2: Downloading the package
 
-* Log on to a system which has the release you want to eventually install the
+- Log on to a system which has the release you want to eventually install the
   package on. (For example, if you're backporting a package from buster to
-  stretch, you should do these steps *on stretch*.) Generally, a Docker
+  stretch, you should do these steps _on stretch_.) Generally, a Docker
   container works quite well because any extra build dependencies you install
   will not remain on the system once the package is built. pbuilder can also be
   used to a similar effect.
 
-* Using the `.dsc` link from above, download the source package:
+- Using the `.dsc` link from above, download the source package:
 
       dget -x http://http.debian.net/debian/pool/main/e/evince/evince_3.14.2-1.dsc
 
-
 ## Step 3: Install dependencies
 
-* Enter the new directory and run `dpkg-checkbuilddeps`, and install any
+- Enter the new directory and run `dpkg-checkbuilddeps`, and install any
   dependencies that are missing. If you'd like to install missing dependencies
   automatically, you can use `sudo mk-build-deps -ir`.
-
 
 ## Step 4: Make any changes (optional)
 
@@ -77,8 +74,7 @@ then use `dquilt`/`quilt` to create your patch. This can be done by running
 `dquilt new <patch-name>.patch` to start a patch, `dquilt edit <file>`, and
 then `dquilt refresh` to generate the patch file from the modified file. You
 can also just modify the source if you don't care about quality, but you
-*should* ensure all the Debian patches are applied first using `dquilt`.
-
+_should_ ensure all the Debian patches are applied first using `dquilt`.
 
 ## Step 5: Update the version number using dch
 
@@ -113,13 +109,11 @@ package, since it will not be inferior to any new versions pushed to Debian
 package repos. This is usually desired because the patch applied should not be
 automatically overwritten by any other changes to the package.
 
-
 ## Step 6: Build the package
 
 Build the package with `dpkg-buildpackage -us -uc -sa`. The `.deb` file will
 pop out in your parent directory along with some other files to send to the apt
 repo (the original source, any modifications, the changelog, etc.).
-
 
 ## Step 7: Upload to our apt repo and test
 
@@ -129,23 +123,23 @@ you probably want to set it up inside Jenkins to automatically test and
 
 For one-off uploads:
 
-1. Copy all the necessary files to `apt` (currently `fallingrocks`):
+1.  Copy all the necessary files to `apt` (currently `fallingrocks`):
 
-       scp *.tar.gz *.tar.bz2 *.debian.tar.xz *.dsc *.changes *.deb you@apt:/tmp/yourpackage
+        scp *.tar.gz *.tar.bz2 *.debian.tar.xz *.dsc *.changes *.deb you@apt:/tmp/yourpackage
 
-   Generally putting these in a new directory in `/tmp` is a good way to go,
-   since if you put them in your home directory, the `ocfapt` user will not be
-   able to read them.
+    Generally putting these in a new directory in `/tmp` is a good way to go,
+    since if you put them in your home directory, the `ocfapt` user will not be
+    able to read them.
 
-2. Include the package files in the suitable distribution. If this is just a
-   backport (no patches), use `<dist>-backports`, otherwise just use `<dist>`:
+2.  Include the package files in the suitable distribution. If this is just a
+    backport (no patches), use `<dist>-backports`, otherwise just use `<dist>`:
 
-       sudo -u ocfapt /opt/apt/bin/reprepro include <dist> /tmp/mypackage.changes
+        sudo -u ocfapt /opt/apt/bin/reprepro include <dist> /tmp/mypackage.changes
 
-   For more options for `reprepro`, see the comments at the top of
-   `/opt/apt/bin/reprepro`, which is a wrapper script around the `reprepro`
-   command to avoid messing up paths and permissions.
+    For more options for `reprepro`, see the comments at the top of
+    `/opt/apt/bin/reprepro`, which is a wrapper script around the `reprepro`
+    command to avoid messing up paths and permissions.
 
-3. Test the package by installing it on one host and see if it behaves how you
-   would expect. Make sure to run `sudo apt update` first so that the host you
-   are testing on knows about the package you have added.
+3.  Test the package by installing it on one host and see if it behaves how you
+    would expect. Make sure to run `sudo apt update` first so that the host you
+    are testing on knows about the package you have added.

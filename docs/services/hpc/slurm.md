@@ -37,7 +37,7 @@ job alive, even if you disconnect from your terminal.
 
 ### Resource options
 
-*Some terminology:* Slurm refers to a process as a "task". Even if a single
+_Some terminology:_ Slurm refers to a process as a "task". Even if a single
 process is using multiple threads/CPUs, it still counts as one task.
 
 **By default, without any flags, a job you submit will be allocated one CPU,
@@ -45,26 +45,22 @@ process is using multiple threads/CPUs, it still counts as one task.
 allocate more resources and time to your job, you must set one or more of these
 flags:**
 
-* `-n` / `--ntasks`:
-    - The number of tasks/processes to allocate. Default is 1.
-* `-c` / `--cpus-per-task`:
-    - The number of CPUs to allocate per task. Default is 1.
-* `--mem`:
-    - The total amount of RAM to allocate. By default, the number supplied is
-assumed to megabytes. However, the prefixes `K`, `M`, `G`, and `T` can be
-appended to the number instead. For example, to allocate 5 gigabytes of ram,
-use `--mem=5G`. Default is 100 megabytes.
-* `--gres` **(Optional)**:
-    - Allocates some GPUs to your job. The format is `--gres=gpu:[optional
-type]:[number to allocate]`. For example, to allocate 2 GPUs of any type, you
-would include `--gres=gpu:2`. To allocate two Nvidia 1080Ti GPUs (our only type
-right now), you would include `--gres=gpu:nv1080:2`. Default is no GPUs.
-* `--t` / `--time` **(Optional)**:
-    - The maximum amount of time your job can take before Slurm forcefully
-kills it. Acceptable time formats include "minutes", "minutes:seconds",
-"hours:minutes:seconds", "days-hours", "days-hours:minutes" and
-"days-hours:minutes:seconds". You cannot set the time limit greater than the
-default, which is 2 days.
+- `-n` / `--ntasks`:
+  - The number of tasks/processes to allocate. Default is 1.
+- `-c` / `--cpus-per-task`:
+  - The number of CPUs to allocate per task. Default is 1.
+- `--mem`: - The total amount of RAM to allocate. By default, the number supplied is
+  assumed to megabytes. However, the prefixes `K`, `M`, `G`, and `T` can be
+  appended to the number instead. For example, to allocate 5 gigabytes of ram,
+  use `--mem=5G`. Default is 100 megabytes.
+- `--gres` **(Optional)**: - Allocates some GPUs to your job. The format is `--gres=gpu:[optional type]:[number to allocate]`. For example, to allocate 2 GPUs of any type, you
+  would include `--gres=gpu:2`. To allocate two Nvidia 1080Ti GPUs (our only type
+  right now), you would include `--gres=gpu:nv1080:2`. Default is no GPUs.
+- `--t` / `--time` **(Optional)**: - The maximum amount of time your job can take before Slurm forcefully
+  kills it. Acceptable time formats include "minutes", "minutes:seconds",
+  "hours:minutes:seconds", "days-hours", "days-hours:minutes" and
+  "days-hours:minutes:seconds". You cannot set the time limit greater than the
+  default, which is 2 days.
 
 ### Using `srun`
 
@@ -84,8 +80,7 @@ Hello world!
 
 #### Running an interactive terminal
 
-To start up an interactive terminal on a compute node, use the `--pty [your
-terminal of choice]` flag. For most everyone, you'll be using `bash`, so to
+To start up an interactive terminal on a compute node, use the `--pty [your terminal of choice]` flag. For most everyone, you'll be using `bash`, so to
 start an interactive terminal on a node, run:
 
 ```bash
@@ -123,8 +118,7 @@ sbatch [path to batch script]
 #### Output from `sbatch`
 
 By default, output from your job (`stdout` and `stderr`) is placed into a file
-in the directory you ran `sbatch` from. it will be named `slurm-[your job's
-numeric ID].out`.
+in the directory you ran `sbatch` from. it will be named `slurm-[your job's numeric ID].out`.
 
 To specify a different output file, use the `-o` / `--output` flag. For
 example, to redirect output to a file named `job.log` in your home directory,
@@ -141,7 +135,6 @@ output when a batch script is submitted, or you can find it using `squeue`
 To view the queue of running and pending jobs from all users, run `squeue`. To
 see the details of one job, run `squeue -j [job ID]`.
 
-To view the list of all HPC nodes, and some details about them, run `sinfo -N
--l`.
+To view the list of all HPC nodes, and some details about them, run `sinfo -N -l`.
 
 [slurm]: https://slurm.schedmd.com/

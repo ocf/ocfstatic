@@ -35,21 +35,25 @@ There are three main ways to generate custom metrics:
 ## Custom Queries
 
 Prometheus supports querying a wide variety of metrics. (For a full list, go to [Prometheus](https://prometheus.ocf.berkeley.edu) and use the "insert metric at cursor" dropdown.) A basic query comes in the form:
+
 ```
 metric{label="value", label2="value2", ...}
 ```
 
 Some labels used frequently are:
- - **instance:** The name of the device that the data was collected from. Some examples are `papercut`, `avalanche`, or `supernova`.
- - **host_type:** The type of device that is being queried. Valid types are `desktop`, `server`, and `staffvm`.
- - **job:** The name of the job/exporter that collected the data. Some examples are `node`, `printer`, and `slurm`.
+
+- **instance:** The name of the device that the data was collected from. Some examples are `papercut`, `avalanche`, or `supernova`.
+- **host_type:** The type of device that is being queried. Valid types are `desktop`, `server`, and `staffvm`.
+- **job:** The name of the job/exporter that collected the data. Some examples are `node`, `printer`, and `slurm`.
 
 For example, if you would like to view the total RAM installed on each of the [servers](/docs/staff/backend/servers) you can query `node_memory_Active_bytes{host_type="server"}`.
 
 To view the per-second rate of a metric, use
+
 ```
 rate(metric{label="value",...})
 ```
+
 For example, the data sent in bytes/second over the past 5 minutes by `fallingrocks` can be retrieved using `rate(node_network_transmit_bytes_total{instance="fallingrocks"}`.
 
 For more info about querying, see the [official documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/).
@@ -59,16 +63,16 @@ Queries are best used in conjunction with Grafana, as to produce more readable r
 ## Grafana
 
 The frontend for Prometheus is [Grafana][grafana], which displays statistics collected by Prometheus in a user-friendly manner. Some of the more useful dashboards available are:
- - **[Servers](https://ocf.io/serverstats):** Displays usage information for the physical servers and hypervisors (fallingrocks, riptide, etc).
- - **[Desktops](https://ocf.io/desktopstats):** Displays usage information for lab computers (cyclone, acid, etc).
- - **[Printers](https://ocf.io/printerstats):** Displays printer usage and resource information.
- - **[Mirrors](https://ocf.io/mirrorstats):** Displays information about mirror staleness.
- - **[HPC](hhttps://ocf.io/hpcstats):** Displays usage information for the [HPC cluster](/docs/services/hpc).
+
+- **[Servers](https://ocf.io/serverstats):** Displays usage information for the physical servers and hypervisors (fallingrocks, riptide, etc).
+- **[Desktops](https://ocf.io/desktopstats):** Displays usage information for lab computers (cyclone, acid, etc).
+- **[Printers](https://ocf.io/printerstats):** Displays printer usage and resource information.
+- **[Mirrors](https://ocf.io/mirrorstats):** Displays information about mirror staleness.
+- **[HPC](hhttps://ocf.io/hpcstats):** Displays usage information for the [HPC cluster](/docs/services/hpc).
 
 There are more dashboards available, which can be accessed by clicking the dropdown arrow on the top left of the Grafana page.
 
 Configuring Grafana dashboards does not require editing Puppet configs. Simply go to [Grafana][grafana], login using your OCF account, and click the plus icon on the left toolbar to begin visually creating a custom dashboard. Grafana uses [Prometheus queries](https://prometheus.io/docs/prometheus/latest/querying/basics/) to fetch data to be displayed.
-
 
 [prometheus-puppet]: https://github.com/ocf/puppet/tree/master/modules/ocf_prometheus/files/rules.d
 [grafana]: https://grafana.ocf.berkeley.edu

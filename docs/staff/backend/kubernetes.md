@@ -7,7 +7,7 @@ At the OCF we have fully migrated all services from Mesos/Marathon to
 Kubernetes cluster while also touching briefly on relevant core concepts. This
 page is _not_ a `HOWTO` for deploying services or troubleshooting a bad
 cluster. Rather, it is meant to explain architectural considerations such that
-current work can be built upon.  Although, reading this document will help you
+current work can be built upon. Although, reading this document will help you
 both deploy services in the OCF Kubernetes cluster and debug issues when they
 arise.
 
@@ -47,9 +47,9 @@ keep state for the services running on the cluster.
 
 #### Why the odd number of masters?
 
-Consider a cluster of *N* members. When masters form quorum to agree on cluster
-state, quorum must have _at least_ ⌊*N*/2⌋+1 members. Every new odd number in a
-cluster with *M* > 1 masters adds one more node of fault tolerance.  Therefore,
+Consider a cluster of _N_ members. When masters form quorum to agree on cluster
+state, quorum must have _at least_ ⌊_N_/2⌋+1 members. Every new odd number in a
+cluster with _M_ > 1 masters adds one more node of fault tolerance. Therefore,
 adding an extra node to an odd numbered cluster gives us nothing. If interested
 read more [here][failure-tolerance].
 
@@ -58,9 +58,9 @@ read more [here][failure-tolerance].
 Workers are the brawn in the Kubernetes cluster. While master nodes are
 constantly sharing data, managing the control plane (routing inside the
 Kubernetes cluster), and scheduling services, workers primarily run
-[pods][pod].  `kubelet` is the service that executes pods as dictated by the
+[pods][pod]. `kubelet` is the service that executes pods as dictated by the
 control plane, performs health checks, and recovers from pod failures should
-they occur.  Workers also run an instance of `kube-proxy`, which forwards
+they occur. Workers also run an instance of `kube-proxy`, which forwards
 control plane traffic to the correct `kubelet`.
 
 ### Pods
@@ -69,7 +69,7 @@ In the Kubernetes world, pods are the smallest computing unit. A pod is made up
 of one or more containers. The difference between a pod and a standalone
 container is best illustrated by an example. Consider [ocfweb][ocfweb]; it is
 composed of several containers—the web container, static container, and worker
-container.  In Kubernetes, together these three containers form one pod, and it
+container. In Kubernetes, together these three containers form one pod, and it
 is pods that can be scaled up or down. A failure in any of these containers
 indicates a failure in the entire pod. An astute reader might wonder: _if pods
 can be broken down into containers, how can pods possibly be the smallest
@@ -153,25 +153,22 @@ All three Kubernetes masters are running an instance of [Nginx][nginx].
 Furthermore, the masters are all running `keepalived`. The traffic for any
 Kubernetes HTTP service will go through the current `keepalived` master, which
 holds the virtual IP for all Kubernetes services. The `keepalived` master is
-randomly chosen but will move hosts in the case of failure.  `nginx` will
+randomly chosen but will move hosts in the case of failure. `nginx` will
 terminate ssl and pass the request on to a worker running [Ingress
-Nginx][ingress-nginx].  Right now ingress is running as a [NodePort][nodeport]
+Nginx][ingress-nginx]. Right now ingress is running as a [NodePort][nodeport]
 service on all workers (Note: we can easily change this to be a subset of
-workers if our cluster scales such that this is no longer feasible).  The
+workers if our cluster scales such that this is no longer feasible). The
 ingress worker will inspect the `Host` header and forward the request on to the
 appropriate pod where the request is finally processed. _Do note that the
 target pod is not necessarily on the same worker that routed the traffic_.
 
-
 ### Why didn't we use MetalLB?
 
-`MetalLB` was created so a bare-metal Kubernetes cluster could use `Type:
-LoadBalancer` in Service definitions. The problem is, in `L2` mode, it takes a
+`MetalLB` was created so a bare-metal Kubernetes cluster could use `Type: LoadBalancer` in Service definitions. The problem is, in `L2` mode, it takes a
 pool of IPs and puts your service on a random IP in that pool. How one makes
 DNS work in this configuration is completely unspecified. We would need to
 dynamically update our DNS, which sounds like a myriad of outages waiting to
 happen. `L3` mode would require the OCF dedicating a router to Kubernetes.
-
 
 ### Why don't we copy Marathon and specify one port per service?
 
@@ -186,7 +183,7 @@ touching Puppet.
 But wait! The Kubernetes documentation says not to use `NodePort` services in
 production, and you just said that above too! True, but we only run _one_
 `NodePort` service, `ingress-nginx`, to keep us from needing other `NodePort`
-services.  SoundCloud, a music streaming company that runs massive bare-metal
+services. SoundCloud, a music streaming company that runs massive bare-metal
 Kubernetes clusters, also has an interesting blog post about [running NodePort
 in production][soundcloud-nodeport].
 

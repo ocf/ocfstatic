@@ -53,11 +53,9 @@ After you've created these principals, you'll need to grant them powers in the
 Also add the new root staffer to the Admin team in our GitHub org and grant
 them RT admin privileges.
 
-
 ## Granting IRC chanop status
 
 TODO
-
 
 ## Granting firewall access
 

@@ -49,7 +49,6 @@ looks like this:
 
 [cups]: https://www.cups.org/documentation.html
 
-
 ## CUPS pipeline overview
 
 The first stage of printing is handled by the application that sends the print
@@ -72,7 +71,6 @@ controlled by the printer's onboard configuration, which can be modified by
 visiting the printer's IP over the web (e.g. `https://papercut/`). In the OCF's
 case, security is provided by an access control list (ACL) which accepts print
 jobs from the printhost and rejects jobs from other hosts.
-
 
 ### Filters
 
@@ -100,7 +98,6 @@ errors.
 
 [ocfps]: https://github.com/ocf/puppet/blob/master/modules/ocf_printhost/files/ocfps
 
-
 ### Drivers
 
 In order to know what job options are available for a particular printer and
@@ -114,10 +111,9 @@ afford the toner.
 
 [m806]: https://github.com/ocf/puppet/blob/master/modules/ocf_printhost/templates/cups/ppd/m806.ppd.epp
 
-
 ## Print accounting
 
-The OCF uses a virtual CUPS printer backend called [Tea4CUPS][Tea4CUPS] to
+The OCF uses a virtual CUPS printer backend called [Tea4CUPS][tea4cups] to
 install a page accounting hook that runs before and after each job is actually
 sent to the printer. The script is called [enforcer][enforcer], but all the
 logic is contained in the [ocflib printing package][ocflib.printing]. All jobs
@@ -132,10 +128,9 @@ over daily or semesterly quota, it emails the user and returns an error code
 that cancels the job. Otherwise, it logs successful print jobs in the database
 and emails users in the case a job fails.
 
-[Tea4CUPS]: https://wiki.debian.org/Tea4CUPS
+[tea4cups]: https://wiki.debian.org/Tea4CUPS
 [enforcer]: https://github.com/ocf/puppet/blob/master/modules/ocf_printhost/files/enforcer
 [ocflib.printing]: https://github.com/ocf/ocflib/tree/master/ocflib/printing
-
 
 ### Desktop notifications
 
@@ -156,11 +151,10 @@ current user.
 
 [notify]: https://github.com/ocf/puppet/blob/master/modules/ocf_desktop/files/xsession/notify
 
-
 ## See also
 
 - [Printing maintenance](/docs/staff/procedures/printing)
-- The [ocf\_printhost][ocf_printhost] Puppet class
+- The [ocf_printhost][ocf_printhost] Puppet class
 - The [paper](/docs/staff/scripts/paper) command
 - [CUPS documentation at Samba][cups-samba] (for Windows users, but has general
   CUPS info as well)

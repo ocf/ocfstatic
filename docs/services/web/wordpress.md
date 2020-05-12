@@ -9,7 +9,6 @@ and groups using WordPress are eligible for [virtual hosting](/docs/services/vho
 
 Instructions for using WordPress are provided below; you can also [drop by during staff hours](/staff-hours) for in-person assistance.
 
-
 ## Installing WordPress
 
 The easiest way to set up WordPress is via [SSH](/docs/services/shell). Some
@@ -40,16 +39,15 @@ simple instructions:
 
    You can choose whatever you want for most options, but you'll need to use:
 
-   * **Database Name:** Your user name
-   * **Database User Name:** Your user name
-   * **Database Password:** Your MySQL password (the one you copied from step 3
+   - **Database Name:** Your user name
+   - **Database User Name:** Your user name
+   - **Database Password:** Your MySQL password (the one you copied from step 3
      above)
-   * **Database Host:** `mysql`
-   * **Table Prefix:** Anything you want (the default `wp_` is fine)
+   - **Database Host:** `mysql`
+   - **Table Prefix:** Anything you want (the default `wp_` is fine)
 
 Your WordPress installation is now ready! You can log in using the username and
 password you created and start configuring your site.
-
 
 ## Migrating from WordPress.com to OCF
 
@@ -81,8 +79,7 @@ The basic steps to migration are as follows:
 
 4. Unzip this file and change the file extension of all .xml files to .wxr
 
-5. Log into the dashboard at your OCF WordPress installation and go to `Tools >
-   Import > WordPress`, then upload the .wxr file with all your content.
+5. Log into the dashboard at your OCF WordPress installation and go to `Tools > Import > WordPress`, then upload the .wxr file with all your content.
 
 6. You will have to re-upload most of your media files to your OCF WordPress
    installation. Additionally, you should try and go through most of your posts
@@ -91,7 +88,6 @@ The basic steps to migration are as follows:
 Further details can be found at [the support page by WordPress.com][1].
 
 [1]: https://en.support.wordpress.com/moving-to-a-self-hosted-wordpress-site/
-
 
 ## Frequently Asked Questions
 
@@ -103,7 +99,6 @@ link from the login page.
 If you're not able to recover your password via email, you can use
 [wp-cli][wp-cli] instead, using the instructions below. (If you're not
 comfortable following these instructions, consider coming in to [staff hours](/staff-hours) instead.
-
 
 1. Go to our [web-based SSH client](https://ssh.ocf.berkeley.edu/) and sign in
    with your username and password.
@@ -136,7 +131,6 @@ comfortable following these instructions, consider coming in to [staff hours](/s
    (Replace `admin` in the command above with your real username, and
    `new_password` with your new password.)
 
-
 ### I forgot my MySQL (database) password
 
 The database password used by WordPress is recorded in the WordPress
@@ -153,7 +147,6 @@ installed (usually `~/public_html` or `~/public_html/wordpress`) and open
 ```shell
 cat ~/path/to/wordpress/wp-config.php | grep DB_PASSWORD
 ```
-
 
 ### My site URL is configured incorrectly
 

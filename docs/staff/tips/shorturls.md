@@ -11,28 +11,28 @@ One of its functions is to shorten member website URLs:
 We've additionally defined other shorturls. Here are some especially useful
 ones for staff:
 
- * **ocf.io/gh/_<repo>_**, **ocf.io/github/_<repo>_**: The repository _<repo>_
-   on the OCF GitHub page.\
-   There are also abbreviations for the most commonly used repositories:
-    * **ocf.io/gh/i**: ircbot
-    * **ocf.io/gh/l**: ocflib
-    * **ocf.io/gh/p**: puppet
-    * **ocf.io/gh/u**: utils
-    * **ocf.io/gh/w**: ocfweb
- * **ocf.io/rt**: RT
-    * **ocf.io/rt/_<ticketnum>_**: The page for ticket _<ticketnum>_ in RT
- * **ocf.io/stats**: Lab stats
- * **ocf.io/guest**: If you bring a guest into the lab after hours, fill out
-   this form
- * **ocf.io/servers**: The server chart
- * **ocf.io/bod**: BoD minutes
+- **ocf.io/gh/_<repo>_**, **ocf.io/github/_<repo>_**: The repository _<repo>_
+  on the OCF GitHub page.\
+  There are also abbreviations for the most commonly used repositories:
+  - **ocf.io/gh/i**: ircbot
+  - **ocf.io/gh/l**: ocflib
+  - **ocf.io/gh/p**: puppet
+  - **ocf.io/gh/u**: utils
+  - **ocf.io/gh/w**: ocfweb
+- **ocf.io/rt**: RT
+  - **ocf.io/rt/_<ticketnum>_**: The page for ticket _<ticketnum>_ in RT
+- **ocf.io/stats**: Lab stats
+- **ocf.io/guest**: If you bring a guest into the lab after hours, fill out
+  this form
+- **ocf.io/servers**: The server chart
+- **ocf.io/bod**: BoD minutes
 
 We also often give out these shorturls in RT tickets:
 
- * **ocf.io/join**: Signup page for an OCF account
- * **ocf.io/vhost**: Info about virtual hosting
- * **ocf.io/vhost-mail**: Info about mail virtual hosting
- * **ocf.io/apphost**: Info about apphosting
+- **ocf.io/join**: Signup page for an OCF account
+- **ocf.io/vhost**: Info about virtual hosting
+- **ocf.io/vhost-mail**: Info about mail virtual hosting
+- **ocf.io/apphost**: Info about apphosting
 
 ## More shorturls
 

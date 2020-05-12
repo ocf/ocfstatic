@@ -15,14 +15,12 @@ This allows us to easily distinguish between certificates in cases where a
 service may be hosted by multiple hostnames, or where the hostname changes,
 without sharing private keys.
 
-
 ## Add relevant entries to LDAP/DNS
 
 The SSL support within Puppet relies on the `dnsA` and `dnsCname` entries for a
 host within LDAP. These are also converted in the ocf/dns repo into
 BIND-parsable files, so if you update LDAP and then update the ocf/dns repo,
 you should be ready to go!
-
 
 ## Setting up SSL with Puppet
 
@@ -39,9 +37,9 @@ class and pass in a list of domains.
 If puppet successfully runs, it should provide these files for whatever service you
 want to setup that needs SSL:
 
-* `/etc/ssl/private/${fqdn}.key`
-* `/etc/ssl/private/${fqdn}.crt`
-* `/etc/ssl/private/${fqdn}.bundle`
+- `/etc/ssl/private/${fqdn}.key`
+- `/etc/ssl/private/${fqdn}.crt`
+- `/etc/ssl/private/${fqdn}.bundle`
 
 The bundle file is automatically generated from the certificate you provided,
 and contains the Let's Encrypt intermediate certificate.
@@ -55,7 +53,6 @@ into your puppet manifest:
 ```puppet
 Class['ocf::ssl::default'] ~> Class['Nginx::Service']
 ```
-
 
 ## Verifying certificates
 

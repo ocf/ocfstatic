@@ -13,7 +13,6 @@ VM disks are stored as LVM volumes on the hypervisors, typically under
 [kvm]: https://www.linux-kvm.org/
 [libvirt]: https://libvirt.org/
 
-
 ## Administration
 
 ### How do I view which VMs are on a hypervisor?
@@ -51,8 +50,7 @@ of time to the shutdown command, so users have adequate warning.
 
 On the hypervisor, run `sudo virsh autostart <vm-name>`.
 
-You can list which VMs are set to autostart with `sudo virsh list --all
---autostart`.
+You can list which VMs are set to autostart with `sudo virsh list --all --autostart`.
 
 Firestorm is set to autostart because it must be running in order for any staff
 to log in (other than by using the root account). Other VMs are not set to
@@ -73,7 +71,7 @@ with `virt-viewer <vm-name>`.
 
 Alternatively, you can directly connect to the VM's VNC display. This procedure
 gives much better performance than X forwarding, especially outside of the OCF
-network.  To do this, first run `sudo virsh vncdisplay <vm-name>` on the
+network. To do this, first run `sudo virsh vncdisplay <vm-name>` on the
 hypervisor, and record what it prints out. Then, from your local computer, run
 `vncviewer -via <hypervisor> <output of virsh vncdisplay>`. So for instance, if
 `virsh vncdisplay` printed out `127.0.0.1:10`, and the hypervisor were jaws,
@@ -131,6 +129,7 @@ for RAM:
     virsh dommemstat <vm-name> [[--config] [--live] | [--current]]
     virsh setmaxmem <vm-name> <size> [[--config] [--live] | [--current]]
     virsh memtune <vm-name> [...]
+
 and for vCPUs:
 
     virsh vcpuinfo <vm-name> [...]

@@ -10,11 +10,13 @@ staff. Our [Kubernetes server](/docs/staff/backend/kubernetes) is also
 accessible from `supernova`.
 
 ## Before you begin
+
 You need to be on staff to log into the server. If you're not sure whether or
 not you're on staff, try logging in. If this doesn't work, talk to a staff
 member and we can add you! All are welcome and encouraged to join.
 
 ## Logging in
+
 To log in, open a terminal window and type in:
 
 ```bash
@@ -33,6 +35,7 @@ quotas, are available on `supernova`. Learn more about these in the scripts
 section of [staff documentation](/docs/staff).
 
 ### Development and Testing
+
 You can `git clone` OCF repositories and run them on `supernova`. An example
 for `ocfweb`:
 
@@ -47,6 +50,7 @@ make dev # start a development server and see your changes live
 ```
 
 ### Kubernetes
+
 To access Kubernetes, simply run `kubectl` commands. See the [Kubernetes
 documentation][kubernetes-basics] for more information.
 

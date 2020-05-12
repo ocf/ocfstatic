@@ -12,38 +12,38 @@ install and manage dependencies and versions.
 
 ## Setting up RVM
 
-1. Create a directory for your app to live in:
+1.  Create a directory for your app to live in:
 
-       mkdir -p ~/myapp
-       cd ~/myapp
+    mkdir -p ~/myapp
+    cd ~/myapp
 
-2. Install RVM in your home directory. Note that `rvm` is terrible and will
-   modify your shell config files without asking, but that's probably what you
-   want, since it will make using and managing Ruby/Rails easier.
+2.  Install RVM in your home directory. Note that `rvm` is terrible and will
+    modify your shell config files without asking, but that's probably what you
+    want, since it will make using and managing Ruby/Rails easier.
 
-   Go find [the RVM commands][rvm] appropriate for your app, and copy the
-   lines straight into your shell to install it. In general this is a bad way
-   to install things, but it only has to be done once. At the time of writing,
-   it looks like this:
+    Go find [the RVM commands][rvm] appropriate for your app, and copy the
+    lines straight into your shell to install it. In general this is a bad way
+    to install things, but it only has to be done once. At the time of writing,
+    it looks like this:
 
-       gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
-       curl -sSL https://get.rvm.io | bash -s stable
+        gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+        curl -sSL https://get.rvm.io | bash -s stable
 
-   Go ahead and run it, and source `rvm`:
+    Go ahead and run it, and source `rvm`:
 
-       . ~/.rvm/scripts/rvm
+        . ~/.rvm/scripts/rvm
 
-3. Install whatever version of Ruby you want. (Newer is better).
+3.  Install whatever version of Ruby you want. (Newer is better).
 
-       rvm install ruby-2.4.0
-       rvm use ruby-2.4.0
+    rvm install ruby-2.4.0
+    rvm use ruby-2.4.0
 
-4. Copy your code to `~/myapp/src` or similar, and install any dependencies
-   using `bundle install` (or `gem` manually, if you aren't using bundler).
+4.  Copy your code to `~/myapp/src` or similar, and install any dependencies
+    using `bundle install` (or `gem` manually, if you aren't using bundler).
 
-   This will download and build whatever gems you have in your `Gemfile`. We've
-   tried to install all the headers (dev packages) needed for building common
-   gems, but if building a gem fails due to a missing header, just [send us an email](/docs/contact) so we can add it.
+    This will download and build whatever gems you have in your `Gemfile`. We've
+    tried to install all the headers (dev packages) needed for building common
+    gems, but if building a gem fails due to a missing header, just [send us an email](/docs/contact) so we can add it.
 
 ## Installing unicorn
 
@@ -78,10 +78,10 @@ running it (or see any errors in your terminal).
 
 Some things to keep in mind:
 
-* You may need to migrate your database first.
-* Make sure you've set secret keys for the app and any gems that need them
+- You may need to migrate your database first.
+- Make sure you've set secret keys for the app and any gems that need them
   (e.g. devise).
-* Static file serving is off by default in production, but you'll want to turn
+- Static file serving is off by default in production, but you'll want to turn
   it on: set both `config.assets.compile` and `config.serve_static_assets`
   (rails 4.1), `config.serve_static_files` (rails 4.2), or
   `config.public_file_server.enabled` (rails 5) to true in

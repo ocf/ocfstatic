@@ -8,7 +8,7 @@ lack of CalNet UID, lack of Kerberos principal, etc.
 
 These are the relevant steps to take in various situations.
 
-#### Missing CalNet UID    {calnet}
+#### Missing CalNet UID {calnet}
 
 If an alumni cannot use the online password reset function to reset the
 password on their account, but they do have a CalNet login, you can manually
@@ -26,7 +26,7 @@ To perform the association, simply follow the steps outlined in the
 with regards to adding the `calnetUid` record. However, don't delete it after
 you're done.
 
-#### Missing Kerberos principal    {kerberos}
+#### Missing Kerberos principal {kerberos}
 
 In 2011, we transitioned our password database to Kerberos. Anyone who
 logged into their OCF account during the transition had their credentials
@@ -46,12 +46,12 @@ To add the principal, run the following:
 You will need an admin principal yourself to do this. `kadmin` will return the
 password and you can relay this to the alumni.
 
-#### Disabled Account    {sorried}
+#### Disabled Account {sorried}
 
 If the account is [sorried](/docs/staff/scripts/sorry), refer to the documentation
 for [unsorry](/docs/staff/scripts/unsorry) to re-enable the account.
 
-#### Manual Verification of Alumni Identity    {verify}
+#### Manual Verification of Alumni Identity {verify}
 
 Before re-enabling access to an alumni's account, one should verify their identity.
 If they do not have a CalNet UID or are otherwise lacking a reasonable method of

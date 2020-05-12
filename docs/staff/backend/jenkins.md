@@ -6,14 +6,13 @@ title: "Jenkins"
 integration and continuous delivery (TM) at OCF. All that means is that when
 you push code,
 
-* Jenkins will test that code,
-* Jenkins will build that code (if applicable),
-* and then Jenkins will deploy that code.
+- Jenkins will test that code,
+- Jenkins will build that code (if applicable),
+- and then Jenkins will deploy that code.
 
 Ideally all projects at OCF will go through this pipeline of being tested
 before deployed, though currently some don't (or some only use some portion,
 such as deploying without any tests).
-
 
 ## Making changes to Jenkins
 
@@ -27,20 +26,19 @@ changes would need to be made inside Puppet instead of the web UI.
 In practice it seems most people in industry are still using the web UI for
 configuration anyway.
 
-
 ## Jenkins security model
 
 There are three users configured on the Jenkins server (`reaper`):
 
-* `jenkins`, the user created by the Debian package. It is used for running the
+- `jenkins`, the user created by the Debian package. It is used for running the
   Jenkins master but not for performing any work.
 
-* `jenkins-slave`, a user we create. It is used for running build jobs with
+- `jenkins-slave`, a user we create. It is used for running build jobs with
   potentially untrusted code. **However,** it's not secure enough to run
   totally untrusted code, since all jobs run under this user.
 
-* `jenkins-deploy`, a user we create. It is used for running build jobs tagged
-  `deploy`, whose only purpose is intended to be *deploying* code which has
+- `jenkins-deploy`, a user we create. It is used for running build jobs tagged
+  `deploy`, whose only purpose is intended to be _deploying_ code which has
   been built or tested in a previous step. The user has a Kerberos keytab for
   the `ocfdeploy` user and our PyPI key in its home directory. Jobs such as
   `upload-deb` or `puppet-trigger` fall under this user.
@@ -61,7 +59,6 @@ jobs that might e.g. delete files or crash processes.
 Of course, in many cases once code builds successfully, we ship it off
 somewhere where it gets effectively run as root anyway. But this feels a little
 safer.
-
 
 ## Jenkins for GitHub projects
 
@@ -84,14 +81,12 @@ To test GitHub projects when you push to master:
 You can create additional steps or organize pipelines if desired (for example,
 if you'd like to first test and then deploy).
 
-
 #### Adding a "Build Status" badge to the README
 
 You might like to add a fancy "Build Status" badge to the README. From the
 project page, choose the "Embeddable Build Status" icon, then choose "Markdown
 (with view), unprotected". You can optionally change the link to point to the
 pipeline view rather ther than just the individual job.
-
 
 ### Building and tagging pull requests
 
@@ -122,11 +117,11 @@ testing pull requests. For example, `puppet-test-pr`.
    `application/json`, and the secret (it's in `supernova:/opt/passwords`).
    Choose to trigger only on certain events:
 
-   * Commit comment
-   * Issue comment
-   * Issues
-   * Pull Request
-   * Pull Request view comment
+   - Commit comment
+   - Issue comment
+   - Issues
+   - Pull Request
+   - Pull Request view comment
 
    (These might not all be necessary, but I don't know the exact list.)
 

@@ -8,15 +8,14 @@ start of each semester.
 
 Printing is currently limited to:
 
- * 200 pages per semester
- * 20 pages per day
+- 200 pages per semester
+- 20 pages per day
 
 Please note:
 
- * Each **printed side** of a sheet counts as a page.
- * Jobs take time to process proportional to the job size.  If you submit a
-   large job, please be patient while the print server processes it.
-
+- Each **printed side** of a sheet counts as a page.
+- Jobs take time to process proportional to the job size. If you submit a
+  large job, please be patient while the print server processes it.
 
 ## Remaining quota
 

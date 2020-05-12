@@ -12,24 +12,24 @@ easily install and manage dependencies and versions.
 
 ## Setting up a virtualenv
 
-1. Create a directory for your app to live in:
+1.  Create a directory for your app to live in:
 
-       mkdir -p ~/myapp
-       cd ~/myapp
+    mkdir -p ~/myapp
+    cd ~/myapp
 
-2. Set up a virtualenv:
+2.  Set up a virtualenv:
 
-       virtualenv venv
+    virtualenv venv
 
-3. Activate the virtualenv:
+3.  Activate the virtualenv:
 
-       . venv/bin/activate
+        . venv/bin/activate
 
-   You should do this step every time before running your app or managing
-   installed packages.
+    You should do this step every time before running your app or managing
+    installed packages.
 
-4. Copy your code to `~/myapp/src` or similar, and install any dependencies
-   using `pip`.
+4.  Copy your code to `~/myapp/src` or similar, and install any dependencies
+    using `pip`.
 
 ## Installing gunicorn
 

@@ -151,8 +151,8 @@ applicable between `~user` and `~asset`.
 If you see an error page when trying to load your app, you may find the
 webserver's logs useful. You can access them in the following locations:
 
-* error log: `/opt/httpd/error.log` (most useful)
-* suexec log: `/opt/httpd/suexec.log` (only useful in rare cases)
+- error log: `/opt/httpd/error.log` (most useful)
+- suexec log: `/opt/httpd/suexec.log` (only useful in rare cases)
 
 Once your app has started running, changes you make to the Ruby code or
 templates won't take effect for a few hours. To apply changes immediately, you

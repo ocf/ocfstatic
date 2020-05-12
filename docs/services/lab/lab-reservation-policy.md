@@ -42,23 +42,23 @@ the student organization will be allowed to to use the lab at the allotted time
 pursuant to the following conditions:
 
 1. The lab space must be cleaned after use by the student organization. Eating
-and drinking in the lab is permitted, as long as the space remains clean and
-available for use immediately after the event concludes.
+   and drinking in the lab is permitted, as long as the space remains clean and
+   available for use immediately after the event concludes.
 
 2. Printing in the OCF lab is subject to the standard per person rules located
-[here](https://www.ocf.berkeley.edu/docs/services/lab/printing/). Please note
-that the OCF currently does not offer printing for group accounts.
+   [here](https://www.ocf.berkeley.edu/docs/services/lab/printing/). Please note
+   that the OCF currently does not offer printing for group accounts.
 
 3. All persons entering the OCF during the time of the event must have
-identification showing affiliation with the university (e.g. Cal ID or Clipper
-Card) and must show it to OCF staff at the door. In addition, all members that
-would like to use OCF computers will need to have their own OCF account.
+   identification showing affiliation with the university (e.g. Cal ID or Clipper
+   Card) and must show it to OCF staff at the door. In addition, all members that
+   would like to use OCF computers will need to have their own OCF account.
 
 4. All OCF policies will continue to apply, take precedence, and will be
-enforced at the sole discretion of the OCF Board of Directors.
+   enforced at the sole discretion of the OCF Board of Directors.
 
 5. Reserving student groups will be held liable for any damage to OCF property
-that occurs during their reservation.
+   that occurs during their reservation.
 
 ## Approving lab usage requests
 

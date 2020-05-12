@@ -11,30 +11,30 @@ install and manage dependencies and versions.
 
 ## Setting up nvm
 
-1. Create a directory for your app to live in:
+1.  Create a directory for your app to live in:
 
-       mkdir -p ~/myapp
-       cd ~/myapp
+    mkdir -p ~/myapp
+    cd ~/myapp
 
-2. Install nvm in your home directory. Note that `nvm` is terrible and will
-   modify your shell config files without asking. But maybe that's what you
-   want?
+2.  Install nvm in your home directory. Note that `nvm` is terrible and will
+    modify your shell config files without asking. But maybe that's what you
+    want?
 
-   Go find the latest version from [the NVM GitHub][nvm-github], and copy the
-   nasty one-liner straight into your shell to install it. At the time of
-   writing, it looks like this:
+    Go find the latest version from [the NVM GitHub][nvm-github], and copy the
+    nasty one-liner straight into your shell to install it. At the time of
+    writing, it looks like this:
 
-       curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 
-   Go ahead and run it, and close/re-open your terminal as it suggests.
+    Go ahead and run it, and close/re-open your terminal as it suggests.
 
-3. Install whatever version of Node.js you want.
+3.  Install whatever version of Node.js you want.
 
-       nvm install 6
-       nvm alias default 6
+    nvm install 6
+    nvm alias default 6
 
-4. Copy your code to `~/myapp/src` or similar, and install any dependencies
-   using `npm`.
+4.  Copy your code to `~/myapp/src` or similar, and install any dependencies
+    using `npm`.
 
 ## Preparing your app to be supervised
 

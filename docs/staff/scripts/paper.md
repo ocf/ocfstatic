@@ -32,7 +32,6 @@ For other users:
 
     $ paper view <user>
 
-
 ### Issue refunds (change user balances)
 
 Refunds can be positive or negative, so you can add or subtract quotas using

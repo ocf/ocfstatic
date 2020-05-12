@@ -6,7 +6,6 @@ title: "Web application hosting"
 have applied for apphosting. For normal user accounts or for groups without
 apphosting, you'll want to host with FastCGI instead.**
 
-
 ## Introduction
 
 All accounts include our [standard web hosting](/docs/services/web), which is
@@ -17,7 +16,7 @@ provides more flexibility.
 
 ## App hosting eligibility
 
-App hosting is *only available for student groups with [virtually-hosting domain names](/docs/services/vhost)* (either group.berkeley.edu, or your own
+App hosting is _only available for student groups with [virtually-hosting domain names](/docs/services/vhost)_ (either group.berkeley.edu, or your own
 separately-purchased domain name). If you don't already have a virtual host and
 want to use app hosting, see below for instructions; please don't fill out a
 virtual host request form.
@@ -27,11 +26,11 @@ virtual host request form.
 To request app hosting, you need to first [create an OCF group account](/docs/membership). Once you have an account, email `hostmaster@ocf.berkeley.edu`
 with at least the following information:
 
-* Group's account name
-* Group's current website, if any (even if not hosted by OCF)
-* Desired domain name for the app (either group.berkeley.edu, or your own
+- Group's account name
+- Group's current website, if any (even if not hosted by OCF)
+- Desired domain name for the app (either group.berkeley.edu, or your own
   domain)
-* The technologies/languages your site is built on
+- The technologies/languages your site is built on
 
 ## Requirements for virtually-hosted apps
 
@@ -54,10 +53,10 @@ server.
 You connect to this server via SSH using your normal OCF account name and
 password.
 
-* **Host:** apphost.ocf.berkeley.edu
-* **Port:** 22
+- **Host:** apphost.ocf.berkeley.edu
+- **Port:** 22
 
-If your login is refused (but you *can* log in to `ssh.ocf.berkeley.edu`), your
+If your login is refused (but you _can_ log in to `ssh.ocf.berkeley.edu`), your
 account probably isn't configured yet. Contact us (see above) to request app
 hosting on your account.
 
@@ -70,7 +69,7 @@ instead of a port, so do that.
 
 We provide some example setups below.
 
-### Supervising and starting your app    {supervise}
+### Supervising and starting your app {supervise}
 
 **Make sure you do these steps on the application server.** If you start your
 app on tsunami, the public login server, it won't work.
@@ -82,63 +81,63 @@ automatically restart if it crashes.
 We highly recommend to use systemd to supervise your app. Our recommended setup
 is:
 
-1. Create a directory for your app `~/myapp`.
+1.  Create a directory for your app `~/myapp`.
 
-2. Place a startup script at `~/myapp/run`. Your script should end by `exec`ing
-   the server process. If you followed one of the guides for [Node.js](/docs/services/webapps/nodejs), [Rails](/docs/services/webapps/rails), or
-   [Django](/docs/services/webapps/python), you've already created this file, so
-   can move on to the next step.
+2.  Place a startup script at `~/myapp/run`. Your script should end by `exec`ing
+    the server process. If you followed one of the guides for [Node.js](/docs/services/webapps/nodejs), [Rails](/docs/services/webapps/rails), or
+    [Django](/docs/services/webapps/python), you've already created this file, so
+    can move on to the next step.
 
-   Otherwise, an example would be:
+    Otherwise, an example would be:
 
-       #!/bin/sh -e
-       exec ~/myapp/run-server
+        #!/bin/sh -e
+        exec ~/myapp/run-server
 
-   Your server should run in the *foreground* (it should not daemonize), and
-   the `run` script should end with an `exec` line so that signals are sent to
-   the server (and not to the shell that started it).
+    Your server should run in the _foreground_ (it should not daemonize), and
+    the `run` script should end with an `exec` line so that signals are sent to
+    the server (and not to the shell that started it).
 
-   Once you've written the script, make it executable (`chmod +x ~/myapp/run`).
-   Test it by executing it in your terminal before moving on; it will be easier
-   to debug problems.
+    Once you've written the script, make it executable (`chmod +x ~/myapp/run`).
+    Test it by executing it in your terminal before moving on; it will be easier
+    to debug problems.
 
-3. Write a systemd service file so your app will be supervised on startup. Save
-   the following to the file `~/.config/systemd/user/myapp.service`:
+3.  Write a systemd service file so your app will be supervised on startup. Save
+    the following to the file `~/.config/systemd/user/myapp.service`:
 
-       [Unit]
-       Description={YOUR GROUP NAME} Webapp
-       ConditionHost=vampires
+        [Unit]
+        Description={YOUR GROUP NAME} Webapp
+        ConditionHost=vampires
 
-       [Install]
-       WantedBy=default.target
+        [Install]
+        WantedBy=default.target
 
-       [Service]
-       ExecStart=/home/{U}/{UU}/{USERNAME}/myapp/run
-       Restart=always
+        [Service]
+        ExecStart=/home/{U}/{UU}/{USERNAME}/myapp/run
+        Restart=always
 
-   Make sure to replace `{YOUR GROUP NAME}` above with your actual group name,
-   and also replace `{U}` with the first letter of your username, `{UU}` with
-   the first two letters of your username, and `{USERNAME}` with your username.
+    Make sure to replace `{YOUR GROUP NAME}` above with your actual group name,
+    and also replace `{U}` with the first letter of your username, `{UU}` with
+    the first two letters of your username, and `{USERNAME}` with your username.
 
-4. Tell systemd to start your app on startup, by running `systemctl --user
-   enable myapp`.
+4.  Tell systemd to start your app on startup, by running `systemctl --user enable myapp`.
 
-5. You'll need to start your app manually once (on future reboots, it will be
-   started for you). To do that, run `systemctl --user start myapp`.
+5.  You'll need to start your app manually once (on future reboots, it will be
+    started for you). To do that, run `systemctl --user start myapp`.
 
 To control your app, you can use the `systemctl` tool. See `man systemctl` for
 full details. In summary,
 
-* **Restart an app.** `systemctl --user restart myapp`
-* **Bring an app offline.** `systemctl --user stop myapp`
-* **Bring an app back online.** `systemctl --user start myapp`
-* **Check the status of an app.** `systemctl --user status myapp`
+- **Restart an app.** `systemctl --user restart myapp`
+- **Bring an app offline.** `systemctl --user stop myapp`
+- **Bring an app back online.** `systemctl --user start myapp`
+- **Check the status of an app.** `systemctl --user status myapp`
 
 Your app's standard output and error streams are sent to systemd's journal (by
 default). You can view them using `journalctl --user -n`. See `man journalctl`
 for more options.
 
 ## Frequently asked questions
+
 ### Can you install a package on the app server?
 
 Probably. [Send us an email](/docs/contact), and be sure to provide the name of
@@ -165,8 +164,8 @@ languages.
 ### How do I get a database for my application?
 
 A [MySQL database](/docs/services/mysql) is included with your OCF account. You
-should probably just use that. We're *not* going to set up a different database
-for you (you could install one in your home directory if you *really* want to).
+should probably just use that. We're _not_ going to set up a different database
+for you (you could install one in your home directory if you _really_ want to).
 
 ### I'm running my app on port 3000 but I can't access it.
 

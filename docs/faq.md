@@ -42,7 +42,7 @@ landed in their spam folder. Check that first, or try to [[reset your password|c
 
 **Please do not email us about items lost in the lab.** The front desk is
 staffed by paid employees, not by OCF volunteers. If you email us, the front
-desk staff *will not see it*. If you've lost something, you should instead stop
+desk staff _will not see it_. If you've lost something, you should instead stop
 by in-person to ask for it.
 
 #### I have an account. Does it expire? Will it still work?

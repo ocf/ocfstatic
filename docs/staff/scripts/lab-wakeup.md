@@ -8,7 +8,7 @@ title: "lab-wakeup: wake up suspended desktops"
 
 Use `lab-wakeup $hostname` when you need to wake up a desktop that has
 suspended. For example, if you try to SSH into `volcano.ocf.berkeley.edu`
- and get an error similar to
+and get an error similar to
 
     ssh: connect to host $host port 22: No route to host
 

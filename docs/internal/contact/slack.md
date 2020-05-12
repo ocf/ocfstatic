@@ -2,7 +2,6 @@
 title: "Slack"
 ---
 
-
 We also offer IRC as a chat service. If that is what you were looking for, head
 over to [our page on IRC](/docs/contact/irc).
 
@@ -19,7 +18,7 @@ over to [our page on IRC](/docs/contact/irc).
    assistance.
 
 4. Click the link in your Berkeley email and follow the instructions to complete
-   setup. We *strongly* recommend setting your display name to your OCF username for
+   setup. We _strongly_ recommend setting your display name to your OCF username for
    consistency.
 
 5. Join some channels!
@@ -43,35 +42,35 @@ If you're still having trouble, you can always reset your password.
 
 ### List of Major OCF Channels
 
-*#announcements*: Low volume announcements channel. Turn on notifications for
+_#announcements_: Low volume announcements channel. Turn on notifications for
 messages in this channel (instructions for [desktop][desktop-notifications] and
 [mobile][mobile-notifications])!
 
 [desktop-notifications]: https://slack.com/help/articles/201355156-Guide-to-desktop-notifications#channel-specific-group-dm-notifications
 [mobile-notifications]: https://slack.com/help/articles/360025446073-Guide-to-mobile-notifications#channel-specific-group-dm-notifications
 
-*#rebuild*: Technical discussion
+_#rebuild_: Technical discussion
 
-*#administrivia*: Administrative discussion
+_#administrivia_: Administrative discussion
 
-*#henlo*: Memes and off-topic social chat with current staff
+_#henlo_: Memes and off-topic social chat with current staff
 
-*#ocf*: General alumni/staff off-topic hangout channel and non-OCF tech
+_#ocf_: General alumni/staff off-topic hangout channel and non-OCF tech
 discussion
 
-*#rebuild-spam*: Information on Github changes/PRs (spammy)
+_#rebuild-spam_: Information on Github changes/PRs (spammy)
 
-*#test*: Actual spam
+_#test_: Actual spam
 
 ### List of Minor OCF channels
 
-*#decal-general*: DeCal student chat
+_#decal-general_: DeCal student chat
 
 _#\*-comm_: Channels for committee discussion
 
-*#cs162-fa19*, *cs170-fa19*, and others: Per-class discussions
+_#cs162-fa19_, _cs170-fa19_, and others: Per-class discussions
 
-*#xcf*: XCF discussion
+_#xcf_: XCF discussion
 
 ### Optional: Using wee-slack
 
@@ -88,7 +87,7 @@ command:
 python pip install websocket-client
 ```
 
-We describe setting up a virtual environment [here](/docs/services/webapps/python).  As a general recommendation, you'll probably want
+We describe setting up a virtual environment [here](/docs/services/webapps/python). As a general recommendation, you'll probably want
 to leave `wee-slack` running in a detached [tmux session][tmux].
 
 [wee-slack]: https://github.com/wee-slack/wee-slack

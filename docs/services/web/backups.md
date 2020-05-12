@@ -6,15 +6,14 @@ Keeping backups on hand is crucial to maintaining any website. While your data
 is protected from hardware failure by the OCF's backup infrastructure, you will
 find you need a backup history of your own when you need to:
 
-* Migrate to an upgraded website
-* Archive an old website with historical data
-* Regress to a previous state due to a bug
-* Recover from a security breach
+- Migrate to an upgraded website
+- Archive an old website with historical data
+- Regress to a previous state due to a bug
+- Recover from a security breach
 
 You can make easy-to-restore backups over [SSH](/docs/services/shell) by
 following the examples on this page. You could alternatively use SFTP, but this
 wouldn't allow you to back up a database.
-
 
 ## Backing up a web directory
 
@@ -41,7 +40,6 @@ Do not try to backup your `public_html` folder by copying it directly! It is
 not a real directory, but a link to where the files are actually stored.
 Instead, explicitly copy all the files inside to another directory or use the
 the commands on this page which were written to do so.
-
 
 ## Backing up a database
 
@@ -79,7 +77,6 @@ it, it will break your old website backups! If you want to save the trouble,
 [follow our instructions](/docs/services/mysql) to create `~/.my.cnf` which will
 allow you to use MySQL without entering the password by hand.
 
-
 ## Taking down a site
 
 If you have an old website you want to archive and remove from public view, you
@@ -100,7 +97,6 @@ If you instead wanted to delete the whole database, you could use the command
 However, you would need to run `makemysql` to create a new database, which
 would permanently change your password.
 
-
 ## Example backup
 
 Suppose your OCF account name is `johndoe` and you have WordPress installed
@@ -118,7 +114,6 @@ while a restore would look like this:
 
 If you were using `.my.cnf`, you wouldn't even have to enter your database
 password.
-
 
 ## Security
 

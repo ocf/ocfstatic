@@ -14,6 +14,7 @@ staffer know you’re working on starter tasks and we will add you.
 These tasks don’t have to be completed in order.
 
 ## Connect to the OCF IRC network
+
 Internet Relay Chat (IRC) is a chat protocol invented in the 80s, an early
 precursor to Slack. The OCF runs an IRC server (since 2002!), which is bridged
 to our Slack network. Many staffers prefer IRC to Slack due to its wide breadth
@@ -24,16 +25,17 @@ For this task, pick an IRC client, install it on your computer, and use it to
 connect to the OCF IRC network (details at https://ocf.io/irc). Some popular
 clients are:
 
-* Irssi (Mac/Linux, console)
-* Weechat (Max/Linux, console)
-* Hexchat (Windows/Linux, graphical)
-* Colloquy (Mac, graphical)
+- Irssi (Mac/Linux, console)
+- Weechat (Max/Linux, console)
+- Hexchat (Windows/Linux, graphical)
+- Colloquy (Mac, graphical)
 
 See http://www.irchelp.org/clients/ for more recommendations.
 
 Once you’ve joined IRC, pick any channel (#rebuild, #henlo, etc) and say hi!
 
 ## Get familiar with the command line
+
 All of [our servers](/docs/staff/backend/servers) run Linux, and we interact with
 them over the command line. There are a lot of online resources about using the
 Linux command line, so if you're confused about something, try Googling it!
@@ -47,6 +49,7 @@ If you want to get more comfortable, try completing [lab
 Administration DeCal.
 
 ## Run the IRC bot in development mode\* (requires being on IRC)
+
 Our chat bot is named `create` and its source code can be found at
 https://github.com/ocf/ircbot. Before testing the IRC bot right away, make sure
 you know how to use it:
@@ -67,6 +70,7 @@ Once you’ve learned about `create`, you can start making changes to it!
    like #test. (there are multiple ways to do this!)
 
 ## Play with staff utilities\*
+
 OCF staff use a collection of scripts when interacting with the campus
 community. For example, before creating an account for a student organization,
 we make sure the person requesting the account is listed as a signatory for that
@@ -84,6 +88,7 @@ check.
    to search across all repositories!
 
 ## Play with your webspace
+
 Every OCF account has [web hosting](/docs/services/web) enabled at
 https://www.ocf.berkeley.edu/~yourusername. As an example, check out [ckuehl’s
 website](https://www.ocf.berkeley.edu/~ckuehl/).
@@ -93,6 +98,7 @@ website](https://www.ocf.berkeley.edu/~ckuehl/).
    WordPress in your webspace. (hint: instructions for this are on our website)
 
 ## Play with ocflib\*
+
 [ocflib][ocflib] is a Python library we maintain which is installed on every OCF
 host. For this exercise, you won’t need to make modifications to ocflib.
 
@@ -109,8 +115,9 @@ host. For this exercise, you won’t need to make modifications to ocflib.
       hour entry on the page.
 3. Your turn! Use ocflib functions to get the following information in your
    interactive Python shell:
+
    1. Get the list of signatories for the OCF, and your favorite student org.
-   (hint: look at the signat source code from before!)
+      (hint: look at the signat source code from before!)
    2. Find the toner levels of each printer.
    3. Find the hours the OCF was open on your most recent birthday.
 
@@ -121,6 +128,7 @@ host. For this exercise, you won’t need to make modifications to ocflib.
 [sourcegraph]: https://sourcegraph.ocf.berkeley.edu
 
 ## Make a pull request!\*
+
 Whenever a technical change to the OCF is made, we use [a pull
 request][github-pull-request] on GitHub. Pull requests allow staffers to propose
 changes in discrete chunks and get feedback before the code goes live.
@@ -129,14 +137,14 @@ You're going to make a pull request to [ocfweb][ocfweb]. Specifically, you'll
 add your name to [the list of everyone who's completed this task](/docs/staff/startertasks/completed).
 
 ### Set up
+
 1. Log into [GitHub](https://github.com). If your [OCF email](/docs/services/mail) (`<OCF username>@ocf.berkeley.edu`) is not connected to your
    account, [add it to your account emails](https://github.com/settings/emails).
 2. Create your personal [fork][github-fork] of [ocfweb][ocfweb].
 3. [Log into supernova](/docs/staff/procedures/ssh-supernova).
 4. Optional: For easier authentication to GitHub, [generate an SSH
    key][github-ssh-keygen] and [add it to your GitHub account][github-add-key].
-   Note: the `xclip` commands will probably not work. Instead, just run `cat
-   ~/.ssh/id_rsa.pub` and manually copy it to your clipboard.
+   Note: the `xclip` commands will probably not work. Instead, just run `cat ~/.ssh/id_rsa.pub` and manually copy it to your clipboard.
 5. Return to **your new fork** of ocfweb and [clone the
    repository][github-clone]. Enter your clone with `cd ocfweb`.
 6. Take a look at the README. It will tell you to run a few commands to finish
@@ -146,6 +154,7 @@ You only have to do this part once. Now that your fork is set up, all future
 pull requests to ocfweb will use this same clone.
 
 ### Make your change
+
 1. First, you want to create a [new branch][git-branch] to separate this change
    from other changes that you or other people are making. To do this, choose a
    very short name for your branch and run `git checkout -b <branch-name>`. You
@@ -156,12 +165,14 @@ pull requests to ocfweb will use this same clone.
    adding the URL or brackets.)
 
    There are a few options for editing the file:
+
    - If you are familiar with a console text editor like `vim` or `emacs`, you
      can use that to edit the file.
    - If you are using a desktop in the OCF lab, you can use the `~/remote`
      folder on the desktop, which is synced to your home directory on supernova.
    - Other editors may have plugins to let you edit files over SSH, such as [VS
      Code][vscode-remote].
+
 3. Now that you've made the change, check out the README to see how to run
    ocfweb in development mode. Once you're running in dev-mode, navigate to the
    page in your browser and visually check it.
@@ -179,6 +190,7 @@ review your changes and make sure they look good. Once one or two people
 approve, the pull request can be merged and your change will go live.
 
 ### Update your PR (optional)
+
 Sometimes you will want to update a pull request after it has been created,
 because you thought of something new or because another staffer suggested a
 change. In this case, you'll update your pull request so that your username on
@@ -191,8 +203,8 @@ the list links to the pull request you made.
    `[username](https://link.to/pull/request)`. The brackets and parentheses
    indicate that this is a [link in Markdown][markdown-link], which is the
    markup language we use for the docs.
-4. As before, stage your changes and commit them.
-5. Optional: Squash your changes. A pull request often will accumulate lots of
+3. As before, stage your changes and commit them.
+4. Optional: Squash your changes. A pull request often will accumulate lots of
    little commits that are not very important. You can "squash" all these
    commits together to make things cleaner.
    1. Run `git rebase -i HEAD~2` (`~2` is the number of commits to rebase) to do an
@@ -205,7 +217,7 @@ the list links to the pull request you made.
       to delete the second message. Save and exit.
    4. You did it! You can run `git log` to check: you should only see one commit
       at the top that is authored by you, instead of two.
-6. Push your new changes as before. If you did the optional step, you will have
+5. Push your new changes as before. If you did the optional step, you will have
    to add the argument `--force-with-lease` after `push`.
 
 After pushing, the pull request on GitHub will automatically update with the new

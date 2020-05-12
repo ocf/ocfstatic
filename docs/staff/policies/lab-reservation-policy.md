@@ -2,7 +2,7 @@
 title: "Lab reservation policy (staff expectations)"
 ---
 
-*As promulgated by the GMs on November 06, 2017*
+_As promulgated by the GMs on November 06, 2017_
 
 Should the OCF lab be closed for the event requested, OCF staff (excluding
 those at the front desk) should remain outside the OCF lab during the time

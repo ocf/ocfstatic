@@ -1,6 +1,7 @@
 ---
 title: "Printing maintenance"
 ---
+
 ## Removing printers from service
 
 Ideally, printers shouldn't ever be turned off. Instead, they should be removed
@@ -27,7 +28,7 @@ Toner replacement takes only a few seconds. Don't bother recording toner
 replacement, there is no point.
 
 Old toner cartridges should be saved in the server room (find a box that has a
-bunch of old toner in it). We return these to Staples for $2/cartridge in
+bunch of old toner in it). We return these to Staples for \$2/cartridge in
 rewards.
 
 Our printers use [CC364X toner cartridges][toner]. As part of our service
@@ -56,19 +57,19 @@ recycle the used toners as soon as possible.
 
 ### Options to dispose the toners
 
-* We can dispose the toners by returning them to
-[Staples](https://www.staples.com/sbd/cre/marketing/sustainability-center/recycling-
-services/) down at the Shattuck Ave. They give us $2 Staples rewards per toner, and
-there is maximum limit of 10 toners per month. With the rewards, we can purchase
-snacks and etc from Staples.
-The rewards account information can be found in the passwd file.
+- We can dispose the toners by returning them to
+  [Staples](https://www.staples.com/sbd/cre/marketing/sustainability-center/recycling-
+  services/) down at the Shattuck Ave. They give us \$2 Staples rewards per toner, and
+  there is maximum limit of 10 toners per month. With the rewards, we can purchase
+  snacks and etc from Staples.
+  The rewards account information can be found in the passwd file.
 
-* Copy Center at 3rd floor of Moffitt Library - to the right of FSM cafe when you enter the
-building - would accept our toners that are individually sealed in a garbage bag.
+- Copy Center at 3rd floor of Moffitt Library - to the right of FSM cafe when you enter the
+  building - would accept our toners that are individually sealed in a garbage bag.
 
-* Xerox Recycles HP toners. One can [order](https://www.xerox.com/perl-bin/product.p
-l?mode=recycling&XOGlang=en_US&referer=xrx) toner return box kit with a free return
-label. Once the kit arrives, put the used toners in the box and schedule a UPS pick up.
+- Xerox Recycles HP toners. One can [order](https://www.xerox.com/perl-bin/product.p
+  l?mode=recycling&XOGlang=en_US&referer=xrx) toner return box kit with a free return
+  label. Once the kit arrives, put the used toners in the box and schedule a UPS pick up.
 
 ## Performing maintenance on the printers
 
@@ -83,19 +84,18 @@ the UC Berkeley PMP Coordinator.
 
 The following is a list of our printers and their IDs, from left to right:
 
-|  Printer name | ID # |
-|---------------|------|
-| papercut      | 1782 |
-| logjam        | 1786 |
-| pagefault     | 1781 |
+| Printer name | ID # |
+| ------------ | ---- |
+| papercut     | 1782 |
+| logjam       | 1786 |
+| pagefault    | 1781 |
 
 ## Stats
 
- * [Printer status Grafana dashboard (ocf.io/printers)][printer-dashboard]
- * Toner and Maintenance Kit [status][printer-summary]
- * [How many pages has each printer printed][pages-printed]? (expressed as total
-   pages printed over time)
-
+- [Printer status Grafana dashboard (ocf.io/printers)][printer-dashboard]
+- Toner and Maintenance Kit [status][printer-summary]
+- [How many pages has each printer printed][pages-printed]? (expressed as total
+  pages printed over time)
 
 [toner]: https://www.staples.com/HP-64X-Black-Toner-Cartridge-CC364XD-High-Yield-Twin-Pack/product_821762
 [pmp]: https://campuslifeservices.ucsf.edu/documentsmedia/services/print_management

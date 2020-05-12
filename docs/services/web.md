@@ -2,11 +2,10 @@
 title: "Web hosting"
 ---
 
-
 All accounts include hosting with a web address at:
 
-* **`https://www.ocf.berkeley.edu/~user`** (canonical version)
-* **`https://ocf.io/user`** (shorter version)
+- **`https://www.ocf.berkeley.edu/~user`** (canonical version)
+- **`https://ocf.io/user`** (shorter version)
 
 where `user` is the account name.
 
@@ -33,20 +32,18 @@ passwords), you should make them private (e.g., `chmod 600` or `chmod 700`).
 
 Both individual hosting and student group hosting are done entirely over HTTPS.
 
-
 ### Supported languages
 
-* PHP 7.0.33
-* Perl 5.24.1
-* Python 2.7.13, and 3.5.3; Django 1.10.7; Flask 0.12.1
-* Ruby 2.3.3; Rails 4.2.7.1
-* NodeJS 4.8.2
+- PHP 7.0.33
+- Perl 5.24.1
+- Python 2.7.13, and 3.5.3; Django 1.10.7; Flask 0.12.1
+- Ruby 2.3.3; Rails 4.2.7.1
+- NodeJS 4.8.2
 
 Other flavors of the day may work but are not currently supported. We may be
 able to install additional packages on request, but will generally advise you
 to use alternatives instead (such as installing in a virtualenv or inside your
 home directory).
-
 
 ## FAQ
 
@@ -56,27 +53,25 @@ We automatically create the `public_html` symlink for all new accounts, but
 it's possible that it was accidentally removed (or that you have an older
 account from before we started the practice).
 
-Keep in mind that just recreating the directory is *not* sufficient; it must be
+Keep in mind that just recreating the directory is _not_ sufficient; it must be
 a symbolic link to your actual web space. If you simply make a directory named
 `public_html`, it won't be used for your website.
 
 Here are two easy ways to re-create the symlink:
 
-
 #### via the web interface
 
-1. Open the [[web commands interface|commands]] in your web browser.
-2. Select the "makehttp" option. Enter your OCF username and password, and
-   choose "Run command". You should see something like this in the output,
-   assuming you entered your username and password correctly:
+1.  Open the [[web commands interface|commands]] in your web browser.
+2.  Select the "makehttp" option. Enter your OCF username and password, and
+    choose "Run command". You should see something like this in the output,
+    assuming you entered your username and password correctly:
 
-        public_html folder has been created successfully.
-
+         public_html folder has been created successfully.
 
 #### via SSH
 
-1. Login to your account via [SSH](/docs/services/shell).
-2. After you go past all system messages, you will see prompt:
+1.  Login to your account via [SSH](/docs/services/shell).
+2.  After you go past all system messages, you will see prompt:
 
         tsunami$
 

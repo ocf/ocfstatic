@@ -12,6 +12,7 @@ Berkeley email), and use the same username as your OCF account. Note that
 Mastodon passwords are separate from OCF account passwords!
 
 ## Alternate usernames
+
 If you would like to use a username different from your OCF account username,
 email [help@ocf.berkeley.edu](mailto:help@ocf.berkeley.edu) to request a custom
 username.

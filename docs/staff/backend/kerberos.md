@@ -9,7 +9,6 @@ server communication over a (potentially) insecure network, where data can be
 eavesdropped on, and addresses can be faked. It has several security and
 usability advantages over using password-based authentication over the network.
 
-
 ### Security advantages
 
 One major security advantage of using Kerberos is that if a ticket is stolen
@@ -22,7 +21,6 @@ plaintext passwords or keys by themselves across the network that could be used
 for attacks. Instead, it uses tickets, and encrypts data sent to clients and
 servers with a key that only that machine can read.
 
-
 ### Usability advantages
 
 Kerberos makes passwordless login easy, since after the first password is
@@ -34,7 +32,6 @@ Kerberos in place. Tickets are invalidated on logout, so that makes sure that
 someone can't steal a ticket and use it after you have left, as a little added
 security.
 
-
 ## Versions
 
 There are two major free versions of Kerberos: MIT and Heimdal Kerberos. At the
@@ -43,7 +40,6 @@ be for the MIT version, so be careful to make sure the commands work. Kerberos
 also has 2 main versions that are still used: version 4 and version 5. Version
 5 fixes a lot of the security and design flaws of version 4, so we use version
 5 of the protocol.
-
 
 ## Terminology
 
@@ -61,8 +57,7 @@ mean:
 - **Realm**: A kerberos domain, usually identified with the domain name in all
   caps (e.g. `OCF.BERKELEY.EDU`). Two hosts are in the same realm if they share
   some kind of secret (password or key). The default realm is specified in
-  `/etc/krb5.conf`, alongside the [location of the KDC and admin server]
-  [kdc-location] (`kerberos.ocf.berkeley.edu` in our case). Cross-realm
+  `/etc/krb5.conf`, alongside the [location of the KDC and admin server][kdc-location] (`kerberos.ocf.berkeley.edu` in our case). Cross-realm
   authentication is possible, but is thankfully not something we need to do, as
   it significantly complicates things.
 
@@ -110,7 +105,6 @@ mean:
 [xkcd-space]: https://xkcd.com/1133/
 [kdc-location]: https://github.com/ocf/puppet/blob/17bc94b395e254529d97c84fb044f76931439fd7/modules/ocf/files/auth/krb5.conf#L27
 
-
 ## Commands
 
 All conveniently prefixed with the letter `k`.
@@ -147,7 +141,6 @@ All conveniently prefixed with the letter `k`.
 There are more commands, but they aren't used so often, and can be searched if
 needed.
 
-
 ## Adding privileges for users
 
 To add privileges for users, first create a new principal for them to use. As
@@ -161,13 +154,12 @@ when running `sudo` commands and for changing user passwords, whereas the
 
 Next, to give the principal actual privileges, add the principals and
 privileges assigned to the [kadmind.acl file][2] used by Puppet. Notice that
-the `all` privilege does not actually give *all* privileges, since the
-`get-keys` privilege is separate.  The `get-keys` privilege is used to fetch
+the `all` privilege does not actually give _all_ privileges, since the
+`get-keys` privilege is separate. The `get-keys` privilege is used to fetch
 principals' keys, which is equivalent to knowing the password hash in other
 authentication systems, so it is not a privilege to be handed out lightly.
 
 [2]: https://github.com/ocf/puppet/blob/master/modules/ocf_kerberos/files/kadmind.acl
-
 
 ## How does it actually work?
 

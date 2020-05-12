@@ -2,7 +2,6 @@
 title: "Virtual hosting (group.berkeley.edu)"
 ---
 
-
 Virtual hosting allows group accounts to have their website available on a
 different domain, typically under berkeley.edu. For example, a group's site can
 be made available at `yourgroup.berkeley.edu` in addition to the standard
@@ -12,10 +11,10 @@ for virtual hosting, but must obtain their own domains (e.g.
 
 The OCF provides two separate (but related) virtual hosting services:
 
-* **Web hosting**, where your group's OCF-hosted website becomes available
+- **Web hosting**, where your group's OCF-hosted website becomes available
   under the new name
 
-* **Email forwarding**, which lets you configure email forwarding for the new
+- **Email forwarding**, which lets you configure email forwarding for the new
   name
 
 Web hosting is always enabled for group accounts with virtual hosting, but
@@ -30,23 +29,23 @@ of the virtual-hosted site (`yourgroup.berkeley.edu`).
 
 ### Instructions
 
-1.   **Request an account.** [Request an OCF account](/docs/membership) (if you
-     haven't already done so). Student and department groups need a group
-     account; faculty and staff may use their personal account.
-2.   **Set up real site.** Set up your webspace and upload your website (if you
-     haven't already done so). The website should be developed already, not a
-     placeholder.
-3.   **Include OCF hosting banner.** Place a [Hosted by OCF banner](/docs/services/vhost/badges) on your home page that links to the OCF front
-     page. If none of these images are appropriate for your site, you may
-     design one of your own and [submit it](/docs/contact) for approval.
-4.   **Include university's disclaimer (if applicable).** If you are a student
-     group, place the university-mandated student group disclaimer on each page
-     of your website (see the section below).
-5.   **Obtain a domain (faculty and staff only).** The OCF will not request
-     personal domains for individuals, so faculty and staff must obtain their
-     own. Your department may be able to assist you with this step.
-6.   **Complete request form.** Complete the [[virtual hosting request form|request_vhost]] online. OCF staff will review your request and
-     contact the university hostmaster on your behalf if necessary.
+1.  **Request an account.** [Request an OCF account](/docs/membership) (if you
+    haven't already done so). Student and department groups need a group
+    account; faculty and staff may use their personal account.
+2.  **Set up real site.** Set up your webspace and upload your website (if you
+    haven't already done so). The website should be developed already, not a
+    placeholder.
+3.  **Include OCF hosting banner.** Place a [Hosted by OCF banner](/docs/services/vhost/badges) on your home page that links to the OCF front
+    page. If none of these images are appropriate for your site, you may
+    design one of your own and [submit it](/docs/contact) for approval.
+4.  **Include university's disclaimer (if applicable).** If you are a student
+    group, place the university-mandated student group disclaimer on each page
+    of your website (see the section below).
+5.  **Obtain a domain (faculty and staff only).** The OCF will not request
+    personal domains for individuals, so faculty and staff must obtain their
+    own. Your department may be able to assist you with this step.
+6.  **Complete request form.** Complete the [[virtual hosting request form|request_vhost]] online. OCF staff will review your request and
+    contact the university hostmaster on your behalf if necessary.
 
 ### Including the OCF banner {ocf_banner}
 
@@ -55,7 +54,7 @@ site by copying the code onto your page. The banner need only be placed on the
 home page of your site. You can also create your own OCF banner with approval
 from the OCF (see instructions above).
 
-### Including the University Student Group Disclaimer    {disclaimer}
+### Including the University Student Group Disclaimer {disclaimer}
 
 The university [requires][rso-domains] that all student group websites on a
 subdomain of berkeley.edu (other than those of university-sponsored student
@@ -64,14 +63,14 @@ groups) contain the following text on each page:
 > We are a student group acting independently of the University of California.
 > We take full responsibility for our organization and this web site.
 
-## Email Forwarding    {email}
+## Email Forwarding {email}
 
 Want to send and receive email from `@mygroup.berkeley.edu` addresses? You can
 do that!
 
-We call this *mail virtual hosting*. To learn more, [check out our page about that](/docs/services/vhost/mail).
+We call this _mail virtual hosting_. To learn more, [check out our page about that](/docs/services/vhost/mail).
 
-## Policies    {policies}
+## Policies {policies}
 
 <!-- As amended by the Board of Directors on April 10, 2017. -->
 
@@ -90,7 +89,6 @@ elsewhere. Group accounts for research groups are not subject to these
 restrictions. While we are happy to host personal websites for faculty and
 staff, we will not manage their DNS, nor provide mailing lists for individual
 accounts.
-
 
 ### Limitations on non-berkeley.edu
 
@@ -114,7 +112,6 @@ particular domain, or the personal website of a faculty or staff member.
 Domains under berkeley.edu may not redirect to a non-berkeley.edu domain (see
 **no off-site hosting**).
 
-
 ### University policies
 
 As with any OCF account, virtually hosted websites must comply with the
@@ -129,29 +126,29 @@ groups.
 
 In particular,
 
-* **No off-site (third-party) hosting**: Circumventions around off-site
-hosting, including (but not limited to) proxies, redirects, and substantial
-inline frames (iframes) of non-berkeley.edu domains are not allowed. The OCF
-does not process nor advise off-site hosting requests, which can be
-[submitted directly to the university][offsite] (however, feel free to keep
-us informed if you have an existing OCF account).
+- **No off-site (third-party) hosting**: Circumventions around off-site
+  hosting, including (but not limited to) proxies, redirects, and substantial
+  inline frames (iframes) of non-berkeley.edu domains are not allowed. The OCF
+  does not process nor advise off-site hosting requests, which can be
+  [submitted directly to the university][offsite] (however, feel free to keep
+  us informed if you have an existing OCF account).
 
-   In other words, to comply with university policy, the OCF may only provide
-   virtual hosting for websites that are hosted on OCF servers.
+  In other words, to comply with university policy, the OCF may only provide
+  virtual hosting for websites that are hosted on OCF servers.
 
-* **Relevant domain name**: Registered Student Organizations may only use
-domains or request subdomains that are the officially recognized name of the
-group or a recognizable shortened version of the official name. Exceptions to
-this rule must be approved by the LEAD Center prior to requesting the domain
-from the OCF. In general, the subdomain must reasonably and uniquely identify
-the student group that is requesting it, and not be easily confused with another
-group or University department or resource.
+- **Relevant domain name**: Registered Student Organizations may only use
+  domains or request subdomains that are the officially recognized name of the
+  group or a recognizable shortened version of the official name. Exceptions to
+  this rule must be approved by the LEAD Center prior to requesting the domain
+  from the OCF. In general, the subdomain must reasonably and uniquely identify
+  the student group that is requesting it, and not be easily confused with another
+  group or University department or resource.
 
 [offsite]: https://offsitehosting.berkeley.edu/
 
 ### Hosting badge
 
-All virtual hosts on the OCF must include an [OCF banner](/docs/services/vhost/badges) on the front page that links to the [OCF home page](/). The banner must be noticeable without undue effort.  The hosting
+All virtual hosts on the OCF must include an [OCF banner](/docs/services/vhost/badges) on the front page that links to the [OCF home page](/). The banner must be noticeable without undue effort. The hosting
 badge not only attributes the OCF but also distinguishes it from sites hosted
 by University departments.
 
@@ -161,7 +158,7 @@ If your OCF account is found in violation of OCF policies, including but not
 limited to the virtual hosting policies in this document, your account and/or
 vhost may be disabled, depending on the cause of the violation. If your vhost
 is disabled you will see [this](http://unavailable.ocf.berkeley.edu/) landing
-page in place of your vhost.  If you would like to request a domain that points
+page in place of your vhost. If you would like to request a domain that points
 to a currently disabled vhost, please contact us for more information.
 
 ### Reclamation of virtual hosts
@@ -172,10 +169,10 @@ for an inactive RSO) may be reclaimed by the OCF. This means that the domain
 name will no longer be reserved for the group or individual that previously
 used it, and the domain may be claimed by others. If the domain is claimed by
 another group or individual after is has been reclaimed, the original group
-will not be able to reclaim it unless it becomes available again.  If the
+will not be able to reclaim it unless it becomes available again. If the
 virtual host has been disabled by the explicit request of the account holder,
 or if the account has lost eligibility for virtual hosting, then the virtual
-host may be reclaimed immediately.  Finally, if the virtual host was disabled
+host may be reclaimed immediately. Finally, if the virtual host was disabled
 for violating [account](/docs/services/account/account-policies) or vhost
 policy, before reclaiming the vhost, OCF staff will make an effort to contact
 the group which holds it. If, in two weeks, we receive no response or OCF staff
@@ -190,7 +187,7 @@ If you wish to rename your virtual host (e.g. switch from
 something.berkeley.edu to somethingelse.berkeley.edu), you must provide a
 compelling reason for doing so, such as a change in the name of your group. In
 this case, you may contact us to request a virtual host at your new URL. If the
-request is approved, you will be granted the new virtual host.  If both virtual
+request is approved, you will be granted the new virtual host. If both virtual
 hosts are direct subdomains of berkeley.edu, then you will be allowed to keep
 your existing virtual host at its current URL until the end of the semester
 following the rename, after which it will be reclaimed and eligible for

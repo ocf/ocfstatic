@@ -9,9 +9,9 @@ SSH/SFTP.
 
 We support the following commonly used shell account tools (to name a few):
 
-*   Subversion, Git, and Mercurial: version control
-*   cron and at: execute commands on a periodic or scheduled basis
-*   vim and emacs: powerful and extensible text editors
+- Subversion, Git, and Mercurial: version control
+- cron and at: execute commands on a periodic or scheduled basis
+- vim and emacs: powerful and extensible text editors
 
 Most SSH/SFTP clients will prompt you to accept an unknown key when you first
 connect. Our SSH fingerprint can be used to verify that you're connecting to
@@ -47,8 +47,8 @@ On Mac OS X or Linux, enter in the terminal:
 
 On Windows, use [PuTTY][putty] (download the `putty.exe` file):
 
-* Host Name: `ssh.ocf.berkeley.edu`
-* Port: 22
+- Host Name: `ssh.ocf.berkeley.edu`
+- Port: 22
 
 [putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
@@ -73,11 +73,11 @@ you can use the command line utility `sftp`, or a graphical program such as
 
 Otherwise, use the following information in your SFTP client.
 
-* Protocol: SFTP (or SSH)
-* Host Name: `ssh.ocf.berkeley.edu`
-* Port: 22
+- Protocol: SFTP (or SSH)
+- Host Name: `ssh.ocf.berkeley.edu`
+- Port: 22
 
-## Disk quotas  {disk_quotas}
+## Disk quotas {disk_quotas}
 
 <!-- As amended by the Board of Directors on December 1, 2015. -->
 
@@ -85,7 +85,7 @@ Currently, accounts are limited to 5 GB of disk usage under the home and web
 directories. You can check your disk usage by running `quota -v` over SSH or
 [[from your browser|commands]].
 
-## Unattended processes  {unattended_processes}
+## Unattended processes {unattended_processes}
 
 <!-- As established by the Board of Directors on April 17, 2017. SM can -->
 <!-- unilaterally amend. -->

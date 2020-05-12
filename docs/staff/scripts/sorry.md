@@ -16,8 +16,7 @@ information, or for myriad other reasons.
 
 Sorrying a user changes their login shell to the sorryshell,
 (/opt/share/utils/bin/sorried), copies the sorry file (containing the reason
-they were sorried) to ~user/.sorry, `chmod 000`'s the user's httpdir, `chmod
-500`'s the user's homedir, and adds the user to the "sorry" group, before
+they were sorried) to ~user/.sorry, `chmod 000`'s the user's httpdir, `chmod 500`'s the user's homedir, and adds the user to the "sorry" group, before
 emailing them with the reason they were sorried. If a sorried user attempts to
 log in, they will be rebuffed.
 
