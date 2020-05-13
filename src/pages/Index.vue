@@ -36,7 +36,7 @@
                   <span v-else class="has-text-danger">Closed</span>
                 </p>
                 <p class="subtitle">
-                  Today's hours: {{ hours }}
+                  <span> Today's hours: {{ hours }} </span>
                   <g-link to="/staff-hours" class="span">
                     See more »
                   </g-link>
@@ -50,14 +50,14 @@
               </article>
               <article class="tile is-child box home-content">
                 <p class="title">Staff News</p>
-                <p class="subtitle is-spaced ">
+                <p class="subtitle">
                   <a href="https://status.ocf.berkeley.edu/">More updates »</a>
                 </p>
                 <div v-for="item in blogPosts" :key="item.id">
                   <p class="title is-5">
-                    <a :href="item.link"></a>{{ item.title }}
+                    {{ item.title }}<a :href="item.link"> »</a>
                   </p>
-                  <p class="subtitle is-6 is-spaced ">
+                  <p class="subtitle is-6">
                     {{ formatBlogTime(item.published) }}
                   </p>
                 </div>
@@ -291,7 +291,8 @@ export default {
         month: "long",
         day: "numeric"
       });
-    }
+    },
+    formatLabHours(hours) {}
   }
 };
 </script>

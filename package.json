@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "gridsome build",
-    "dev": "gridsome develop",
+    "develop": "gridsome develop",
     "explore": "gridsome explore",
     "lint": "npm run format && eslint --ext .vue,.js . --fix",
     "format": "prettier --write '**/*.{vue,js,scss,css,json,md}'"
