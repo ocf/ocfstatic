@@ -12,7 +12,7 @@
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.5.0",
-    "@mdi/font": "^5.1.45",
+    "@mdi/font": "^5.2.45",
     "axios": "^0.19.2",
     "buefy": "^0.8.18",
     "bulma-divider": "^0.2.0",
