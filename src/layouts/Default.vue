@@ -66,9 +66,11 @@
         <br />
         <g-link class="subtitle is-6" to="/stats">Stats</g-link>
         <br />
-        <a class="subtitle is-6">Board Meeting Minutes</a>
+        <a class="subtitle is-6" href="https://www.ocf.berkeley.edu/~staff/bod/"
+          >Board Meeting Minutes</a
+        >
         <br />
-        <g-link class="subtitle is-6" to="/">Manage My Account</g-link>
+        <g-link class="subtitle is-6" to="/account">Manage My Account</g-link>
       </div>
       <div class="column content has-text-centered is-size-7">
         <!-- Use line breaks to avoid line spacing. -->

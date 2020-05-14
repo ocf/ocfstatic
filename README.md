@@ -8,7 +8,7 @@ A new website for the OCF.
 # Getting set up
 $ npm install
 # Run dev server
-$ npm run dev
+$ npm run develop
 # Build
 $ npm run build
 # Lint

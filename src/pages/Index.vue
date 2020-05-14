@@ -36,16 +36,17 @@
                   <span v-else class="has-text-danger">Closed</span>
                 </p>
                 <p class="subtitle">
-                  <span> Today's hours: {{ hours }} </span>
+                  <span> Today's hours: {{ formatLabHours(hours) }} </span>
                   <g-link to="/staff-hours" class="span">
                     See more »
                   </g-link>
                 </p>
                 <div class="content">
                   <p>
-                    There are currently 5 people in the lab, including 4 staff:
+                    There are currently {{ numUsersInLab }} people in the lab,
+                    including {{ staffInLab.length }} staff:
                   </p>
-                  <p>c⁠ooperc, f⁠ydai, r⁠rchan, v⁠aibhavj</p>
+                  <p>{{ staffInLab }}</p>
                 </div>
               </article>
               <article class="tile is-child box home-content">
@@ -158,7 +159,7 @@
                     <a href="/docs/services/hpc/">High-performance computing</a>
                     on our GPU server
                   </li>
-                  <li>...and <a href="/docs/services/">lots more!</a></li>
+                  <li>...and <a href="/docs/">lots more!</a></li>
                 </ul>
                 <p>
                   We hold
@@ -252,7 +253,9 @@ export default {
   data() {
     return {
       hours: [],
-      blogPosts: []
+      blogPosts: [],
+      numUsersInLab: null,
+      staffInLab: []
     };
   },
   mounted() {
@@ -266,6 +269,8 @@ export default {
     );
     this.setHoursTextToday();
     this.setBlogPosts();
+    this.setNumUsersInLab();
+    this.setStaffInLab();
   },
   methods: {
     async setHoursTextToday() {
@@ -292,7 +297,23 @@ export default {
         day: "numeric"
       });
     },
-    formatLabHours(hours) {}
+    formatLabHours(hours) {
+      if (!hours) {
+        return "None";
+      } else {
+        return hours.map(pair => pair[0] + "-" + pair[1]).join(", ");
+      }
+    },
+    async setNumUsersInLab() {
+      this.numUsersInLab = await this.$http
+        .get(this.$static.metadata.apiUrl + "lab/num_users")
+        .then(response => response.data);
+    },
+    async setStaffInLab() {
+      this.staffInLab = await this.$http
+        .get(this.$static.metadata.apiUrl + "lab/staff")
+        .then(response => response.data.join(", "));
+    }
   }
 };
 </script>
