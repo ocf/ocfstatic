@@ -27,7 +27,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-gridsome": "^1.4.10",
+    "eslint-plugin-gridsome": "^1.4.11",
     "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
