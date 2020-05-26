@@ -32,6 +32,16 @@ module.exports = {
         ],
         searchFields: ["title", "content"]
       }
+    },
+    {
+      use: "@gridsome/plugin-sitemap",
+      options: {
+        config: {
+          "/staff-hours": {
+            changefreq: "weekly"
+          }
+        }
+      }
     }
   ],
   transformers: {
