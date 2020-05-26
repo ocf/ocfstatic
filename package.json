@@ -12,7 +12,7 @@
     "@gridsome/plugin-sitemap": "^0.2.3",
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.5.0",
+    "@gridsome/transformer-remark": "^0.6.0",
     "@mdi/font": "^5.3.45",
     "axios": "^0.19.2",
     "buefy": "^0.8.20",
