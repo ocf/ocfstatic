@@ -3,12 +3,9 @@
     <div class="card">
       <div class="card-content">
         <div class="media">
-          <div v-if="hash" class="media-left">
+          <div v-if="selectedEvent.email" class="media-left">
             <figure class="image is-64x64">
-              <g-image
-                :src="'https://www.gravatar.com/avatar/' + hash"
-                alt="Image"
-              />
+              <gravatar-pic :email="selectedEvent.email" />
             </figure>
           </div>
           <div class="media-content">
@@ -30,8 +27,11 @@
 </template>
 
 <script>
-import md5 from "md5";
+import GravatarPic from "~/components/GravatarPic.vue";
 export default {
+  components: {
+    GravatarPic
+  },
   props: {
     showModal: Boolean,
     selectedEvent: {
@@ -47,9 +47,6 @@ export default {
       set(val) {
         this.$emit("update:showModal", val);
       }
-    },
-    hash() {
-      return this.selectedEvent.email ? md5(this.selectedEvent.email) : "";
     }
   },
   methods: {

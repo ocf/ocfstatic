@@ -48,11 +48,14 @@
           <g-link class="navbar-item" to="/docs/internal/contact">
             Contact Us
           </g-link>
-          <g-link class="navbar-item" to="/login" tag="span">
-            <b-button outlined type="is-link">
+          <div class="navbar-item">
+            <div v-if="user">
+              <profile :user="user" />
+            </div>
+            <b-button v-else outlined type="is-link" @click="authenticate">
               Login
             </b-button>
-          </g-link>
+          </div>
         </div>
       </div>
     </nav>
@@ -95,6 +98,8 @@
 <script>
 import Logo from "~/components/Logo.vue";
 import Penguin from "~/assets/svg/penguin.svg";
+import Profile from "~/components/Profile.vue";
+import store from "~/store.js";
 
 export default {
   metaInfo: {
@@ -104,7 +109,8 @@ export default {
   },
   components: {
     Logo,
-    Penguin
+    Penguin,
+    Profile
   },
   data() {
     return {
@@ -121,6 +127,16 @@ export default {
         { name: "High Performance Computing", route: "/docs/services/hpc" }
       ]
     };
+  },
+  computed: {
+    user() {
+      return store.user;
+    }
+  },
+  methods: {
+    authenticate() {
+      store.keycloak.login();
+    }
   }
 };
 </script>
