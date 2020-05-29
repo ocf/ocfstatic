@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ocfstatic-service
+spec:
+  selector:
+    app: ocfstatic
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ocfstatic-deployment
+  labels:
+    app: ocfstatic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ocfstatic
+  template:
+    metadata:
+      labels:
+        app: ocfstatic
+    spec:
+      containers:
+        - name: ocfstatic
+          image: "docker.ocf.berkeley.edu/ocfstatic:<%= version%>"
+          resources:
+            limits:
+              memory: 256Mi
+              cpu: 500m
+          ports:
+            - containerPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: virtual-host-ingress
+spec:
+  rules:
+    - host: ocfstatic.ocf.berkeley.edu
+      http:
+        paths:
+          - backend:
+              serviceName: ocfstatic-service
+              servicePort: 80

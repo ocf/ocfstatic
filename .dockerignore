@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.cache
+.dockerignore
+Dockerfile
+.DS_Store
+src/.temp
+.gitignore
+.env
