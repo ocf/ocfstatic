@@ -6,27 +6,30 @@ import Buefy from "buefy";
 import "~/assets/styles.scss"; // Our css options on top of bulma styles
 import "bulma-divider/dist/css/bulma-divider.min.css";
 import "@mdi/font/css/materialdesignicons.min.css";
-import Axios from "axios";
+import axios from "axios";
+import createAuthRefreshInterceptor from "axios-auth-refresh";
 import store from "~/store.js";
 
 export default async function(Vue, { isClient }) {
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
 
-  Vue.prototype.$http = Axios;
+  Vue.prototype.$http = axios;
   Vue.use(Buefy);
 
   function tokenInterceptor() {
-    Vue.prototype.$http.interceptors.request.use(
+    axios.interceptors.request.use(
       config => {
         config.headers.Authorization = `Bearer ${store.keycloak.token}`;
         return config;
       },
-      error => {
-        return Promise.reject(error);
-      }
+      error => Promise.reject(error)
     );
   }
+  const refreshAuthLogic = () =>
+    store.keycloak.updateToken(5).then(() => {
+      return Promise.resolve();
+    });
 
   // Init Keycloak on the client.
   if (isClient) {
@@ -42,12 +45,13 @@ export default async function(Vue, { isClient }) {
             window.location.origin + "/silent-check-sso.html"
         })
       ) {
+        tokenInterceptor();
+        createAuthRefreshInterceptor(axios, refreshAuthLogic);
         try {
           store.user = await store.keycloak.loadUserProfile();
         } catch (err) {
           console.error(`Failed to load user profile: ${err}`);
         }
-        tokenInterceptor();
       } else {
         console.error("Authentication failed");
       }

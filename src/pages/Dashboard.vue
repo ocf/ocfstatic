@@ -20,7 +20,7 @@ export default {
   methods: {
     async auth_request_test() {
       this.test = await this.$http
-        .get("https://rejection.ocf.berkeley.edu:8000/")
+        .get("http://localhost:8000/")
         .then(response => response.data);
     }
   }

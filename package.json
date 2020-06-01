@@ -9,21 +9,22 @@
     "format": "prettier --write '**/*.{vue,js,scss,css,json,md}'"
   },
   "dependencies": {
-    "@gridsome/plugin-sitemap": "^0.2.3",
+    "@gridsome/plugin-sitemap": "^0.3.0",
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.5.0",
+    "@gridsome/transformer-remark": "^0.6.0",
     "@mdi/font": "^5.3.45",
     "axios": "^0.19.2",
+    "axios-auth-refresh": "^2.2.6",
     "buefy": "^0.8.20",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
-    "gridsome": "^0.7.14",
-    "gridsome-plugin-flexsearch": "^0.1.20",
+    "gridsome": "^0.7.15",
+    "gridsome-plugin-flexsearch": "^1.0.1",
     "keycloak-js": "^10.0.1",
     "md5": "^2.2.1",
     "scrollreveal": "^4.0.6",
-    "vue-cal": "^3.2.6"
+    "vue-cal": "^3.2.8"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -32,7 +33,7 @@
     "eslint-plugin-gridsome": "^1.4.12",
     "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.6",
+    "lint-staged": "^10.2.7",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "vue-eslint-parser": "^7.1.0",

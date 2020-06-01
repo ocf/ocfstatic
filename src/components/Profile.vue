@@ -1,19 +1,28 @@
 <template>
-  <b-dropdown mobile-modal hoverable position="is-bottom-left" aria-role="list">
-    <g-link slot="trigger" to="/dashboard" tag="span">
-      <b-button icon-right="menu-down">
-        <figure class="image is-32x32 profile">
-          <gravatar-pic :email="user.email" />
-        </figure>
-      </b-button>
-    </g-link>
-
-    <b-dropdown-item custom aria-role="listitem"
-      >Signed in as <b>{{ user.username }}</b></b-dropdown-item
+  <b-dropdown mobile-modal position="is-bottom-left" aria-role="list">
+    <b-button
+      slot="trigger"
+      slot-scope="{ active }"
+      :icon-right="active ? 'menu-up' : 'menu-down'"
     >
+      <figure class="image is-32x32 profile">
+        <gravatar-pic :email="user.email" />
+      </figure>
+    </b-button>
+    <b-dropdown-item custom aria-role="listitem">
+      Signed in as <b>{{ user.username }}</b>
+    </b-dropdown-item>
     <hr class="dropdown-divider" />
-    <b-dropdown-item aria-role="listitem">Example 1</b-dropdown-item>
-    <b-dropdown-item aria-role="listitem">Example 2</b-dropdown-item>
+    <b-dropdown-item aria-role="listitem">
+      <g-link to="/dashboard" tag="span">
+        <div class="media">
+          <b-icon class="media-left" icon="view-dashboard" />
+          <div class="media-content">
+            <h3>Dashboard</h3>
+          </div>
+        </div>
+      </g-link>
+    </b-dropdown-item>
     <b-dropdown-item aria-role="listitem">
       <div class="media">
         <b-icon class="media-left" icon="cog" />
