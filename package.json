@@ -19,7 +19,7 @@
     "buefy": "^0.8.20",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
-    "gridsome": "^0.7.15",
+    "gridsome": "^0.7.16",
     "gridsome-plugin-flexsearch": "^1.0.1",
     "keycloak-js": "^10.0.1",
     "md5": "^2.2.1",
