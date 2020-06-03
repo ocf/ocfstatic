@@ -15,7 +15,7 @@
     "@gridsome/transformer-remark": "^0.6.0",
     "@mdi/font": "^5.3.45",
     "axios": "^0.19.2",
-    "axios-auth-refresh": "^2.2.6",
+    "axios-auth-refresh": "^2.2.7",
     "buefy": "^0.8.20",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
