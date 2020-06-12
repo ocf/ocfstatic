@@ -33,7 +33,7 @@
     "eslint-plugin-gridsome": "^1.4.12",
     "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.9",
+    "lint-staged": "^10.2.10",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "vue-eslint-parser": "^7.1.0",
