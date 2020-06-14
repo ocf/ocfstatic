@@ -21,7 +21,7 @@
     "bulma-timeline": "^3.0.4",
     "gridsome": "^0.7.17",
     "gridsome-plugin-flexsearch": "^1.0.1",
-    "keycloak-js": "^10.0.1",
+    "keycloak-js": "^10.0.2",
     "md5": "^2.2.1",
     "scrollreveal": "^4.0.6",
     "vue-cal": "^3.5.1"
