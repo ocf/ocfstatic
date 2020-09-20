@@ -105,4 +105,7 @@ export default {
 .reverse-row-order {
   flex-direction: row-reverse;
 }
+.column {
+  min-width: 0;
+}
 </style>
