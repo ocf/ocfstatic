@@ -60,7 +60,7 @@
       </div>
     </nav>
     <slot />
-    <footer class="footer columns is-vcentered">
+    <footer class="footer columns is-vcentered w-100">
       <div class="column is-4">
         <p class="title is-4" style="margin-bottom: 0.5rem">Quick Links</p>
         <g-link class="subtitle is-6" to="/">Home</g-link>
