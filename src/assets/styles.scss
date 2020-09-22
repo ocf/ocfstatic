@@ -28,4 +28,21 @@ $footer-padding: 2rem 3rem 2rem;
 
 // Import Bulma and Buefy styles
 @import "~bulma";
+// An extremely hacky fix to stop bulma's number class from interfering with
+// our markdown syntax highlighting. We can't even not import it since there are
+// other things we want in the bulma/sass/elements/other.sass file :(
+.number {
+  align-items: initial;
+  background-color: initial;
+  border-radius: initial;
+  display: initial;
+  font-size: initial;
+  height: initial;
+  justify-content: initial;
+  margin-right: initial;
+  min-width: initial;
+  padding: initial;
+  text-align: initial;
+  vertical-align: initial;
+}
 @import "~buefy/src/scss/buefy";
