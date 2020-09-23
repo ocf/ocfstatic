@@ -17,7 +17,10 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Doc",
-        path: "docs/**/*.md"
+        path: "docs/**/*.md",
+        remark: {
+          autolinkClassName: " "
+        }
       }
     },
     {
