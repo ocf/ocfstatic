@@ -36,11 +36,11 @@
 </template>
 
 <static-query>
-  query {
-    metadata {
-      apiUrl
-    }
+query {
+  metadata {
+    apiUrl
   }
+}
 </static-query>
 
 <script>

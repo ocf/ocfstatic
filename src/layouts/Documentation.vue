@@ -36,16 +36,16 @@
 </template>
 
 <static-query>
-  query {
-    docs: allDoc(sortBy: "path", order: ASC) {
-      edges {
-        node {
-          title
-          path
-        }
+query {
+  docs: allDoc(sortBy: "path", order: ASC) {
+    edges {
+      node {
+        title
+        path
       }
     }
   }
+}
 </static-query>
 
 <script>

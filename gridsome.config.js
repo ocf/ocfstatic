@@ -37,14 +37,7 @@ module.exports = {
       }
     },
     {
-      use: "@gridsome/plugin-sitemap",
-      options: {
-        config: {
-          "/staff-hours": {
-            changefreq: "weekly"
-          }
-        }
-      }
+      use: "@gridsome/plugin-sitemap"
     }
   ],
   transformers: {

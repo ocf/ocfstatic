@@ -36,17 +36,15 @@
                   <span v-else class="has-text-danger">Closed</span>
                 </p>
                 <p class="subtitle">
-                  <span> Today's hours: {{ formatLabHours(hours) }} </span>
-                  <g-link to="/staff-hours" class="span">
-                    See more »
-                  </g-link>
+                  <span> Today's hours: {{ hours }} </span>
+                  <g-link to="/staff-hours" class="span"> See more » </g-link>
                 </p>
                 <div class="content">
                   <p>
                     There are currently {{ numUsersInLab }} people in the lab,
                     including {{ staffInLab.length }} staff:
                   </p>
-                  <p>{{ staffInLab }}</p>
+                  <p>{{ formatStaffInLab(staffInLab) }}</p>
                 </div>
               </article>
               <article class="tile is-child box home-content">
@@ -231,11 +229,11 @@
 </template>
 
 <static-query>
-  query {
-    metadata {
-      apiUrl
-    }
+query {
+  metadata {
+    apiUrl
   }
+}
 </static-query>
 
 <script>
@@ -297,12 +295,9 @@ export default {
         day: "numeric"
       });
     },
-    formatLabHours(hours) {
-      if (!hours) {
-        return "None";
-      } else {
-        return hours.map(pair => pair[0] + "-" + pair[1]).join(", ");
-      }
+    formatStaffInLab(staffList) {
+      // We only want the first item, the name
+      return staffList.map(staff => staff[0]).join(", ");
     },
     async setNumUsersInLab() {
       this.numUsersInLab = await this.$http
@@ -312,7 +307,7 @@ export default {
     async setStaffInLab() {
       this.staffInLab = await this.$http
         .get(this.$static.metadata.apiUrl + "lab/staff")
-        .then(response => response.data.join(", "));
+        .then(response => response.data);
     }
   }
 };

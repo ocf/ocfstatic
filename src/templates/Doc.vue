@@ -30,25 +30,25 @@
 </template>
 
 <page-query>
-  query Doc($path: String!) {
-    doc(path: $path) {
-      title
-      content
-      path
-      subtitles: headings(depth: h2) {
-        value
-        anchor
-      }
+query Doc($path: String!) {
+  doc(path: $path) {
+    title
+    content
+    path
+    subtitles: headings(depth: h2) {
+      value
+      anchor
     }
   }
+}
 </page-query>
 
 <static-query>
-  query {
-    metadata {
-      githubUrl
-    }
+query {
+  metadata {
+    githubUrl
   }
+}
 </static-query>
 
 <script>
