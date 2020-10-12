@@ -41,20 +41,39 @@
           />
         </div>
         <div class="column is-three-quarters">
+          <h3 class="title is-3">
+            Joining the OCF is an awesome way to learn!
+          </h3>
           <div class="columns">
             <div class="column is-third">
               <!--<div class="content">-->
-              <h2 class="title is-2">Hello</h2>
-              <p>Lap aorwe apeg aslfkgj awklej wlrkgja sldfkgjawkaf d</p>
+              <h4 class="title is-4">
+                We love talking tech and learning new things.
+              </h4>
+              <p>
+                We use our weekly board meetings and staff hours not just to
+                make decisions, but also to learn more about *nix and free
+                software.
+              </p>
               <!--</div>-->
             </div>
             <div class="column is-third">
-              <h2>Hello</h2>
-              <p>Lap aorwe apeg aslfkgj awklej wlrkgja sldfkgjawkaf d</p>
+              <h4 class="title is-4">
+                We're totally open and super-inclusive!
+              </h4>
+              <p>
+                Our members have a wide range of majors and technical
+                backgrounds. There are tons of ways to learn and have fun!
+              </p>
             </div>
             <div class="column is-third">
-              <h2>Hello</h2>
-              <p>Lap aorwe apeg aslfkgj awklej wlrkgja sldfkgjawkaf d</p>
+              <h4 class="title is-4">
+                We've got a perfect sandbox to poke around.
+              </h4>
+              <p>
+                In addition to our powerful servers and desktops, staff get
+                access to their own private server to hoze.
+              </p>
             </div>
           </div>
         </div>
