@@ -28,8 +28,8 @@
               </p>
               <p><strong>When:</strong> Every Monday at 8:10pm</p>
               <p>
-                <strong>Where: </strong
-                ><a href="https://ocf.io/meet">Google Meet</a>
+                <strong>Where: </strong>
+                <a href="https://ocf.io/meet">Google Meet</a>
               </p>
             </div>
           </div>
@@ -78,6 +78,50 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next section: services provided-->
+    <section class="hero is-primary">
+      <div class="hero-body columns">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3 has-text-centered">
+            We provide lots of cool services to the Berkeley community!
+          </h3>
+          <div class="columns">
+            <div class="column is-third">
+              <h4 class="title is-4">
+                We love talking tech and learning new things.
+              </h4>
+              <p>
+                We use our weekly board meetings and staff hours not just to
+                make decisions, but also to learn more about *nix and free
+                software.
+              </p>
+            </div>
+            <div class="column is-third">
+              <h4 class="title is-4">
+                We're totally open and super-inclusive!
+              </h4>
+              <p>
+                Our members have a wide range of majors and technical
+                backgrounds. There are tons of ways to learn and have fun!
+              </p>
+            </div>
+            <div class="column is-third">
+              <h4 class="title is-4">
+                We've got a perfect sandbox to poke around.
+              </h4>
+              <p>
+                In addition to our powerful servers and desktops, staff get
+                access to their own private server to hoze.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-quarter">
+          <g-image src="~/assets/lab.jpg" class="card" />
         </div>
       </div>
     </section>
