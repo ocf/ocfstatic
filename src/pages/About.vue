@@ -37,19 +37,19 @@
       </div>
     </section>
     <section class="hero is-warning">
-      <div class="hero-body columns">
-        <div class="column is-quarter">
+      <div class="hero-body columns is-centered">
+        <div class="column is-one-quarter">
           <img
             src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F1299823%2Fsize%2Ftl-horizontal_main%2F7-weird-stock-images-of-people-struggling-with-basic-cooking&f=1&nofb=1"
             class="card"
           />
         </div>
-        <div class="column is-three-quarters">
-          <h3 class="title is-3 has-text-centered">
+        <div class="column is-half">
+          <h3 class="title is-3">
             Joining the OCF is an awesome way to learn!
           </h3>
           <div class="columns">
-            <div class="column is-third">
+            <div class="column is-half">
               <h4 class="title is-4">
                 We love talking tech and learning new things.
               </h4>
@@ -59,22 +59,13 @@
                 software.
               </p>
             </div>
-            <div class="column is-third">
+            <div class="column is-half">
               <h4 class="title is-4">
                 We're totally open and super-inclusive!
               </h4>
               <p>
                 Our members have a wide range of majors and technical
                 backgrounds. There are tons of ways to learn and have fun!
-              </p>
-            </div>
-            <div class="column is-third">
-              <h4 class="title is-4">
-                We've got a perfect sandbox to poke around.
-              </h4>
-              <p>
-                In addition to our powerful servers and desktops, staff get
-                access to their own private server to hoze.
               </p>
             </div>
           </div>
