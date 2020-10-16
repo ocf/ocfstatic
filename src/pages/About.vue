@@ -6,7 +6,7 @@
           <h1 class="title is-1">
             About Us
           </h1>
-          <div class="columns">
+          <div class="columns is-8">
             <div class="column is-half">
               <h2 class="subtitle">What We Do</h2>
               <p>
@@ -36,37 +36,37 @@
         </div>
       </div>
     </section>
-    <section class="hero is-warning">
-      <div class="hero-body columns is-centered">
-        <div class="column is-one-quarter">
-          <img
-            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F1299823%2Fsize%2Ftl-horizontal_main%2F7-weird-stock-images-of-people-struggling-with-basic-cooking&f=1&nofb=1"
-            class="card"
-          />
-        </div>
-        <div class="column is-half">
-          <h3 class="title is-3">
-            Joining the OCF is an awesome way to learn!
-          </h3>
-          <div class="columns">
-            <div class="column is-half">
-              <h4 class="title is-4">
-                We love talking tech and learning new things.
-              </h4>
-              <p>
-                We use our weekly board meetings and staff hours not just to
-                make decisions, but also to learn more about *nix and free
-                software.
-              </p>
-            </div>
-            <div class="column is-half">
-              <h4 class="title is-4">
-                We're totally open and super-inclusive!
-              </h4>
-              <p>
-                Our members have a wide range of majors and technical
-                backgrounds. There are tons of ways to learn and have fun!
-              </p>
+    <section class="section card">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <img
+              src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F1299823%2Fsize%2Ftl-horizontal_main%2F7-weird-stock-images-of-people-struggling-with-basic-cooking&f=1&nofb=1"
+              class="card"
+            />
+          </div>
+          <div class="column is-half">
+            <div class="columns is-centered is-vcentered">
+              <div class="column is-three-quarters">
+                <h3 class="title is-3">
+                  Joining the OCF is an awesome way to learn!
+                </h3>
+                <h4 class="title is-4">
+                  We love talking tech and learning new things.
+                </h4>
+                <p>
+                  We use our weekly board meetings and staff hours not just to
+                  make decisions, but also to learn more about *nix and free
+                  software.
+                </p>
+                <h4 class="title is-4">
+                  We're totally open and super-inclusive!
+                </h4>
+                <p>
+                  Our members have a wide range of majors and technical
+                  backgrounds. There are tons of ways to learn and have fun!
+                </p>
+              </div>
             </div>
           </div>
         </div>
