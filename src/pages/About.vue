@@ -6,10 +6,10 @@
           <h1 class="title is-1">
             About Us
           </h1>
-          <div class="columns is-8">
+          <div class="columns is-8 is-variable">
             <div class="column is-half">
               <h2 class="subtitle">What We Do</h2>
-              <p>
+              <p class="is-size-5">
                 We're a student organization dedicated to providing free
                 computing for all UC Berkeley students, faculty, and staff. We
                 run a super awesome computer lab on southside, have a wicked set
@@ -21,13 +21,15 @@
               <h2 class="subtitle">
                 Staff Meetings
               </h2>
-              <p>
+              <p class="is-size-5">
                 OCF Staff meet to discuss technology, learn from each other, and
                 work on OCF projects. Drop-in visitors are always welcome,
                 especially those interested in joining the staff team!
               </p>
-              <p><strong>When:</strong> Every Monday at 8:10pm</p>
-              <p>
+              <p class="is-size-4">
+                <strong>When:</strong> Every Monday at 8:10pm
+              </p>
+              <p class="is-size-4">
                 <strong>Where: </strong>
                 <a href="https://ocf.io/meet">Google Meet</a>
               </p>
@@ -48,9 +50,9 @@
           <div class="column is-half">
             <div class="columns is-centered is-vcentered">
               <div class="column is-three-quarters">
-                <h3 class="title is-3">
+                <h2 class="title is-2">
                   Joining the OCF is an awesome way to learn!
-                </h3>
+                </h2>
                 <h4 class="title is-4">
                   We love talking tech and learning new things.
                 </h4>
