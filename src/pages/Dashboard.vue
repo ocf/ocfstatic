@@ -1,28 +1,38 @@
 <template>
-  <Layout>
-    {{ test }}
-  </Layout>
+  <dashboard>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+    <div>test</div>
+    <b-button>test</b-button>
+  </dashboard>
 </template>
 
 <script>
+import dashboard from "@/layouts/Dashboard.vue";
 export default {
   metaInfo: {
     title: "Dashboard"
   },
-  data() {
-    return {
-      test: null
-    };
-  },
-  mounted() {
-    this.auth_request_test();
-  },
-  methods: {
-    async auth_request_test() {
-      this.test = await this.$http
-        .get("http://localhost:8000/user")
-        .then(response => response.data);
-    }
+  components: {
+    dashboard
   }
 };
 </script>

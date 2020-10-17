@@ -1,7 +1,7 @@
 <template>
   <ul class="menu-list">
     <li v-for="(value, key) in items" :key="key">
-      <g-link :class="{ 'is-active': path === value.path }" :to="value.path">
+      <g-link exact-active-class="is-active" :to="value.path">
         <div class="level">
           {{ value.title }}
           <b-icon

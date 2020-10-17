@@ -33,7 +33,7 @@
     </b-dropdown-item>
     <hr class="dropdown-divider" />
     <b-dropdown-item aria-role="listitem">
-      <div class="media" @click="logout">
+      <div class="media" @click="$keycloak.logout()">
         <b-icon class="media-left" icon="logout" />
         <div class="media-content">
           <h3>Logout</h3>
@@ -45,7 +45,6 @@
 
 <script>
 import GravatarPic from "~/components/GravatarPic.vue";
-import store from "~/store.js";
 
 export default {
   components: {
@@ -55,11 +54,6 @@ export default {
     user: {
       type: Object,
       required: true
-    }
-  },
-  methods: {
-    logout() {
-      store.keycloak.logout();
     }
   }
 };

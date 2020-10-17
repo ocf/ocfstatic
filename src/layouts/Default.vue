@@ -52,7 +52,7 @@
             <div v-if="user">
               <profile :user="user" />
             </div>
-            <b-button v-else outlined type="is-link" @click="authenticate">
+            <b-button v-else outlined type="is-link" @click="$keycloak.login()">
               Login
             </b-button>
           </div>
@@ -60,7 +60,10 @@
       </div>
     </nav>
     <slot />
-    <footer class="footer columns is-vcentered w-100">
+    <footer
+      v-if="!disableFooter"
+      class="footer columns is-marginless is-vcentered w-100"
+    >
       <div class="column is-4">
         <p class="title is-4" style="margin-bottom: 0.5rem">Quick Links</p>
         <g-link class="subtitle is-6" to="/">Home</g-link>
@@ -112,6 +115,12 @@ export default {
     Penguin,
     Profile
   },
+  props: {
+    disableFooter: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       isMenuActive: false,
@@ -131,11 +140,6 @@ export default {
   computed: {
     user() {
       return store.user;
-    }
-  },
-  methods: {
-    authenticate() {
-      store.keycloak.login();
     }
   }
 };

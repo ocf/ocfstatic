@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <template v-slot:navItem>
+    <template #navItem>
       <b-autocomplete
         v-model="searchTerm"
         :data="searchResults"
@@ -11,7 +11,7 @@
         field="title"
         @select="item => $router.push(item.path)"
       >
-        <template v-slot:empty>
+        <template #empty>
           No results found
         </template>
         <template slot-scope="props">
