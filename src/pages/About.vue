@@ -42,15 +42,50 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-half">
+            <g-image src="~/assets/lab.jpg" class="card" />
+          </div>
+          <div class="column is-half">
+            <div class="columns is-centered is-vcentered">
+              <div class="column is-three-quarters">
+                <div class="content">
+                  <h2 class="title is-2 has-text-centered">
+                    Services We Provide
+                  </h2>
+                  <!--
+                  Right now these cards just look pretty but don't do anything
+                  Current goal: when hovering over one of them, change the image to that
+
+
+
+                  -->
+
+                  <p class="card box hover-p">
+                    <strong>Web &amp; Email Hosting</strong>
+                  </p>
+                  <p class="card box"><strong>UNIX Shell Accounts</strong></p>
+                  <p class="card box">
+                    <strong>Free Printing for Members</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section card">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-half">
             <img
-              src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F1299823%2Fsize%2Ftl-horizontal_main%2F7-weird-stock-images-of-people-struggling-with-basic-cooking&f=1&nofb=1"
+              src="http://3.bp.blogspot.com/-l5WiG6Nci34/UVKfPBediVI/AAAAAAAAABk/48mdp61vr5k/s1600/Emperor-Penguins-Couple.jpg"
               class="card"
             />
           </div>
           <div class="column is-half">
             <div class="columns is-centered is-vcentered">
               <div class="column is-three-quarters">
-                <h2 class="title is-2">
+                <h2 class="title is-2 has-text-centered">
                   Joining the OCF is an awesome way to learn!
                 </h2>
                 <h4 class="title is-4">
@@ -75,7 +110,7 @@
       </div>
     </section>
 
-    <!-- Next section: services provided-->
+    <!-- Next section: services provided
     <section class="hero is-primary">
       <div class="hero-body columns">
         <div class="column is-three-quarters">
@@ -117,7 +152,7 @@
           <g-image src="~/assets/lab.jpg" class="card" />
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!--- The timeline -->
 
@@ -143,3 +178,9 @@ export default {
   }
 };
 </script>
+<style scoped>
+.hover-p:hover {
+  background-color: #e1e1e1;
+  transition: background-color 1s;
+}
+</style>
