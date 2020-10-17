@@ -18,6 +18,6 @@ export default async function(Vue, { isClient }) {
   Vue.use(Buefy);
 
   if (isClient) {
-    initKeycloak();
+    initKeycloak(Vue);
   }
 }
