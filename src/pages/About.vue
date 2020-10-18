@@ -183,7 +183,7 @@ export default {
     mouseOverChangeImage() {
       // console.log("This should be printing");
       document.getElementById("changethis").src =
-        "/assets/img/penguinsticker.png";
+        "/assets/img/nikitpenguin.png";
     }
   }
 };
