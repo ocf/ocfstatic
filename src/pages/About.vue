@@ -1,7 +1,4 @@
 <template>
-  <!--
-  <script src="test.js" type="application/javascript"></script>
--->
   <Layout>
     <section class="section">
       <div class="container">
@@ -54,13 +51,6 @@
                   <h2 class="title is-2 has-text-centered">
                     Services We Provide
                   </h2>
-                  <!--
-                  Right now these cards just look pretty but don't do anything
-                  Current goal: when hovering over one of them, change the image to
-                  an image that's relevant and with some text for info
-
-
-                  -->
 
                   <p
                     class="card box"
@@ -125,50 +115,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Next section: services provided
-    <section class="hero is-primary">
-      <div class="hero-body columns">
-        <div class="column is-three-quarters">
-          <h3 class="title is-3 has-text-centered">
-            We provide lots of cool services to the Berkeley community!
-          </h3>
-          <div class="columns">
-            <div class="column is-third">
-              <h4 class="title is-4">
-                We love talking tech and learning new things.
-              </h4>
-              <p>
-                We use our weekly board meetings and staff hours not just to
-                make decisions, but also to learn more about *nix and free
-                software.
-              </p>
-            </div>
-            <div class="column is-third">
-              <h4 class="title is-4">
-                We're totally open and super-inclusive!
-              </h4>
-              <p>
-                Our members have a wide range of majors and technical
-                backgrounds. There are tons of ways to learn and have fun!
-              </p>
-            </div>
-            <div class="column is-third">
-              <h4 class="title is-4">
-                We've got a perfect sandbox to poke around.
-              </h4>
-              <p>
-                In addition to our powerful servers and desktops, staff get
-                access to their own private server to hoze.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="column is-quarter">
-          <g-image src="~/assets/lab.jpg" class="card" />
-        </div>
-      </div>
-    </section> -->
 
     <!--- The timeline -->
 
