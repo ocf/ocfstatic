@@ -1,4 +1,7 @@
 <template>
+  <!--
+  <script src="test.js" type="application/javascript"></script>
+-->
   <Layout>
     <section class="section">
       <div class="container">
@@ -53,8 +56,8 @@
                   </h2>
                   <!--
                   Right now these cards just look pretty but don't do anything
-                  Current goal: when hovering over one of them, change the image to that
-
+                  Current goal: when hovering over one of them, change the image to
+                  an image that's relevant and with some text for info
 
 
                   -->
