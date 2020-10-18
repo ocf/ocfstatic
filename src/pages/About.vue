@@ -45,7 +45,7 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-half">
-            <img src="@/assets/lab.jpg" class="card" id="changethis" />
+            <img src="/assets/img/cloud.jpg" class="card" id="changethis" />
           </div>
           <div class="column is-half">
             <div class="columns is-centered is-vcentered">
@@ -62,11 +62,24 @@
 
                   -->
 
-                  <p class="card box hover-p" @mouseover="mouseOverChangeImage">
+                  <p
+                    class="card box"
+                    @mouseover="mouseOverChangeImage('/assets/img/cloud.jpg')"
+                  >
                     <strong>Web &amp; Email Hosting</strong>
                   </p>
-                  <p class="card box"><strong>UNIX Shell Accounts</strong></p>
-                  <p class="card box">
+                  <p
+                    class="card box"
+                    @mouseover="
+                      mouseOverChangeImage('/assets/img/unix-shell.jpg')
+                    "
+                  >
+                    <strong>UNIX Shell Accounts</strong>
+                  </p>
+                  <p
+                    class="card box"
+                    @mouseover="mouseOverChangeImage('/assets/img/printer.jpg')"
+                  >
                     <strong>Free Printing for Members</strong>
                   </p>
                 </div>
@@ -180,10 +193,8 @@ export default {
     History
   },
   methods: {
-    mouseOverChangeImage() {
-      // console.log("This should be printing");
-      document.getElementById("changethis").src =
-        "/assets/img/nikitpenguin.png";
+    mouseOverChangeImage(newSrc) {
+      document.getElementById("changethis").src = newSrc;
     }
   }
 };
