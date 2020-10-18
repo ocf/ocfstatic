@@ -45,7 +45,7 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-half">
-            <g-image src="~/assets/lab.jpg" class="card" />
+            <img src="@/assets/lab.jpg" class="card" id="changethis" />
           </div>
           <div class="column is-half">
             <div class="columns is-centered is-vcentered">
@@ -62,7 +62,7 @@
 
                   -->
 
-                  <p class="card box hover-p">
+                  <p class="card box hover-p" @mouseover="mouseOverChangeImage">
                     <strong>Web &amp; Email Hosting</strong>
                   </p>
                   <p class="card box"><strong>UNIX Shell Accounts</strong></p>
@@ -178,6 +178,13 @@ export default {
   },
   components: {
     History
+  },
+  methods: {
+    mouseOverChangeImage() {
+      // console.log("This should be printing");
+      document.getElementById("changethis").src =
+        "/assets/img/penguinsticker.png";
+    }
   }
 };
 </script>
