@@ -146,8 +146,8 @@ export default {
 };
 </script>
 <style scoped>
-.hover-p:hover {
-  background-color: #e1e1e1;
-  transition: background-color 1s;
+p.card:hover {
+  background-color: #e7717d;
+  transition: background-color 0.6s;
 }
 </style>
