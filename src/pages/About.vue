@@ -54,21 +54,27 @@
 
                   <p
                     class="card box"
-                    @mouseover="mouseOverChangeImage('/assets/img/cloud.jpg')"
+                    @click="
+                      mouseOverChangeImage($event, '/assets/img/cloud.jpg')
+                    "
                   >
+                    <!-- Bug: If clicking on the text of the p (i.e select text) it doesn't work)
+                  Probably need to disable text selection (maybe make it a button) -->
                     <strong>Web &amp; Email Hosting</strong>
                   </p>
                   <p
                     class="card box"
-                    @mouseover="
-                      mouseOverChangeImage('/assets/img/unix-shell.jpg')
+                    @click="
+                      mouseOverChangeImage($event, '/assets/img/unix-shell.jpg')
                     "
                   >
                     <strong>UNIX Shell Accounts</strong>
                   </p>
                   <p
                     class="card box"
-                    @mouseover="mouseOverChangeImage('/assets/img/printer.jpg')"
+                    @click="
+                      mouseOverChangeImage($event, '/assets/img/printer.jpg')
+                    "
                   >
                     <strong>Free Printing for Members</strong>
                   </p>
@@ -139,15 +145,24 @@ export default {
     History
   },
   methods: {
-    mouseOverChangeImage(newSrc) {
+    mouseOverChangeImage(elem_clicked, newSrc) {
+      //console.log(elem_clicked.target)
+      var all_cards = document.getElementsByClassName("active-card");
+      for (var i = 0; i < all_cards.length; i++) {
+        all_cards[i].classList.remove("active-card");
+      }
+      elem_clicked.target.classList.add("active-card");
       document.getElementById("changethis").src = newSrc;
     }
   }
 };
 </script>
 <style scoped>
-p.card:hover {
-  background-color: #e7717d;
-  transition: background-color 0.6s;
+p.card {
+  transform: none;
+  transition: transform 0.6s;
+}
+.active-card {
+  transform: translate(-1.75em, 0) !important;
 }
 </style>
