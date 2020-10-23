@@ -62,22 +62,22 @@
                   </h2>
 
                   <p
-                    class="card box"
-                    v-on:click="svc_img = '/assets/img/cloud.jpg'"
+                    class="button card box is-white is-medium active-card"
+                    @click="mouseOverChangeImage(0, '/assets/img/cloud.jpg')"
                   >
-                    <!-- Bug: If clicking on the text of the p (i.e select text) it doesn't work)
-                  Probably need to disable text selection (maybe make it a button) -->
-                    <strong>Web &amp; Email Hosting</strong>
+                    Web &amp; Email Hosting
                   </p>
                   <p
-                    class="card box"
-                    v-on:click="svc_img = '/assets/img/unix-shell.jpg'"
+                    class="button card box is-white is-medium"
+                    @click="
+                      mouseOverChangeImage(1, '/assets/img/unix-shell.jpg')
+                    "
                   >
                     <strong>UNIX Shell Accounts</strong>
                   </p>
                   <p
-                    class="card box"
-                    v-on:click="svc_img = '/assets/img/printer.jpg'"
+                    class="button card box is-white is-medium"
+                    @click="mouseOverChangeImage(2, '/assets/img/printer.jpg')"
                   >
                     <strong>Free Printing for Members</strong>
                   </p>
@@ -153,14 +153,20 @@ export default {
     };
   },
   methods: {
-    mouseOverChangeImage(elem_clicked, newSrc) {
+    mouseOverChangeImage(i_clicked, newSrc) {
       //console.log(elem_clicked.target)
-      var all_cards = document.getElementsByClassName("active-card");
-      for (var i = 0; i < all_cards.length; i++) {
-        all_cards[i].classList.remove("active-card");
+      var all_cards = document.getElementsByClassName(
+        "button card box is-white is-medium"
+      );
+      var active_card = document.getElementsByClassName(
+        "button card box is-white is-medium active-card"
+      );
+      for (var i = 0; i < active_card.length; i++) {
+        active_card[i].classList.remove("active-card");
       }
-      elem_clicked.target.classList.add("active-card");
-      document.getElementById("changethis").src = newSrc;
+      all_cards[i_clicked].classList.add("active-card");
+      this.svc_img = newSrc;
+      // document.getElementById("changethis").src = newSrc;
     }
   }
 };
@@ -169,6 +175,7 @@ export default {
 p.card {
   transform: none;
   transition: transform 0.6s;
+  width: 100%;
 }
 .active-card {
   transform: translate(-1.75em, 0) !important;
