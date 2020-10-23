@@ -42,7 +42,16 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-half">
-            <img src="/assets/img/cloud.jpg" class="card" id="changethis" />
+            <transition name="fade" mode="out-in">
+              <img
+                :src="svc_img"
+                :key="svc_img"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="goTop"
+                alt=""
+              />
+            </transition>
           </div>
           <div class="column is-half">
             <div class="columns is-centered is-vcentered">
@@ -54,9 +63,7 @@
 
                   <p
                     class="card box"
-                    @click="
-                      mouseOverChangeImage($event, '/assets/img/cloud.jpg')
-                    "
+                    v-on:click="svc_img = '/assets/img/cloud.jpg'"
                   >
                     <!-- Bug: If clicking on the text of the p (i.e select text) it doesn't work)
                   Probably need to disable text selection (maybe make it a button) -->
@@ -64,17 +71,13 @@
                   </p>
                   <p
                     class="card box"
-                    @click="
-                      mouseOverChangeImage($event, '/assets/img/unix-shell.jpg')
-                    "
+                    v-on:click="svc_img = '/assets/img/unix-shell.jpg'"
                   >
                     <strong>UNIX Shell Accounts</strong>
                   </p>
                   <p
                     class="card box"
-                    @click="
-                      mouseOverChangeImage($event, '/assets/img/printer.jpg')
-                    "
+                    v-on:click="svc_img = '/assets/img/printer.jpg'"
                   >
                     <strong>Free Printing for Members</strong>
                   </p>
@@ -143,6 +146,11 @@ export default {
   },
   components: {
     History
+  },
+  data() {
+    return {
+      svc_img: "/assets/img/cloud.jpg"
+    };
   },
   methods: {
     mouseOverChangeImage(elem_clicked, newSrc) {
