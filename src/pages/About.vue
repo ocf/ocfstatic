@@ -44,8 +44,8 @@
           <div class="column is-half">
             <transition name="fade" mode="out-in">
               <img
-                :src="svc_img"
-                :key="svc_img"
+                :src="servicesImages[servicesActiveImage]"
+                :key="servicesImages[servicesActiveImage]"
                 data-toggle="tooltip"
                 data-placement="bottom"
                 title="goTop"
@@ -62,24 +62,25 @@
                   </h2>
 
                   <p
-                    class="button card box is-white is-medium active-card"
-                    @click="mouseOverChangeImage(0, '/assets/img/cloud.jpg')"
+                    class="button card box is-white is-medium"
+                    @click="servicesActiveImage = 0"
+                    :class="{ 'active-card': servicesActiveImage == 0 }"
                   >
                     Web &amp; Email Hosting
                   </p>
                   <p
                     class="button card box is-white is-medium"
-                    @click="
-                      mouseOverChangeImage(1, '/assets/img/unix-shell.jpg')
-                    "
+                    @click="servicesActiveImage = 1"
+                    :class="{ 'active-card': servicesActiveImage == 1 }"
                   >
-                    <strong>UNIX Shell Accounts</strong>
+                    UNIX Shell Accounts
                   </p>
                   <p
                     class="button card box is-white is-medium"
-                    @click="mouseOverChangeImage(2, '/assets/img/printer.jpg')"
+                    @click="servicesActiveImage = 2"
+                    :class="{ 'active-card': servicesActiveImage == 2 }"
                   >
-                    <strong>Free Printing for Members</strong>
+                    Free Printing for Members
                   </p>
                 </div>
               </div>
@@ -149,25 +150,13 @@ export default {
   },
   data() {
     return {
-      svc_img: "/assets/img/cloud.jpg"
+      servicesActiveImage: 0,
+      servicesImages: [
+        "/assets/img/cloud.jpg",
+        "/assets/img/unix-shell.jpg",
+        "/assets/img/printer.jpg"
+      ]
     };
-  },
-  methods: {
-    mouseOverChangeImage(i_clicked, newSrc) {
-      //console.log(elem_clicked.target)
-      var all_cards = document.getElementsByClassName(
-        "button card box is-white is-medium"
-      );
-      var active_card = document.getElementsByClassName(
-        "button card box is-white is-medium active-card"
-      );
-      for (var i = 0; i < active_card.length; i++) {
-        active_card[i].classList.remove("active-card");
-      }
-      all_cards[i_clicked].classList.add("active-card");
-      this.svc_img = newSrc;
-      // document.getElementById("changethis").src = newSrc;
-    }
   }
 };
 </script>
