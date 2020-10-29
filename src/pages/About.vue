@@ -38,9 +38,10 @@
         </div>
       </div>
     </section>
-    <section class="section card">
+    <div class="is-divider"></div>
+    <section class="section">
       <div class="container">
-        <div class="columns is-vcentered">
+        <div class="columns is-vcentered reverse-row-order">
           <div class="column is-half">
             <transition name="fade" mode="out-in">
               <img
@@ -91,13 +92,13 @@
         </div>
       </div>
     </section>
-    <section class="section card">
+    <div class="is-divider"></div>
+    <section class="section">
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-half">
             <img
               src="http://3.bp.blogspot.com/-l5WiG6Nci34/UVKfPBediVI/AAAAAAAAABk/48mdp61vr5k/s1600/Emperor-Penguins-Couple.jpg"
-              class="card"
               width="800"
               height="600"
             />
@@ -129,7 +130,7 @@
         </div>
       </div>
     </section>
-
+    <div class="is-divider"></div>
     <!--- The timeline -->
 
     <section class="section has-text-centered">
@@ -171,6 +172,9 @@ p.card {
   width: 100%;
 }
 .active-card {
-  transform: translate(-1.75em, 0) !important;
+  transform: translate(1.75em, 0) !important;
+}
+.reverse-row-order {
+  flex-direction: row-reverse;
 }
 </style>
