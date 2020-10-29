@@ -47,6 +47,8 @@
                 :src="servicesImages[servicesActiveImage]"
                 :key="servicesImages[servicesActiveImage]"
                 data-toggle="tooltip"
+                width="800"
+                height="600"
                 data-placement="bottom"
                 title="goTop"
                 alt=""
@@ -96,6 +98,8 @@
             <img
               src="http://3.bp.blogspot.com/-l5WiG6Nci34/UVKfPBediVI/AAAAAAAAABk/48mdp61vr5k/s1600/Emperor-Penguins-Couple.jpg"
               class="card"
+              width="800"
+              height="600"
             />
           </div>
           <div class="column is-half">
