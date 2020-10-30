@@ -11,6 +11,9 @@
       <a href="https://mastodon.ocf.berkeley.edu">
         <mastodon class="item" />
       </a>
+      <a href="https://discord.ocf.berkeley.edu/">
+        <discord class="item" />
+      </a>
       <a href="https://callink.berkeley.edu/organization/ocf">
         <g-image class="item" src="~/assets/callink.png" />
       </a>
@@ -26,6 +29,7 @@ import Slack from "~/assets/svg/slack.svg";
 import Github from "~/assets/svg/github.svg";
 import Mastodon from "~/assets/svg/mastodon.svg";
 import Hashtag from "~/assets/svg/hashtag.svg";
+import Discord from "~/assets/svg/discord.svg";
 
 export default {
   components: {
