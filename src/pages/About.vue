@@ -67,21 +67,21 @@
                   <p
                     class="button card box is-white is-medium"
                     @click="servicesActiveImage = 0"
-                    :class="{ 'active-card': servicesActiveImage == 0 }"
+                    :class="{ 'active-card': servicesActiveImage === 0 }"
                   >
                     Web &amp; Email Hosting
                   </p>
                   <p
                     class="button card box is-white is-medium"
                     @click="servicesActiveImage = 1"
-                    :class="{ 'active-card': servicesActiveImage == 1 }"
+                    :class="{ 'active-card': servicesActiveImage === 1 }"
                   >
                     UNIX Shell Accounts
                   </p>
                   <p
                     class="button card box is-white is-medium"
                     @click="servicesActiveImage = 2"
-                    :class="{ 'active-card': servicesActiveImage == 2 }"
+                    :class="{ 'active-card': servicesActiveImage === 2 }"
                   >
                     Free Printing for Members
                   </p>
@@ -97,8 +97,8 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-half">
-            <img
-              src="http://3.bp.blogspot.com/-l5WiG6Nci34/UVKfPBediVI/AAAAAAAAABk/48mdp61vr5k/s1600/Emperor-Penguins-Couple.jpg"
+            <g-image
+              src="~/assets/penguins_placeholder.jpg"
               width="800"
               height="600"
             />
@@ -167,12 +167,11 @@ export default {
 </script>
 <style scoped>
 p.card {
-  transform: none;
   transition: transform 0.6s;
   width: 100%;
 }
 .active-card {
-  transform: translate(1.75em, 0) !important;
+  transform: translateX(1.75em);
 }
 .reverse-row-order {
   flex-direction: row-reverse;
