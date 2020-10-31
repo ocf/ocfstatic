@@ -17,6 +17,9 @@
       <a href="https://github.com/ocf">
         <github class="item" />
       </a>
+      <a href="https://ocf.io/discord">
+        <discord class="item" />
+      </a>
     </div>
   </div>
 </template>
@@ -26,13 +29,15 @@ import Slack from "~/assets/svg/slack.svg";
 import Github from "~/assets/svg/github.svg";
 import Mastodon from "~/assets/svg/mastodon.svg";
 import Hashtag from "~/assets/svg/hashtag.svg";
+import Discord from "~/assets/svg/discord.svg";
 
 export default {
   components: {
     Slack,
     Github,
     Mastodon,
-    Hashtag
+    Hashtag,
+    Discord
   }
 };
 </script>
