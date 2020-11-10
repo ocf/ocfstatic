@@ -17,10 +17,7 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Doc",
-        path: "docs/**/*.md",
-        remark: {
-          autolinkClassName: " "
-        }
+        path: "docs/**/*.md"
       }
     },
     {
@@ -42,7 +39,15 @@ module.exports = {
   ],
   transformers: {
     remark: {
-      plugins: ["@gridsome/remark-prismjs"]
+      autolinkClassName: " ",
+      plugins: [
+        [
+          "@gridsome/remark-prismjs",
+          {
+            customClassPrefix: "prism-"
+          }
+        ]
+      ]
     }
   }
 };
