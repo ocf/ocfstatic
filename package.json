@@ -13,7 +13,7 @@
     "@gridsome/remark-prismjs": "^0.5.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.3",
-    "@mdi/font": "^5.6.55",
+    "@mdi/font": "^5.8.55",
     "axios": "^0.21.0",
     "axios-auth-refresh": "^3.0.0",
     "buefy": "^0.9.4",
@@ -21,7 +21,7 @@
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.4",
     "gridsome": "^0.7.22",
-    "gridsome-plugin-flexsearch": "^1.0.4",
+    "gridsome-plugin-flexsearch": "^1.0.5",
     "keycloak-js": "^10.0.1",
     "md5": "^2.3.0",
     "scrollreveal": "^4.0.7",
@@ -36,8 +36,8 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.5.1",
     "node-sass": "^5.0.0",
-    "sass-loader": "^10.0.5",
-    "vue-eslint-parser": "^7.1.0",
+    "sass-loader": "^10.1.0",
+    "vue-eslint-parser": "^7.1.1",
     "vue-svg-loader": "^0.16.0"
   },
   "husky": {
