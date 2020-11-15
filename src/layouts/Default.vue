@@ -1,6 +1,6 @@
 <template>
-  <div class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top is-spaced has-shadow">
+  <div class="has-navbar">
+    <nav class="navbar is-spaced has-shadow">
       <div class="navbar-brand">
         <g-link class="navbar-item" to="/">
           <penguin class="penguin" />
@@ -105,11 +105,6 @@ import Profile from "~/components/Profile.vue";
 import store from "~/store.js";
 
 export default {
-  metaInfo: {
-    htmlAttrs: {
-      class: "has-navbar-fixed-top has-spaced-navbar-fixed-top"
-    }
-  },
   components: {
     Logo,
     Penguin,

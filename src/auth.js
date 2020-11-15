@@ -2,10 +2,10 @@ import axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import store from "~/store.js";
 
-function tokenInterceptor() {
+function tokenInterceptor(Vue) {
   axios.interceptors.request.use(
     config => {
-      config.headers.Authorization = `Bearer ${store.keycloak.token}`;
+      config.headers.Authorization = `Bearer ${Vue.prototype.$keycloak.token}`;
       return config;
     },
     error => Promise.reject(error)
@@ -32,7 +32,7 @@ export default async function initKeycloak(Vue) {
       })
     ) {
       // Use token in future requests
-      tokenInterceptor();
+      tokenInterceptor(Vue);
       // Refresh the token automatically when requests fail
       createAuthRefreshInterceptor(axios, refreshAuthLogic);
       try {

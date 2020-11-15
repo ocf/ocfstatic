@@ -13,7 +13,7 @@
           )"
           :key="index"
         >
-          <g-link :class="{ 'is-active': path === item.path }" :to="item.path"
+          <g-link exact-active-class="is-active" :to="item.path"
             >{{ item.title }}
           </g-link>
         </li>
@@ -69,9 +69,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.icon {
-  margin-right: 2px;
-}
-</style>

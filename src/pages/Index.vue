@@ -24,7 +24,7 @@
     <div class="has-text-centered home-content">
       <links />
     </div>
-    <section class="section">
+    <section class="section container">
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
           <div class="tile">
@@ -68,8 +68,9 @@
                 <p class="subtitle">Located at 171 MLK Student Union</p>
                 <div class="content">
                   <p>
-                    Find out how to <a>get there</a>. Just show your Cal ID at
-                    the door!
+                    Find out how to
+                    <a href="https://goo.gl/maps/USohudX21j5H1JQC7">get there</a
+                    >. Just show your Cal ID at the door!
                   </p>
                   <g-link to="/lab">
                     <g-image src="~/assets/lab.jpg" />

@@ -8,6 +8,9 @@
       <a href="https://fco.slack.com">
         <slack class="item" />
       </a>
+      <a href="https://ocf.io/discord">
+        <discord class="item" />
+      </a>
       <a href="https://mastodon.ocf.berkeley.edu">
         <mastodon class="item" />
       </a>
@@ -16,9 +19,6 @@
       </a>
       <a href="https://github.com/ocf">
         <github class="item" />
-      </a>
-      <a href="https://ocf.io/discord">
-        <discord class="item" />
       </a>
     </div>
   </div>
