@@ -1,6 +1,6 @@
 <template>
-  <div class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top is-spaced has-shadow">
+  <div class="has-navbar">
+    <nav class="navbar is-spaced has-shadow">
       <div class="navbar-brand">
         <g-link class="navbar-item" to="/">
           <penguin class="penguin" />
@@ -52,7 +52,7 @@
             <div v-if="user">
               <profile :user="user" />
             </div>
-            <b-button v-else outlined type="is-link" @click="authenticate">
+            <b-button v-else outlined type="is-link" @click="$keycloak.login()">
               Login
             </b-button>
           </div>
@@ -60,7 +60,10 @@
       </div>
     </nav>
     <slot />
-    <footer class="footer columns is-vcentered w-100">
+    <footer
+      v-if="!disableFooter"
+      class="footer columns is-marginless is-vcentered w-100"
+    >
       <div class="column is-4">
         <p class="title is-4" style="margin-bottom: 0.5rem">Quick Links</p>
         <g-link class="subtitle is-6" to="/">Home</g-link>
@@ -102,15 +105,16 @@ import Profile from "~/components/Profile.vue";
 import store from "~/store.js";
 
 export default {
-  metaInfo: {
-    htmlAttrs: {
-      class: "has-navbar-fixed-top has-spaced-navbar-fixed-top"
-    }
-  },
   components: {
     Logo,
     Penguin,
     Profile
+  },
+  props: {
+    disableFooter: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
@@ -131,11 +135,6 @@ export default {
   computed: {
     user() {
       return store.user;
-    }
-  },
-  methods: {
-    authenticate() {
-      store.keycloak.login();
     }
   }
 };

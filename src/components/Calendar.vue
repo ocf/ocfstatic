@@ -17,7 +17,7 @@
         twelve-hour
         time-format="h:mm"
       >
-        <template v-slot:event="{ event }">
+        <template #event="{ event }">
           <div style="padding: 5px;">
             <div class="vuecal__event-title">
               <p class="title is-5">{{ event.name }}</p>

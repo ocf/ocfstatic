@@ -8,7 +8,7 @@ import "bulma-divider/dist/css/bulma-divider.min.css";
 import "@mdi/font/css/materialdesignicons.min.css";
 import axios from "axios";
 import initKeycloak from "~/auth.js";
-import "prismjs/themes/prism.css";
+import "~/assets/ocf-prism.css"; // Our custom css for styling code blocks
 
 export default async function(Vue, { isClient }) {
   // Set default layout as a global component
@@ -18,6 +18,6 @@ export default async function(Vue, { isClient }) {
   Vue.use(Buefy);
 
   if (isClient) {
-    initKeycloak();
+    initKeycloak(Vue);
   }
 }
