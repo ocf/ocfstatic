@@ -94,7 +94,6 @@
         </div>
       </div>
     </section>
-    <div class="is-divider"></div>
     <section class="section">
       <div class="container">
         <div class="columns is-vcentered">
