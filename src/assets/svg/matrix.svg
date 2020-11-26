@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   role="img"
+   aria-label="[Matrix logo]"
+   viewBox="0 0 45 45"
+   version="1.1"
+   id="svg4054"
+   sodipodi:docname="matrix.svg"
+   width="45"
+   height="45"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata4060">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4058" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1025"
+     id="namedview4056"
+     showgrid="false"
+     inkscape:zoom="12.275374"
+     inkscape:cx="28.277841"
+     inkscape:cy="19.163504"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="matrix-logo"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     id="parent"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="translate(0,-39.66525)">
+    <g
+       id="child"
+       transform="translate(-122,-6)"
+       style="fill:#000000;fill-rule:nonzero">
+      <g
+         id="matrix-logo"
+         transform="translate(122,6)">
+        <polygon
+           id="left-bracket"
+           points="8.1027848,1.9381101 2.2470886,1.9381101 2.2470886,82.726884 8.1027848,82.726884 8.1027848,84.665246 0,84.665246 0,0 8.1027848,0 "
+           transform="matrix(0.53010984,0,0,0.53010984,0,39.783363)" />
+        <path
+           d="m 14.39114,54.387527 v 2.167292 h 0.06214 c 0.582181,-0.824994 1.283402,-1.46556 2.104872,-1.9197 0.820932,-0.45334 1.761978,-0.680944 2.821929,-0.680944 1.018347,0 1.948791,0.196555 2.790526,0.588331 0.842001,0.392442 1.481353,1.083511 1.917922,2.07441 0.477771,-0.701597 1.127323,-1.320976 1.948792,-1.857601 0.820931,-0.53636 1.792711,-0.80514 2.91547,-0.80514 0.852336,0 1.641863,0.103409 2.37006,0.309823 0.727122,0.206415 1.350773,0.536626 1.870549,0.990632 0.51924,0.454407 0.924539,1.047801 1.216167,1.779913 0.290823,0.733448 0.436569,1.615342 0.436569,2.647684 v 10.711995 l -4.427826,-1.34e-4 v -9.071335 c 0,-0.536359 -0.02068,-1.04207 -0.06241,-1.51713 -0.042,-0.474395 -0.155812,-0.886959 -0.342893,-1.238357 -0.187216,-0.350599 -0.463008,-0.629506 -0.826301,-0.836054 -0.363829,-0.205616 -0.857704,-0.309424 -1.481222,-0.309424 -0.623515,0 -1.127725,0.119399 -1.512355,0.35593 -0.3849,0.23773 -0.686058,0.547553 -0.90414,0.928934 -0.218217,0.382314 -0.363829,0.815533 -0.436434,1.300855 -0.07315,0.484789 -0.109243,0.975175 -0.109243,1.470491 v 8.916224 h -4.427559 v -8.978189 c 0,-0.474661 -0.01087,-0.944392 -0.03086,-1.408526 -0.02121,-0.464667 -0.109243,-0.892821 -0.265458,-1.285264 -0.155944,-0.391775 -0.415899,-0.706795 -0.779596,-0.944525 -0.36383,-0.236531 -0.89904,-0.35593 -1.605763,-0.35593 -0.208151,0 -0.483541,0.04651 -0.826166,0.139654 -0.343028,0.09288 -0.675856,0.268646 -0.997814,0.526232 -0.322629,0.258252 -0.597749,0.629773 -0.826435,1.114428 -0.22882,0.485322 -0.343027,1.119624 -0.343027,1.903842 v 9.288144 l -4.427425,1.34e-4 V 54.387527 Z"
+           id="m"
+           inkscape:connector-curvature="0"
+           style="stroke-width:0.53010988" />
+        <polygon
+           id="right-bracket"
+           points="197.58076,82.726884 197.58076,1.9381101 191.72506,1.9381101 191.72506,0 199.82835,0 199.82835,84.665246 191.72506,84.665246 191.72506,82.726884 "
+           transform="matrix(0.53010984,0,0,0.53010984,-60.889344,39.783363)" />
+      </g>
+    </g>
+  </g>
+</svg>

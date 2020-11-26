@@ -23,6 +23,9 @@
       <a href="https://www.facebook.com/ucbocf">
         <facebook class="item" />
       </a>
+      <a href="https://matrix.ocf.io">
+        <matrix class="item" />
+      </a>
     </div>
   </div>
 </template>
@@ -34,6 +37,7 @@ import Mastodon from "~/assets/svg/mastodon.svg";
 import Hashtag from "~/assets/svg/hashtag.svg";
 import Discord from "~/assets/svg/discord.svg";
 import Facebook from "~/assets/svg/facebook.svg";
+import Matrix from "~/assets/svg/matrix.svg";
 
 export default {
   components: {
@@ -42,7 +46,8 @@ export default {
     Mastodon,
     Hashtag,
     Discord,
-    Facebook
+    Facebook,
+    Matrix
   }
 };
 </script>
