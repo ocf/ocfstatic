@@ -20,6 +20,9 @@
       <a href="https://github.com/ocf">
         <github class="item" />
       </a>
+      <a href="https://www.facebook.com/ucbocf">
+        <facebook class="item" />
+      </a>
     </div>
   </div>
 </template>
@@ -30,6 +33,7 @@ import Github from "~/assets/svg/github.svg";
 import Mastodon from "~/assets/svg/mastodon.svg";
 import Hashtag from "~/assets/svg/hashtag.svg";
 import Discord from "~/assets/svg/discord.svg";
+import Facebook from "~/assets/svg/facebook.svg";
 
 export default {
   components: {
@@ -37,7 +41,8 @@ export default {
     Github,
     Mastodon,
     Hashtag,
-    Discord
+    Discord,
+    Facebook
   }
 };
 </script>
