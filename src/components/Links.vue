@@ -23,7 +23,7 @@
       <a href="https://www.facebook.com/ucbocf">
         <facebook class="item" />
       </a>
-      <a href="https://matrix.ocf.io">
+      <a href="https://chat.ocf.berkeley.edu/">
         <matrix class="item" />
       </a>
     </div>
