@@ -38,7 +38,10 @@
         </div>
       </div>
     </section>
-    <div class="is-divider"></div>
+
+    <div class="has-text-centered">
+      <links />
+    </div>
     <section class="section">
       <div class="container">
         <div class="columns is-vcentered reverse-row-order">
@@ -92,7 +95,6 @@
         </div>
       </div>
     </section>
-    <div class="is-divider"></div>
     <section class="section">
       <div class="container">
         <div class="columns is-vcentered">
@@ -146,12 +148,14 @@
 
 <script>
 import History from "~/components/History.vue";
+import Links from "~/components/Links.vue";
 export default {
   metaInfo: {
     title: "About Us"
   },
   components: {
-    History
+    History,
+    Links
   },
   data() {
     return {
