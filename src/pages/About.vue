@@ -38,10 +38,11 @@
         </div>
       </div>
     </section>
-
     <div class="has-text-centered">
       <links />
     </div>
+
+    <!-- Section: Image and content banners -->
     <section class="section">
       <div class="container">
         <div class="columns is-vcentered reverse-row-order">
@@ -133,7 +134,56 @@
       </div>
     </section>
     <div class="is-divider"></div>
-    <!--- The timeline -->
+
+    <!-- Section of cards: Open source softwares we use -->
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-2">Technologies We Use</h2>
+        <div class="columns is-vcentered">
+          <div class="column is-one-fifth">
+            <a class="box" href="https://xfce.org">
+              <figure class="image is-square">
+                <img
+                  src="https://static.ocf.berkeley.edu/img/about/logos/xfce.svg"
+                />
+              </figure>
+              <div class="content">
+                <h3>XFCE desktop</h3>
+                <p>A good lightweight desktop we use on our machines</p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box">
+              <figure class="image is-square">
+                <img
+                  src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg4.wikia.nocookie.net%2F__cb20141015233313%2Fprivacy%2Fimages%2Fa%2Faa%2FDebian-square-logo.png&f=1&nofb=1"
+                />
+              </figure>
+              <div class="content">
+                <h3>Debian Linux</h3>
+                <p>
+                  An open-source, Linux-based operating system that powers our
+                  desktops and servers!
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <p>Hello blah blah</p>
+          </div>
+          <div class="column is-one-fifth">
+            <p>Hello blah blah</p>
+          </div>
+          <div class="column is-one-fifth">
+            <p>Hello blah blah</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--- Section: The timeline -->
 
     <section class="section has-text-centered">
       <div class="container">
