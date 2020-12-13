@@ -142,6 +142,20 @@
         <h2 class="title is-2">Technologies We Use</h2>
         <div class="columns is-vcentered">
           <div class="column is-one-fifth">
+            <a class="box" href="https://linuxfoundation.org">
+              <figure class="image is-square">
+                <img src="/assets/img/linux.png" />
+              </figure>
+              <div class="content">
+                <h3>Linux</h3>
+                <p>
+                  The world's most important open source project. Linux is the
+                  kernel that powers our servers, desktops, and more.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
             <a class="box" href="https://xfce.org">
               <figure class="image is-square">
                 <img
@@ -155,11 +169,25 @@
             </a>
           </div>
           <div class="column is-one-fifth">
-            <a class="box">
+            <a class="box" style="height:100%;">
               <figure class="image is-square">
                 <img
                   src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg4.wikia.nocookie.net%2F__cb20141015233313%2Fprivacy%2Fimages%2Fa%2Faa%2FDebian-square-logo.png&f=1&nofb=1"
                 />
+              </figure>
+              <div class="content">
+                <h3>Debian Linux</h3>
+                <p>
+                  An open-source, Linux-based operating system that powers our
+                  desktops and servers!
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;">
+              <figure class="image is-square">
+                <img src="" />
               </figure>
               <div class="content">
                 <h3>Debian Linux</h3>
@@ -229,5 +257,8 @@ p.card {
 }
 .reverse-row-order {
   flex-direction: row-reverse;
+}
+.box {
+  height: 100%;
 }
 </style>
