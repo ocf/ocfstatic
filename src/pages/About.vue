@@ -146,7 +146,7 @@
               <figure class="image is-square">
                 <img src="/assets/img/linux.png" />
               </figure>
-              <div class="content">
+              <div class="content mt-4">
                 <h3>Linux</h3>
                 <p>
                   The world's most important open source project. Linux is the
@@ -160,7 +160,7 @@
               <figure class="image is-square">
                 <g-image src="~/assets/svg/xfce.svg" />
               </figure>
-              <div class="content">
+              <div class="content mt-4">
                 <h3>XFCE desktop</h3>
                 <p>A good lightweight desktop we use on our machines</p>
               </div>
@@ -171,7 +171,7 @@
               <figure class="image is-square">
                 <g-image src="~/assets/oss_icons/debian.png" />
               </figure>
-              <div class="content">
+              <div class="content mt-4">
                 <h3>Debian Linux</h3>
                 <p>
                   An open-source, Linux-based operating system that powers our
@@ -180,13 +180,12 @@
               </div>
             </a>
           </div>
-
           <div class="column is-one-fifth">
             <a class="box" style="height:100%;">
               <figure class="image is-square">
                 <g-image src="~/assets/svg/python.svg" />
               </figure>
-              <div class="content">
+              <div class="content mt-4">
                 <h3>Python</h3>
                 <p>
                   Python is an open-source programming language
@@ -199,7 +198,7 @@
               <figure class="image is-square">
                 <g-image src="~/assets/svg/apache.svg" />
               </figure>
-              <div class="content">
+              <div class="content mt-4">
                 <h3>Apache</h3>
                 <p>
                   Apache is a creater of open-source software. Idk anything else
