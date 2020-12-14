@@ -158,9 +158,7 @@
           <div class="column is-one-fifth">
             <a class="box" href="https://xfce.org">
               <figure class="image is-square">
-                <img
-                  src="https://static.ocf.berkeley.edu/img/about/logos/xfce.svg"
-                />
+                <g-image src="~/assets/svg/xfce.svg" />
               </figure>
               <div class="content">
                 <h3>XFCE desktop</h3>
@@ -171,15 +169,27 @@
           <div class="column is-one-fifth">
             <a class="box" style="height:100%;">
               <figure class="image is-square">
-                <img
-                  src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg4.wikia.nocookie.net%2F__cb20141015233313%2Fprivacy%2Fimages%2Fa%2Faa%2FDebian-square-logo.png&f=1&nofb=1"
-                />
+                <g-image src="~/assets/oss_icons/debian.png" />
               </figure>
               <div class="content">
                 <h3>Debian Linux</h3>
                 <p>
                   An open-source, Linux-based operating system that powers our
                   desktops and servers!
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;">
+              <figure class="image is-square">
+                <g-image src="~/assets/svg/python.svg" />
+              </figure>
+              <div class="content">
+                <h3>Python</h3>
+                <p>
+                  Python is an open-source programming language
                 </p>
               </div>
             </a>
@@ -187,25 +197,17 @@
           <div class="column is-one-fifth">
             <a class="box" style="height:100%;">
               <figure class="image is-square">
-                <img src="" />
+                <g-image src="~/assets/svg/apache.svg" />
               </figure>
               <div class="content">
-                <h3>Debian Linux</h3>
+                <h3>Apache</h3>
                 <p>
-                  An open-source, Linux-based operating system that powers our
-                  desktops and servers!
+                  Apache is a creater of open-source software. Idk anything else
+                  about them but they seem chill I guess. I'll have to check
+                  their website for more info
                 </p>
               </div>
             </a>
-          </div>
-          <div class="column is-one-fifth">
-            <p>Hello blah blah</p>
-          </div>
-          <div class="column is-one-fifth">
-            <p>Hello blah blah</p>
-          </div>
-          <div class="column is-one-fifth">
-            <p>Hello blah blah</p>
           </div>
         </div>
       </div>
