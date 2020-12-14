@@ -120,7 +120,7 @@
                   make decisions, but also to learn more about *nix and free
                   software.
                 </p>
-                <h4 class="title is-4">
+                <h4 class="title is-4 mt-4">
                   We're totally open and super-inclusive!
                 </h4>
                 <p>
