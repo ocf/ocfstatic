@@ -167,7 +167,7 @@
             </a>
           </div>
           <div class="column is-one-fifth">
-            <a class="box" style="height:100%;">
+            <a class="box" style="height:100%;" href="https://www.debian.org">
               <figure class="image is-square">
                 <g-image src="~/assets/oss_icons/debian.png" />
               </figure>
@@ -181,7 +181,7 @@
             </a>
           </div>
           <div class="column is-one-fifth">
-            <a class="box" style="height:100%;">
+            <a class="box" style="height:100%;" href="https://www.python.org">
               <figure class="image is-square">
                 <g-image src="~/assets/svg/python.svg" />
               </figure>
@@ -194,7 +194,7 @@
             </a>
           </div>
           <div class="column is-one-fifth">
-            <a class="box" style="height:100%;">
+            <a class="box" style="height:100%;" href="https://www.apache.org">
               <figure class="image is-square">
                 <g-image src="~/assets/svg/apache.svg" />
               </figure>
