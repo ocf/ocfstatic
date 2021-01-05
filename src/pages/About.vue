@@ -213,11 +213,11 @@
     </section>
 
     <!--- Section: The timeline -->
-
-    <section class="section has-text-centered">
+    <div class="is-divider"></div>
+    <section class="section">
       <div class="container">
-        <h1 class="title">
-          History
+        <h1 class="title is-2">
+          History of the OCF
         </h1>
         <history />
       </div>
