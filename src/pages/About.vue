@@ -49,8 +49,8 @@
           <div class="column is-half">
             <transition name="fade" mode="out-in">
               <img
-                :src="servicesImages[servicesActiveImage]"
                 :key="servicesImages[servicesActiveImage]"
+                :src="servicesImages[servicesActiveImage]"
                 data-toggle="tooltip"
                 width="800"
                 height="600"
@@ -70,22 +70,22 @@
 
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 0"
                     :class="{ 'active-card': servicesActiveImage === 0 }"
+                    @click="servicesActiveImage = 0"
                   >
                     Web &amp; Email Hosting
                   </p>
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 1"
                     :class="{ 'active-card': servicesActiveImage === 1 }"
+                    @click="servicesActiveImage = 1"
                   >
                     UNIX Shell Accounts
                   </p>
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 2"
                     :class="{ 'active-card': servicesActiveImage === 2 }"
+                    @click="servicesActiveImage = 2"
                   >
                     Free Printing for Members
                   </p>
@@ -129,6 +129,69 @@
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="is-divider"></div>
+
+    <!-- Section: what you can do for us -->
+    <section class="section" style="background-color:pink;">
+      <div class="container">
+        <h2 class="title is-2">What You Can Do At the OCF</h2>
+        <div class="columns is-vcentered">
+          <div class="column is-one-fifth">
+            <a class="box" href="https://linuxfoundation.org">
+              <div class="content mt-4">
+                <h3>Maintain our Servers</h3>
+                <p>
+                  We host lots of powerful servers and you can help work on them
+                  and learn Linux sysadmin skills in the process.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" href="https://xfce.org">
+              <div class="content mt-4">
+                <h3>Work on our website</h3>
+                <p>I'm doing that now!!</p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.debian.org">
+              <div class="content mt-4">
+                <h3>Debian Linux</h3>
+                <p>
+                  You can make lots of laughable requests to buy stuff, but who
+                  knows, one of them might actually be a solid purchase! Link to
+                  purchase request form.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.python.org">
+              <div class="content mt-4">
+                <h3>Tech Support</h3>
+                <p>
+                  We help people use our services. Drop by staff hours to get a
+                  feel for helping people!
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.apache.org">
+              <div class="content mt-4">
+                <h3>Events</h3>
+                <p>
+                  We host lots of events to help talk about open source and you
+                  can learn from them.
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
