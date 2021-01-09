@@ -136,7 +136,7 @@
     <div class="is-divider"></div>
 
     <!-- Section: what you can do for us -->
-    <section class="section" style="background-color:pink;">
+    <section class="section" id="actions-bg">
       <div class="container">
         <h2 class="title is-2">What You Can Do At the OCF</h2>
         <div class="columns is-vcentered">
@@ -322,7 +322,11 @@ p.card {
 .reverse-row-order {
   flex-direction: row-reverse;
 }
-.box {
-  height: 100%;
+#actions-bg {
+  background-image: url("/assets/img/actions/event.jpg"),
+    url("/assets/img/actions/webdev.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right bottom;
+  background-size: 50%, 50%;
 }
 </style>
