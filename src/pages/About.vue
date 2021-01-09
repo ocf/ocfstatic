@@ -133,12 +133,16 @@
         </div>
       </div>
     </section>
+    <!--
     <div class="is-divider"></div>
+-->
 
     <!-- Section: what you can do for us -->
-    <section class="section" id="actions-bg">
+    <section class="section has-background-primary">
       <div class="container">
-        <h2 class="title is-2">What You Can Do At the OCF</h2>
+        <h2 class="title is-2 has-text-white has-shadow">
+          What You Can Do At the OCF
+        </h2>
         <div class="columns is-vcentered">
           <div class="column is-one-fifth">
             <a class="box" href="https://linuxfoundation.org">
@@ -196,7 +200,9 @@
         </div>
       </div>
     </section>
+    <!--
     <div class="is-divider"></div>
+-->
 
     <!-- Section of cards: Open source softwares we use -->
 
