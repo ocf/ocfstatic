@@ -6,16 +6,27 @@
           {{ value.title }}
           <b-icon
             v-if="value.children"
-            :icon="path.includes(value.path) ? 'chevron-down' : 'chevron-left'"
+            :icon="
+              clicked.includes(value.path) || path.includes(value.path)
+                ? 'chevron-down'
+                : 'chevron-left'
+            "
             class="is-pulled-right"
             size="is-small"
+            href="#"
+            @click.native="toggleChevron(value, $event)"
           />
         </div>
       </g-link>
       <sidebar-item
-        v-if="value.children && path.includes(value.path)"
+        v-if="
+          value.children &&
+            (clicked.includes(value.path) || path.includes(value.path))
+        "
         :items="value.children"
         :path="path"
+        :clicked="clicked"
+        @toggle-chevron="toggleChevron"
       />
     </li>
   </ul>
@@ -32,6 +43,18 @@ export default {
     path: {
       type: String,
       required: true
+    },
+    clicked: {
+      type: Array,
+      default: () => []
+    }
+  },
+  methods: {
+    toggleChevron(value, event) {
+      if (event) {
+        event.preventDefault();
+      }
+      this.$emit("toggle-chevron", value);
     }
   }
 };

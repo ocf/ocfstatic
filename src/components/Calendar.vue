@@ -202,13 +202,7 @@ export default {
 }
 
 .vuecal__event.meeting {
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    #f2f2f2 10px,
-    #f2f2f2 20px
-  ); /* IE 10+ */
+  background-color: rgba($grey, 0.6);
   color: #999;
   display: flex;
   justify-content: center;

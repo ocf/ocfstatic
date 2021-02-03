@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="columns is-desktop is-vcentered">
           <div class="column has-text-centered">
-            <logo animated />
+            <logo animated :color="darkMode ? 'white' : 'black'" />
           </div>
           <div class="column has-text-centered">
             <div class="title is-size-2-desktop home-content">
@@ -248,6 +248,9 @@ export default {
   components: {
     Logo,
     Links
+  },
+  props: {
+    darkMode: Boolean
   },
   data() {
     return {

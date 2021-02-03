@@ -29,8 +29,8 @@
     />
     <defs>
       <linearGradient :id="uuid" gradientTransform="rotate(315)">
-        <stop offset="0%" stop-color="#000000" />
-        <stop offset="74%" stop-color="#414141" />
+        <stop offset="0%" stop-color="#000000" class="logo-start" />
+        <stop offset="74%" stop-color="#414141" class="logo-end" />
       </linearGradient>
     </defs>
   </svg>

@@ -28,7 +28,7 @@
       <div class="column">
         <slot />
       </div>
-      <div class="column is-3 has-background-white-bis">
+      <div class="column is-3">
         <sidebar :items="tree" :path="path" :subtitles="subtitles" />
       </div>
     </div>

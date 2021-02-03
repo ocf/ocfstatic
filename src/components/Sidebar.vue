@@ -29,7 +29,9 @@
         <sidebar-item
           :key="'list-' + key"
           :items="value.children"
+          :clicked="clicked"
           :path="path"
+          @toggle-chevron="toggleChevron"
         />
       </template>
     </aside>
@@ -59,12 +61,24 @@ export default {
       default: () => []
     }
   },
+  data() {
+    return {
+      clicked: []
+    };
+  },
   computed: {
     docPath() {
       return this.path
         .split("/")
         .slice(2)
         .join("/");
+    }
+  },
+  methods: {
+    toggleChevron(value) {
+      this.clicked = this.clicked.includes(value.path)
+        ? this.clicked.filter(v => v !== value.path)
+        : [...this.clicked, value.path];
     }
   }
 };

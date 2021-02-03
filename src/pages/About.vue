@@ -45,8 +45,8 @@
           <div class="column is-half">
             <transition name="fade" mode="out-in">
               <img
-                :src="servicesImages[servicesActiveImage]"
                 :key="servicesImages[servicesActiveImage]"
+                :src="servicesImages[servicesActiveImage]"
                 data-toggle="tooltip"
                 width="800"
                 height="600"
@@ -65,23 +65,23 @@
                   </h2>
 
                   <p
-                    class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 0"
+                    class="button card box is-medium"
                     :class="{ 'active-card': servicesActiveImage === 0 }"
+                    @click="servicesActiveImage = 0"
                   >
                     Web &amp; Email Hosting
                   </p>
                   <p
-                    class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 1"
+                    class="button card box is-medium"
                     :class="{ 'active-card': servicesActiveImage === 1 }"
+                    @click="servicesActiveImage = 1"
                   >
                     UNIX Shell Accounts
                   </p>
                   <p
-                    class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 2"
+                    class="button card box is-medium"
                     :class="{ 'active-card': servicesActiveImage === 2 }"
+                    @click="servicesActiveImage = 2"
                   >
                     Free Printing for Members
                   </p>

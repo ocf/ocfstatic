@@ -26,6 +26,71 @@ $link-focus-border: $primary;
 
 $footer-padding: 2rem 3rem 2rem;
 
+#app.dark {
+  @import "src/assets/_dark-theme.scss";
+
+  background-color: #121212;
+
+  .navbar-link:not(.is-arrowless)::after {
+    border-color: #e7717d !important;
+  }
+
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  div,
+  span {
+    color: #dbdbdb !important;
+  }
+
+  .is-divider,
+  .is-divider-vertical {
+    border-top: 0.1rem solid #0a0a0a;
+  }
+  .is-divider-vertical[data-content]::after,
+  .is-divider[data-content]::after {
+    background-color: #0a0a0a;
+  }
+
+  svg.logo {
+    color: white;
+    path {
+      stroke: white;
+    }
+    defs > linearGradient {
+      stop.logo-start {
+        stop-color: #ffffff;
+      }
+      stop.logo-end {
+        stop-color: #bebebe;
+      }
+    }
+  }
+
+  .box,
+  .dropdown-content,
+  .navbar-dropdown {
+    box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1),
+      0 0px 0 1px rgba(0, 0, 0, 0.02) !important;
+  }
+
+  input,
+  select {
+    background-color: #414141 !important;
+    border: none !important;
+    color: white !important;
+  }
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #bebebe !important;
+  }
+}
+
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
