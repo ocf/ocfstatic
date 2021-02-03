@@ -29,10 +29,10 @@ $footer-padding: 2rem 3rem 2rem;
 #app.dark {
   @import "src/assets/_dark-theme.scss";
 
-  background-color: #121212;
+  background-color: $black-bis;
 
   .navbar-link:not(.is-arrowless)::after {
-    border-color: #e7717d !important;
+    border-color: $primary !important;
   }
 
   p,
@@ -45,29 +45,29 @@ $footer-padding: 2rem 3rem 2rem;
   h6,
   div,
   span {
-    color: #dbdbdb !important;
+    color: $grey-lighter !important;
   }
 
   .is-divider,
   .is-divider-vertical {
-    border-top: 0.1rem solid #0a0a0a;
+    border-top: 0.1rem solid $black;
   }
   .is-divider-vertical[data-content]::after,
   .is-divider[data-content]::after {
-    background-color: #0a0a0a;
+    background-color: $black;
   }
 
   svg.logo {
-    color: white;
+    color: $white;
     path {
-      stroke: white;
+      stroke: $white;
     }
     defs > linearGradient {
       stop.logo-start {
-        stop-color: #ffffff;
+        stop-color: $white;
       }
       stop.logo-end {
-        stop-color: #bebebe;
+        stop-color: $grey-light;
       }
     }
   }
@@ -92,13 +92,13 @@ $footer-padding: 2rem 3rem 2rem;
 
   input,
   select {
-    background-color: #414141 !important;
+    background-color: $grey-dark !important;
     border: none !important;
-    color: white !important;
+    color: $white !important;
   }
   ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: #bebebe !important;
+    color: $grey-light !important;
   }
 }
 
