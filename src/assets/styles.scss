@@ -79,6 +79,17 @@ $footer-padding: 2rem 3rem 2rem;
       0 0px 0 1px rgba(0, 0, 0, 0.02) !important;
   }
 
+  .modal-background {
+    background-color: rgba(21, 21, 21, 0.7);
+  }
+  .modal-content {
+    padding: 20px !important;
+  }
+
+  .vuecal__cell--selected {
+    background-color: rgba(21, 21, 21, 0.5);
+  }
+
   input,
   select {
     background-color: #414141 !important;
