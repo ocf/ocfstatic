@@ -3,7 +3,7 @@
     <div class="is-divider custom" data-content="Links" />
     <div class="block ">
       <a href="https://irc.ocf.berkeley.edu/">
-        <hashtag class="item" />
+        <hashtag class="item darkmode-invert" />
       </a>
       <a href="https://fco.slack.com">
         <slack class="item" />
@@ -18,13 +18,13 @@
         <g-image class="item" src="~/assets/callink.png" />
       </a>
       <a href="https://github.com/ocf">
-        <github class="item" />
+        <github class="item darkmode-invert" />
       </a>
       <a href="https://www.facebook.com/ucbocf">
         <facebook class="item" />
       </a>
       <a href="https://chat.ocf.berkeley.edu/">
-        <matrix class="item" />
+        <matrix class="item darkmode-invert" />
       </a>
     </div>
   </div>

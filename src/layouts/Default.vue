@@ -143,23 +143,22 @@ export default {
   },
   watch: {
     darkMode(newMode) {
-      if (
-        document.getElementById("app").classList.value.includes("dark") !==
-        newMode
-      )
-        document.getElementById("app").classList.toggle("dark");
+      const appClasses = document.getElementById("app").classList;
+
+      if (appClasses.value.includes("dark") !== newMode) {
+        appClasses.toggle("dark");
+      }
       localStorage.darkMode = newMode;
     }
   },
   mounted() {
     if (localStorage.darkMode) {
-      let status = localStorage.darkMode === "true";
+      const status = localStorage.darkMode === "true";
+      const appClasses = document.getElementById("app").classList;
 
-      if (
-        document.getElementById("app").classList.value.includes("dark") !==
-        status
-      )
-        document.getElementById("app").classList.toggle("dark");
+      if (appClasses.value.includes("dark") !== status) {
+        appClasses.toggle("dark");
+      }
       this.darkMode = status;
     }
   },

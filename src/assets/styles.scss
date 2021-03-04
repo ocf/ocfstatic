@@ -41,8 +41,17 @@ $footer-padding: 2rem 3rem 2rem;
 
   background-color: $black-bis;
 
-  .navbar-link:not(.is-arrowless)::after {
-    border-color: $primary !important;
+  .navbar-item > .navbar-link:not(.is-arrowless)::after {
+    border-color: $primary;
+  }
+  .control.has-icons-left,
+  .control.has-icons-right {
+    input.input ~ .icon {
+      color: $grey-lighter;
+    }
+    input.input:focus ~ .icon {
+      color: $white;
+    }
   }
 
   p,
@@ -55,7 +64,11 @@ $footer-padding: 2rem 3rem 2rem;
   h6,
   div,
   span {
-    color: $white !important;
+    color: $white;
+  }
+
+  .menu-label {
+    color: $grey-lighter;
   }
 
   .is-divider,
@@ -83,38 +96,45 @@ $footer-padding: 2rem 3rem 2rem;
   }
 
   .box,
+  .card,
   .dropdown-content,
   .navbar-dropdown {
-    box-shadow: 0 0.25em 1em -0.125em rgba(0, 0, 0, 0.05),
-      0 0px 0 1px rgba(0, 0, 0, 0.01) !important;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+      0 0px 0 1px rgba(10, 10, 10, 0.02);
   }
 
   .modal-background {
     background-color: rgba(21, 21, 21, 0.7);
   }
-  .modal-content {
-    padding: 20px !important;
+  .modal-content.animation-content {
+    padding: 20px;
   }
 
+  .modal:focus {
+    outline: none;
+  }
   .vuecal__cell--selected {
     background-color: rgba(21, 21, 21, 0.5);
   }
 
-  input,
+  input[type="text"],
   select {
-    background-color: $grey-dark !important;
-    border: none !important;
-    color: $white !important;
+    background-color: $grey-dark;
+    border: none;
+    color: $white;
   }
-  ::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: $grey-light !important;
+  input[type="text"]::-webkit-input-placeholder {
+    color: $grey-light;
   }
 
   code {
     // taken from prism-okaida
     background-color: #262822;
     color: #e7717d;
+  }
+
+  .darkmode-invert {
+    filter: invert(100%);
   }
 }
 
