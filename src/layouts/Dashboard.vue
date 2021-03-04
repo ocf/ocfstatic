@@ -15,7 +15,7 @@
       <div class="column">
         <slot />
       </div>
-      <div class="column is-2 has-background-white-bis">
+      <div class="column is-2">
         <aside-menu />
       </div>
     </div>

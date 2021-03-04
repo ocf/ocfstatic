@@ -7,7 +7,7 @@
           <b-icon
             v-if="value.children"
             :icon="
-              clicked.includes(value.path) || path.includes(value.path)
+              clicked.includes(value.path) ^ path.includes(value.path)
                 ? 'chevron-down'
                 : 'chevron-left'
             "
@@ -21,7 +21,7 @@
       <sidebar-item
         v-if="
           value.children &&
-            (clicked.includes(value.path) || path.includes(value.path))
+            clicked.includes(value.path) ^ path.includes(value.path)
         "
         :items="value.children"
         :path="path"

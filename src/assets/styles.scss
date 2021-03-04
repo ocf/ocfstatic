@@ -18,6 +18,11 @@ $addColors: (
 // Merge default colors with our custom choices
 $colors: map-merge($colors, $addColors);
 
+#app {
+  // fixes empty space at bottom of page for short pages
+  min-height: 100vh;
+}
+
 // Links
 $link: $primary;
 $link-focus-border: $primary;
@@ -26,8 +31,13 @@ $link-focus-border: $primary;
 
 $footer-padding: 2rem 3rem 2rem;
 
+#app {
+  @import "src/assets/ocf-prism.scss";
+}
+
 #app.dark {
   @import "src/assets/_dark-theme.scss";
+  @import "src/assets/ocf-prism-okaida.scss";
 
   background-color: $black-bis;
 
@@ -45,7 +55,7 @@ $footer-padding: 2rem 3rem 2rem;
   h6,
   div,
   span {
-    color: $grey-lighter !important;
+    color: $white !important;
   }
 
   .is-divider,
@@ -75,8 +85,8 @@ $footer-padding: 2rem 3rem 2rem;
   .box,
   .dropdown-content,
   .navbar-dropdown {
-    box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1),
-      0 0px 0 1px rgba(0, 0, 0, 0.02) !important;
+    box-shadow: 0 0.25em 1em -0.125em rgba(0, 0, 0, 0.05),
+      0 0px 0 1px rgba(0, 0, 0, 0.01) !important;
   }
 
   .modal-background {
@@ -99,6 +109,12 @@ $footer-padding: 2rem 3rem 2rem;
   ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: $grey-light !important;
+  }
+
+  code {
+    // taken from prism-okaida
+    background-color: #262822;
+    color: #e7717d;
   }
 }
 

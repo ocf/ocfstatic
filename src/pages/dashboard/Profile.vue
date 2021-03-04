@@ -8,11 +8,11 @@
             <!-- <gravatar-pic :email="user.email" /> -->
             <hr />
             <b-field label="Name">
-              <b-input :value="'test'" custom-class="is-static" readonly />
+              <b-input :value="'test'" readonly />
             </b-field>
             <hr />
             <b-field label="E-mail">
-              <b-input :value="userEmail" custom-class="is-static" readonly />
+              <b-input :value="userEmail" readonly />
             </b-field>
           </card>
         </div>
@@ -82,16 +82,16 @@
 <script>
 import dashboard from "@/layouts/Dashboard.vue";
 import card from "@/components/Card.vue";
-import GravatarPic from "~/components/GravatarPic.vue";
-import store from "~/store.js";
+// import GravatarPic from "~/components/GravatarPic.vue";
+// import store from "~/store.js";
 export default {
   metaInfo: {
-    title: "Dashboard",
+    title: "Dashboard"
   },
   components: {
     card,
-    dashboard,
-    GravatarPic
-  },
+    dashboard
+    //    GravatarPic
+  }
 };
 </script>

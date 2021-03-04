@@ -1,0 +1,125 @@
+/* PrismJS 1.23.0
+https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.prism-token.comment,
+.prism-token.prolog,
+.prism-token.doctype,
+.prism-token.cdata {
+  color: #8292a2;
+}
+
+.prism-token.punctuation {
+  color: #f8f8f2;
+}
+
+.prism-token.namespace {
+  opacity: 0.7;
+}
+
+.prism-token.property,
+.prism-token.tag,
+.prism-token.constant,
+.prism-token.symbol,
+.prism-token.deleted {
+  color: #f92672;
+}
+
+.prism-token.boolean,
+.prism-token.number {
+  color: #ae81ff;
+}
+
+.prism-token.selector,
+.prism-token.attr-name,
+.prism-token.string,
+.prism-token.char,
+.prism-token.builtin,
+.prism-token.inserted {
+  color: #a6e22e;
+}
+
+.prism-token.operator,
+.prism-token.entity,
+.prism-token.url,
+.language-css .prism-token.string,
+.style .prism-token.string,
+.prism-token.variable {
+  color: #f8f8f2;
+}
+
+.prism-token.atrule,
+.prism-token.attr-value,
+.prism-token.function,
+.prism-token.class-name {
+  color: #e6db74;
+}
+
+.prism-token.keyword {
+  color: #66d9ef;
+}
+
+.prism-token.regex,
+.prism-token.important {
+  color: #fd971f;
+}
+
+.prism-token.important,
+.prism-token.bold {
+  font-weight: bold;
+}
+.prism-token.italic {
+  font-style: italic;
+}
+
+.prism-token.entity {
+  cursor: help;
+}
