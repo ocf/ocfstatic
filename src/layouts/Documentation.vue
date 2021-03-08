@@ -28,7 +28,7 @@
       <div class="column">
         <slot />
       </div>
-      <div class="column is-3">
+      <div class="column is-3 has-background-main-ter">
         <sidebar :items="tree" :path="path" :subtitles="subtitles" />
       </div>
     </div>

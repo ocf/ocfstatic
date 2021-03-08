@@ -31,12 +31,12 @@ $link-focus-border: $primary;
 
 $footer-padding: 2rem 3rem 2rem;
 
-#app {
-  @import "src/assets/ocf-prism.scss";
-}
+@import "src/assets/ocf-prism.scss";
+@import "src/assets/_global-helpers.scss";
 
 #app.dark {
   @import "src/assets/_dark-theme.scss";
+  @import "src/assets/_global-helpers.scss";
   @import "src/assets/ocf-prism-okaida.scss";
 
   background-color: $black-bis;
@@ -117,14 +117,23 @@ $footer-padding: 2rem 3rem 2rem;
     background-color: rgba(21, 21, 21, 0.5);
   }
 
+  .profile img {
+    max-height: initial;
+  }
+
   input[type="text"],
   select {
-    background-color: $grey-dark;
-    border: none;
+    background-color: inherit;
     color: $white;
   }
   input[type="text"]::-webkit-input-placeholder {
     color: $grey-light;
+  }
+  div.search > div.control > input.input {
+    box-shadow: none;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
   }
 
   code {
@@ -135,6 +144,11 @@ $footer-padding: 2rem 3rem 2rem;
 
   .darkmode-invert {
     filter: invert(100%);
+  }
+
+  button.button {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 

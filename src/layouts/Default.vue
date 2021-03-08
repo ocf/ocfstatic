@@ -56,7 +56,10 @@
               Login
             </b-button>
           </div>
-          <div class="navbar-item is-clickable" @click="toggleTheme">
+          <div
+            class="navbar-item is-clickable is-unselectable"
+            @click="toggleTheme"
+          >
             {{ darkMode ? "🌑" : "☀️" }}
           </div>
         </div>
