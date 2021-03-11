@@ -8,7 +8,16 @@
         <h2 class="subtitle is-4">
           Everything you need to know
         </h2>
+        <p>
+          The OCF offers many services, free of charge, to the campus community.
+        </p>
+        <p>
+          Have an idea for something else the OCF can provide? Feel free to send
+          your suggestion by
+          <a href="/docs/contact">contacting us</a>!
+        </p>
       </div>
+      <!-- import faq here -->
     </section>
   </Documentation>
 </template>
