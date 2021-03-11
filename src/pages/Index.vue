@@ -105,7 +105,10 @@
                     meeting recaps
                   </li>
                   <li>
-                    Chat with us on <a href="https://fco.slack.com">Slack</a> or
+                    Chat with us on
+                    <a href="https://fco.slack.com">Slack</a>,
+                    <a href="https://ocf.io/discord">Discord</a>,
+                    <a href="https://chat.ocf.berkeley.edu/">Matrix</a> or
                     <a href="docs/internal/contact/irc/">IRC</a>
                   </li>
                   <li>
