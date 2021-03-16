@@ -3,9 +3,7 @@
     <section class="section">
       <div class="container">
         <div class="content">
-          <h1 class="title is-1">
-            About Us
-          </h1>
+          <h1 class="title is-1">About Us</h1>
           <div class="columns is-8 is-variable">
             <div class="column is-half">
               <h2 class="subtitle">What We Do</h2>
@@ -18,9 +16,7 @@
               </p>
             </div>
             <div class="column is-half">
-              <h2 class="subtitle">
-                Staff Meetings
-              </h2>
+              <h2 class="subtitle">Staff Meetings</h2>
               <p class="is-size-5">
                 OCF Staff meet to discuss technology, learn from each other, and
                 work on OCF projects. Drop-in visitors are always welcome,
@@ -135,9 +131,7 @@
 
     <section class="section has-text-centered">
       <div class="container">
-        <h1 class="title">
-          History
-        </h1>
+        <h1 class="title">History</h1>
         <history />
       </div>
     </section>
