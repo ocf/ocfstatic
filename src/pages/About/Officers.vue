@@ -124,67 +124,89 @@ export default {
         id: 1,
         name: "Kevin Mo",
         handle: "kmo",
-        role: ["General Manager"]
+        role: ["General Manager"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 2,
         name: "Saurabh Narain ",
         handle: "snarain",
-        role: ["General Manager"]
+        role: ["General Manager"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 3,
         name: "Nikhil Jha  ",
         handle: "njha",
-        role: ["Site Manager"]
+        role: ["Site Manager"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 4,
         name: "Frank Dai",
         handle: "fydai",
-        role: ["Site Manager"]
+        role: ["Site Manager"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 5,
         name: "Ja Wattanawong",
         handle: "jaw",
-        role: ["Internal Head"]
+        role: ["Internal Head"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 6,
         name: "Ronit Nath",
         handle: "ronitnath",
-        role: ["Internal Head", "Finance Head", "Communications Head"]
+        role: ["Internal Head", "Finance Head", "Communications Head"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 7,
         name: "Ryan-chan",
         handle: "rrchan",
-        role: ["Industry and Alumni Relations Head"]
+        role: ["Industry and Alumni Relations Head"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 8,
         name: "Andrew Aikawa",
         handle: "asai",
-        role: ["Industry and Alumni Relations Head"]
+        role: ["Industry and Alumni Relations Head"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 9,
         name: "Nicholas Berberi",
         handle: "ncberberi",
-        role: ["Finance Head"]
+        role: ["Finance Head"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 10,
         name: "Ben Cuan",
         handle: "bencuan",
-        role: ["Communications Head", "DeCal Head"]
+        role: ["Communications Head", "DeCal Head"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
         id: 11,
         name: "Leo Huang",
         handle: "hexhu",
-        role: ["DeCal Head"]
+        role: ["DeCal Head"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       }
     ];
   }
