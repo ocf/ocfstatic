@@ -26,6 +26,9 @@ $link-focus-border: $primary;
 
 $footer-padding: 2rem 3rem 2rem;
 
+$card-background-color: $primary;
+$card-color: $primary-invert;
+
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

@@ -42,9 +42,21 @@
           <g-link class="navbar-item" to="/docs">
             Documentation
           </g-link>
-          <g-link class="navbar-item" to="/about">
-            About
-          </g-link>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-link">
+              About
+            </div>
+            <div class="navbar-dropdown is-boxed">
+              <g-link
+                v-for="(about_item, index) in about"
+                :key="index"
+                :to="about_item.route"
+                class="navbar-item"
+              >
+                {{ about_item.name }}
+              </g-link>
+            </div>
+          </div>
           <g-link class="navbar-item" to="/docs/internal/contact">
             Contact Us
           </g-link>
@@ -129,6 +141,10 @@ export default {
         { name: "MySQL Database", route: "/docs/services/mysql" },
         { name: "Software Mirrors", route: "/docs/services/mirrors" },
         { name: "High Performance Computing", route: "/docs/services/hpc" }
+      ],
+      about: [
+        { name: "What We Do", route: "/about" },
+        { name: "Officers", route: "/about/officers" }
       ]
     };
   },
