@@ -4,29 +4,14 @@
       <div class="container">
         <h1 class="title is-1 has-text-centered">Meet Our Officers</h1>
         <div class="is-divider"></div>
-        <h2 class="title is-2 has-text-centered">Faculty Adviser</h2>
-        <h4 class="title is-4 has-text-centered">
-          <a href="https://www.cs.berkeley.edu/~bh">Dr. Brian Harvey</a>
-        </h4>
-
-        <h2 class="title is-2 has-text-centered">Board of Directors</h2>
-        <h4 class="title is-4 has-text-centered">
-          See <a href="https://www.ocf.berkeley.edu/~staff/bod/">minutes</a> for
-          attendance
-        </h4>
-        <h4 class="title is-4 has-text-centered">
-          The Board of Directors is the decision-making entity behind the OCF's
-          operations. The Board is appointed based on attendance at our
-          <a href="/about">weekly meetings</a>
-        </h4>
-        <div class="is-divider"></div>
 
         <h2 class="title is-2 has-text-centered">General Managers</h2>
-        <h4 class="title is-4 has-text-centered">
+        <p class="is-size-4 has-text-centered">
           General Managers handle the organizational activities of the OCF and
           lead the Board of Directors meetings. They are elected by the Board of
           Directors at the end of each semester.
-        </h4>
+        </p>
+        <br />
         <OfficerCardSet
           role-wanted="General Manager"
           :cards="cards"
@@ -36,11 +21,12 @@
         <div class="is-divider"></div>
 
         <h2 class="title is-2 has-text-centered">Site Managers</h2>
-        <h4 class="title is-4 has-text-centered">
+        <p class="is-size-4 has-text-centered">
           Site Managers lie behind the technical work involved in maintaining
           the OCF lab and other services. They are elected by the Board of
           Directors at the end of each semester.
-        </h4>
+        </p>
+        <br />
         <OfficerCardSet
           role-wanted="Site Manager"
           :cards="cards"
@@ -49,10 +35,11 @@
         <br />
         <div class="is-divider"></div>
         <h2 class="title is-2 has-text-centered">Committee Heads</h2>
-        <h4 class="title is-4 has-text-centered">
+        <p class="is-size-4 has-text-centered">
           Committee heads guide the work of the various committees that function
           within the OCF.
-        </h4>
+        </p>
+        <br />
 
         <div class="columns is-centered">
           <div class="column">
@@ -92,12 +79,31 @@
             />
           </div>
         </div>
-        <h3 class="title is-3 has-text-centered">DeCal Heads</h3>
-        <OfficerCardSet
-          role-wanted="DeCal Head"
-          :cards="cards"
-          :double-set="false"
-        />
+        <div class="column">
+          <h3 class="title is-3 has-text-centered">DeCal Heads</h3>
+          <OfficerCardSet
+            role-wanted="DeCal Head"
+            :cards="cards"
+            :double-set="false"
+          />
+        </div>
+        <div class="is-divider"></div>
+
+        <h2 class="title is-2 has-text-centered">Faculty Adviser</h2>
+        <h4 class="title is-4 has-text-centered">
+          <a href="https://www.cs.berkeley.edu/~bh">Dr. Brian Harvey</a>
+        </h4>
+
+        <h2 class="title is-2 has-text-centered">Board of Directors</h2>
+        <p class="is-size-4 has-text-centered">
+          See <a href="https://www.ocf.berkeley.edu/~staff/bod/">minutes</a> for
+          attendance
+        </p>
+        <p class="is-size-4 has-text-centered">
+          The Board of Directors is the decision-making entity behind the OCF's
+          operations. The Board is appointed based on attendance at our
+          <a href="/about">weekly meetings</a>
+        </p>
       </div>
     </section>
   </Layout>
