@@ -204,28 +204,13 @@
             <p class="subtitle"><g-link to="/stats">See More »</g-link></p>
 
             <div class="level">
-              <div class="level-item has-text-centered">
+              <div
+                v-for="stat in statsDisplay"
+                class="level-item has-text-centered"
+              >
                 <div>
-                  <p class="heading">Pages printed</p>
-                  <p class="title">3,456</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Bandwidth Usage</p>
-                  <p class="title">123GB</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Hours Farmed</p>
-                  <p class="title">456</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Accounts Created</p>
-                  <p class="title">9</p>
+                  <p class="heading">{{ stat.name }}</p>
+                  <p class="title">{{ stat.value }}</p>
                 </div>
               </div>
             </div>
@@ -261,7 +246,8 @@ export default {
       hours: [],
       blogPosts: [],
       numUsersInLab: null,
-      staffInLab: []
+      staffInLab: [],
+      statsDisplay: []
     };
   },
   mounted() {
@@ -334,6 +320,11 @@ export default {
     async setStaffInLab() {
       this.staffInLab = await this.$http
         .get(this.$static.metadata.apiUrl + "lab/staff")
+        .then(response => response.data);
+    },
+    setStats() {
+      this.statsDisplay = await this.$http
+        .get(this.$static.metadata.apiUrl + "lab/stats")
         .then(response => response.data);
     }
   }
