@@ -205,12 +205,12 @@
 
             <div class="level">
               <div
-                v-for="stat in statsDisplay"
+                v-for="(value, key) in statsDisplay"
                 class="level-item has-text-centered"
               >
                 <div>
-                  <p class="heading">{{ stat.name }}</p>
-                  <p class="title">{{ stat.value }}</p>
+                  <p class="heading">{{ key }}</p>
+                  <p class="title">{{ value }}</p>
                 </div>
               </div>
             </div>
@@ -247,7 +247,7 @@ export default {
       blogPosts: [],
       numUsersInLab: null,
       staffInLab: [],
-      statsDisplay: []
+      statsDisplay: {}
     };
   },
   mounted() {
@@ -263,6 +263,7 @@ export default {
     this.setBlogPosts();
     this.setNumUsersInLab();
     this.setStaffInLab();
+    this.setStats();
   },
   methods: {
     async setHoursTextToday() {
@@ -322,10 +323,11 @@ export default {
         .get(this.$static.metadata.apiUrl + "lab/staff")
         .then(response => response.data);
     },
-    setStats() {
+    async setStats() {
       this.statsDisplay = await this.$http
-        .get(this.$static.metadata.apiUrl + "lab/stats")
+        .get("http://127.0.0.1:8000/stats")
         .then(response => response.data);
+      console.log(this.statsDisplay);
     }
   }
 };
