@@ -107,6 +107,7 @@
         </p>
         <div class="is-divider"></div>
 
+        <h2 class="title is-2 has-text-centered">Past Officers</h2>
         <b-collapse
           class="card has-background-light"
           animation="slide"
@@ -115,10 +116,10 @@
           <template #trigger="props">
             <div class="card-header" role="button">
               <p class="card-header-title">
-                Past Officers
+                View Past Officers
               </p>
               <a class="card-header-icon has-text-black">
-                <b-icon :icon="props.open ? 'menu-down' : 'menu-up'"> </b-icon>
+                <b-icon :icon="props.open ? 'menu-up' : 'menu-down'"> </b-icon>
               </a>
             </div>
           </template>
@@ -132,9 +133,7 @@
             >
               <template #trigger="props">
                 <a class="has-text-black">
-                  <b-icon
-                    :icon="!props.open ? 'menu-down' : 'menu-up'"
-                  ></b-icon>
+                  <b-icon :icon="props.open ? 'menu-up' : 'menu-down'"></b-icon>
                   {{ v.term }}
                 </a>
               </template>
