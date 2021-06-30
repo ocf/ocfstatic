@@ -143,7 +143,7 @@ export default {
         { name: "High Performance Computing", route: "/docs/services/hpc" }
       ],
       about: [
-        { name: "What We Do", route: "/about" },
+        { name: "About Us", route: "/about" },
         { name: "Officers", route: "/about/officers" }
       ]
     };
