@@ -67,6 +67,9 @@
                   <h2 class="title is-2 has-text-centered">
                     Services We Provide
                   </h2>
+                  <h3 class="subtitle is-5 has-text-centered">
+                    Click for More Info
+                  </h3>
 
                   <p
                     class="button card box is-white is-medium"
