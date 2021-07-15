@@ -41,21 +41,7 @@
     <!-- Section: Image and content banners -->
     <section class="section">
       <div class="container">
-        <div class="columns is-vcentered reverse-row-order">
-          <div class="column is-half">
-            <transition name="fade" mode="out-in">
-              <img
-                :key="servicesImages[servicesActiveImage]"
-                :src="servicesImages[servicesActiveImage]"
-                data-toggle="tooltip"
-                width="800"
-                height="600"
-                data-placement="bottom"
-                title="goTop"
-                alt=""
-              />
-            </transition>
-          </div>
+        <div class="columns is-vcentered">
           <div class="column is-half">
             <div class="columns is-centered is-vcentered">
               <div class="column is-three-quarters">
@@ -67,30 +53,43 @@
                     Click for More Info
                   </h3>
 
-                  <p
-                    class="button card box is-white is-medium"
-                    :class="{ 'active-card': servicesActiveImage === 0 }"
-                    @click="servicesActiveImage = 0"
-                  >
-                    Web &amp; Email Hosting
-                  </p>
-                  <p
-                    class="button card box is-white is-medium"
-                    :class="{ 'active-card': servicesActiveImage === 1 }"
-                    @click="servicesActiveImage = 1"
-                  >
-                    UNIX Shell Accounts
-                  </p>
-                  <p
-                    class="button card box is-white is-medium"
-                    :class="{ 'active-card': servicesActiveImage === 2 }"
-                    @click="servicesActiveImage = 2"
-                  >
-                    Free Printing for Members
+                  <p>
+                    We provide lots of services to the Berkeley community for
+                    free.
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="column is-half">
+            <div class="has-background-dark">
+              <button @click="servicesActive = Math.max(0, servicesActive - 1)">
+                Prev
+              </button>
+              <button
+                class="has-background-dark"
+                @click="servicesActive = Math.min(2, servicesActive + 1)"
+              >
+                <span class="icon">
+                  <i class="fas fa-angle-down"></i>
+                </span>
+              </button>
+              <h3 class="title is-3 has-text-white">
+                {{ servicesNames[servicesActive] }}
+              </h3>
+            </div>
+            <transition name="fade" mode="out-in">
+              <img
+                :key="servicesImages[servicesActive]"
+                :src="servicesImages[servicesActive]"
+                data-toggle="tooltip"
+                width="800"
+                height="600"
+                data-placement="bottom"
+                title="goTop"
+                alt=""
+              />
+            </transition>
           </div>
         </div>
       </div>
@@ -306,11 +305,16 @@ export default {
   },
   data() {
     return {
-      servicesActiveImage: 0,
+      servicesActive: 0,
       servicesImages: [
         "/assets/img/cloud.jpg",
         "/assets/img/unix-shell.jpg",
         "/assets/img/printer.jpg"
+      ],
+      servicesNames: [
+        "Web & Email Hosting",
+        "Unix Shell Accounts",
+        "Free Printing for Members"
       ]
     };
   }
