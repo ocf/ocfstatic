@@ -57,34 +57,53 @@
                     We provide lots of services to the Berkeley community for
                     free.
                   </p>
+                  <p
+                    class="button card box is-white is-medium is-hidden-touch"
+                    v-for="service in services"
+                    :class="{
+                      'active-card': activeService === service['index']
+                    }"
+                    @click="activeService = service['index']"
+                  >
+                    {{ service["name"] }}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="column is-half">
-            <div class="has-background-dark">
-              <button @click="servicesActive = Math.max(0, servicesActive - 1)">
-                Prev
-              </button>
-              <button
-                class="has-background-dark"
-                @click="servicesActive = Math.min(2, servicesActive + 1)"
+            <div class="container is-hidden-desktop">
+              <div
+                class="columns is-3 is-mobile is-vcentered is-hidden-desktop"
               >
-                <span class="icon">
-                  <i class="fas fa-angle-down"></i>
-                </span>
-              </button>
-              <h3 class="title is-3 has-text-white">
-                {{ servicesNames[servicesActive] }}
-              </h3>
+                <div class="column has-text-centered">
+                  <button
+                    class="button is-primary"
+                    @click="activeService = Math.max(0, activeService - 1)"
+                  >
+                    &larr;
+                  </button>
+                </div>
+                <div class="column is-one-half has-text-centered">
+                  {{ services[activeService]["name"] }}
+                </div>
+                <div class="column has-text-centered">
+                  <button
+                    class="button is-primary"
+                    @click="activeService = Math.min(2, activeService + 1)"
+                  >
+                    &rarr;
+                  </button>
+                </div>
+              </div>
             </div>
             <transition name="fade" mode="out-in">
               <img
-                :key="servicesImages[servicesActive]"
-                :src="servicesImages[servicesActive]"
+                :key="services[activeService]['image']"
+                :src="services[activeService]['image']"
                 data-toggle="tooltip"
                 width="800"
-                height="600"
+                height="800"
                 data-placement="bottom"
                 title="goTop"
                 alt=""
@@ -305,7 +324,7 @@ export default {
   },
   data() {
     return {
-      servicesActive: 0,
+      activeService: 0,
       servicesImages: [
         "/assets/img/cloud.jpg",
         "/assets/img/unix-shell.jpg",
@@ -315,6 +334,23 @@ export default {
         "Web & Email Hosting",
         "Unix Shell Accounts",
         "Free Printing for Members"
+      ],
+      services: [
+        {
+          index: 0,
+          name: "Web & Email Hosting",
+          image: "/assets/img/cloud.jpg"
+        },
+        {
+          index: 1,
+          name: "Tech Support",
+          image: "/assets/img/techsupport.png"
+        },
+        {
+          index: 2,
+          name: "Computer Lab and Printing",
+          image: "/assets/img/lab_and_printing.png"
+        }
       ]
     };
   }
