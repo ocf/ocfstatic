@@ -53,10 +53,6 @@
                     Click for More Info
                   </h3>
 
-                  <p>
-                    We provide lots of services to the Berkeley community for
-                    free.
-                  </p>
                   <p
                     class="button card box is-white is-medium is-hidden-touch"
                     v-for="service in services"
@@ -109,6 +105,9 @@
                 alt=""
               />
             </transition>
+            <div class="notification">
+              {{ services[activeService]["text"] }}
+            </div>
           </div>
         </div>
       </div>
@@ -339,17 +338,23 @@ export default {
         {
           index: 0,
           name: "Web & Email Hosting",
-          image: "/assets/img/cloud.jpg"
+          image: "/assets/img/cloud.jpg",
+          text:
+            "We provide quality, free website and email hosting for individuals and student organizations."
         },
         {
           index: 1,
           name: "Tech Support",
-          image: "/assets/img/techsupport.png"
+          image: "/assets/img/techsupport.png",
+          text:
+            "We have Staff Hours to provide assistance with using our services."
         },
         {
           index: 2,
           name: "Computer Lab and Printing",
-          image: "/assets/img/lab_and_printing.png"
+          image: "/assets/img/lab_and_printing.png",
+          text:
+            "We operate a lab of 29 state-of-the-art workstations running Debian Linux and open-source software. We also provide free printing to members!"
         }
       ]
     };
