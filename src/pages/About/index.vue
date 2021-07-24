@@ -105,8 +105,10 @@
                 alt=""
               />
             </transition>
-            <div class="notification">
-              {{ services[activeService]["text"] }}
+            <div class="container" style="min-height:8em;">
+              <div class="notification">
+                {{ services[activeService]["text"] }}
+              </div>
             </div>
           </div>
         </div>
@@ -149,9 +151,6 @@
         </div>
       </div>
     </section>
-    <!--
-    <div class="is-divider"></div>
--->
 
     <!-- Section: what you can do for us -->
     <section class="section has-background-primary">
@@ -226,69 +225,20 @@
       <div class="container">
         <h2 class="title is-2">Technologies We Use</h2>
         <div class="columns is-vcentered">
-          <div class="column is-one-fifth">
-            <a class="box" href="https://linuxfoundation.org">
+          <div class="column is-one-fifth" v-for="technology in technologies">
+            <a class="box" :href="technology['link']">
               <figure class="image is-square">
-                <img src="/assets/img/linux.png" />
+                <g-image
+                  :src="
+                    require('!!assets-loader!~/assets/oss_icons/' +
+                      technology.image)
+                  "
+                />
               </figure>
               <div class="content mt-4">
-                <h3>Linux</h3>
+                <h3>{{ technology["name"] }}</h3>
                 <p>
-                  The world's most important open source project. Linux is the
-                  kernel that powers our servers, desktops, and more.
-                </p>
-              </div>
-            </a>
-          </div>
-          <div class="column is-one-fifth">
-            <a class="box" href="https://xfce.org">
-              <figure class="image is-square">
-                <g-image src="~/assets/svg/xfce.svg" />
-              </figure>
-              <div class="content mt-4">
-                <h3>XFCE desktop</h3>
-                <p>A good lightweight desktop we use on our machines</p>
-              </div>
-            </a>
-          </div>
-          <div class="column is-one-fifth">
-            <a class="box" style="height:100%;" href="https://www.debian.org">
-              <figure class="image is-square">
-                <g-image src="~/assets/oss_icons/debian.png" />
-              </figure>
-              <div class="content mt-4">
-                <h3>Debian Linux</h3>
-                <p>
-                  An open-source, Linux-based operating system that powers our
-                  desktops and servers!
-                </p>
-              </div>
-            </a>
-          </div>
-          <div class="column is-one-fifth">
-            <a class="box" style="height:100%;" href="https://www.python.org">
-              <figure class="image is-square">
-                <g-image src="~/assets/svg/python.svg" />
-              </figure>
-              <div class="content mt-4">
-                <h3>Python</h3>
-                <p>
-                  Python is an open-source programming language
-                </p>
-              </div>
-            </a>
-          </div>
-          <div class="column is-one-fifth">
-            <a class="box" style="height:100%;" href="https://www.apache.org">
-              <figure class="image is-square">
-                <g-image src="~/assets/svg/apache.svg" />
-              </figure>
-              <div class="content mt-4">
-                <h3>Apache</h3>
-                <p>
-                  Apache is a creater of open-source software. Idk anything else
-                  about them but they seem chill I guess. I'll have to check
-                  their website for more info
+                  {{ technology["text"] }}
                 </p>
               </div>
             </a>
@@ -355,6 +305,43 @@ export default {
           image: "/assets/img/lab_and_printing.png",
           text:
             "We operate a lab of 29 state-of-the-art workstations running Debian Linux and open-source software. We also provide free printing to members!"
+        }
+      ],
+      technologies: [
+        {
+          name: "Linux",
+          image: "linux.png",
+          text:
+            "The world's most important open source project. Linux is the kernel that powers our servers, desktops, and more.",
+          link: "https://linuxfoundation.org"
+        },
+        {
+          name: "Debian",
+          image: "debian.png",
+          text:
+            "An open-source, Linux-based operating system that powers our desktops and servers!",
+          link: "https://debian.org"
+        },
+        {
+          name: "XFCE Desktop",
+          image: "xfce.svg",
+          text:
+            "A lightweight, efficient desktop environment that runs on top of Debian.",
+          link: "https://xfce.org"
+        },
+        {
+          name: "Python",
+          image: "python.svg",
+          text:
+            "Python is open-source and modern programming language, and we use it under the hood of many of our services.",
+          link: "https://python.org"
+        },
+        {
+          name: "Apache",
+          image: "apache.svg",
+          text:
+            "Apache creates some very useful pieces of open-source software, particularly for web hosting.",
+          link: "https://apache.org"
         }
       ]
     };
