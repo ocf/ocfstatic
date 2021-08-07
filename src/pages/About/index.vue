@@ -70,7 +70,8 @@
           <div class="column is-half">
             <div class="container is-hidden-desktop">
               <div
-                class="columns is-3 is-mobile is-vcentered is-hidden-desktop"
+                class="columns is-3 is-mobile is-hidden-desktop is-vcentered"
+                style="min-height:6.5em;"
               >
                 <div class="column has-text-centered">
                   <button
@@ -301,7 +302,7 @@ export default {
         },
         {
           index: 2,
-          name: "Computer Lab and Printing",
+          name: "Computer Lab + Printing",
           image: "/assets/img/lab_and_printing.png",
           text:
             "We operate a lab of 29 state-of-the-art workstations running Debian Linux and open-source software. We also provide free printing to members!"
