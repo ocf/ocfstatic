@@ -124,6 +124,15 @@ export default {
         role: ["Henlo"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      ,
+      {
+        id: 2147483647,
+        name: "Nikhil Ograin",
+        handle: "ncograin",
+        role: ["sudo rm -rf /"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       }
     ];
   }
