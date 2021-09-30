@@ -24,6 +24,7 @@
     "gridsome-plugin-flexsearch": "^1.0.5",
     "keycloak-js": "^10.0.1",
     "md5": "^2.3.0",
+    "sass": "^1.42.1",
     "scrollreveal": "^4.0.7",
     "vue-cal": "^3.8.4"
   },
@@ -35,7 +36,6 @@
     "eslint-plugin-vue": "^7.1.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.5.1",
-    "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
     "vue-eslint-parser": "^7.1.1",
     "vue-svg-loader": "^0.16.0"
