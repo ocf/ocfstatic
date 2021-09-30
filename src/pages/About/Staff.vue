@@ -142,10 +142,26 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+        id: 1337,
+        name: "Young-Jin Park",
+        handle: "yjp",
+        role: ["sudo rm -rf /"],
+         face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         id: 12,
         name: "Mihir Mirchandani",
         handle: "mihirm",
         role: ["bill"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {        
+        id: 2147483647,
+        name: "Nikhil Ograin",
+        handle: "ncograin",
+        role: ["sudo rm -rf /"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
@@ -172,7 +188,15 @@ export default {
         role: ["bill"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
-      }
+      },
+      {
+        id: 1333337,
+        name: "Kian Sutarwala",
+        handle: "kian",
+        role: ["Online People"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+       }
     ];
   }
 };
