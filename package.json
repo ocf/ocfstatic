@@ -26,7 +26,8 @@
     "md5": "^2.3.0",
     "sass": "^1.42.1",
     "scrollreveal": "^4.0.7",
-    "vue-cal": "^3.8.4"
+    "vue-cal": "^3.8.4",
+    "vue-gravatar": "^1.4.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
