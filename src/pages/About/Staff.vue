@@ -128,7 +128,7 @@ export default {
       {
         id: 60,
         name: "Jack Hale",
-        handle: "jshale"
+        handle: "jshale",
         role: ["sudo rm -rf /"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
