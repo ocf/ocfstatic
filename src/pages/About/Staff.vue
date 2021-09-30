@@ -124,6 +124,58 @@ export default {
         role: ["Henlo"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+            {
+        id: 11,
+        name: "VincentHe",
+        handle: "sdfsdf",
+        role: ["IDK"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+
+      },
+
+
+            {
+        id: 12,
+        name: "VincentHe2",
+        handle: "sdfsdf",
+        role: ["IDK"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      }
+      ,
+
+
+            {
+        id: 13,
+        name: "VincentHe3",
+        handle: "sdfsdf",
+        role: ["IDK"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      }
+      ,
+
+
+            {
+        id: 14,
+        name: "VincentHe4",
+        handle: "sdfsdf",
+        role: ["IDK"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      }
+      ,
+
+
+            {
+        id: 15,
+        name: "VincentHe5",
+        handle: "sdfsdf",
+        role: ["IDK"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       }
     ];
   }
