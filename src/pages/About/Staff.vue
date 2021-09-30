@@ -126,7 +126,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        Add-yzy
         id: 3037117079,
         name: "Ziyan Yu",
         handle: "yzy",
