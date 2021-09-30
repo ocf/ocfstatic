@@ -23,6 +23,14 @@
           :cards="cards"
           :double-set="false"
         />
+	<br />
+	<div class="is-divider"></div>
+
+	<OfficerCartSet
+	  role-wanted="thicc_penguins"
+	  :cards="cards"
+	  :double-set="false"
+	/>
       </div>
     </section>
   </Layout>
@@ -124,8 +132,15 @@ export default {
         role: ["Henlo"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 1337,
+	name: "Andrew Zhang",
+	handle: "azh",
+	role: ["thicc_penguins"],
+	face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       }
-    ];
   }
 };
 </script>
