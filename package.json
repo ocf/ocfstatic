@@ -14,7 +14,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.3",
     "@mdi/font": "^5.8.55",
-    "axios": "^0.21.0",
+    "axios": "^0.21.2",
     "axios-auth-refresh": "^3.0.0",
     "buefy": "^0.9.4",
     "bulma": "^0.9.1",
