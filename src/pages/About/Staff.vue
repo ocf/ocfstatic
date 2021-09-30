@@ -126,6 +126,14 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+        id: 3037117079,
+        name: "Ziyan Yu",
+        handle: "yzy",
+        role: ["Online People"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         id: 2147483647,
         name: "Nikhil Ograin",
         handle: "ncograin",
