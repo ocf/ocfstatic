@@ -23,6 +23,14 @@
           :cards="cards"
           :double-set="false"
         />
+        <br />
+        <div class="is-divider"></div>
+
+        <OfficerCardSet
+          role-wanted="ligma"
+          :cards="cards"
+          :double-set="false"
+        />
       </div>
     </section>
   </Layout>
@@ -126,10 +134,10 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 2147483647,
-        name: "Nikhil Ograin",
-        handle: "ncograin",
-        role: ["sudo rm -rf /"],
+        id: 1,
+        name: "Lance Mathias",
+        handle: "lmathias",
+        role: ["ligma"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       }
