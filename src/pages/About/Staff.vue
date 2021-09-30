@@ -23,6 +23,7 @@
           :cards="cards"
           :double-set="false"
         />
+        <br />
         <div class="is-divider"></div>
 
         <OfficerCardSet
