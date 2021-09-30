@@ -149,7 +149,17 @@ export default {
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       }
+      ,
+      {
+        id: 234234,
+        name: "Vincent He",
+        handle: "Viincent",
+        role: ["The Guy"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      }
     ];
+    
   }
 };
 </script>
