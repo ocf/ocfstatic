@@ -24,6 +24,11 @@
           :double-set="false"
         />
       </div>
+      <OfficerCardSet
+          role-wanted="pew"
+          :cards="cards"
+          :double-set="false"
+        />
     </section>
   </Layout>
 </template>
@@ -122,6 +127,14 @@ export default {
         name: "Another person",
         handle: "sdfsdf",
         role: ["Henlo"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      }
+      {
+        id: 27,
+        name: "Alyssa Nguyen",
+        handle: "anguy",
+        role: ["pew"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       }
