@@ -144,7 +144,8 @@ export default {
       ],
       about: [
         { name: "What We Do", route: "/about" },
-        { name: "Officers", route: "/about/officers" }
+        { name: "Officers", route: "/about/officers" },
+        { name: "Meet Our Staff", route: "/about/staff" }
       ]
     };
   },
