@@ -23,6 +23,15 @@
           :cards="cards"
           :double-set="false"
         />
+      
+
+       <div class="is-divider"></div>
+
+        <OfficerCardSet
+          role-wanted="sdfsdf"
+          :cards="cards"
+          :double-set="false"
+        />
       </div>
     </section>
   </Layout>
