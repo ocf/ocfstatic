@@ -124,6 +124,14 @@ export default {
         role: ["Henlo"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 13,
+        name: "Vasanth Kumar",
+        handle: "vakumar",
+        role: ["Online people"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       }
     ];
   }
