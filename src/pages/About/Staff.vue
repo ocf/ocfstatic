@@ -110,7 +110,7 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 8,
+        id: 9,
         name: "One person",
         handle: "jsdx",
         role: ["Henlo"],
