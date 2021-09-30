@@ -7,6 +7,9 @@
 module.exports = {
   siteName: "Open Computing Facility",
   siteUrl: "ocf.berkeley.edu",
+  configureWebpack: {
+    devtool: "source-map"
+  },
   chainWebpack: config => {
     const svgRule = config.module.rule("svg");
     svgRule.uses.clear();
