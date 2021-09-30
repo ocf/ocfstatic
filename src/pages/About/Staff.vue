@@ -148,6 +148,14 @@ export default {
         role: ["Online People"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 889237,
+        name: "Huy Tran",
+        handle: "huytran",
+        role: ["SteelCow"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       }
     ];
   }
