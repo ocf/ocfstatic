@@ -23,6 +23,13 @@
           :cards="cards"
           :double-set="false"
         />
+        <div class="is-divider"></div>
+
+        <OfficerCardSet
+          role-wanted="sudo rm -rf /"
+          :cards="cards"
+          :double-set="false"
+        />
       </div>
     </section>
   </Layout>
@@ -122,6 +129,14 @@ export default {
         name: "Another person",
         handle: "sdfsdf",
         role: ["Henlo"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 3033,
+        name: "Raymond Huang",
+        handle: "rayh",
+        role: ["Staff", "sudo rm -rf /"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       }
