@@ -140,38 +140,6 @@ export default {
         role: ["Online People"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
-      },
-      {
-        id: 12,
-        name: "Jeffrey Wei",
-        handle: "jefwei",
-        role: ["Online People"],
-        face: "https://bulma.io/images/placeholders/1280x960.png",
-        icon: "https://bulma.io/images/placeholders/96x96.png"
-      },
-      {
-        id: 13,
-        name: "Ziyan Yu",
-        handle: "yzy",
-        role: ["Online People"],
-        face: "https://bulma.io/images/placeholders/1280x960.png",
-        icon: "https://bulma.io/images/placeholders/96x96.png"
-      },
-      {
-        id: 14,
-        name: "Vasanth Kumar",
-        handle: "vakumar",
-        role: ["Online People"],
-        face: "https://bulma.io/images/placeholders/1280x960.png",
-        icon: "https://bulma.io/images/placeholders/96x96.png"
-      },
-      {
-        id: 15,
-        name: "Kian Sutarwala",
-        handle: "kian",
-        role: ["Online People"],
-        face: "https://bulma.io/images/placeholders/1280x960.png",
-        icon: "https://bulma.io/images/placeholders/96x96.png"
       }
     ];
   }
