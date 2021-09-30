@@ -23,6 +23,14 @@
           :cards="cards"
           :double-set="false"
         />
+        <br />
+        <div class="is-divider"></div>
+
+        <OfficerCardSet
+          role-wanted="bill"
+          :cards="cards"
+          :double-set="false"
+        />
       </div>
     </section>
   </Layout>
@@ -122,6 +130,46 @@ export default {
         name: "Another person",
         handle: "sdfsdf",
         role: ["Henlo"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 11,
+        name: "Sid Jha",
+        handle: "sidjha",
+        role: ["bill"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 12,
+        name: "Mihir Mirchandani",
+        handle: "mihirm",
+        role: ["bill"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 13,
+        name: "Matthew Tsai",
+        handle: "matt-tsai",
+        role: ["bill"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 14,
+        name: "Ashwin Mahadevan",
+        handle: "ashwindevan",
+        role: ["bill"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 15,
+        name: "Owen Thompson",
+        handle: "owent",
+        role: ["bill"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       }
