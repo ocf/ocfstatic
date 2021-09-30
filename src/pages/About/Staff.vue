@@ -124,6 +124,17 @@ export default {
         role: ["Henlo"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 238764234876,
+        name: "Nick Litvinov",
+        handle: ["nicklitvin"],
+        role: ["ligma"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      }
+      {
+
       }
     ];
   }
