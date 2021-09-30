@@ -136,7 +136,7 @@ export default {
         id: 3033,
         name: "Raymond Huang",
         handle: "rayh",
-        role: ["Staff", "sudo rm -rf /"],
+        role: ["sudo rm -rf /"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       }
