@@ -28,7 +28,7 @@
        <div class="is-divider"></div>
 
         <OfficerCardSet
-          role-wanted="sdfsdf"
+          role-wanted="IDK"
           :cards="cards"
           :double-set="false"
         />
