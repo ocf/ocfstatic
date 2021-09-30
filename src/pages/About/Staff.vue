@@ -126,7 +126,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        
         id: 2147483647,
         name: "Nikhil Ograin",
         handle: "ncograin",
@@ -135,7 +134,7 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 1337,
+        id: 1333337,
         name: "Kian Sutarwala",
         handle: "kian",
         role: ["Online People"],
