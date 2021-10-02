@@ -1,21 +1,11 @@
 <template>
   <Layout>
-    <head>
-      <title>ocf.io shorturls</title>
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        crossorigin="anonymous"
-      />
-    </head>
-    <body>
-      <div class="m-3">
-        <h1>Ocf.io Short Link Translations</h1>
-        <table class="table">
-          <ShortUrlTable />
-        </table>
-      </div>
-    </body>
+    <div class="m-3">
+      <h1 class="title is-1">Ocf.io Short Link Translations</h1>
+      <table class="table">
+        <ShortUrlTable />
+      </table>
+    </div>
   </Layout>
 </template>
 
