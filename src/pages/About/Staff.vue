@@ -148,6 +148,14 @@ export default {
         role: ["Online People"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        id: 34927392710,
+        name: "Ben Trefry",
+        handle: "bentref",
+        role: ["Online People"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
       }
     ];
   }
