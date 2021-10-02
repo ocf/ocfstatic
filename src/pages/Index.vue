@@ -89,7 +89,7 @@
               ></g-image>
               <p class="title">Join Staff!</p>
               <p class="subtitle">
-                Meetings 8PM every Monday at
+                Meetings 8PM every Wednesday at the lab and at 
                 <a href="http://ocf.io/meet">ocf.io/meet</a>
               </p>
               <div class="content">
