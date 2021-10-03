@@ -4,7 +4,7 @@
       <div class="container">
         <div class="content">
           <h1 class="title is-1">About Us</h1>
-          <div class="columns is-8 is-variable">
+          <div class="columns is-2 is-variable">
             <div class="column is-half">
               <h2 class="subtitle">What We Do</h2>
               <p class="is-size-5">
@@ -108,7 +108,7 @@
             </transition>
             <div class="container" style="min-height:8em;">
               <div class="notification">
-                {{ services[activeService]["text"] }}
+                <span v-html="services[activeService]['text']"></span>
               </div>
             </div>
           </div>
@@ -228,19 +228,25 @@
         <div class="columns is-vcentered">
           <div class="column is-one-fifth" v-for="technology in technologies">
             <a class="box" :href="technology['link']">
-              <figure class="image is-square">
-                <g-image
-                  :src="
-                    require('!!assets-loader!~/assets/oss_icons/' +
-                      technology.image)
-                  "
-                />
-              </figure>
-              <div class="content mt-4">
-                <h3>{{ technology["name"] }}</h3>
-                <p>
-                  {{ technology["text"] }}
-                </p>
+              <div class="columns is-multiline is-mobile">
+                <div class="column is-one-quarter-mobile is-full-tablet">
+                  <figure class="image is-square">
+                    <g-image
+                      :src="
+                        require('!!assets-loader!~/assets/oss_icons/' +
+                          technology.image)
+                      "
+                    />
+                  </figure>
+                </div>
+                <div class="column is-three-quarters-mobile is-full-tablet">
+                  <div class="content mt-4">
+                    <h3>{{ technology["name"] }}</h3>
+                    <p>
+                      {{ technology["text"] }}
+                    </p>
+                  </div>
+                </div>
               </div>
             </a>
           </div>
@@ -291,21 +297,21 @@ export default {
           name: "Web & Email Hosting",
           image: "/assets/img/cloud.jpg",
           text:
-            "We provide quality, free website and email hosting for individuals and student organizations."
+            'We provide quality, free <a href="/docs/services/web">website and email hosting</a> for individuals and student organizations.'
         },
         {
           index: 1,
           name: "Tech Support",
           image: "/assets/img/techsupport.png",
           text:
-            "We have Staff Hours to provide assistance with using our services."
+            'We have <a href="/staff-hours">Staff Hours</a> to provide assistance with using our services.'
         },
         {
           index: 2,
           name: "Computer Lab + Printing",
           image: "/assets/img/lab_and_printing.png",
           text:
-            "We operate a lab of 29 state-of-the-art workstations running Debian Linux and open-source software. We also provide free printing to members!"
+            'We operate a <a href="/docs/services/lab">lab</a> of 29 state-of-the-art workstations running Debian Linux and open-source software. We also provide <a href="/docs/services/lab/printing">free printing</a> to members!'
         }
       ],
       technologies: [
