@@ -7,6 +7,10 @@
         </h1>
         <h2 class="subtitle is-4">
           Everything you need to know
+          <br />
+          <br />
+          <g-link to="/shorturls">Short URLs</g-link>
+          <br />
         </h2>
       </div>
     </section>

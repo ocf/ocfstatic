@@ -84,6 +84,8 @@
         <br />
         <g-link class="subtitle is-6" to="/stats">Stats</g-link>
         <br />
+        <g-link class="subtitle is-6" to="/shorturls">Short URLs</g-link>
+        <br />
         <a class="subtitle is-6" href="https://www.ocf.berkeley.edu/~staff/bod/"
           >Board Meeting Minutes</a
         >
