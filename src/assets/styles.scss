@@ -18,6 +18,9 @@ $addColors: (
 // Merge default colors with our custom choices
 $colors: map-merge($colors, $addColors);
 
+$table-striped-row-even-background-color: #fbe9eb;
+$table-head-background-color: #fbe9eb;
+
 // Links
 $link: $primary;
 $link-focus-border: $primary;
