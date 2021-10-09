@@ -9,38 +9,30 @@
         <p class="is-size-4 has-text-centered">
           Here are some of the volunteer staff who make the OCF go round!
         </p>
-        <br />
-        <OfficerCardSet
-          role-wanted="Staff"
-          :cards="cards"
-          :double-set="false"
-        />
-        <br />
-        <div class="is-divider"></div>
 
-        <OfficerCardSet
-          role-wanted="Henlo"
-          :cards="cards"
-          :double-set="false"
-        />
+        <div class="pt-6 staffGrid">
+          <div v-for="staffItem in cards" :key="staffItem.id">
+            <StaffCard :staff-item="staffItem" />
+          </div>
+        </div>
       </div>
     </section>
   </Layout>
 </template>
 
 <script>
-import OfficerCardSet from "../../components/OfficerCardSet";
+import StaffCard from "../../components/StaffCard";
 
 export default {
   metaInfo: {
     title: "Officers"
   },
   components: {
-    OfficerCardSet
+    StaffCard
   },
   data() {
     return {
-      cards: []
+      cards2: []
     };
   },
   created() {
@@ -153,7 +145,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 p.card {
   transition: transform 0.6s;
   width: 100%;
