@@ -11,6 +11,7 @@
 </template>
 
 <script>
+/* eslint-disable no-useless-escape */
 export default {
   mounted: async function() {
     let pp = await (await fetch(

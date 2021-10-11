@@ -22,12 +22,12 @@ export default {
 </script>
 
 <style scoped>
-  .stats-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0;
-    width: 100%;
-    height: 350vh;
-  }
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  width: 100%;
+  height: 350vh;
+}
 </style>

@@ -82,16 +82,16 @@
 <script>
 import dashboard from "@/layouts/Dashboard.vue";
 import card from "@/components/Card.vue";
-import GravatarPic from "~/components/GravatarPic.vue";
-import store from "~/store.js";
+// import GravatarPic from "~/components/GravatarPic.vue";
+// import store from "~/store.js";
 export default {
   metaInfo: {
-    title: "Dashboard",
+    title: "Dashboard"
   },
   components: {
     card,
-    dashboard,
-    GravatarPic
-  },
+    dashboard
+    // GravatarPic
+  }
 };
 </script>
