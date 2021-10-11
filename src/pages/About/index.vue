@@ -3,9 +3,7 @@
     <section class="section">
       <div class="container">
         <div class="content">
-          <h1 class="title is-1">
-            About Us
-          </h1>
+          <h1 class="title is-1">About Us</h1>
           <div class="columns is-8 is-variable">
             <div class="column is-half">
               <h2 class="subtitle">What We Do</h2>
@@ -18,9 +16,7 @@
               </p>
             </div>
             <div class="column is-half">
-              <h2 class="subtitle">
-                Staff Meetings
-              </h2>
+              <h2 class="subtitle">Staff Meetings</h2>
               <p class="is-size-5">
                 OCF Staff meet to discuss technology, learn from each other, and
                 work on OCF projects. Drop-in visitors are always welcome,
@@ -45,8 +41,8 @@
           <div class="column is-half">
             <transition name="fade" mode="out-in">
               <img
-                :src="servicesImages[servicesActiveImage]"
                 :key="servicesImages[servicesActiveImage]"
+                :src="servicesImages[servicesActiveImage]"
                 data-toggle="tooltip"
                 width="800"
                 height="600"
@@ -66,22 +62,22 @@
 
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 0"
                     :class="{ 'active-card': servicesActiveImage === 0 }"
+                    @click="servicesActiveImage = 0"
                   >
                     Web &amp; Email Hosting
                   </p>
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 1"
                     :class="{ 'active-card': servicesActiveImage === 1 }"
+                    @click="servicesActiveImage = 1"
                   >
                     UNIX Shell Accounts
                   </p>
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 2"
                     :class="{ 'active-card': servicesActiveImage === 2 }"
+                    @click="servicesActiveImage = 2"
                   >
                     Free Printing for Members
                   </p>
@@ -135,9 +131,7 @@
 
     <section class="section has-text-centered">
       <div class="container">
-        <h1 class="title">
-          History
-        </h1>
+        <h1 class="title">History</h1>
         <history />
       </div>
     </section>

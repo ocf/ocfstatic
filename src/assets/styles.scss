@@ -18,6 +18,9 @@ $addColors: (
 // Merge default colors with our custom choices
 $colors: map-merge($colors, $addColors);
 
+$table-striped-row-even-background-color: #fbe9eb;
+$table-head-background-color: #fbe9eb;
+
 // Links
 $link: $primary;
 $link-focus-border: $primary;
@@ -25,6 +28,9 @@ $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
 $footer-padding: 2rem 3rem 2rem;
+
+$card-background-color: $primary;
+$card-color: $primary-invert;
 
 // Import Bulma and Buefy styles
 @import "~bulma";

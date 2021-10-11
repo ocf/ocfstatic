@@ -194,11 +194,14 @@ export default {
 .vuecal__cell.current {
   background-color: rgba($primary, 0.2);
 }
-.vuecal:not(.vuecal--day-view) .vuecal__cell.selected {
+.vuecal:not(.vuecal--day-view) {
   background-color: rgba($primary, 0.05);
 }
 .vuecal__cell.selected:before {
   border-color: $primary;
+}
+.vuecal__cell--selected {
+  background-color: rgba($primary, 0.15);
 }
 
 .vuecal__event.meeting {

@@ -88,7 +88,10 @@
                 inside
               ></g-image>
               <p class="title">Join Staff!</p>
-              <p class="subtitle">Meetings 8PM every Monday in the lab</p>
+              <p class="subtitle">
+                Meetings 8PM every Wednesday at the lab and at 
+                <a href="http://ocf.io/meet">ocf.io/meet</a>
+              </p>
               <div class="content">
                 <p>
                   We meet every week to talk tech and work on cool projects. All
@@ -102,7 +105,10 @@
                     meeting recaps
                   </li>
                   <li>
-                    Chat with us on <a href="https://fco.slack.com">Slack</a> or
+                    Chat with us on
+                    <a href="https://fco.slack.com">Slack</a>,
+                    <a href="https://ocf.io/discord">Discord</a>,
+                    <a href="https://chat.ocf.berkeley.edu/">Matrix</a> or
                     <a href="docs/internal/contact/irc/">IRC</a>
                   </li>
                   <li>
