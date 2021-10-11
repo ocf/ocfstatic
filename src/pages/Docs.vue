@@ -21,13 +21,17 @@
           <a href="/docs/contact">contacting us</a>!
         </p>
       </div>
-      <!-- import faq here -->
+      <div class="FAQ">
+        <br />
+        <FAQ></FAQ>
+      </div>
     </section>
   </Documentation>
 </template>
 
 <script>
 import Documentation from "~/layouts/Documentation.vue";
+import FAQ from "@/components/Faq.vue";
 
 export default {
   metaInfo() {
@@ -36,7 +40,8 @@ export default {
     };
   },
   components: {
-    Documentation
+    Documentation,
+    FAQ
   }
 };
 </script>
