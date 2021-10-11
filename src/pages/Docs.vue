@@ -8,9 +8,6 @@
         <h2 class="subtitle is-4">
           Everything you need to know
           <br />
-          <br />
-          <g-link to="/shorturls">Short URLs</g-link>
-          <br />
         </h2>
         <p>
           The OCF offers many services, free of charge, to the campus community.
@@ -18,8 +15,27 @@
         <p>
           Have an idea for something else the OCF can provide? Feel free to send
           your suggestion by
-          <a href="/docs/contact">contacting us</a>!
+          <a href="/docs/internal/contact">contacting us</a>!
         </p>
+        <br />
+        <div class="content">
+          <h2>How to use these docs</h2>
+          <p>
+            All information on the services we provide is contained here.
+            Navigate with the sidebar on the left to find what you're looking
+            for and use the search bar on the top left to locate something
+            directly.
+          </p>
+          <h2>
+            <g-link to="/shorturls">
+              Ocf.io Short Link Translations Table
+            </g-link>
+          </h2>
+          <p>
+            This table shows the full URL version of all short URLs the OCF
+            uses.
+          </p>
+        </div>
       </div>
       <div class="FAQ">
         <br />
