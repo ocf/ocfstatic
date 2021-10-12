@@ -38,16 +38,18 @@ $card-color: $primary-invert;
 
 .staffGrid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem 1rem;
   justify-items: stretch;
 
   @include mobile {
     grid-template-columns: 1fr 1fr;
+    padding: 0 0.5rem;
   }
   @include tablet {
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 2rem;
   }
-  @include desktop {
+  @include widescreen {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   @include fullhd {

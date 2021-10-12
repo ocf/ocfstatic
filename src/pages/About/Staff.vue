@@ -11,7 +11,7 @@
         </p>
 
         <div class="pt-6 staffGrid">
-          <div v-for="staffItem in cards" :key="staffItem.id">
+          <div v-for="staffItem in cards" :key="staffItem.handle">
             <StaffCard :staff-item="staffItem" />
           </div>
         </div>
@@ -156,4 +156,5 @@ p.card {
 .reverse-row-order {
   flex-direction: row-reverse;
 }
+/* staffGrid is in styles.scss since it needs Bulma @includes */
 </style>

@@ -1,23 +1,25 @@
 <template>
-  <div class="card">
-    <div class="card-image">
+  <div>
+    <div class="staff-card-leadimg">
       <figure class="image is-4by3">
         <img :src="staffItem.face" />
       </figure>
     </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-48x48">
-            <img :src="staffItem.icon" />
-          </figure>
-        </div>
-        <div class="media-content">
-          <p class="title is-4">{{ staffItem.name }}</p>
-          <p class="subtitle is-6">@{{ staffItem.handle }}</p>
-        </div>
+    <div class="staff-card-content">
+      <img :src="staffItem.icon" class="staff-card-icon" />
+      <div>
+        <p class="subtitle is-6">@{{ staffItem.handle }}</p>
+        <p class="title is-4">{{ staffItem.name }}</p>
       </div>
     </div>
+    <!-- <div class="card-content">
+      <div class="media">
+        <div class="media-left rounded-full overflow-hidden">
+          <figure class="image is-48x48">
+          </figure>
+        </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -29,3 +31,27 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.staff-card-leadimg {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+.staff-card-content {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  padding: 1.5rem 0.25rem;
+  gap: 0.75rem;
+}
+.staff-card-icon {
+  object-fit: cover;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+</style>
