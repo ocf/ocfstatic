@@ -35,24 +35,3 @@ $card-color: $primary-invert;
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
-
-.staffGrid {
-  display: grid;
-  gap: 1.5rem 1rem;
-  justify-items: stretch;
-
-  @include mobile {
-    grid-template-columns: 1fr 1fr;
-    padding: 0 0.5rem;
-  }
-  @include tablet {
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 0 2rem;
-  }
-  @include widescreen {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  @include fullhd {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-}

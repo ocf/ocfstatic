@@ -30,11 +30,6 @@ export default {
   components: {
     StaffCard
   },
-  data() {
-    return {
-      cards2: []
-    };
-  },
   created() {
     this.cards = [
       {
@@ -146,15 +141,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-p.card {
-  transition: transform 0.6s;
-  width: 100%;
+.staffGrid {
+  display: grid;
+  gap: 1.5rem 1rem;
+  justify-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  padding: 0 2em;
 }
-.active-card {
-  transform: translateX(1.75em);
-}
-.reverse-row-order {
-  flex-direction: row-reverse;
-}
-/* staffGrid is in styles.scss since it needs Bulma @includes */
 </style>
