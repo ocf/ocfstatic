@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="staff-card-leadimg">
+    <div class="staff-card-leadimg-container">
       <figure class="image is-4by3">
-        <img :src="staffItem.face" />
+        <img :src="staffItem.face" class="staff-card-leadimg" />
       </figure>
     </div>
     <div class="staff-card-content">
@@ -25,13 +25,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.staff-card-leadimg {
+.staff-card-leadimg-container {
   --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   overflow: hidden;
   border-radius: 0.25rem;
+}
+.staff-card-leadimg {
+  object-fit: cover;
 }
 .staff-card-content {
   display: grid;
