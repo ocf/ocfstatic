@@ -25,7 +25,7 @@ import StaffCard from "../../components/StaffCard";
 
 export default {
   metaInfo: {
-    title: "Officers"
+    title: "Meet Our Staff"
   },
   components: {
     StaffCard
