@@ -12,14 +12,6 @@
         <p class="title is-4">{{ staffItem.name }}</p>
       </div>
     </div>
-    <!-- <div class="card-content">
-      <div class="media">
-        <div class="media-left rounded-full overflow-hidden">
-          <figure class="image is-48x48">
-          </figure>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 

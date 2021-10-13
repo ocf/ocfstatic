@@ -10,7 +10,7 @@
           Here are some of the volunteer staff who make the OCF go round!
         </p>
 
-        <div class="pt-6 staffGrid">
+        <div class="staffGrid">
           <div v-for="staffItem in cards" :key="staffItem.handle">
             <StaffCard :staff-item="staffItem" />
           </div>
@@ -146,6 +146,6 @@ export default {
   gap: 1.5rem 1rem;
   justify-items: stretch;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  padding: 0 2em;
+  padding: 3rem 2rem;
 }
 </style>
