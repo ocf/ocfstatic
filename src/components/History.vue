@@ -7,9 +7,9 @@
       <div class="timeline-marker is-primary" />
       <div class="timeline-content">
         <p class="heading">
-          January 2016
+          1989
         </p>
-        <p>Timeline content - Can include any HTML element</p>
+        <p>OCF founded</p>
       </div>
     </div>
     <div class="timeline-item is-warning">
