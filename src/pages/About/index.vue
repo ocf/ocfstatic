@@ -54,8 +54,8 @@
                   </h3>
 
                   <p
-                    class="button card box is-white is-medium is-hidden-touch"
                     v-for="service in services"
+                    class="button card box is-white is-medium is-hidden-touch"
                     :class="{
                       'active-card': activeService === service['index']
                     }"
@@ -235,7 +235,7 @@
       <div class="container">
         <h2 class="title is-2">Technologies We Use</h2>
         <div class="columns is-vcentered">
-          <div class="column is-one-fifth" v-for="technology in technologies">
+          <div v-for="technology in technologies" class="column is-one-fifth">
             <a class="box" :href="technology['link']">
               <div class="columns is-multiline is-mobile">
                 <div class="column is-one-quarter-mobile is-full-tablet">

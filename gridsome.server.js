@@ -11,6 +11,7 @@ module.exports = function(api) {
     actions.addMetadata("apiUrl", "https://www.ocf.berkeley.edu/api/");
   });
 
+  // eslint-disable-next-line no-unused-vars
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api
   });
