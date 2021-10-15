@@ -9,39 +9,26 @@
         <p class="is-size-4 has-text-centered">
           Here are some of the volunteer staff who make the OCF go round!
         </p>
-        <br />
-        <OfficerCardSet
-          role-wanted="Staff"
-          :cards="cards"
-          :double-set="false"
-        />
-        <br />
-        <div class="is-divider"></div>
 
-        <OfficerCardSet
-          role-wanted="Henlo"
-          :cards="cards"
-          :double-set="false"
-        />
+        <div class="staffGrid">
+          <div v-for="staffItem in cards" :key="staffItem.handle">
+            <StaffCard :staff-item="staffItem" />
+          </div>
+        </div>
       </div>
     </section>
   </Layout>
 </template>
 
 <script>
-import OfficerCardSet from "../../components/OfficerCardSet";
+import StaffCard from "../../components/StaffCard";
 
 export default {
   metaInfo: {
-    title: "Officers"
+    title: "Meet Our Staff"
   },
   components: {
-    OfficerCardSet
-  },
-  data() {
-    return {
-      cards: []
-    };
+    StaffCard
   },
   created() {
     this.cards = [
@@ -55,7 +42,7 @@ export default {
       },
       {
         id: 2,
-        name: "Saurabh Narain ",
+        name: "Saurabh Narain",
         handle: "snarain",
         role: ["Staff"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
@@ -63,7 +50,7 @@ export default {
       },
       {
         id: 3,
-        name: "Nikhil Jha  ",
+        name: "Nikhil Jha",
         handle: "njha",
         role: ["Staff"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
@@ -87,8 +74,8 @@ export default {
       },
       {
         id: 6,
-        name: "Nikhil Jha",
-        handle: "njha",
+        name: "Ravi Riley",
+        handle: "raviriley",
         role: ["Henlo"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
@@ -153,15 +140,12 @@ export default {
   }
 };
 </script>
-<style scoped>
-p.card {
-  transition: transform 0.6s;
-  width: 100%;
-}
-.active-card {
-  transform: translateX(1.75em);
-}
-.reverse-row-order {
-  flex-direction: row-reverse;
+<style lang="scss" scoped>
+.staffGrid {
+  display: grid;
+  gap: 1.5rem 1rem;
+  justify-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  padding: 3rem 2rem;
 }
 </style>
