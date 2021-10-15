@@ -42,7 +42,7 @@ export default {
       },
       {
         id: 2,
-        name: "Saurabh Narain ",
+        name: "Saurabh Narain",
         handle: "snarain",
         role: ["Staff"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
@@ -50,7 +50,7 @@ export default {
       },
       {
         id: 3,
-        name: "Nikhil Jha  ",
+        name: "Nikhil Jha",
         handle: "njha",
         role: ["Staff"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
@@ -74,8 +74,8 @@ export default {
       },
       {
         id: 6,
-        name: "Nikhil Jha",
-        handle: "njha",
+        name: "Ravi Riley",
+        handle: "raviriley",
         role: ["Henlo"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
