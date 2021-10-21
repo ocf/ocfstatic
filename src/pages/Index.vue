@@ -72,7 +72,8 @@
                     <a href="https://goo.gl/maps/USohudX21j5H1JQC7">get there</a
                     >. Just show your Cal ID at the door!
                   </p>
-                  <g-link to="/lab">
+
+                  <g-link to="/docs/services/lab/">
                     <g-image src="~/assets/lab.jpg" />
                   </g-link>
                 </div>
