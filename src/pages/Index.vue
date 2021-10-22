@@ -297,6 +297,7 @@ export default {
       return date;
     },
     labIsOpen() {
+      // this.hours starts off as an object, which doesn't have a split method
       if (!(typeof this.hours === "string")) {
         return false;
       }
