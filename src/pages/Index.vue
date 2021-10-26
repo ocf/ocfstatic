@@ -32,7 +32,7 @@
               <article class="tile is-child box home-content">
                 <p class="title">
                   Currently
-                  <span v-if="hours.length" class="has-text-success">Open</span>
+                  <span v-if="labIsOpen()" class="has-text-success">Open</span>
                   <span v-else class="has-text-danger">Closed</span>
                 </p>
                 <p class="subtitle">
@@ -287,6 +287,25 @@ export default {
     },
     formatHours(hoursList) {
       return hoursList.map(pair => pair[0] + " - " + pair[1]).join(", ");
+    },
+    getDateObject(timeString) {
+      var date = new Date();
+      var time = timeString.split(":");
+      date.setHours(time[0]);
+      date.setMinutes(time[1]);
+      date.setMilliseconds(time[2]);
+      return date;
+    },
+    labIsOpen() {
+      // this.hours starts off as an object, which doesn't have a split method
+      if (!(typeof this.hours === "string")) {
+        return false;
+      }
+      var labHours = this.hours.split(" - ");
+      var openTime = this.getDateObject(labHours[0]);
+      var closeTime = this.getDateObject(labHours[1]);
+      var currentTime = new Date();
+      return openTime <= currentTime && currentTime <= closeTime;
     },
     async setBlogPosts() {
       this.blogPosts = await this.$http
