@@ -147,7 +147,7 @@ On the hypervisor,
     virsh dominfo <vm>
     virsh domblkinfo <vm>
     lvextend /dev/vg/<vm> -L20G
-    virsh blockresize <vm> /dev/vda 20G
+    virsh blockresize <vm> /dev/vg/<vm> 20G
 
 On the vm,
 
