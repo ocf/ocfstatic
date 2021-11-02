@@ -161,69 +161,58 @@
         </h2>
         <div class="columns is-vcentered">
           <div class="column is-one-fifth">
-            <a class="box" href="https://linuxfoundation.org">
-              <div class="content mt-4">
-                <h3>Maintain our Servers</h3>
-                <p><em>#linux-infra</em> channel on chat platforms</p>
-                <p>
-                  We host lots of powerful servers and you can help work on them
-                  and learn Linux sysadmin skills in the process.
-                </p>
-              </div>
-            </a>
+            <div class="box content mt-4">
+              <h3>Maintain our Servers</h3>
+              <p><em>#linux-infra</em> channel on chat platforms</p>
+              <p>
+                We host lots of powerful servers and you can help work on them
+                and learn Linux sysadmin skills in the process.
+              </p>
+            </div>
           </div>
           <div class="column is-one-fifth">
-            <a class="box" href="https://github.com/ocf/ocfstatic">
-              <div class="content mt-4">
-                <h3>Work on our website</h3>
-                <p><em>#web</em> channel on chat platforms</p>
-                <p>
-                  Interested in web development? This website is still a work in
-                  progress and we welcome staff to contribute to ongoing
-                  changes.
-                </p>
-              </div>
-            </a>
+            <div class="box content mt-4">
+              <h3>Work on our website</h3>
+              <p><em>#web</em> channel on chat platforms</p>
+              <p>
+                Interested in web development? This website is still a work in
+                progress and we welcome staff to contribute to ongoing changes.
+              </p>
+            </div>
           </div>
           <div class="column is-one-fifth">
-            <a class="box" style="height:100%;" href="https://www.debian.org">
-              <div class="content mt-4">
-                <h3>Plan Events</h3>
-                <p><em>#internal-comm</em> channel on chat platforms</p>
-                <p>
-                  If you've got a knack for logistics (and/or like ordering
-                  pizza) the Internal Committee is in charge of planning events
-                  such as hack days, socials, and more.
-                </p>
-              </div>
-            </a>
+            <div class="box content mt-4">
+              <h3>Plan Events</h3>
+              <p><em>#internal-comm</em> channel on chat platforms</p>
+              <p>
+                If you've got a knack for logistics (and/or like ordering pizza)
+                the Internal Committee is in charge of planning events such as
+                hack days, socials, and more.
+              </p>
+            </div>
           </div>
           <div class="column is-one-fifth">
-            <a class="box" style="height:100%;" href="https://www.python.org">
-              <div class="content mt-4">
-                <h3>Attend Staff Hours</h3>
-                <p>
-                  By attending staff hours you get to help people
-                  <i>and</i> learn about OCF infrastructure in the process. To
-                  get started, show up during
-                  <a href="/staff-hours">staff hours</a> and shadow a veteran
-                  staffer.
-                </p>
-              </div>
-            </a>
+            <div class="box content mt-4">
+              <h3>Attend Staff Hours</h3>
+              <p>
+                By attending staff hours you get to help people
+                <i>and</i> learn about OCF infrastructure in the process. To get
+                started, show up during
+                <a href="/staff-hours">staff hours</a> and shadow a veteran
+                staffer.
+              </p>
+            </div>
           </div>
           <div class="column is-one-fifth">
-            <a class="box" style="height:100%;" href="https://www.apache.org">
-              <div class="content mt-4">
-                <h3>Events</h3>
-                <p>
-                  We host industry and alumni events every semester. We've had
-                  tech talks and recruiting events from big names such as
-                  Facebook, Google, and CockroachDB--plus mock interviews and
-                  resume workshops to help you get your dream job.
-                </p>
-              </div>
-            </a>
+            <div class="box content mt-4">
+              <h3>Events</h3>
+              <p>
+                We host industry and alumni events every semester. We've had
+                tech talks and recruiting events from big names such as
+                Facebook, Google, and CockroachDB--plus mock interviews and
+                resume workshops to help you get your dream job.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -349,7 +338,7 @@ export default {
           name: "Python",
           image: "python.svg",
           text:
-            "Python is open-source and modern programming language, and we use it under the hood of many of our services.",
+            "Python is an open-source and modern programming language, and we use it under the hood of many of our services.",
           link: "https://python.org"
         },
         {
