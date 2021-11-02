@@ -1,5 +1,5 @@
 # Build stage
-FROM node:current AS build-env
+FROM node:16 AS build-env
 WORKDIR /build
 COPY . .
 RUN npm install && npm run build
