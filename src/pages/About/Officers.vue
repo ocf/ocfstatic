@@ -104,6 +104,64 @@
           operations. The Board is appointed based on attendance at our
           <a href="/about">weekly meetings</a>
         </p>
+        <br />
+        <div class="is-divider"></div>
+
+        <h2 class="title is-2 has-text-centered">Previous Officers</h2>
+        <b-collapse
+          class="card has-background-light"
+          animation="slide"
+          :open="false"
+        >
+          <template #trigger="props">
+            <div class="card-header" role="button">
+              <p class="card-header-title">
+                View Past Officers
+              </p>
+              <a class="card-header-icon has-text-black">
+                <b-icon :icon="props.open ? 'menu-up' : 'menu-down'"> </b-icon>
+              </a>
+            </div>
+          </template>
+
+          <div class="card-content">
+            <b-collapse
+              class="mb-4"
+              animation="slide"
+              v-for="(v, index) of pastOfficers"
+              :key="index"
+            >
+              <template #trigger="props">
+                <a class="has-text-black">
+                  <b-icon :icon="props.open ? 'menu-up' : 'menu-down'"></b-icon>
+                  {{ v.term }}
+                </a>
+              </template>
+
+              <b-table class="mt-2" :data="v.table">
+                <b-table-column
+                  field="gm"
+                  width="50%"
+                  label="General Managers"
+                  v-slot="props"
+                >
+                  {{
+                    (props.row.gm &&
+                      props.row.gm.name + " @" + props.row.gm.handle) ||
+                      ""
+                  }}
+                </b-table-column>
+                <b-table-column field="sm" label="Site Managers" v-slot="props">
+                  {{
+                    (props.row.sm &&
+                      props.row.sm.name + " @" + props.row.sm.handle) ||
+                      ""
+                  }}
+                </b-table-column>
+              </b-table>
+            </b-collapse>
+          </div>
+        </b-collapse>
       </div>
     </section>
   </Layout>
@@ -111,6 +169,7 @@
 
 <script>
 import OfficerCardSet from "../../components/OfficerCardSet";
+import PastOfficersData from "@/assets/officers-data/past-officers.json";
 
 export default {
   metaInfo: {
@@ -121,7 +180,8 @@ export default {
   },
   data() {
     return {
-      cards: []
+      cards: [],
+      pastOfficers: []
     };
   },
   created() {
@@ -215,6 +275,18 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       }
     ];
+
+    for (var i = 0; i < PastOfficersData.pastOfficers.length; i++) {
+      var data = PastOfficersData.pastOfficers[i];
+      this.pastOfficers[i] = { term: data.term, table: [] };
+      var len = Math.max(data.gms.length, data.sms.length);
+      for (var k = 0; k < len; k++) {
+        this.pastOfficers[i].table[k] = {
+          gm: data.gms[k] || "",
+          sm: data.sms[k] || ""
+        };
+      }
+    }
   }
 };
 </script>
