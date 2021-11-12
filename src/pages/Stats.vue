@@ -18,7 +18,20 @@
             <p>{{ formatStaffInLab(staffInLab) }}</p>
           </div>
           <div class="tile is-child box">
-            <h1 class="is-title is-1">Printers</h1>
+            <h1 class="title is-3">Printers</h1>
+            <div v-for="printer in printers">
+              <h2 class="subtitle is-5">{{ printer[0] }}</h2>
+              <progress
+                v-if="printer[1]"
+                class="progress"
+                :value="printer[1]"
+                max="100"
+                >{{ printer[1] }}</progress
+              >
+              <!--
+              <progress v-if="printer[2]" class="progress" :value="{{ printer[1] }}" max="100">{{ printer[1] }}</progress>
+-->
+            </div>
           </div>
         </div>
         <div class="tile is-parent">
@@ -110,12 +123,14 @@ export default {
       blogPosts: [],
       numUsersInLab: null,
       staffInLab: [],
+      printers: [],
       statsDisplay: {}
     };
   },
   mounted() {
     this.setNumUsersInLab();
     this.setStaffInLab();
+    this.setPrinters();
   },
   metaInfo: {
     title: "Stats"
@@ -133,6 +148,11 @@ export default {
     async setStaffInLab() {
       this.staffInLab = await this.$http
         .get(this.$static.metadata.apiUrl + "lab/staff")
+        .then(response => response.data);
+    },
+    async setPrinters() {
+      this.printers = await this.$http
+        .get("http://localhost:8401/api/lab/printers_summary")
         .then(response => response.data);
     },
     getTodayDate() {
