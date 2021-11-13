@@ -16,13 +16,11 @@ The front desk staff can help with basic troubleshooting, but for technical or o
 
 The OCF computer lab is located in 171 MLK Student Union. It can be accessed through the main MLK building or via the tunnel by the stairs between Upper and Lower Sproul.
 
+Having trouble finding the entrance? Follow the video [here](https://fat.gfycat.com/DefiniteEquatorialAtlanticblackgoby.webm) starting from Upper Sproul.
+
 To enter the lab, **bring a valid student identification card; you will be asked to show it.**
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.611290506271!2d-122.26173268482958!3d37.86938467974231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857c2587cd775d%3A0x379e14d14aeb3cd8!2sOpen%20Computing%20Facility!5e0!3m2!1sen!2sus!4v1634360393539!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-
-### Having trouble finding the entrance?
-
-Follow the video [here](https://fat.gfycat.com/DefiniteEquatorialAtlanticblackgoby.webm) starting from Upper Sproul.
 
 ### Hours
 
