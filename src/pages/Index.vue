@@ -74,7 +74,7 @@
                 <div class="content">
                   <p>
                     Find out how to
-                    <g-link href="/docs/services/lab/#location">get there</g-link>. Just
+                    <g-link to="/docs/services/lab/#location">get there</g-link>. Just
                     show your Cal ID at the door!
                   </p>
 
