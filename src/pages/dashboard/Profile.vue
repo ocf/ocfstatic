@@ -11,14 +11,16 @@
               <b-input :value="'test'" custom-class="is-static" readonly />
             </b-field>
             <hr />
+            <!--
             <b-field label="E-mail">
               <b-input :value="userEmail" custom-class="is-static" readonly />
             </b-field>
+            -->
           </card>
         </div>
         <div class="tile is-parent">
           <card title="Change Password" icon="lock" class="tile is-child">
-            <!-- <form @submit.prevent="submit">
+            <form @submit.prevent="submit">
               <b-field
                 horizontal
                 label="Current password"
@@ -28,6 +30,7 @@
                   name="password_current"
                   type="password"
                   v-model="form.password_current"
+                  placeholder="Enter password here"
                   required
                   autcomplete="current-password"
                 />
@@ -71,7 +74,7 @@
                   </button>
                 </div>
               </b-field>
-            </form> -->
+            </form>
           </card>
         </div>
       </div>
@@ -84,9 +87,21 @@ import dashboard from "@/layouts/Dashboard.vue";
 import card from "@/components/Card.vue";
 // import GravatarPic from "~/components/GravatarPic.vue";
 // import store from "~/store.js";
+
 export default {
   metaInfo: {
     title: "Dashboard"
+  },
+  data() {
+    return {
+      form: {}
+    };
+  },
+  methods: {
+    submit() {
+      const myForm = JSON.stringify(this.form);
+      // Add logic for sending JSON here
+    }
   },
   components: {
     card,
