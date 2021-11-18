@@ -37,7 +37,9 @@
                 </p>
                 <p class="subtitle">
                   <span> Today's hours: {{ hours }} </span>
-                  <g-link to="/staff-hours" class="span"> See more » </g-link>
+                  <g-link to="/docs/services/lab/#hours" class="span">
+                    See more »
+                  </g-link>
                 </p>
                 <div class="content">
                   <p>
@@ -65,12 +67,15 @@
             <div class="tile is-parent">
               <article class="tile is-child box home-content">
                 <p class="title">The Lab</p>
-                <p class="subtitle">Located at 171 MLK Student Union</p>
+                <p class="subtitle">
+                  Located at 171 MLK Student Union
+                  <g-link to="/docs/services/lab"> See more » </g-link>
+                </p>
                 <div class="content">
                   <p>
                     Find out how to
-                    <a href="https://goo.gl/maps/USohudX21j5H1JQC7">get there</a
-                    >. Just show your Cal ID at the door!
+                    <g-link to="/docs/services/lab/#location">get there</g-link>. Just
+                    show your Cal ID at the door!
                   </p>
 
                   <g-link to="/docs/services/lab/">
