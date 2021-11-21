@@ -2,10 +2,10 @@
   <Stats>
     <section class="section">
       <div class="tile is-ancestor is-vertical">
-        <div class="tile is-parent">
+        <div class="tile">
           <div class="tile is-parent is-6">
             <div class="tile is-child box">
-              <h1 class="title is-3 has-text-centered">Graphs</h1>
+              <h1 class="title is-3 has-text-centered">Lab Usage Graphs</h1>
               <img
                 class=""
                 src="https://www.ocf.berkeley.edu/stats/daily-graph/graph"
@@ -17,46 +17,57 @@
             </div>
           </div>
 
-          <div class="tile is-parent">
-            <div class="tile is-child box">
-              <h1 class="title is-3 has-text-centered">Printers</h1>
-              <div v-for="printer in printers" :key="printer[0]">
-                <p class="subtitle is-5 mb-0 mt-5">{{ printer[0] }}</p>
-                <div class="columns is-2 is-mobile is-vcentered">
-                  <div class="column is-one-third pb-0">
-                    Toner
+          <div class="tile is-vertical">
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <h3 class="title is-3 has-text-centered">Currently in Lab</h3>
+                <p>
+                  There are currently {{ numUsersInLab }} people in the lab,
+                  including {{ staffInLab.length }} staff:
+                </p>
+                <p>{{ formatStaffInLab(staffInLab) }}</p>
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <h1 class="title is-3 has-text-centered">Printers</h1>
+                <div v-for="printer in printers" :key="printer[0]">
+                  <p class="subtitle is-5 mb-0 mt-5">{{ printer[0] }}</p>
+                  <div class="columns is-2 is-mobile is-vcentered">
+                    <div class="column is-one-third pb-0">
+                      Toner
+                    </div>
+                    <div class="column pb-0">
+                      <progress
+                        v-if="printer[1]"
+                        class="progress"
+                        :value="printer[1][0]"
+                        :max="printer[1][1]"
+                        >{{ printer[1][0] }}</progress
+                      >
+                      <p v-else><i>Unable to read</i></p>
+                    </div>
                   </div>
-                  <div class="column pb-0">
-                    <progress
-                      v-if="printer[1]"
-                      class="progress"
-                      :value="printer[1][0]"
-                      :max="printer[1][1]"
-                      >{{ printer[1][0] }}</progress
-                    >
-                    <p v-else><i>Unable to read</i></p>
+                  <div class="columns is-2 is-mobile is-vcentered">
+                    <div class="column is-one-third pb-0">
+                      Maint. Kit
+                    </div>
+                    <div class="column pb-0">
+                      <progress
+                        v-if="printer[2]"
+                        class="progress is-primary"
+                        :value="printer[2][0]"
+                        :max="printer[2][1]"
+                        >{{ printer[2][0] }}</progress
+                      >
+                      <p v-else><i>Unable to read</i></p>
+                    </div>
                   </div>
+                  <div class="is-divider"></div>
                 </div>
-                <div class="columns is-2 is-mobile is-vcentered">
-                  <div class="column is-one-third pb-0">
-                    Maint. Kit
-                  </div>
-                  <div class="column pb-0">
-                    <progress
-                      v-if="printer[2]"
-                      class="progress is-primary"
-                      :value="printer[2][0]"
-                      :max="printer[2][1]"
-                      >{{ printer[2][0] }}</progress
-                    >
-                    <p v-else><i>Unable to read</i></p>
-                  </div>
-                </div>
-                <div class="is-divider"></div>
               </div>
             </div>
           </div>
-
           <div class="tile is-parent">
             <div class="tile is-child box">
               <h1 class="title is-3 has-text-centered">Mirroring</h1>
@@ -98,10 +109,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr
-                  v-for="profile in desktopUsage"
-                  :key="profile['hostname']"
-                >
+                <tr v-for="profile in desktopUsage" :key="profile['hostname']">
                   <td>{{ profile["hostname"] }}</td>
                   <td>{{ profile["minutes_idle"] }}</td>
                   <td>{{ profile["minutes_busy"] }}</td>
