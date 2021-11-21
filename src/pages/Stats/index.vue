@@ -174,17 +174,17 @@ export default {
     },
     async setPrinters() {
       this.printers = await this.$http
-        .get("http://supernova.ocf.berkeley.edu:8401/api/lab/printers_summary")
+        .get(this.$static.metadata.apiUrl + "lab/printers_summary")
         .then(response => response.data);
     },
     async setDesktopUsage() {
       this.desktopUsage = await this.$http
-        .get("http://supernova.ocf.berkeley.edu:8401/api/lab/desktop_usage")
+        .get(this.$static.metadata.apiUrl + "lab/desktop_usage")
         .then(response => response.data);
     },
     async setMirrorsShowcase() {
       this.mirrorsShowcase = await this.$http
-        .get("http://supernova.ocf.berkeley.edu:8401/api/lab/mirrors_showcase")
+        .get(this.$static.metadata.apiUrl + "lab/mirrors_showcase")
         .then(response => response.data);
     },
     getTodayDate() {

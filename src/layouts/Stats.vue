@@ -22,8 +22,6 @@
 import Search from "gridsome-plugin-flexsearch/SearchMixin";
 export default {
   components: {},
-  // Normally don't like mixins, but this is simple enough.
-  // searchTerm -> searchResults
 
   props: {
     path: {
