@@ -23,7 +23,7 @@
               </g-link>
               <g-link
                 class="button is-medium is-desktop-large inverted outlined home-content column is-flex my-2"
-                to="/docs/services/webapps/"
+                to="/docs/services/webhostingsolutions/"
               >
                 Host your Website
               </g-link>
