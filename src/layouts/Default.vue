@@ -134,10 +134,10 @@ export default {
     return {
       isMenuActive: false,
       services: [
-        { name: "Lab", route: "/docs/services/lab" },
+        { name: "Computer Lab", route: "/docs/services/lab" },
         { name: "Printing", route: "/docs/services/lab/printing" },
-        { name: "Web Hosting", route: "/docs/services/web" },
-        { name: "Application Hosting", route: "/docs/services/webapps" },
+        { name: "Personal Website Hosting", route: "/docs/services/web" },
+        { name: "Group Website Hosting", route: "/docs/services/vhost" },
         { name: "SSH/SFTP (Shell)", route: "/docs/services/shell" },
         { name: "Email Hosting", route: "/docs/services/mail" },
         { name: "MySQL Database", route: "/docs/services/mysql" },
