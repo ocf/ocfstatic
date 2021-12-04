@@ -1,5 +1,5 @@
 ---
-title: "Web hosting"
+title: "Web hosting (personal)"
 ---
 
 All accounts include hosting with a web address at:
