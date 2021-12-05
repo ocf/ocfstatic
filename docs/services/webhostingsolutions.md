@@ -1,10 +1,8 @@
 ---
-title: "Web hosting solutions at OCF"
+title: "What type of web hosting do I need?"
 ---
 
-## What type of web hosting do I need?
-
-The OCF offers two main types of hosting, personal hosting and group hosting. If you have a personal account (which most people have unless you have requested a group account), then your main option is personal hosting. If you have a group account for a Registered Student Organization, then you have a couple options for your hosting solutions, which are listed in the group hosting section.
+The OCF offers two main types of hosting, personal hosting and group hosting. If you have a personal account (which most people do unless you have specifically requested a group account), then your only option is personal hosting. If you have a group account for a Registered Student Organization, then you have a couple options for your hosting solutions, which are listed in the group hosting section.
 
 ## Hosting your personal site
 
