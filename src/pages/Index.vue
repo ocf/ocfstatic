@@ -14,17 +14,41 @@
               An all-volunteer student organization dedicated to free computing
               for all UC Berkeley students, faculty, and staff.
             </div>
-            <b-button size="is-large inverted outlined" class="home-content">
-              Create an Account
-            </b-button>
+            <div class="columns mx-2 my-0 hero-buttons">
+              <g-link
+                class="button is-medium is-desktop-large inverted outlined home-content column is-flex my-2"
+                to="/docs/internal/membership/"
+              >
+                Create an Account
+              </g-link>
+              <g-link
+                class="button is-medium is-desktop-large inverted outlined home-content column is-flex my-2"
+                to="/docs/services/webhostingsolutions/"
+              >
+                Host your Website
+              </g-link>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <div class="has-text-centered home-content">
-      <links />
-    </div>
     <section class="section container">
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box home-content">
+            <div class="columns mx-0" style="gap: 2rem;">
+              <g-link
+                class="button is-info is-outlineda is-medium column is-flex my-2"
+                v-for="link in quickLinks"
+                :key="link.url"
+                :to="link.url"
+              >
+                {{ link.title }}
+              </g-link>
+            </div>
+          </article>
+        </div>
+      </div>
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
           <div class="tile">
@@ -74,8 +98,8 @@
                 <div class="content">
                   <p>
                     Find out how to
-                    <g-link to="/docs/services/lab/#location">get there</g-link>. Just
-                    show your Cal ID at the door!
+                    <g-link to="/docs/services/lab/#location">get there</g-link
+                    >. Just show your Cal ID at the door!
                   </p>
 
                   <g-link to="/docs/services/lab/">
@@ -266,7 +290,25 @@ export default {
       hours: [],
       blogPosts: [],
       numUsersInLab: null,
-      staffInLab: []
+      staffInLab: [],
+      quickLinks: [
+        {
+          title: "Staff Hours",
+          url: "/staff-hours"
+        },
+        {
+          title: "How to Print",
+          url: "/docs/services/lab/printing"
+        },
+        {
+          title: "Join Staff",
+          url: "/docs/staff/getinvolved"
+        },
+        {
+          title: "Get Help",
+          url: "/docs/internal/contact"
+        }
+      ]
     };
   },
   mounted() {

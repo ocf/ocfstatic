@@ -1,5 +1,5 @@
 ---
-title: "Web application hosting"
+title: "Web application hosting (group)"
 ---
 
 **Note: This document only applies to student groups with virtual hosts who

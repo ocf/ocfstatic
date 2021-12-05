@@ -3,6 +3,7 @@
 
 // Set your colors
 $primary: #e7717d;
+$info: #687172;
 
 // Setup $colors to use as bulma classes (e.g. 'is-primary')
 $addColors: (
@@ -13,6 +14,10 @@ $addColors: (
   "link": (
     $primary,
     $primary-invert
+  ),
+  "info": (
+    $info,
+    $info-invert
   )
 );
 // Merge default colors with our custom choices
