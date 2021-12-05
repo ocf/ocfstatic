@@ -8,8 +8,8 @@ The OCF offers two main types of hosting, personal hosting and group hosting. If
 
 ## Hosting your personal site
 
-Head on over to [the documentation](/docs/services/web/) to get started!
+See [personal hosting documentation](/docs/services/web/) to get started!
 
 ## Hosting your group's site
 
-You should start with our [virtual hosting solution](/docs/services/vhost/) if you are just getting started with group hosting at the OCF. If you have applied for application hosting and was approved, head over to the [app hosting documentation](/docs/services/webapps/).
+You should start with our [virtual hosting documentation](/docs/services/vhost/) if you are just getting started with group hosting at the OCF. If you have applied and been approved for application hosting, head over to the [app hosting documentation](/docs/services/webapps/).
