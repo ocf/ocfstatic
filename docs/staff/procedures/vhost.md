@@ -64,7 +64,7 @@ mail.
 We request the same DNS records for mail hosting as for web hosting. First,
 check if any DNS records already exist with
 
-    dig hostname.berkeley.edu [A|AAA|MX]
+    dig hostname.berkeley.edu [A|AAAA|MX]
 
 for IPv4/IPv6/mail records, respectively. If they have all the records from the
 previous section, you don't have to do anything else.
