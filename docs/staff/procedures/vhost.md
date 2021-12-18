@@ -52,7 +52,7 @@ new DNS requests.
 
 ### Mail (if requested) {mail}
 
-Edit the file `~staff/vhost/vhost-mail.conf`, adding a new line for the group.
+Edit the file https://github.com/ocf/etc/blob/master/configs/vhost-mail.conf, adding a new line for the group.
 The format is simply:
 
     groupname domainname
