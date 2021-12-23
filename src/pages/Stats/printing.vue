@@ -3,20 +3,22 @@
     <section class="section">
       <div class="tile is-ancestor is-vertical">
         <div class="tile">
-          <div class="tile is-parent is-6">
+          <div class="tile is-parent is-8">
             <div class="tile is-child box">
               <h1 class="title is-3 has-text-centered">Printing Graphs</h1>
               <img
                 class=""
                 src="https://www.ocf.berkeley.edu/stats/printing/daily-job/graph"
+                style="width:100%;"
               />
               <img
                 class=""
                 src="https://www.ocf.berkeley.edu/stats/printing/semester-histogram/graph"
+                style="width:100%;"
               />
             </div>
           </div>
-          <div class="tile">
+          <div class="tile is-vertical">
             <div class="tile is-parent">
               <div class="tile is-child box">
                 <h3 class="title is-3 has-text-centered">Toner Usage</h3>
