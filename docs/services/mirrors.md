@@ -20,6 +20,7 @@ mirroring service, please [contact us](/docs/contact).
 
 - [Apache Projects](https://www.apache.org/)
 - [Arch Linux](https://www.archlinux.org/)
+- [Artix Linux](https://www.artixlinux.org/)
 - [CentOS](https://www.centos.org/)
 - [Debian](https://www.debian.org/)
 - [Finnix](https://www.finnix.org/)
