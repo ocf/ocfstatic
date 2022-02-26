@@ -13,9 +13,10 @@ title: "Joining the OCF"
   past. If you have forgotten your account name or password, please do not
   request a new account. Instead, reset your [password](/docs/services/account).
 
-- Choose an OCF account name that is based on your real name (for individual
-  accounts) or your group's name (for group accounts). It is unlikely you will
-  be able to change your account name after your request has been processed.
+- We recommend that you choose a professional OCF account name. It is unlikely
+  you will be able to change your account name after your request has been
+  processed. For group accounts, your account name must be based on your
+  group's name.
 
 ## Individual accounts
 
@@ -27,7 +28,7 @@ title: "Joining the OCF"
 **[[Request an account online|register]]**
 
 You will be prompted to log in with CalNet. Then follow the instructions to
-make your request. Your account name must be based on your real name.
+make your request.
 
 Feel free to [contact us](/docs/contact) if you experience difficulties in the
 request or you have questions.
