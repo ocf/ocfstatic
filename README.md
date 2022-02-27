@@ -5,7 +5,7 @@ A new website for the OCF. Written in Vue with Gridsome, uses Bulma and Buefy fo
 ## Development
 
 ### Dependencies
-- Node.js 12 or higher (https://nodejs.org/en/)
+- Node.js 12-16 (https://nodejs.org/en/)
 - If on M1 Mac, requires `vips` (can be installed through [Homebrew](https://brew.sh/) `brew install libvips`)
 
 ### Getting set up
