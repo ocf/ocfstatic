@@ -1,14 +1,25 @@
 # OCF Static
 
-A new website for the OCF.
+A new website for the OCF. Written in Vue with Gridsome, uses Bulma and Buefy for styles.
 
 ## Development
 
+### Dependencies
+- Node.js 12-16 (https://nodejs.org/en/)
+- If on M1 Mac, requires `vips` (can be installed through [Homebrew](https://brew.sh/) `brew install libvips`)
+
+### Getting set up
 ```bash
-# Getting set up
+# Clone the repository
+$ git clone https://github.com/ocf/ocfstatic.git && cd ocfstatic
+# Install all of our dependencies
 $ npm install
-# Run dev server
+# Run dev server (visit http://localhost:8080 to view)
 $ npm run develop
+```
+
+### Extras
+```bash
 # Build
 $ npm run build
 # Lint
