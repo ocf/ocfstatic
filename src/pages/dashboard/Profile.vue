@@ -25,6 +25,7 @@
                 horizontal
                 label="Current password"
                 message="Required. Your current password"
+                type="is-white"
               >
                 <b-input
                   name="password_current"
@@ -40,6 +41,7 @@
                 horizontal
                 label="New password"
                 message="Required. New password"
+                type="is-white"
               >
                 <b-input
                   name="password"
@@ -53,6 +55,7 @@
                 horizontal
                 label="Confirm password"
                 message="Required. New password one more time"
+                type="is-white"
               >
                 <b-input
                   name="password_confirmation"
