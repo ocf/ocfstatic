@@ -2,8 +2,8 @@
   "name": "ocf",
   "private": true,
   "scripts": {
-    "build": "gridsome build",
-    "develop": "gridsome develop",
+    "build": "NODE_ENV=production gridsome build",
+    "develop": "NODE_ENV=dev gridsome develop",
     "explore": "gridsome explore",
     "lint": "npm run format && eslint --ext .vue,.js . --fix",
     "format": "prettier --write '**/*.{vue,js,scss,css,json,md}'"

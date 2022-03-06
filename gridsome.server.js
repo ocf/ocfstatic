@@ -5,10 +5,15 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-module.exports = function(api) {
-  api.loadSource(actions => {
+module.exports = function (api) {
+  api.loadSource((actions) => {
     actions.addMetadata("githubUrl", "https://github.com/BernardZhao/ocf");
-    actions.addMetadata("apiUrl", "https://www.ocf.berkeley.edu/api/");
+    actions.addMetadata(
+      "apiUrl",
+      process.env.NODE_ENV.toLowerCase() === "production"
+        ? "https://www.ocf.berkeley.edu/api/"
+        : "http://localhost:8000/"
+    );
   });
 
   // eslint-disable-next-line no-unused-vars
