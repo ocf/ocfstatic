@@ -9,16 +9,16 @@ $info: #687172;
 $addColors: (
   "primary": (
     $primary,
-    $primary-invert,
+    $primary-invert
   ),
   "link": (
     $primary,
-    $primary-invert,
+    $primary-invert
   ),
   "info": (
     $info,
-    $info-invert,
-  ),
+    $info-invert
+  )
 );
 // Merge default colors with our custom choices
 $colors: map-merge($colors, $addColors);
