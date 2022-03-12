@@ -33,7 +33,6 @@ export default {
   created() {
     this.cards = [
       {
-        id: 1,
         name: "Kevin Mo",
         handle: "kmo",
         role: ["Staff"],
@@ -41,7 +40,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 2,
         name: "Saurabh Narain",
         handle: "snarain",
         role: ["Staff"],
@@ -49,7 +47,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 3,
         name: "Nikhil Jha",
         handle: "njha",
         role: ["Staff"],
@@ -57,7 +54,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 4,
         name: "Frank Dai",
         handle: "fydai",
         role: ["Staff"],
@@ -65,7 +61,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 5,
         name: "Ja Wattanawong",
         handle: "jaw",
         role: ["Staff"],
@@ -73,7 +68,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 6,
         name: "Ravi Riley",
         handle: "raviriley",
         role: ["Henlo"],
@@ -81,39 +75,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 7,
-        name: "Frank Dai",
-        handle: "fydai",
-        role: ["Henlo"],
-        face: "https://bulma.io/images/placeholders/1280x960.png",
-        icon: "https://bulma.io/images/placeholders/96x96.png"
-      },
-      {
-        id: 8,
-        name: "Ja Wattanawong",
-        handle: "jaw",
-        role: ["Henlo"],
-        face: "https://bulma.io/images/placeholders/1280x960.png",
-        icon: "https://bulma.io/images/placeholders/96x96.png"
-      },
-      {
-        id: 9,
-        name: "One person",
-        handle: "jsdx",
-        role: ["Henlo"],
-        face: "https://bulma.io/images/placeholders/1280x960.png",
-        icon: "https://bulma.io/images/placeholders/96x96.png"
-      },
-      {
-        id: 10,
-        name: "Another person",
-        handle: "sdfsdf",
-        role: ["Henlo"],
-        face: "https://bulma.io/images/placeholders/1280x960.png",
-        icon: "https://bulma.io/images/placeholders/96x96.png"
-      },
-      {
-        id: 1337,
         name: "Young-Jin Park",
         handle: "yjp",
         role: ["sudo rm -rf /"],
@@ -121,7 +82,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 1338,
         name: "Owen Thompson",
         handle: "owent",
         role: ["bill"],
@@ -129,7 +89,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 2147483647,
         name: "Nikhil Ograin",
         handle: "ncograin",
         role: ["sudo rm -rf /"],
@@ -137,7 +96,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 1333337,
         name: "Kian Sutarwala",
         handle: "kian",
         role: ["Online People"],
@@ -145,7 +103,6 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
-        id: 273561234,
         name: "Jeffrey Wei",
         handle: "jefwei",
         role: ["Online People"],
