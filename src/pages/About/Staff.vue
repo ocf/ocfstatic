@@ -152,6 +152,13 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+        handle: "sidjha",
+        name: "Sid Jha",
+        role: ["bill"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         handle: "snarain",
         name: "Saurabh Narain",
         role: ["Staff"],
