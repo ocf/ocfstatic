@@ -33,6 +33,41 @@ export default {
   created() {
     this.cards = [
       {
+        handle: "andwappe",
+        name: "Andrew Wapperom",
+        role: ["ligma"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        handle: "anguy",
+        name: "Alyssa Nguyen",
+        role: ["pew"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        handle: "azh",
+        name: "Andrew Zhang",
+        role: ["thicc_penguins"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        handle: "bplate",
+        name: "Ben Plate",
+        role: ["Online People"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        handle: "etw",
+        name: "Ethan Wu",
+        role: ["D@B"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         handle: "fydai",
         name: "Frank Dai",
         role: ["Staff"],
@@ -54,6 +89,13 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+        handle: "jshale",
+        name: "Jack Hale",
+        role: ["sudo rm -rf /"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         handle: "kian",
         name: "Kian Sutarwala",
         role: ["Online People"],
@@ -68,9 +110,23 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+        handle: "lmathias",
+        name: "Lance Mathias",
+        role: ["ligma"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         handle: "ncograin",
         name: "Nikhil Ograin",
         role: ["sudo rm -rf /"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        handle: "nicklitvin",
+        name: "Nick Litvinov",
+        role: ["ligma"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
@@ -103,9 +159,30 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+        handle: "vakumar",
+        name: "Vasanth Kumar",
+        role: ["Online people"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        handle: "viincent",
+        name: "Vincent He",
+        role: ["The Guy"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         handle: "yjp",
         name: "Young-Jin Park",
         role: ["sudo rm -rf /"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
+        handle: "yzy",
+        name: "Ziyan Yu",
+        role: ["Online People"],
         face: "https://bulma.io/images/placeholders/1280x960.png",
         icon: "https://bulma.io/images/placeholders/96x96.png"
       }
