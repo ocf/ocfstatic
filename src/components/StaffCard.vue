@@ -1,15 +1,25 @@
 <template>
   <div>
+    <!-- 
+    Removing until everyone adds images, for cleaner UI
+
     <div class="staff-card-leadimg-container">
       <figure class="image is-4by3">
         <img :src="staffItem.face" class="staff-card-leadimg" />
       </figure>
     </div>
+    -->
     <div class="staff-card-content">
       <img :src="staffItem.icon" class="staff-card-icon" />
       <div>
         <p class="subtitle is-6">@{{ staffItem.handle }}</p>
-        <p class="title is-4">{{ staffItem.name }}</p>
+        <p class="title is-4 mb-3">{{ staffItem.name }}</p>
+        <span
+          class="tag is-light mr-1"
+          v-for="sr in staffItem.role"
+          :key="sr"
+          >{{ sr }}</span
+        >
       </div>
     </div>
   </div>
