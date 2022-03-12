@@ -16,6 +16,7 @@
             </div>
             <div class="columns mx-2 my-0 hero-buttons">
               <g-link
+                v-if="!user"
                 class="button is-medium is-desktop-large inverted outlined home-content column is-flex my-2"
                 to="/docs/internal/membership/"
               >
@@ -276,6 +277,7 @@ query {
 <script>
 import Logo from "~/components/Logo.vue";
 import Links from "~/components/Links.vue";
+import store from "~/store.js";
 
 export default {
   metaInfo: {
@@ -382,6 +384,11 @@ export default {
       this.staffInLab = await this.$http
         .get(this.$static.metadata.apiUrl + "lab/staff")
         .then(response => response.data);
+    }
+  },
+  computed: {
+    user() {
+      return store.user;
     }
   }
 };
