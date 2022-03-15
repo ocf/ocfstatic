@@ -7,8 +7,7 @@ and also means your printouts come out draft quality. If you need to print
 something and not have it in draft quality, you can use the `economode` script
 to turn Economode off.
 
-You'll need the printer password, whose location can be found in the
-[private docs](/docs/staff/private).
+You'll need the printer password, whose location can be found in `/opt/passwords`. Only `rootstaff` has access to this file, you'll have to ask someone on `rootstaff` to give you the password.
 
 Remember to reset Economode to on using the same script once you're done.
 
