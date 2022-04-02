@@ -8,12 +8,7 @@
 module.exports = function (api) {
   api.loadSource((actions) => {
     actions.addMetadata("githubUrl", "https://github.com/BernardZhao/ocf");
-    actions.addMetadata(
-      "apiUrl",
-      process.env.NODE_ENV.toLowerCase() === "production"
-        ? "https://www.ocf.berkeley.edu/api/"
-        : "http://localhost:8000/"
-    );
+    actions.addMetadata("apiUrl", "https://api.ocf.berkeley.edu/");
   });
 
   // eslint-disable-next-line no-unused-vars
