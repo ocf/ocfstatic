@@ -6,6 +6,7 @@ import {
   PopoverTrigger,
 } from "@chakra-ui/react"
 import React, { useState } from "react"
+import OCFColors from "../definitions/OCFColors"
 
 export type NavbarDropdownProps = {
   title: string
@@ -26,7 +27,7 @@ const NavbarDropdown = ({ title, width, children }: NavbarDropdownProps) => {
         <Button
           variant="ghost"
           h="100%"
-          _hover={{ color: "#68b4d3", bg: "#fafafa" }}
+          _hover={{ color: OCFColors.primary, bg: "#fafafa" }}
           fontWeight="light"
           bg={isHovered ? "#fafafa" : ""}
         >
