@@ -5,5 +5,5 @@ COPY . .
 RUN npm install && npm run build
 
 FROM nginx:stable
-COPY --from=build-env /build/dist /usr/share/nginx/html/
+COPY --from=build-env /build/public /usr/share/nginx/html/
 EXPOSE 80
