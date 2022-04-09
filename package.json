@@ -16,6 +16,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@chakra-ui/gatsby-plugin": "^2.0.4",
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "framer-motion": "^6.2.9",
     "gatsby": "^4.11.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
