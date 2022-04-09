@@ -6,8 +6,8 @@ import penguin from "../images/penguin.svg";
 
 const IndexPage = () => {
   return (
-    <Box bg='tomato' w='100%' h={100} paddingLeft={8} paddingRight={8} color='white'>
-      <a href="/" style={{float: "left", height: "50%", position: "relative", top: "25%"}}>
+    <Box bg='tomato' w='100%' h={90} paddingLeft={8} paddingRight={8} paddingTop={5} paddingBottom={5} color='white'>
+      <a href="/" style={{float: "left", height: "100%"}}>
         <Flex h="100%">
             <Image src={penguin} h="100%" />
             <Image src={logo} h="80%" position="relative" top="10%" />
