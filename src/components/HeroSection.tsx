@@ -1,7 +1,7 @@
 import { Flex, Heading, Box, Button, Text } from "@chakra-ui/react"
 import React from "react"
-import OCFColors from "../definitions/OCFColors"
-import Logo from "./Logo"
+import OCFColors from "~/definitions/OCFColors"
+import Logo from "~/components/Logo"
 
 const HeroSection = () => {
   return (

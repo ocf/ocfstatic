@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from "@chakra-ui/react"
 import React, { useState } from "react"
-import OCFColors from "../definitions/OCFColors"
+import OCFColors from "~/definitions/OCFColors"
 
 export type NavbarDropdownProps = {
   title: string

@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/react"
 import React from "react"
-import OCFColors from "../definitions/OCFColors"
+import OCFColors from "~/definitions/OCFColors"
 
 export type NavbarButtonProps = {
   href?: string
