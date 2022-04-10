@@ -3,11 +3,11 @@ import type { GatsbyConfig } from "gatsby"
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `ocfstatic`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://new.ocf.berkeley.edu`,
   },
   plugins: [
     {
-      resolve: '@chakra-ui/gatsby-plugin',
+      resolve: "@chakra-ui/gatsby-plugin",
       options: {
         /**
          * @property {boolean} [resetCSS=true]
