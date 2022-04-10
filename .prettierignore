@@ -2,3 +2,4 @@ src/.temp
 dist
 public
 node_modules
+tsconfig.json
