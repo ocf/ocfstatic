@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
+  pathPrefix: "/~kian/ocfstatic",
   siteMetadata: {
     title: `ocfstatic`,
     siteUrl: `https://new.ocf.berkeley.edu`,
