@@ -1,7 +1,6 @@
 public/
 .cache/
 node_modules/
-tsconfig.json
 .vscode/
 .yarn/
 .pnp.*

@@ -3,7 +3,7 @@ DOCKER_TAG = docker-push.ocf.berkeley.edu/ocfstatic:$(DOCKER_REVISION)
 
 .PHONY: cook-image
 cook-image:
-	docker build --pull -t $(DOCKER_TAG) . 
+	docker build --pull -t $(DOCKER_TAG) .
 
 .PHONY: push-image
 push-image:
