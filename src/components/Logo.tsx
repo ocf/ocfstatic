@@ -2,7 +2,7 @@ import { styled } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react"
 import OCFColors from "~/definitions/OCFColors"
 
-import "~/components/logo.css"
+import "~/components/Logo.css"
 
 export type LogoProps = {
   height?: number
