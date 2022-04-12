@@ -1,9 +1,29 @@
 import { Flex, Heading, Box, Button, Text } from "@chakra-ui/react"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import OCFColors from "~/definitions/OCFColors"
 import Logo from "~/components/Logo"
 
 const HeroSection = () => {
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight,
+  })
+
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight,
+    })
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", setDimension)
+
+    return () => {
+      window.removeEventListener("resize", setDimension)
+    }
+  }, [screenSize])
+
   return (
     <Flex
       w="100%"
@@ -12,20 +32,25 @@ const HeroSection = () => {
       p={20}
       fontWeight="light"
       color="white"
+      flexDirection={screenSize.dynamicWidth >= 1000 ? "row" : "column"}
     >
-      <Box flex={1} justifyContent="center">
-        <Box p={10}>
+      <Flex justifyContent="center" alignItems="center" flex={1}>
+        <Flex justifyContent="center" alignItems="center" h="100%">
           <Logo animated={true} />
-        </Box>
-      </Box>
+        </Flex>
+      </Flex>
       <Flex flex={1} flexDirection="column" textAlign="center">
         <Box flex={3}></Box>
         <Heading flex={1}>Open Computing Facility </Heading>
-        <Text flex={1}>
+        <Text flex={1} margin={2}>
           An all-volunteer student organization dedicated to free computing for
-          all UC Berkeley students, faculty, and staff.{" "}
+          all UC Berkeley students, faculty, and staff.
         </Text>
-        <Flex flex={1} color="black">
+        <Flex
+          flex={screenSize.dynamicWidth >= 1000 ? 1 : 5}
+          color="black"
+          margin={5}
+        >
           <Button
             h="100%"
             flex={1}
@@ -45,7 +70,7 @@ const HeroSection = () => {
             Host your Website
           </Button>
         </Flex>
-        <Box flex={3}></Box>
+        <Box flex={2}></Box>
       </Flex>
     </Flex>
   )
