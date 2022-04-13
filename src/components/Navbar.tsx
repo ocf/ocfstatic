@@ -1,4 +1,5 @@
 import { Box, Flex, Image } from "@chakra-ui/react"
+import Link from "~/components/InternalLink"
 import NavbarButton from "~/components/NavbarButton"
 import NavbarDropdown from "~/components/NavbarDropdown"
 import NavbarDropdownLink from "~/components/NavbarDropdownLink"
@@ -10,23 +11,22 @@ const Navbar = () => {
   return (
     <Box
       bg="white"
-      borderColor="#eeeeee"
+      borderColor="gray.200"
       borderBottomStyle="solid"
       borderBottomWidth={1}
       w="100%"
       h={90}
       px={8}
       py={5}
-      paddingBottom={5}
       color="black"
       fontWeight="light"
     >
-      <a href="/" style={{ float: "left", height: "100%" }}>
+      <Link to="/" float="left" h="100%">
         <Flex h="100%">
           <Image src={penguin} h="100%" />
           <Image src={logo} h="80%" position="relative" top="10%" />
         </Flex>
-      </a>
+      </Link>
 
       <Box float="right" h="100%">
         <NavbarButton>Login</NavbarButton>
