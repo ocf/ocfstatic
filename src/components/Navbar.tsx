@@ -3,11 +3,14 @@ import Link from "~/components/InternalLink"
 import NavbarButton from "~/components/NavbarButton"
 import NavbarDropdown from "~/components/NavbarDropdown"
 import NavbarDropdownLink from "~/components/NavbarDropdownLink"
+import { useKeycloak } from "@react-keycloak/web"
+import { OCFKeycloakToken } from "~/utils/keycloak"
 
 import logo from "~/images/logo.svg"
 import penguin from "~/images/penguin.svg"
 
 const Navbar = () => {
+  const { keycloak } = useKeycloak()
   return (
     <Box
       bg="white"
@@ -29,7 +32,23 @@ const Navbar = () => {
       </Link>
 
       <Box float="right" h="100%">
-        <NavbarButton>Login</NavbarButton>
+        {keycloak.authenticated ? (
+          <NavbarButton
+            onClick={() => {
+              keycloak.logout().catch(console.error)
+            }}
+          >
+            {(keycloak.tokenParsed as OCFKeycloakToken).preferred_username}
+          </NavbarButton>
+        ) : (
+          <NavbarButton
+            onClick={() => {
+              keycloak.login().catch(console.error)
+            }}
+          >
+            Login
+          </NavbarButton>
+        )}
       </Box>
 
       <Box float="right" h="100%">
