@@ -14,6 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint --cache .",
+    "format": "prettier -w .",
     "typecheck": "tsc --noEmit",
     "postinstall": "husky install"
   },

@@ -1,16 +1,10 @@
-import {
-  Button,
-  Popover,
-  PopoverBody,
-  PopoverContent,
-  PopoverTrigger,
-} from "@chakra-ui/react";
-import React from "react";
+import { Button } from "@chakra-ui/react"
+import { ReactNode } from "react"
 
 export type NavbarDropdownLinkProps = {
-  href?: string;
-  children: any;
-};
+  href?: string
+  children: ReactNode
+}
 
 const NavbarDropdownLink = ({ href, children }: NavbarDropdownLinkProps) => {
   return (
@@ -27,7 +21,7 @@ const NavbarDropdownLink = ({ href, children }: NavbarDropdownLinkProps) => {
         {children}
       </Button>
     </a>
-  );
-};
+  )
+}
 
-export default NavbarDropdownLink;
+export default NavbarDropdownLink

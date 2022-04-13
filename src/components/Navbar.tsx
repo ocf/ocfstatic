@@ -1,5 +1,4 @@
 import { Box, Flex, Image } from "@chakra-ui/react"
-import React, { useEffect, useState } from "react"
 import NavbarButton from "~/components/NavbarButton"
 import NavbarDropdown from "~/components/NavbarDropdown"
 import NavbarDropdownLink from "~/components/NavbarDropdownLink"
@@ -8,7 +7,6 @@ import logo from "~/images/logo.svg"
 import penguin from "~/images/penguin.svg"
 
 const Navbar = () => {
-
   return (
     <Box
       bg="white"

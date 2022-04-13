@@ -1,10 +1,10 @@
 import { Button } from "@chakra-ui/react"
-import React from "react"
+import { ReactNode } from "react"
 import OCFColors from "~/definitions/OCFColors"
 
 export type NavbarButtonProps = {
   href?: string
-  children: any
+  children: ReactNode
 }
 
 const NavbarButton = ({ href, children }: NavbarButtonProps) => {

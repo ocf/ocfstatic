@@ -23,7 +23,13 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/.eslintrc.js", "lint-staged.config.js"],
+      files: ["*.ts", "*.tsx"],
+      extends: [
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+    },
+    {
+      files: [".eslintrc.js", "lint-staged.config.js"],
       parser: "espree",
       parserOptions: {
         sourceType: "script",

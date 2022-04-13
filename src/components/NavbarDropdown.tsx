@@ -5,17 +5,17 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@chakra-ui/react"
-import React, { useState } from "react"
+import { ReactNode, useState } from "react"
 import OCFColors from "~/definitions/OCFColors"
 
 export type NavbarDropdownProps = {
   title: string
   width?: number
-  children: any
+  children: ReactNode
 }
 
 const NavbarDropdown = ({ title, width, children }: NavbarDropdownProps) => {
-  let [isHovered, setIsHovered] = useState<boolean>(false)
+  const [isHovered, setIsHovered] = useState<boolean>(false)
 
   return (
     <Popover

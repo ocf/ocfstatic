@@ -1,5 +1,5 @@
 import { Flex, Heading, Box, Button, Text } from "@chakra-ui/react"
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import OCFColors from "~/definitions/OCFColors"
 import Logo from "~/components/Logo"
 
