@@ -28,8 +28,10 @@ $ yarn develop
 $ yarn build
 # Lint
 $ yarn lint
-# View GraphQL schema
-$ yarn explore
+# Typecheck
+$ yarn typecheck
+# Autoformat
+$ yarn format
 ```
 
 ## How to contribute
