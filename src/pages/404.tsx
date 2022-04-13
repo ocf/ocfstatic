@@ -1,4 +1,4 @@
-import { Link } from "@chakra-ui/react"
+import InternalLink from "~/components/InternalLink"
 
 // styles
 const pageStyles = {
@@ -44,7 +44,7 @@ const NotFoundPage = () => {
           </>
         ) : null}
         <br />
-        <Link href="/">Go home</Link>.
+        <InternalLink to="/">Go home</InternalLink>.
       </p>
     </main>
   )
