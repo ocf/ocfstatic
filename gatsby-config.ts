@@ -6,6 +6,7 @@ const config: GatsbyConfig = {
     title: `ocfstatic`,
     siteUrl: `https://new.ocf.berkeley.edu`,
   },
+  jsxRuntime: "automatic",
   plugins: [
     {
       resolve: "@chakra-ui/gatsby-plugin",
