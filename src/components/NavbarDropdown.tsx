@@ -15,7 +15,7 @@ export type NavbarDropdownProps = {
 }
 
 const NavbarDropdown = ({ title, width, children }: NavbarDropdownProps) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <Popover
@@ -35,9 +35,7 @@ const NavbarDropdown = ({ title, width, children }: NavbarDropdownProps) => {
         </Button>
       </PopoverTrigger>
       <PopoverContent w={width ? width : 200}>
-        <PopoverBody paddingLeft={0} paddingRight={0}>
-          {children}
-        </PopoverBody>
+        <PopoverBody px={0}>{children}</PopoverBody>
       </PopoverContent>
     </Popover>
   )

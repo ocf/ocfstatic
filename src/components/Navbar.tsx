@@ -15,9 +15,8 @@ const Navbar = () => {
       borderBottomWidth={1}
       w="100%"
       h={90}
-      paddingLeft={8}
-      paddingRight={8}
-      paddingTop={5}
+      px={8}
+      py={5}
       paddingBottom={5}
       color="black"
       fontWeight="light"
