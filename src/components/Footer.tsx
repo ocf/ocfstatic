@@ -1,86 +1,56 @@
-import { Box, Text, Flex, Link } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+import { Grid, Box, Text, Flex, Link } from "@chakra-ui/react"
 import OCFColors from "~/definitions/OCFColors"
 
 const Footer = () => {
-  const [screenSize, getDimension] = useState({
-    dynamicWidth: window.innerWidth,
-    dynamicHeight: window.innerHeight,
-  })
-
-  const setDimension = () => {
-    getDimension({
-      dynamicWidth: window.innerWidth,
-      dynamicHeight: window.innerHeight,
-    })
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", setDimension)
-
-    return () => {
-      window.removeEventListener("resize", setDimension)
-    }
-  }, [screenSize])
-
   return (
-    <Box
+    <Grid
       bg="white"
-      borderColor="#fafafa"
-      color="#363636"
+      color="gray.800"
       w="100%"
-      minHeight={250}
-      paddingLeft={20}
-      paddingRight={20}
-      paddingTop={5}
-      paddingBottom={5}
+      px={20}
+      py={8}
       fontWeight="light"
+      templateColumns={["1fr", null, "3fr 9fr"]}
+      gap={6}
     >
-      <Flex
-        flexDirection="column"
-        float="left"
-        h="100%"
-        w={screenSize.dynamicWidth >= 1000 ? "30%" : "100%"}
-      >
-        <Box flex={1}></Box>
-        <Text flex={4} fontSize={24} fontWeight="semibold">
+      <Flex flexDirection="column">
+        <Text fontSize="large" fontWeight="semibold">
           Quick Links
         </Text>
-        <Link flex={1}>Home</Link>
-        <Link flex={1}>FAQ</Link>
-        <Link flex={1}>Stats</Link>
-        <Link flex={1}>Short URLs</Link>
-        <Link flex={1}>Board Meeting Minutes</Link>
-        <Link flex={1}>Manage my Account</Link>
-        <Box flex={1}></Box>
+        <Link>Home</Link>
+        <Link>FAQ</Link>
+        <Link>Stats</Link>
+        <Link>Short URLs</Link>
+        <Link>Board Meeting Minutes</Link>
+        <Link>Manage my Account</Link>
       </Flex>
       <Flex
         flexDirection="column"
         textAlign="center"
-        fontSize={12}
-        float="right"
-        paddingTop={50}
-        paddingBottom={50}
-        w={screenSize.dynamicWidth >= 1000 ? "70%" : "100%"}
+        justifyContent="end"
+        fontSize="small"
+        gap={2}
       >
-        <Box flex={5}></Box>
-        <Text flex={1}>
-          The Open Computing Facility is run entirely by student volunteers.
-        </Text>
-        <Text flex={1}>
-          Copyright &copy; 1989–2022 Board of Directors of the Open Computing
-          Facility.
-        </Text>
-        <Text flex={1}>
-          The Open Computing Facility is a Chartered Program of the ASUC.
-        </Text>
-        <Text flex={1}></Text>
-        <Text flex={1}>
-          View the source code on <Link color={OCFColors.primary}>GitHub</Link>
-        </Text>
-        <Box flex={5}></Box>
+        <Box>
+          <Text>
+            The Open Computing Facility is run entirely by student volunteers.
+          </Text>
+          <Text>
+            Copyright &copy; 1989–2022 Board of Directors of the Open Computing
+            Facility.
+          </Text>
+          <Text>
+            The Open Computing Facility is a Chartered Program of the ASUC.
+          </Text>
+        </Box>
+        <Box>
+          <Text>
+            View the source code on{" "}
+            <Link color={OCFColors.primary}>GitHub</Link>
+          </Text>
+        </Box>
       </Flex>
-    </Box>
+    </Grid>
   )
 }
 
