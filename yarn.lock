@@ -3947,6 +3947,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-helmet@npm:^6":
+  version: 6.1.5
+  resolution: "@types/react-helmet@npm:6.1.5"
+  dependencies:
+    "@types/react": "*"
+  checksum: d059cc084d3b3071cce3421bb1170dd42819cf39b81afe60d4fbd66c5ef9ffeaadf1802df80efd9553258f621678f69ceb5a21d73df0d8539d40ae9a0f995485
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:^17, @types/react@npm:^17.0.44":
   version: 17.0.44
   resolution: "@types/react@npm:17.0.44"
@@ -8383,6 +8392,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-react-helmet@npm:^5.12.1":
+  version: 5.12.1
+  resolution: "gatsby-plugin-react-helmet@npm:5.12.1"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+  peerDependencies:
+    gatsby: ^4.0.0-next
+    react-helmet: ^5.1.3 || ^6.0.0
+  checksum: 5f57fd5f3c7a6ad6cba9981968917fdbec820e622095b7131d50d758b4b1c94d7e348f74bab793fc07b43bded932322cbd7b7f9735de68ca928708e38dc552e7
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-typescript@npm:^4.12.1":
   version: 4.12.1
   resolution: "gatsby-plugin-typescript@npm:4.12.1"
@@ -11819,6 +11840,7 @@ __metadata:
     "@types/node": ^17.0.23
     "@types/react": ^17.0.44
     "@types/react-dom": ^17.0.15
+    "@types/react-helmet": ^6
     "@typescript-eslint/eslint-plugin": ^5.19.0
     "@typescript-eslint/parser": ^5.19.0
     eslint: ^8.13.0
@@ -11827,12 +11849,14 @@ __metadata:
     eslint-plugin-react: ^7.29.4
     framer-motion: ^6.2.10
     gatsby: ^4.12.1
+    gatsby-plugin-react-helmet: ^5.12.1
     husky: ^7.0.4
     keycloak-js: ^11.0.3
     lint-staged: ^12.3.7
     prettier: 2.6.2
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-helmet: ^6.1.0
     swr: ^1.3.0
     typescript: ^4.6.3
   languageName: unknown
@@ -13052,7 +13076,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:3.2.0, react-fast-compare@npm:^3.2.0":
+"react-fast-compare@npm:3.2.0, react-fast-compare@npm:^3.1.1, react-fast-compare@npm:^3.2.0":
   version: 3.2.0
   resolution: "react-fast-compare@npm:3.2.0"
   checksum: 8ef272c825ae329f61633ce4ce7f15aa5b84e5214d88bc0823880236e03e985a13195befa2c7a4eda7db3b017dc7985729152d88445823f652403cf36c2b86aa
@@ -13072,6 +13096,20 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0
   checksum: 520b12a4496be21b3228bbf938657f6c33f868e486a0cd355d8bec918129d2c1bf7aabecb20aecdb446a1fbdb61b16f680b5d15b998f544f1b5c0dc5c8914c40
+  languageName: node
+  linkType: hard
+
+"react-helmet@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "react-helmet@npm:6.1.0"
+  dependencies:
+    object-assign: ^4.1.1
+    prop-types: ^15.7.2
+    react-fast-compare: ^3.1.1
+    react-side-effect: ^2.1.0
+  peerDependencies:
+    react: ">=16.3.0"
+  checksum: a4998479dab7fc1c2799eddefb1870a9d881b5f71cfdf97979a9882e42f4bb50402d55335f308f461e735e01a06f46b16cc7b4e6bcb22c7a4a6f85a753c5c106
   languageName: node
   linkType: hard
 
@@ -13128,6 +13166,15 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 9413b9105088034dc7dc45567897961def26b73d9fd00eef0b3de7ed5e2defdb42e5ef52f218dab35fd2ac0335601d8bc445c46a20e60626bab770e4cf1f6a20
+  languageName: node
+  linkType: hard
+
+"react-side-effect@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "react-side-effect@npm:2.1.1"
+  peerDependencies:
+    react: ^16.3.0 || ^17.0.0
+  checksum: 324511ea8f6669555e166b4af280cdf46034bf0e33c486711e3ce17f88f6f21fed17055098408be1347657d0cbcd614bca944cf9f8e4ecfa96a21d13893fe9fc
   languageName: node
   linkType: hard
 

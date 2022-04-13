@@ -23,6 +23,7 @@ const config: GatsbyConfig = {
         isUsingColorMode: true,
       },
     },
+    "gatsby-plugin-react-helmet",
   ],
 }
 
