@@ -34,6 +34,16 @@ $ yarn typecheck
 $ yarn format
 ```
 
+### Developing with ocfapi locally
+
+Create a file named .env.development with the following contents:
+
+```
+GATSBY_API_URL=http://localhost:8001 # or whatever port the API is on
+```
+
+This will redirect all API requests to that URL, if you want to revert to the production API just delete the file or comment out the line.
+
 ## How to contribute
 
 Take a look at the issues, and take your pick!

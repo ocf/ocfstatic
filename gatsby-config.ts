@@ -1,4 +1,9 @@
 import type { GatsbyConfig } from "gatsby"
+import { config as dotenv } from "dotenv"
+
+dotenv({
+  path: `.env.${process.env.NODE_ENV ?? "development"}`,
+})
 
 const config: GatsbyConfig = {
   pathPrefix: "/~kian/ocfstatic",
