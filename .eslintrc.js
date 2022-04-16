@@ -11,15 +11,23 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   extends: [
     "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
   ],
+  rules: {
+    "import/no-anonymous-default-export": "error",
+  },
   settings: {
     react: {
       version: "detect",
     },
+    "import/resolver": "typescript",
   },
   overrides: [
     {
