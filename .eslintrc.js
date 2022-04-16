@@ -40,5 +40,11 @@ module.exports = {
         browser: false,
       },
     },
+    {
+      files: ["src/definitions/ocfapi.ts"],
+      rules: {
+        "@typescript-eslint/no-empty-interface": "off",
+      },
+    },
   ],
 }
