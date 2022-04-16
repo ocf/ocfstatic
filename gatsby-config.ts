@@ -30,6 +30,10 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-react-helmet",
   ],
+  proxy: {
+    prefix: "/api",
+    url: process.env.GATSBY_API_URL || "https://api.ocf.berkeley.edu",
+  },
 }
 
 export default config
