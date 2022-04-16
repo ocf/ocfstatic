@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     () => ({
       fetcher: (url: string) => {
         if (process.env.NODE_ENV === "production" && url.startsWith("/api")) {
-          url = "https://api.ocf.berkeley.edu" + url.replace("/api", "/")
+          url = "https://api.ocf.berkeley.edu" + url.replace("/api", "")
         }
         return fetch(url).then((r) => r.json())
       },
