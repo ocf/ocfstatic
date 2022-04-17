@@ -1,7 +1,6 @@
 import { ConditionalPick, ValueOf } from "type-fest"
 import { paths } from "~/definitions/ocfapi"
 import useSWR, { SWRResponse } from "swr"
-import { URLSearchParams } from "url"
 
 type HTTP2xxCodes = 200 | 201 | 202 | 203 | 204 | 205 | 206
 
