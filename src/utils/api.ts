@@ -56,7 +56,7 @@ export function getSWRKeyForPath<
     | { path: Record<string, ParameterValue> }
     | { query: Record<string, ParameterValue> }
 
-  let pathReplaced: string = path
+  let pathReplaced: string = "/api" + path
   if ("path" in params) {
     for (const param in params.path) {
       pathReplaced = pathReplaced.replaceAll(
