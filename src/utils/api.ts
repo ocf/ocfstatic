@@ -1,4 +1,4 @@
-import { ConditionalPick, ValueOf } from "type-fest"
+import type { ConditionalPick, ValueOf } from "type-fest"
 import { paths } from "~/definitions/ocfapi"
 import useSWR, { SWRResponse } from "swr"
 
@@ -68,12 +68,14 @@ export function getSWRKeyForPath<
 
   let queryRendered = ""
   if ("query" in params) {
-    queryRendered = `?${new URLSearchParams(
-      Object.entries(params.query).map(([key, value]): [string, string] => [
-        key,
-        value.toString(),
-      ])
-    ).toString()}`
+    queryRendered =
+      "?" +
+      new URLSearchParams(
+        Object.entries(params.query).map(([key, value]): [string, string] => [
+          key,
+          value.toString(),
+        ])
+      ).toString()
   }
 
   return "/api" + pathReplaced + queryRendered
