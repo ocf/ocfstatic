@@ -117,6 +117,13 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+	handle: "lharriscal",
+	name: "Lukas Harris"
+	role: ["Staff"],
+	face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      }
+      {
         handle: "ncograin",
         name: "Nikhil Ograin",
         role: ["sudo rm -rf /"],
