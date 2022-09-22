@@ -166,6 +166,13 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+        handle: "tnthi",
+        name: "Tymon Thi",
+        role: ["vimenjoyer"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         handle: "vakumar",
         name: "Vasanth Kumar",
         role: ["Online people"],
