@@ -89,6 +89,13 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+	handle: "jmo",
+	name: "Joe Mo",
+	role: ["Staff"]
+	face: "https://bulma.io/images/placeholders/1280x960.png"
+	icon: "https://bulma.io/images/placeholders/96x96.png"
+      }
+      {
         handle: "jshale",
         name: "Jack Hale",
         role: ["sudo rm -rf /"],
