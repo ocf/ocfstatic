@@ -1,0 +1,8 @@
+# Treat yarn artifacts as binary blobs (we don't use the `binary` macro
+# attribute since we still want git to treat the contents as text for the
+# purposes of line-ending converesion and the like)
+.yarn/releases/** -diff -merge
+.yarn/plugins/** -diff -merge
+
+# Suppress lockfile diffs by default
+yarn.lock -diff
