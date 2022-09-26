@@ -13,7 +13,7 @@ A new website for the OCF. Written in React with Gatsby, uses Chakra UI.
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/ocf/ocfstatic.git && cd ocfstatic
+$ git clone https://github.com/ocf/ocfstatic.git --branch gatsby-dev && cd ocfstatic
 # Install all of our dependencies
 $ corepack enable
 $ yarn
