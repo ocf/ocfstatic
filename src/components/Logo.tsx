@@ -1,4 +1,4 @@
-import { useId } from "@reach/auto-id"
+import { useId } from "react"
 
 import "~/components/Logo.css"
 
@@ -9,7 +9,7 @@ export type LogoProps = {
 }
 
 const Logo = ({ height, width, animated }: LogoProps) => {
-  const id = useId("logo-gradient")
+  const id = useId()
 
   return (
     <svg

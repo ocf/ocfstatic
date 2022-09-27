@@ -8,6 +8,7 @@ dotenv({
 })
 
 const config: GatsbyConfig = {
+  // FIXME: update for production
   pathPrefix: "/~kian/ocfstatic",
   siteMetadata: {
     title: `ocfstatic`,
@@ -23,11 +24,6 @@ const config: GatsbyConfig = {
          * if false, this plugin will not use `<CSSReset />
          */
         resetCSS: true,
-        /**
-         * @property {boolean} [isUsingColorMode=true]
-         * if false, this plugin will not use <ColorModeProvider />
-         */
-        isUsingColorMode: true,
       },
     },
     "gatsby-plugin-react-helmet",
