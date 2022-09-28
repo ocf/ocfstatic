@@ -61,6 +61,13 @@ export default {
         icon: "https://bulma.io/images/placeholders/96x96.png"
       },
       {
+        handle: "ericyang",
+        name: "Eric Yang",
+        role: ["Average Chungus Enjoyer"],
+        face: "https://bulma.io/images/placeholders/1280x960.png",
+        icon: "https://bulma.io/images/placeholders/96x96.png"
+      },
+      {
         handle: "etw",
         name: "Ethan Wu",
         role: ["D@B"],
