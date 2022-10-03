@@ -21,14 +21,14 @@
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^3.0.6",
-    "@chakra-ui/react": "^2.3.4",
+    "@chakra-ui/react": "^2.3.5",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@react-keycloak/web": "^3.4.0",
-    "framer-motion": "^7.4.0",
-    "gatsby": "^4.23.1",
-    "gatsby-plugin-react-helmet": "^5.23.0",
-    "keycloak-js": "^11.0.3",
+    "framer-motion": "^7.5.1",
+    "gatsby": "^4.24.1",
+    "gatsby-plugin-react-helmet": "^5.24.0",
+    "keycloak-js": "^18.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -37,13 +37,13 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
-    "@types/node": "^18.7.23",
+    "@types/node": "^18.8.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@types/react-helmet": "^6.1.5",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
-    "dotenv": "^16.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.1",
@@ -57,7 +57,7 @@
     "lint-staged": "^13.0.3",
     "openapi-typescript": "^5.4.1",
     "prettier": "2.7.1",
-    "typescript": "^4.8.3"
+    "typescript": "4.8.3"
   },
   "packageManager": "yarn@3.2.3"
 }
