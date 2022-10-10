@@ -3,6 +3,7 @@
 # purposes of line-ending converesion and the like)
 .yarn/releases/** -diff -merge
 .yarn/plugins/** -diff -merge
+.yarn/sdks/*/** -diff -merge
 
 # Suppress lockfile diffs by default
 yarn.lock -diff
