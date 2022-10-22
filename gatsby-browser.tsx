@@ -2,12 +2,11 @@ import { type GatsbyBrowser } from "gatsby"
 import { ReactKeycloakProvider } from "@react-keycloak/web"
 import keycloak from "~/utils/keycloak"
 import { SWRConfig, SWRConfiguration } from "swr"
+import "~/styles/inter.css"
 
 export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
   element,
 }) => {
-  // Component does not start with capital letter
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const options: SWRConfiguration = {
     fetcher: (url: string) => {
       if (process.env.NODE_ENV === "production" && url.startsWith("/api")) {

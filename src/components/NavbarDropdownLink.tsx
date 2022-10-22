@@ -17,6 +17,7 @@ const NavbarDropdownLink = ({ href, children }: NavbarDropdownLinkProps) => {
         color="gray.800"
         _hover={{ color: "black", bg: "gray.100" }}
         textAlign="left"
+        borderRadius={0}
       >
         {children}
       </Button>

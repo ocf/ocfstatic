@@ -1,33 +1,24 @@
-import { Grid, Box, Text, Flex, Link } from "@chakra-ui/react"
+import { Text, Flex } from "@chakra-ui/react"
+import FullWidthBox from "~/components/FullWidthBox"
+import Link from "~/components/InternalLink"
 
 const Footer = () => {
   return (
-    <Grid
-      w="100%"
-      py={8}
-      fontWeight="light"
-      templateColumns={["1fr", null, "3fr 9fr"]}
-      gap={6}
-    >
-      <Flex flexDirection="column">
-        <Text fontSize="large" fontWeight="semibold">
-          Quick Links
-        </Text>
-        <Link>Home</Link>
-        <Link>FAQ</Link>
-        <Link>Stats</Link>
-        <Link>Short URLs</Link>
-        <Link>Board Meeting Minutes</Link>
-        <Link>Manage my Account</Link>
-      </Flex>
-      <Flex
-        flexDirection="column"
-        textAlign="center"
-        justifyContent="end"
-        fontSize="small"
-        gap={2}
-      >
-        <Box>
+    <FullWidthBox bg="gray.800" color="gray.100" py={12} fontSize="sm">
+      <Flex alignItems="center" justifyContent="space-between">
+        <Flex flexDirection="column" gap={1}>
+          <Link to="https://ocf.io/donate">Donate to the OCF</Link>
+          <Link to="https://www.ocf.berkeley.edu/~staff/bod/">
+            Board Meeting Minutes
+          </Link>
+          <Link to="https://www.ocf.berkeley.edu/docs/docs/">
+            Official Documents
+          </Link>
+          <Link to="https://www.ocf.berkeley.edu/docs/privacy/">
+            Privacy Policy
+          </Link>
+        </Flex>
+        <Flex direction="column" textAlign="right" gap={1} color="gray.300">
           <Text>
             The Open Computing Facility is run entirely by student volunteers.
           </Text>
@@ -38,14 +29,9 @@ const Footer = () => {
           <Text>
             The Open Computing Facility is a Chartered Program of the ASUC.
           </Text>
-        </Box>
-        <Box>
-          <Text>
-            View the source code on <Link color="primary">GitHub</Link>
-          </Text>
-        </Box>
+        </Flex>
       </Flex>
-    </Grid>
+    </FullWidthBox>
   )
 }
 

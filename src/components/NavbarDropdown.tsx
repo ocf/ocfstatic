@@ -1,5 +1,4 @@
 import {
-  Button,
   Popover,
   PopoverBody,
   PopoverContent,
@@ -8,6 +7,7 @@ import {
 } from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 import { ReactNode } from "react"
+import NavbarButton from "./NavbarButton"
 
 export type NavbarDropdownProps = {
   title: string
@@ -19,15 +19,10 @@ const NavbarDropdown = ({ title, width, children }: NavbarDropdownProps) => {
   return (
     <Popover trigger="hover">
       <PopoverTrigger>
-        <Button
-          variant="ghost"
-          h="100%"
-          _hover={{ color: "primary", bg: "gray.100" }}
-          fontWeight="light"
-        >
+        <NavbarButton>
           <Text>{title}</Text>
           <ChevronDownIcon ml={1} />
-        </Button>
+        </NavbarButton>
       </PopoverTrigger>
       <PopoverContent w={width ?? 200}>
         <PopoverBody px={0}>{children}</PopoverBody>

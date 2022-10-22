@@ -3,7 +3,13 @@ import { Box } from "@chakra-ui/react"
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <Box w="100vw" position="relative" h="max-content" bg="gray.50">
+    <Box
+      w="100vw"
+      minH="100vh"
+      position="relative"
+      h="max-content"
+      bg="gray.50"
+    >
       <Box
         h={{
           sm: "initial",
