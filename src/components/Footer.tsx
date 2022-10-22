@@ -1,13 +1,9 @@
 import { Grid, Box, Text, Flex, Link } from "@chakra-ui/react"
-import OCFColors from "~/definitions/OCFColors"
 
 const Footer = () => {
   return (
     <Grid
-      bg="white"
-      color="gray.800"
       w="100%"
-      px={20}
       py={8}
       fontWeight="light"
       templateColumns={["1fr", null, "3fr 9fr"]}
@@ -45,8 +41,7 @@ const Footer = () => {
         </Box>
         <Box>
           <Text>
-            View the source code on{" "}
-            <Link color={OCFColors.primary}>GitHub</Link>
+            View the source code on <Link color="primary">GitHub</Link>
           </Text>
         </Box>
       </Flex>

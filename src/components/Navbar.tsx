@@ -1,4 +1,4 @@
-import { Box, Flex, Image } from "@chakra-ui/react"
+import { Box, Button, Flex, Image } from "@chakra-ui/react"
 import Link from "~/components/InternalLink"
 import NavbarButton from "~/components/NavbarButton"
 import NavbarDropdown from "~/components/NavbarDropdown"
@@ -11,12 +11,10 @@ import penguin from "~/images/penguin.svg"
 
 const Navbar = () => {
   const { keycloak } = useKeycloak()
+
   return (
     <Box
-      bg="white"
-      borderColor="gray.200"
-      borderBottomStyle="solid"
-      borderBottomWidth={1}
+      bg="transparent"
       w="100%"
       h={90}
       px={8}
@@ -31,7 +29,7 @@ const Navbar = () => {
         </Flex>
       </Link>
 
-      <Box float="right" h="100%">
+      <Flex float="right" h="100%" alignItems="center">
         {keycloak.authenticated ? (
           <NavbarButton
             onClick={() => {
@@ -41,30 +39,27 @@ const Navbar = () => {
             {(keycloak.tokenParsed as OCFKeycloakToken).preferred_username}
           </NavbarButton>
         ) : (
-          <NavbarButton
+          <Button
+            _hover={{ color: "primary", bg: "gray.100" }}
             onClick={() => {
               keycloak.login().catch(console.error)
             }}
           >
-            Login
-          </NavbarButton>
+            Log In
+          </Button>
         )}
-      </Box>
+      </Flex>
 
       <Box float="right" h="100%">
         <NavbarButton>Contact Us</NavbarButton>
       </Box>
 
       <Box float="right" h="100%">
-        <NavbarDropdown title="About us" width={150}>
+        <NavbarDropdown title="About" width={150}>
           <NavbarDropdownLink>What We Do</NavbarDropdownLink>
           <NavbarDropdownLink>Officers</NavbarDropdownLink>
           <NavbarDropdownLink>Meet Our Staff</NavbarDropdownLink>
         </NavbarDropdown>
-      </Box>
-
-      <Box float="right" h="100%">
-        <NavbarButton>Documentation</NavbarButton>
       </Box>
 
       <Box float="right" h="100%">
@@ -79,6 +74,10 @@ const Navbar = () => {
           <NavbarDropdownLink>Software Mirrors</NavbarDropdownLink>
           <NavbarDropdownLink>High Performance Computing</NavbarDropdownLink>
         </NavbarDropdown>
+      </Box>
+
+      <Box float="right" h="100%">
+        <NavbarButton>Documentation</NavbarButton>
       </Box>
 
       <Box float="right" h="100%">

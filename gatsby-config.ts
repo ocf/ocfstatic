@@ -26,7 +26,6 @@ const config: GatsbyConfig = {
         resetCSS: true,
       },
     },
-    "gatsby-plugin-react-helmet",
   ],
   developMiddleware: (app: ExpressApp) => {
     app.use(

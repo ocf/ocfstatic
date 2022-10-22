@@ -1,6 +1,6 @@
 import Keycloak, { type KeycloakTokenParsed } from "keycloak-js"
 
-const keycloak = Keycloak({
+const keycloak = new Keycloak({
   realm: "ocf",
   url: "https://auth.ocf.berkeley.edu/auth/",
   clientId: "ocfstatic",

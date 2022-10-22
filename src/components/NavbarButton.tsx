@@ -1,6 +1,5 @@
 import { Button } from "@chakra-ui/react"
 import { MouseEventHandler, ReactNode } from "react"
-import OCFColors from "~/definitions/OCFColors"
 
 export type NavbarButtonProps = {
   href?: string
@@ -14,7 +13,7 @@ const NavbarButton = ({ href, children, onClick }: NavbarButtonProps) => {
       <Button
         variant="ghost"
         h="100%"
-        _hover={{ color: OCFColors.primary, bg: "#fafafa" }}
+        _hover={{ color: "primary", bg: "gray.100" }}
         fontWeight="light"
         onClick={onClick}
       >

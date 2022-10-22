@@ -1,7 +1,7 @@
 import type { GatsbyBrowser } from "gatsby"
 import { ReactKeycloakProvider } from "@react-keycloak/web"
 
-export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
+export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
   element,
 }) => {
   return (

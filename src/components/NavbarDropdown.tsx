@@ -4,9 +4,10 @@ import {
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
+  Text,
 } from "@chakra-ui/react"
-import { ReactNode, useState } from "react"
-import OCFColors from "~/definitions/OCFColors"
+import { ChevronDownIcon } from "@chakra-ui/icons"
+import { ReactNode } from "react"
 
 export type NavbarDropdownProps = {
   title: string
@@ -15,26 +16,20 @@ export type NavbarDropdownProps = {
 }
 
 const NavbarDropdown = ({ title, width, children }: NavbarDropdownProps) => {
-  const [isHovered, setIsHovered] = useState(false)
-
   return (
-    <Popover
-      trigger="hover"
-      onOpen={() => setIsHovered(true)}
-      onClose={() => setIsHovered(false)}
-    >
+    <Popover trigger="hover">
       <PopoverTrigger>
         <Button
           variant="ghost"
           h="100%"
-          _hover={{ color: OCFColors.primary, bg: "#fafafa" }}
+          _hover={{ color: "primary", bg: "gray.100" }}
           fontWeight="light"
-          bg={isHovered ? "#fafafa" : ""}
         >
-          {title}
+          <Text>{title}</Text>
+          <ChevronDownIcon ml={1} />
         </Button>
       </PopoverTrigger>
-      <PopoverContent w={width ? width : 200}>
+      <PopoverContent w={width ?? 200}>
         <PopoverBody px={0}>{children}</PopoverBody>
       </PopoverContent>
     </Popover>
