@@ -1,10 +1,21 @@
 import Navbar from "~/components/Navbar"
 import Footer from "~/components/Footer"
 import { useApiRoute } from "~/utils/api"
-import { Box, Button, Flex, Text } from "@chakra-ui/react"
+import {
+  Box,
+  type BoxProps,
+  Button,
+  Flex,
+  Grid,
+  List,
+  ListItem,
+  Text,
+  Heading,
+} from "@chakra-ui/react"
 import Layout from "~/components/Layout"
 import FullWidthBox from "~/components/FullWidthBox"
 import Link from "~/components/InternalLink"
+import { type ReactNode } from "react"
 
 const IndexPage = () => {
   const { data: staffInLab } = useApiRoute("/lab/staff")
@@ -42,23 +53,68 @@ const IndexPage = () => {
           </Flex>
         </Box>
       </FullWidthBox>
-      <Box h="40vh">
-        {staffInLab && (
-          <>
-            <h2>Staff in Lab:</h2>
-            <ul>
-              {staffInLab.staff_in_lab.map((s) => (
-                <li key={s.host}>
+      <Grid
+        py={8}
+        templateColumns="repeat(3, 1fr)"
+        templateRows="repeat(4, 1fr)"
+        gap={4}
+      >
+        <HomeCard
+          gridArea="1 / 1 / 2 / 2"
+          title={
+            <>
+              Currently{" "}
+              <Text color="green.500" as="span">
+                Open
+              </Text>
+            </>
+          }
+        >
+          <List>
+            {staffInLab &&
+              staffInLab.staff_in_lab.map((s) => (
+                <ListItem key={s.host}>
                   {s.user} on {s.host} since {s.start}
-                </li>
+                </ListItem>
               ))}
-            </ul>
-          </>
-        )}
-      </Box>
+          </List>
+        </HomeCard>
+        <HomeCard gridArea="2 / 1 / 3 / 2" title="Staff News"></HomeCard>
+        <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab"></HomeCard>
+        <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us"></HomeCard>
+        <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff"></HomeCard>
+        <HomeCard gridArea="4 / 1 / 5 / 2" title="Stats"></HomeCard>
+        <HomeCard
+          gridArea="4 / 2 / 5 / 4"
+          title="Linux Sysadmin DeCal"
+        ></HomeCard>
+      </Grid>
       <Footer />
     </Layout>
   )
 }
 
 export default IndexPage
+
+const HomeCard = ({
+  title,
+  children,
+  ...rest
+}: { title: ReactNode } & Omit<BoxProps, "title">) => {
+  return (
+    <Box
+      bg="white"
+      boxShadow="0px 4px 20px 0px #0000000D"
+      p={4}
+      borderRadius={4}
+      {...rest}
+    >
+      {title && (
+        <Heading as="h3" fontSize="xl" mb={2}>
+          {title}
+        </Heading>
+      )}
+      {children}
+    </Box>
+  )
+}

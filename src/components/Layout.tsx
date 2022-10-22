@@ -11,7 +11,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       bg="gray.50"
     >
       <Box
-        h={{
+        minH={{
           sm: "initial",
           md: "unset",
           lg: "100vh",

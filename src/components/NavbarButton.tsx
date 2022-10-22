@@ -1,4 +1,5 @@
 import { Button, ButtonProps, forwardRef } from "@chakra-ui/react"
+import Link from "./InternalLink"
 
 export type NavbarButtonProps = {
   href?: string
@@ -17,7 +18,7 @@ const NavbarButton = forwardRef<NavbarButtonProps & ButtonProps, "button">(
     )
 
     if (href) {
-      return <a href={href}>{button}</a>
+      return <Link to={href}>{button}</Link>
     }
 
     return button

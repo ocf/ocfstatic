@@ -25,18 +25,13 @@ const Navbar = () => {
       <Link
         to="/"
         h="100%"
-        textDecoration="none"
+        _hover={{ textDecoration: "none" }}
         display="flex"
         gap={4}
         alignItems="center"
       >
         <Image src={penguin} h="75%" />
-        <Text
-          fontSize="xl"
-          fontWeight="semibold"
-          _hover={{ textDecoration: "none" }}
-          textDecoration="none"
-        >
+        <Text fontSize="xl" fontWeight="semibold" textDecoration="none">
           Open Computing Facility
         </Text>
       </Link>
