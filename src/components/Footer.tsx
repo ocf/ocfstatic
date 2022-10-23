@@ -4,14 +4,14 @@ import Link from "~/components/InternalLink"
 
 const Footer = () => {
   return (
-    <FullWidthBox bg="gray.800" color="gray.100" py={12} fontSize="sm">
+    <FullWidthBox bg="gray.800" color="gray.100" py={8} fontSize="sm">
       <Flex
         alignItems={{ md: "center" }}
         justifyContent="space-between"
         flexDirection={{ base: "column", md: "row" }}
         gap={8}
       >
-        <Flex flexDirection="column" gap={1}>
+        <Flex flexDirection="column" gap={2}>
           <Link to="https://ocf.io/donate">Donate to the OCF</Link>
           <Link to="https://www.ocf.berkeley.edu/~staff/bod/">
             Board Meeting Minutes

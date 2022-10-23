@@ -6,6 +6,7 @@ import NavbarDropdownLink from "~/components/NavbarDropdownLink"
 import { useKeycloak } from "@react-keycloak/web"
 import { OCFKeycloakToken } from "~/utils/keycloak"
 import { useEffect, useState, type RefObject } from "react"
+import { navigate } from "gatsby"
 
 import penguin from "~/images/penguin.svg"
 
@@ -108,7 +109,8 @@ const Navbar = ({
               fontWeight="medium"
               px={4}
               onClick={() => {
-                keycloak.logout().catch(console.error)
+                navigate("/account")?.catch(console.error)
+                // keycloak.logout().catch(console.error)
               }}
             >
               {(keycloak.tokenParsed as OCFKeycloakToken).preferred_username}
