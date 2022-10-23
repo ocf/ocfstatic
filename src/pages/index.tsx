@@ -96,10 +96,7 @@ const IndexPage = () => {
         <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us"></HomeCard>
         <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff"></HomeCard>
         <HomeCard gridArea="4 / 1 / 5 / 2" title="Stats"></HomeCard>
-        <HomeCard
-          gridArea="4 / 2 / 5 / 4"
-          title="Linux Sysadmin DeCal"
-        ></HomeCard>
+        <LinuxSysadminDecalCard />
       </Grid>
       <Footer />
     </Layout>
@@ -132,3 +129,20 @@ const HomeCard = ({
     </Box>
   )
 }
+
+const LinuxSysadminDecalCard = () => (
+  <HomeCard gridArea="4 / 2 / 5 / 4" title="Linux Sysadmin DeCal">
+    <Link to="https://decal.ocf.berkeley.edu/">
+      <Text>See more</Text>
+    </Link>
+    <br />
+    <Text>
+      Whether you are looking to improve your Bash wizardry, just plain GNU, or
+      everything Unix and Unix-like, this is the perfect class for you. We offer
+      a beginner section for those new to Unix and an advanced section for those
+      who have some experience but want to learn more. Both sections are 2 units
+      and be held from 8-9pm, the beginner section on Tuesdays and the advanced
+      section on Thursdays, right in the OCF lab.
+    </Text>
+  </HomeCard>
+)
