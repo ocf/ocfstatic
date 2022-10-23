@@ -10,8 +10,10 @@ const NavbarButton = forwardRef<NavbarButtonProps & ButtonProps, "button">(
     const button = (
       <Button
         variant="ghost"
-        _hover={{ bg: "gray.100" }}
+        color="gray.700"
+        _hover={{ color: "gray.900" }}
         fontWeight="normal"
+        px={3}
         ref={ref}
         {...rest}
       />

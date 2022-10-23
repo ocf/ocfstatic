@@ -15,19 +15,23 @@ import {
 import Layout from "~/components/Layout"
 import FullWidthBox from "~/components/FullWidthBox"
 import Link from "~/components/InternalLink"
-import { type ReactNode } from "react"
+import { useRef, type ReactNode } from "react"
 
 const IndexPage = () => {
+  const heroRef = useRef<HTMLDivElement>(null)
   const { data: staffInLab } = useApiRoute("/lab/staff")
+
   return (
     <Layout>
+      <Navbar intersectionElement={heroRef} />
       <FullWidthBox
         bgImage="/assets/img/hero.jpg"
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
+        ref={heroRef}
+        pt="16" // allocate space for navbar
       >
-        <Navbar />
         <Box py={12}>
           <Text fontSize="3xl" fontWeight="semibold">
             Welcome to the Open Computing Facility!
@@ -39,24 +43,32 @@ const IndexPage = () => {
           </Text>
           <Flex gap={4} direction={{ base: "column", md: "row" }} mt={12}>
             <Link to="/account/create">
-              <Button bg="white">Create Account</Button>
+              <Button bg="white" w="100%">
+                Create Account
+              </Button>
             </Link>
-            <Link to="">
-              <Button bg="white">Request Hosting</Button>
+            <Link to="/account/hosting">
+              <Button bg="white" w="100%">
+                Request Hosting
+              </Button>
             </Link>
-            <Link to="">
-              <Button bg="white">How to Print</Button>
+            <Link to="/docs/printing">
+              <Button bg="white" w="100%">
+                How to Print
+              </Button>
             </Link>
-            <Link to="">
-              <Button bg="white">Get Help</Button>
+            <Link to="/staff-hours">
+              <Button bg="white" w="100%">
+                Get Help
+              </Button>
             </Link>
           </Flex>
         </Box>
       </FullWidthBox>
       <Grid
         py={8}
-        templateColumns="repeat(3, 1fr)"
-        templateRows="repeat(4, 1fr)"
+        templateColumns={{ md: "repeat(3, 1fr)" }}
+        templateRows={{ md: "repeat(4, 1fr)" }}
         gap={4}
       >
         <HomeCard
@@ -98,19 +110,21 @@ export default IndexPage
 
 const HomeCard = ({
   title,
+  gridArea,
   children,
   ...rest
-}: { title: ReactNode } & Omit<BoxProps, "title">) => {
+}: { title: ReactNode; gridArea: string } & Omit<BoxProps, "title">) => {
   return (
     <Box
       bg="white"
       boxShadow="0px 4px 20px 0px #0000000D"
       p={4}
       borderRadius={4}
+      gridArea={{ md: gridArea }}
       {...rest}
     >
       {title && (
-        <Heading as="h3" fontSize="xl" mb={2}>
+        <Heading as="h3" fontSize="xl" fontWeight="semibold" mb={3}>
           {title}
         </Heading>
       )}

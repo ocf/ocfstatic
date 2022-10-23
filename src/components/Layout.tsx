@@ -18,7 +18,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           xl: "100vh",
         }}
         w="100%"
-        maxW="72rem"
+        maxW="6xl"
         mx="auto"
         px="2rem"
       >

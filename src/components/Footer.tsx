@@ -5,7 +5,12 @@ import Link from "~/components/InternalLink"
 const Footer = () => {
   return (
     <FullWidthBox bg="gray.800" color="gray.100" py={12} fontSize="sm">
-      <Flex alignItems="center" justifyContent="space-between">
+      <Flex
+        alignItems={{ md: "center" }}
+        justifyContent="space-between"
+        flexDirection={{ base: "column", md: "row" }}
+        gap={8}
+      >
         <Flex flexDirection="column" gap={1}>
           <Link to="https://ocf.io/donate">Donate to the OCF</Link>
           <Link to="https://www.ocf.berkeley.edu/~staff/bod/">
@@ -18,7 +23,12 @@ const Footer = () => {
             Privacy Policy
           </Link>
         </Flex>
-        <Flex direction="column" textAlign="right" gap={1} color="gray.300">
+        <Flex
+          direction="column"
+          textAlign={{ md: "right" }}
+          gap={1}
+          color="gray.300"
+        >
           <Text>
             The Open Computing Facility is run entirely by student volunteers.
           </Text>
