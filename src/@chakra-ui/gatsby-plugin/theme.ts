@@ -16,6 +16,13 @@ const theme = {
       900: "#171717",
     },
   },
+  components: {
+    Link: {
+      baseStyle: {
+        textDecoration: "underline",
+      },
+    },
+  },
   fonts: {
     heading: `'Inter var', sans-serif`,
     body: `'Inter var', sans-serif`,
