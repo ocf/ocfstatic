@@ -11,6 +11,7 @@ import {
   ListItem,
   Text,
   Heading,
+  UnorderedList,
 } from "@chakra-ui/react"
 import Layout from "~/components/Layout"
 import FullWidthBox from "~/components/FullWidthBox"
@@ -93,7 +94,43 @@ const IndexPage = () => {
         </HomeCard>
         <HomeCard gridArea="2 / 1 / 3 / 2" title="Staff News"></HomeCard>
         <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab"></HomeCard>
-        <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us"></HomeCard>
+        <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us">
+          <Text fontSize="xl">Learn more about what we do!</Text>
+          <br></br>
+          <Text>
+            {" "}
+            The Open Computing Facility is an all-volunteer student organization
+            located at the University of California, Berkeley. We&apos;re
+            passionate about open source and free software.{" "}
+          </Text>
+          <br></br>
+          <Text>
+            {" "}
+            Our volunteers maintain services for the Berkeley community. Among
+            others, we offer:{" "}
+          </Text>
+          <br></br>
+          <UnorderedList>
+            <ListItem>A spiffy computer lab in 171 MLK Student Union</ListItem>
+            <ListItem>
+              Web & email hosting for thousands of student groups and
+              individuals
+            </ListItem>
+            <ListItem>Free printing for all UC Berkeley students</ListItem>
+            <ListItem>
+              Shell accounts on our powerful on-campus servers
+            </ListItem>
+            <ListItem> High-performance computing on our GPU server</ListItem>
+            <ListItem> ...and lots more!</ListItem>
+          </UnorderedList>{" "}
+          <br></br>
+          <Text>
+            {" "}
+            We hold <Link to="/staff-hours/"> weekly staff hours </Link> to
+            provide assistance with account issues or with OCF services. Drop by
+            to ask questions or just to hang out!{" "}
+          </Text>
+        </HomeCard>
         <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff"></HomeCard>
         <HomeCard gridArea="4 / 1 / 5 / 2" title="Stats"></HomeCard>
         <LinuxSysadminDecalCard />
