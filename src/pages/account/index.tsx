@@ -10,8 +10,8 @@ import { OCFKeycloakToken } from "~/utils/keycloak"
 const AccountDashboardPage = () => {
   const { initialized, keycloak } = useKeycloak()
 
-  if (initialized && !keycloak.authenticated) {
-    navigate("/")?.catch(console.error)
+  if (!keycloak.authenticated) {
+    if (initialized) navigate("/")?.catch(console.error)
     return null
   }
 
