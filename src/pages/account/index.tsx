@@ -14,9 +14,6 @@ const AccountDashboardPage = () => {
     return null
   }
 
-  const profile = keycloak.tokenParsed
-  console.log(profile)
-
   return (
     <Layout>
       <Navbar />

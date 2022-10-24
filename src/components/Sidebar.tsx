@@ -19,10 +19,10 @@ const Sidebar = () => {
     >
       <Box w="100%" px="2rem" mx="auto" h="100%" alignItems="center">
         <Box>
-          <Text>
+          <Text padding={1}>
             <b>{profile.name}</b>
           </Text>
-          <Text>{profile.preferred_username}</Text>
+          <Text padding={1}>{profile.preferred_username}</Text>
         </Box>
         <br />
         <Box>
