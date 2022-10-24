@@ -86,7 +86,7 @@ const Navbar = ({
           display={{ base: "none", lg: "flex" }}
         >
           <NavbarButton>Staff Hours</NavbarButton>
-          <NavbarButton>Documentation</NavbarButton>
+          <NavbarButton href="/docs">Documentation</NavbarButton>
           <NavbarDropdown title="Services" width={250}>
             <NavbarDropdownLink>Computer Lab</NavbarDropdownLink>
             <NavbarDropdownLink>Printing</NavbarDropdownLink>
