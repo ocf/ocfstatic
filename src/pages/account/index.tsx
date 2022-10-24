@@ -1,4 +1,4 @@
-import { Box, Input, Text } from "@chakra-ui/react"
+import { Box, Button, Input, Text } from "@chakra-ui/react"
 import { useKeycloak } from "@react-keycloak/web"
 import { navigate } from "gatsby"
 import Footer from "~/components/Footer"
@@ -49,12 +49,14 @@ const AccountDashboardPage = () => {
           <br />
           <Box>
             <Text fontWeight="medium">Email</Text>
-            <Input value={profile.email} maxWidth="500" />
+            <Input value={profile.email} maxWidth="500" marginRight="10" />
+            <Button bgColor="blue.200">Save</Button>
           </Box>
           <br />
           <Box>
             <Text fontWeight="medium">Password</Text>
-            <Input type="password" maxWidth="500" />
+            <Input type="password" maxWidth="500" marginRight="10" />
+            <Button bgColor="blue.200">Save</Button>
           </Box>
           <Box h="16" />
         </Box>
