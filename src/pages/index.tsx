@@ -92,7 +92,7 @@ const IndexPage = () => {
               ))}
           </List>
         </HomeCard>
-        <StaffNewsCard gridArea="2 / 1 / 3 / 2"></StaffNewsCard>
+        <StaffNewsCard gridArea="2 / 1 / 3 / 2" postCount={5}></StaffNewsCard>
         <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab"></HomeCard>
         <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us">
           <Text fontSize="xl">Learn more about what we do!</Text>
@@ -195,19 +195,41 @@ interface BlogPost {
   link: string
 }
 
-const StaffNewsCard = ({ gridArea }: { gridArea: string }) => {
-  function generateBlogPosts(blogPosts?: BlogPost[]): ReactNode {
+const StaffNewsCard = ({
+  gridArea,
+  postCount,
+}: {
+  gridArea: string
+  postCount: number
+}) => {
+  // function dateDifference(date1: Date, date2: Date): string {
+  //  const difference = date1.to - date2;
+  // }
+
+  function generateBlogPosts(
+    blogPosts?: BlogPost[],
+    postCount?: number
+  ): ReactNode {
     if (!blogPosts) {
       return <Text>Error loading posts</Text>
     }
-    return blogPosts.map((post: BlogPost) => {
-      return (
-        <Box key={post.id}>
-          <Link to={post.link}>{post.title}</Link>
-          <Text>{post.published}</Text>
-        </Box>
-      )
-    })
+    if (!postCount) {
+      postCount = 5
+    }
+    return (
+      <List spacing={3}>
+        {blogPosts.slice(0, postCount).map((post: BlogPost) => {
+          return (
+            <ListItem key={post.id}>
+              <Link color="teal.500" to={post.link}>
+                {post.title}
+              </Link>
+              <Text>Last updated {post.updated}</Text>
+            </ListItem>
+          )
+        })}
+      </List>
+    )
   }
 
   const { data: blogPosts } = useApiRoute("/announce/blog") as {
@@ -218,7 +240,7 @@ const StaffNewsCard = ({ gridArea }: { gridArea: string }) => {
     <HomeCard gridArea={gridArea} title="Staff News">
       <Text fontSize="lg">More updates</Text>
       <br />
-      {generateBlogPosts(blogPosts)}
+      {generateBlogPosts(blogPosts, postCount)}
     </HomeCard>
   )
 }
