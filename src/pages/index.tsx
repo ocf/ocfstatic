@@ -91,7 +91,7 @@ const IndexPage = () => {
               ))}
           </List>
         </HomeCard>
-        <HomeCard gridArea="2 / 1 / 3 / 2" title="Staff News"></HomeCard>
+        <StaffNewsCard gridArea="2 / 1 / 3 / 2"></StaffNewsCard>
         <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab"></HomeCard>
         <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us"></HomeCard>
         <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff"></HomeCard>
@@ -133,7 +133,7 @@ const HomeCard = ({
 const LinuxSysadminDecalCard = () => (
   <HomeCard gridArea="4 / 2 / 5 / 4" title="Linux Sysadmin DeCal">
     <Link to="https://decal.ocf.berkeley.edu/">
-      <Text>See more</Text>
+      <Text fontSize="lg">See more</Text>
     </Link>
     <br />
     <Text>
@@ -146,3 +146,42 @@ const LinuxSysadminDecalCard = () => (
     </Text>
   </HomeCard>
 )
+
+interface BlogPost {
+  id: string
+  published: string
+  updated: string
+  title: string
+  content: string
+  author_name: string
+  author_email: string
+  link: string
+}
+
+const StaffNewsCard = ({ gridArea }: { gridArea: string }) => {
+  function generateBlogPosts(blogPosts?: BlogPost[]): ReactNode {
+    if (!blogPosts) {
+      return <Text>Error loading posts</Text>
+    }
+    return blogPosts.map((post: BlogPost) => {
+      return (
+        <Box key={post.id}>
+          <Link to={post.link}>{post.title}</Link>
+          <Text>{post.published}</Text>
+        </Box>
+      )
+    })
+  }
+
+  const { data: blogPosts } = useApiRoute("/announce/blog") as {
+    data?: BlogPost[]
+  }
+  console.log(blogPosts)
+  return (
+    <HomeCard gridArea={gridArea} title="Staff News">
+      <Text fontSize="lg">More updates</Text>
+      <br />
+      {generateBlogPosts(blogPosts)}
+    </HomeCard>
+  )
+}
