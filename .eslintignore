@@ -1,3 +1,6 @@
-src/.temp
-.eslintrc.js
-dist
+public/
+.cache/
+node_modules/
+.vscode/
+.yarn/
+.pnp.*

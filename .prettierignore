@@ -1,2 +1,8 @@
-src/.temp
-dist
+public/
+.cache/
+node_modules/
+tsconfig.json
+.vscode/
+.yarn/
+.pnp.*
+static/docs/

@@ -1,25 +1,58 @@
 module.exports = {
   root: true,
-  parser: "vue-eslint-parser",
-  parserOptions: {
-    ecmaVersion: 6,
-    // Use this parser on script tags to dodge dynamic import warnings
-    parser: "babel-eslint",
-    sourceType: "module"
-  },
   env: {
-    node: true,
-    es6: true
+    browser: true,
   },
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+    project: ["./tsconfig.json"],
+  },
+  plugins: ["@typescript-eslint"],
   extends: [
     "eslint:recommended",
-    "plugin:vue/recommended",
-    "plugin:gridsome/recommended",
-    "prettier",
-    "prettier/vue"
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
   ],
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
-  }
-};
+    "import/no-anonymous-default-export": "error",
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
+    "import/resolver": "typescript",
+  },
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      extends: [
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+    },
+    {
+      files: [".eslintrc.js", "lint-staged.config.js"],
+      parser: "espree",
+      parserOptions: {
+        sourceType: "script",
+      },
+      env: {
+        node: true,
+        es6: true,
+        browser: false,
+      },
+    },
+    {
+      files: ["src/definitions/ocfapi.ts"],
+      rules: {
+        "@typescript-eslint/no-empty-interface": "off",
+      },
+    },
+  ],
+}

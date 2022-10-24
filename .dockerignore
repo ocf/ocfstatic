@@ -8,3 +8,4 @@ Dockerfile
 src/.temp
 .gitignore
 .env
+public

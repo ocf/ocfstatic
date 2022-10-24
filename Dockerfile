@@ -1,9 +1,13 @@
 # Build stage
-FROM node:16 AS build-env
+FROM node:16 AS build
 WORKDIR /build
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn .yarn
+RUN corepack enable
+RUN corepack yarn install --immutable
 COPY . .
-RUN npm install && npm run build
+RUN corepack yarn run build
 
 FROM nginx:stable
-COPY --from=build-env /build/dist /usr/share/nginx/html/
+COPY --from=build /build/public /usr/share/nginx/html/
 EXPOSE 80
