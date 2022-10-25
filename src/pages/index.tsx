@@ -19,6 +19,7 @@ import Layout from "~/components/Layout"
 import FullWidthBox from "~/components/FullWidthBox"
 import Link from "~/components/InternalLink"
 import { useRef, type ReactNode } from "react"
+import { SEO } from "~/components/SEO"
 
 const IndexPage = () => {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -186,6 +187,8 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const Head = () => <SEO />
 
 const HomeCard = ({
   title,
