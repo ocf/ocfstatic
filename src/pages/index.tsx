@@ -5,10 +5,8 @@ import {
   Box,
   type BoxProps,
   Button,
-  Center,
   Flex,
   Grid,
-  Image,
   List,
   ListItem,
   Text,
@@ -94,21 +92,24 @@ const IndexPage = () => {
               ))}
           </List>
         </HomeCard>
-        <HomeCard gridArea="2 / 1 / 3 / 2" title="Staff News"></HomeCard>
+        <StaffNewsCard gridArea="2 / 1 / 3 / 2" postCount={5}></StaffNewsCard>
         <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab"></HomeCard>
         <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us">
-          <Text>Learn more about what we do!</Text>
-          <br />
+          <Text fontSize="xl">Learn more about what we do!</Text>
+          <br></br>
           <Text>
+            {" "}
             The Open Computing Facility is an all-volunteer student organization
             located at the University of California, Berkeley. We&apos;re
-            passionate about open source and free software.
+            passionate about open source and free software.{" "}
           </Text>
-          <br />
+          <br></br>
           <Text>
-            Our volunteers maintain services for the Berkeley community.
+            {" "}
+            Our volunteers maintain services for the Berkeley community. Among
+            others, we offer:{" "}
           </Text>
-          <br />
+          <br></br>
           <UnorderedList>
             <ListItem>A spiffy computer lab in 171 MLK Student Union</ListItem>
             <ListItem>
@@ -119,64 +120,18 @@ const IndexPage = () => {
             <ListItem>
               Shell accounts on our powerful on-campus servers
             </ListItem>
-            <ListItem>High-performance computing on our GPU server</ListItem>
-            <ListItem>...and lots more!</ListItem>
-          </UnorderedList>
-          <br />
+            <ListItem> High-performance computing on our GPU server</ListItem>
+            <ListItem> ...and lots more!</ListItem>
+          </UnorderedList>{" "}
+          <br></br>
           <Text>
-            We hold <Link to="/staff-hours">weekly staff hours</Link> to provide
-            assistance with account issues or with OCF services. Drop by to ask
-            questions or just to hang out!
+            {" "}
+            We hold <Link to="/staff-hours/"> weekly staff hours </Link> to
+            provide assistance with account issues or with OCF services. Drop by
+            to ask questions or just to hang out!{" "}
           </Text>
         </HomeCard>
-        <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff!">
-          <Flex>
-            <Box flex={6}>
-              <Text>
-                Meetings 8pm every Wednesday at the lab and at{" "}
-                <Link to="https://ocf.io/meet">https://ocf.io/meet</Link>.
-              </Text>
-              <br />
-              <Text>
-                We meet every week to talk tech and work on cool projects. All
-                are welcome to join OCF staff, at any point in the semester!
-              </Text>
-              <br />
-              <Text>
-                <b>Sound interesting?</b>
-              </Text>
-              <br />
-              <UnorderedList>
-                <ListItem>
-                  Subscribe to our{" "}
-                  <Link to="https://ocf.io/announce">mailing list</Link> for
-                  meeting recaps
-                </ListItem>
-                <ListItem>
-                  Chat with us on <Link to="https://fco.slack.com/">Slack</Link>
-                  , <Link to="https://ocf.io/discord">Discord</Link>,{" "}
-                  <Link to="https://chat.ocf.berkeley.edu/">Matrix</Link>, or{" "}
-                  <Link to="https://new.ocf.berkeley.edu/docs/internal/contact/irc/">
-                    IRC
-                  </Link>
-                </ListItem>
-                <ListItem>
-                  Drop by and say hello, or{" "}
-                  <Link to="/docs/internal/contact">email the staff team</Link>
-                </ListItem>
-                <ListItem>
-                  See more ways to{" "}
-                  <Link to="/docs/staff/getinvolved">
-                    contribute and get involved
-                  </Link>
-                </ListItem>
-              </UnorderedList>
-            </Box>
-            <Center flex={2}>
-              <Image src="/assets/img/penguin-sticker.png" />
-            </Center>
-          </Flex>
-        </HomeCard>
+        <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff"></HomeCard>
         <HomeCard gridArea="4 / 1 / 5 / 2" title="Stats"></HomeCard>
         <LinuxSysadminDecalCard />
       </Grid>
@@ -215,7 +170,7 @@ const HomeCard = ({
 const LinuxSysadminDecalCard = () => (
   <HomeCard gridArea="4 / 2 / 5 / 4" title="Linux Sysadmin DeCal">
     <Link to="https://decal.ocf.berkeley.edu/">
-      <Text>See more</Text>
+      <Text fontSize="lg">See more</Text>
     </Link>
     <br />
     <Text>
@@ -228,3 +183,110 @@ const LinuxSysadminDecalCard = () => (
     </Text>
   </HomeCard>
 )
+
+interface BlogPost {
+  id: string
+  published: string
+  updated: string
+  title: string
+  content: string
+  author_name: string
+  author_email: string
+  link: string
+}
+
+const StaffNewsCard = ({
+  gridArea,
+  // Maximum number of posts to show
+  postCount,
+}: {
+  gridArea: string
+  postCount: number
+}) => {
+  // function dateDifference(date1: Date, date2: Date): string {
+  //  const difference = date1.to - date2;
+  // }
+
+  function dateDuration(currentDate: Date, otherDate: Date): string {
+    const currentUnixTime: number = Date.parse(currentDate.toDateString())
+    const otherUnixTime: number = Date.parse(otherDate.toDateString())
+    const differenceUnixTime: number = currentUnixTime - otherUnixTime
+    const difference: number = Date.parse(
+      new Date(differenceUnixTime).toDateString()
+    )
+
+    const MINUTE_MILLISECONDS = 60 * 1000
+    const HOUR_MILLISECONDS = 60 * MINUTE_MILLISECONDS
+    const DAY_MILLISECONDS = 24 * HOUR_MILLISECONDS
+    const WEEK_MILLISECONDS = 7 * DAY_MILLISECONDS
+    const MONTH_MILLISECONDS = 30 * DAY_MILLISECONDS
+    const YEAR_MILLISECONDS = 365 * DAY_MILLISECONDS
+
+    let datePartsAdded = 2
+    const durationParts: string[] = []
+    const years: number = Math.floor(difference / YEAR_MILLISECONDS)
+    if (years > 0) {
+      durationParts.push(`${years} year${years > 1 ? "s" : ""}`)
+      --datePartsAdded
+    }
+    if (datePartsAdded <= 0) {
+      return durationParts.join(", ")
+    }
+    // skip time already counted by years above
+    const months: number =
+      Math.floor(difference / MONTH_MILLISECONDS) - 12 * years
+    if (months > 0) {
+      durationParts.push(`${months} month${months > 1 ? "s" : ""}`)
+      ++datePartsAdded
+    }
+    const weeks: number =
+      Math.floor(difference / WEEK_MILLISECONDS) - 52 * years - 4 * months
+    if (weeks > 0) {
+      durationParts.push(`${weeks} week${weeks > 1 ? "s" : ""}`)
+      ++datePartsAdded
+    }
+    return durationParts.join(", ")
+  }
+
+  function generateBlogPosts(
+    blogPosts?: BlogPost[],
+    postCount?: number
+  ): ReactNode {
+    if (!blogPosts) {
+      return <Text>Error loading posts</Text>
+    }
+    if (!postCount) {
+      postCount = 5
+    }
+    const currentDate = new Date()
+    return (
+      <List spacing={3}>
+        {blogPosts.slice(0, postCount).map((post: BlogPost) => {
+          return (
+            <ListItem key={post.id}>
+              <Link color="teal.500" to={post.link}>
+                {post.title}
+              </Link>
+              <Text>
+                Last updated {dateDuration(currentDate, new Date(post.updated))}{" "}
+                ago
+              </Text>
+            </ListItem>
+          )
+        })}
+      </List>
+    )
+  }
+
+  const { data: blogPosts } = useApiRoute("/announce/blog") as {
+    data?: BlogPost[]
+  }
+  console.log(blogPosts)
+  return (
+    <HomeCard gridArea={gridArea} title="Staff News">
+      <Text fontSize="lg">More updates</Text>
+      <br />
+      {generateBlogPosts(blogPosts, postCount)}
+    </HomeCard>
+  )
+}
