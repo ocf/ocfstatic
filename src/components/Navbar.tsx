@@ -69,6 +69,7 @@ const Navbar = ({
         <Link
           to="/"
           h="100%"
+          textDecoration="none"
           _hover={{ textDecoration: "none" }}
           display="flex"
           gap={4}
