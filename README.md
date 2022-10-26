@@ -1,23 +1,24 @@
 # OCF Static
 
-A new website for the OCF. Written in React with Gatsby, uses Chakra UI.
+A new website for the OCF. Written in React with [Gatsby](https://www.gatsbyjs.com/), uses [Chakra UI](https://chakra-ui.com/).
 
 ## Development
 
 ### Dependencies
 
 - Node.js 16+ (https://nodejs.org/en/)
-- If on M1 Mac, requires `vips` (can be installed through [Homebrew](https://brew.sh/) `brew install libvips`)
+- If using an Apple Silicon Mac (M1, M2, etc.), `vips` is required (can be installed through [Homebrew](https://brew.sh/) `brew install libvips`)
+- If using Windows, WSL is required (https://learn.microsoft.com/en-us/windows/wsl/install)
 
 ### Getting set up
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/ocf/ocfstatic.git --branch gatsby-dev && cd ocfstatic
+$ git clone https://github.com/ocf/ocfstatic.git && cd ocfstatic
 # Install all of our dependencies
 $ corepack enable
 $ yarn
-# Run dev server (visit http://localhost:8080 to view)
+# Run dev server (visit http://localhost:8000 to view)
 $ yarn develop
 ```
 
@@ -47,8 +48,6 @@ This will redirect all API requests to that URL, if you want to revert to the pr
 ## How to contribute
 
 Take a look at the issues, and take your pick!
-
-I would recommend getting familiar with the Bulma styles included in the project, to reuse them and write as little custom css as possible.
 
 ## Possible pitfalls
 
