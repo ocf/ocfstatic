@@ -46,26 +46,42 @@ const IndexPage = () => {
             California, Berkeley students, faculty, and staff.
           </Text>
           <Flex gap={4} direction={{ base: "column", md: "row" }} mt={12}>
-            <Link to="/account/create">
-              <Button bg="white" w="100%">
-                Create Account
-              </Button>
-            </Link>
-            <Link to="/account/hosting">
-              <Button bg="white" w="100%">
-                Request Hosting
-              </Button>
-            </Link>
-            <Link to="/docs/printing">
-              <Button bg="white" w="100%">
-                How to Print
-              </Button>
-            </Link>
-            <Link to="/staff-hours">
-              <Button bg="white" w="100%">
-                Get Help
-              </Button>
-            </Link>
+            <Button
+              to="/account/create"
+              bg="white"
+              textDecoration="none"
+              _hover={{ textDecoration: "none" }}
+              as={Link}
+            >
+              Create Account
+            </Button>
+            <Button
+              to="/account/hosting"
+              bg="white"
+              textDecoration="none"
+              _hover={{ textDecoration: "none" }}
+              as={Link}
+            >
+              Request Hosting
+            </Button>
+            <Button
+              to="/docs/printing"
+              bg="white"
+              textDecoration="none"
+              _hover={{ textDecoration: "none" }}
+              as={Link}
+            >
+              How to Print
+            </Button>
+            <Button
+              to="/staff-hours"
+              bg="white"
+              textDecoration="none"
+              _hover={{ textDecoration: "none" }}
+              as={Link}
+            >
+              Get Help
+            </Button>
           </Flex>
         </Box>
       </FullWidthBox>
@@ -174,7 +190,10 @@ const IndexPage = () => {
               </UnorderedList>
             </Box>
             <Center flex={2}>
-              <Image src="/assets/img/penguin-sticker.png" />
+              <Image
+                src="/assets/img/penguin-sticker.png"
+                alt="Penguin next to server graphic"
+              />
             </Center>
           </Flex>
         </HomeCard>

@@ -75,7 +75,7 @@ const Navbar = ({
           gap={4}
           alignItems="center"
         >
-          <Image src={penguin} h="125%" />
+          <Image src={penguin} h="125%" alt="OCF Logo" />
           <Text fontSize="xl" fontWeight="semibold" textDecoration="none">
             Open Computing Facility
           </Text>
