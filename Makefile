@@ -17,7 +17,7 @@ preview-deploy:
 	$(eval DEPLOY_ID=$(shell echo $(PREVIEW_DEPLOY_ID) | tr '[:upper:]' '[:lower:]'))
 	docker cp $(CONTAINER_ID):/usr/share/nginx/html/ ./$(DEPLOY_ID)
 	docker rm $(CONTAINER_ID)
-	$(eval POD_NAME=$(shell sh -c "kubectl get pods --no-headers -o custom-columns=":metadata.name" -l=app=$(KUBE_PREVIEW_DEPLOY_APP) -n $(KUBE_PREVIEW_DEPLOY_NAMESPACE)"))
+	$(eval POD_NAME=$(shell sh -c "kubectl get pods --no-headers -o custom-columns=":metadata.name" -l=app=$(KUBE_PREVIEW_DEPLOY_APP) -n $(KUBE_PREVIEW_DEPLOY_NAMESPACE) | head -n 1"))
 	kubectl exec $(POD_NAME) -n $(KUBE_PREVIEW_DEPLOY_NAMESPACE) -- sh -c "rm -rf /var/www/ocfstatic/$(DEPLOY_ID)"
 	kubectl cp ./$(DEPLOY_ID) $(KUBE_PREVIEW_DEPLOY_NAMESPACE)/$(POD_NAME):/var/www/ocfstatic/ --no-preserve=true
 	rm -rf ./$(DEPLOY_ID)
