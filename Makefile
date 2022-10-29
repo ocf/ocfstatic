@@ -21,7 +21,3 @@ preview-deploy:
 	kubectl exec $(POD_NAME) -n $(KUBE_PREVIEW_DEPLOY_NAMESPACE) -- sh -c "rm -rf /var/www/ocfstatic/$(DEPLOY_ID)"
 	kubectl cp ./$(DEPLOY_ID) $(KUBE_PREVIEW_DEPLOY_NAMESPACE)/$(POD_NAME):/var/www/ocfstatic/ --no-preserve=true
 	rm -rf ./$(DEPLOY_ID)
-
-.PHONY: test
-test:
-	@echo "test complete"
