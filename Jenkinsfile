@@ -34,13 +34,6 @@ pipeline {
             }
             parallel {
                 stage('test') {
-                    environment {
-                        // Get a coveralls or codecov token from the
-                        // parameters, but don't error if it doesn't exist
-                        // (not all projects are using coveralls or codecov)
-                        COVERALLS_REPO_TOKEN = credentials("${pipelineParams.getOrDefault('coverallsToken', 'default')}")
-                        CODECOV_REPO_TOKEN = credentials("${pipelineParams.getOrDefault('codecovToken', 'default')}")
-                    }
                     steps {
                         script {
                             sh 'make -q test || if [ "$?" -ne "2" ]; then make test; fi'
