@@ -82,6 +82,11 @@ pipeline {
         }
 
         stage('deploy-to-preview') {
+            when {
+                expression {
+                    return env.CHANGE_ID
+                }
+            }
             environment {
                 DOCKER_REPO = 'docker-push.ocf.berkeley.edu/'
                 DOCKER_REVISION = "${version}"
@@ -100,7 +105,7 @@ pipeline {
                             if (status != 0) {
                                 pullRequest.comment("Preview deployment failed! See Jenkins output for more details: ${env.BUILD_URL}")
                             } else {
-                                pullRequest.comment("View preview deployment of this pull request here: https://${env.BRANCH_NAME}.new.ocf.berkeley.edu")
+                                pullRequest.comment("View the preview deployment of this pull request here: https://${env.BRANCH_NAME}.new.ocf.berkeley.edu")
                             }
                         }
                     }
