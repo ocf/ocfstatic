@@ -83,9 +83,7 @@ pipeline {
 
         stage('deploy-to-preview') {
             when {
-                expression {
-                    return env.CHANGE_ID
-                }
+                changeRequest()
             }
             environment {
                 DOCKER_REPO = 'docker-push.ocf.berkeley.edu/'
@@ -96,17 +94,14 @@ pipeline {
             }
             steps {
                 script {
-                    // Only run on pull requests
-                    if (env.CHANGE_ID) {
-                        withKubeConfig([credentialsId: 'kubernetes-deploy-token',
-                                        serverUrl: 'https://kubernetes.ocf.berkeley.edu:6443'
-                        ]) {
-                            def status = sh returnStatus: true, script: "make preview-deploy PREVIEW_DEPLOY_ID=${env.BRANCH_NAME}"
-                            if (status != 0) {
-                                pullRequest.comment("Preview deployment failed! See Jenkins output for more details: ${env.BUILD_URL}")
-                            } else {
-                                pullRequest.comment("View the preview deployment of this pull request here: https://${env.BRANCH_NAME}.new.ocf.berkeley.edu")
-                            }
+                    withKubeConfig([credentialsId: 'kubernetes-deploy-token',
+                                    serverUrl: 'https://kubernetes.ocf.berkeley.edu:6443'
+                    ]) {
+                        def status = sh returnStatus: true, script: "make preview-deploy PREVIEW_DEPLOY_ID=${env.BRANCH_NAME}"
+                        if (status != 0) {
+                            pullRequest.comment("Preview deployment failed! See Jenkins output for more details: ${env.BUILD_URL}")
+                        } else {
+                            pullRequest.comment("View the preview deployment of this pull request here: https://${env.BRANCH_NAME}.new.ocf.berkeley.edu")
                         }
                     }
                 }
