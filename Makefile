@@ -1,7 +1,7 @@
 DOCKER_REVISION ?= testing-$(USER)
 DOCKER_TAG = docker-push.ocf.berkeley.edu/ocfstatic:$(DOCKER_REVISION)
-KUBE_PREVIEW_DEPLOY_NAMESPACE ?= dev-kian
-KUBE_PREVIEW_DEPLOY_APP ?= ocfstatic-cd
+KUBE_PREVIEW_DEPLOY_NAMESPACE ?= app-ocfstatic
+KUBE_PREVIEW_DEPLOY_APP ?= ocfstatic-previews
 
 .PHONY: cook-image
 cook-image:
