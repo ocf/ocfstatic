@@ -20,7 +20,11 @@ const NavbarButton = forwardRef<NavbarButtonProps & ButtonProps, "button">(
     )
 
     if (href) {
-      return <Link to={href}>{button}</Link>
+      return (
+        <Link to={href} _hover={{ opacity: "100%" }}>
+          {button}
+        </Link>
+      )
     }
 
     return button

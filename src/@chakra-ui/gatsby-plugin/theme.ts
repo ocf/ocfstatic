@@ -20,6 +20,9 @@ const theme = {
     Link: {
       baseStyle: {
         textDecoration: "underline",
+        _hover: {
+          opacity: "75%",
+        },
       },
     },
   },

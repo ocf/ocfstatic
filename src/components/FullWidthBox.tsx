@@ -10,7 +10,7 @@ const FullWidthBox = forwardRef<BoxProps, "div">(
         insetX={{ md: "50%" }}
         {...rest}
       >
-        <Box maxW="6xl" width="100%" mx="auto" px="2rem" ref={ref}>
+        <Box maxW="7xl" width="100%" mx="auto" px="2rem" ref={ref}>
           {children}
         </Box>
       </Box>
