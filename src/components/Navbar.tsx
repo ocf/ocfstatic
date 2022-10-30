@@ -89,18 +89,38 @@ const Navbar = ({
           <NavbarButton>Staff Hours</NavbarButton>
           <NavbarButton href="/docs">Documentation</NavbarButton>
           <NavbarDropdown title="Services" width={250}>
-            <NavbarDropdownLink>Computer Lab</NavbarDropdownLink>
-            <NavbarDropdownLink>Printing</NavbarDropdownLink>
-            <NavbarDropdownLink>Personal Website Hosting</NavbarDropdownLink>
-            <NavbarDropdownLink>Group Website Hosting</NavbarDropdownLink>
-            <NavbarDropdownLink>SSH/SFTP (Shell)</NavbarDropdownLink>
-            <NavbarDropdownLink>Email Hosting</NavbarDropdownLink>
-            <NavbarDropdownLink>MySQL Database</NavbarDropdownLink>
-            <NavbarDropdownLink>Software Mirrors</NavbarDropdownLink>
-            <NavbarDropdownLink>High Performance Computing</NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/lab/">
+              Computer Lab
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/lab/printing">
+              Printing
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/web/">
+              Personal Website Hosting
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/webapps/">
+              Group Website Hosting
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/shell/">
+              SSH/SFTP (Shell)
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/vhost/mail/">
+              Email Hosting
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/mysql">
+              MySQL Database
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/mirrors">
+              Software Mirrors
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/hpc/">
+              High Performance Computing
+            </NavbarDropdownLink>
           </NavbarDropdown>
           <NavbarDropdown title="About" width={150}>
-            <NavbarDropdownLink>What We Do</NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/internal/about/">
+              What We Do
+            </NavbarDropdownLink>
             <NavbarDropdownLink>Officers</NavbarDropdownLink>
             <NavbarDropdownLink>Meet Our Staff</NavbarDropdownLink>
           </NavbarDropdown>
