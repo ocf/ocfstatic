@@ -118,9 +118,7 @@ const Navbar = ({
             </NavbarDropdownLink>
           </NavbarDropdown>
           <NavbarDropdown title="About" width={150}>
-            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/internal/about/">
-              What We Do
-            </NavbarDropdownLink>
+            <NavbarDropdownLink>What We Do</NavbarDropdownLink>
             <NavbarDropdownLink>Officers</NavbarDropdownLink>
             <NavbarDropdownLink>Meet Our Staff</NavbarDropdownLink>
           </NavbarDropdown>
