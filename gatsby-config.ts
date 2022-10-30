@@ -8,8 +8,6 @@ dotenv({
 })
 
 const config: GatsbyConfig = {
-  // FIXME: update for production
-  pathPrefix: "/~kian/ocfstatic",
   siteMetadata: {
     title: `ocfstatic`,
     siteUrl: `https://new.ocf.berkeley.edu`,

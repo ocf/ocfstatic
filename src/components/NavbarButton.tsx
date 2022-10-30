@@ -7,23 +7,20 @@ export type NavbarButtonProps = {
 
 const NavbarButton = forwardRef<NavbarButtonProps & ButtonProps, "button">(
   ({ href, ...rest }, ref) => {
-    const button = (
+    return (
       <Button
         variant="ghost"
         color="gray.700"
-        _hover={{ color: "gray.900" }}
+        textDecoration="none"
+        _hover={{ color: "gray.900", textDecoration: "none", opacity: "100%" }}
         fontWeight="normal"
         px={3}
         ref={ref}
+        as={href ? Link : undefined}
+        to={href}
         {...rest}
       />
     )
-
-    if (href) {
-      return <Link to={href}>{button}</Link>
-    }
-
-    return button
   }
 )
 

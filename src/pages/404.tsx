@@ -1,5 +1,6 @@
 import { Button, Flex, Text } from "@chakra-ui/react"
 import InternalLink from "~/components/InternalLink"
+import { SEO } from "~/components/SEO"
 
 const NotFoundPage = () => {
   return (
@@ -17,6 +18,4 @@ const NotFoundPage = () => {
 
 export default NotFoundPage
 
-export const Head = () => {
-  return <title>Not found</title>
-}
+export const Head = () => <SEO title="Not Found" />

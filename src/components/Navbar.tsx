@@ -58,7 +58,7 @@ const Navbar = ({
         w="100%"
         px="2rem"
         mx="auto"
-        maxW="6xl"
+        maxW="7xl"
         h="100%"
         py={5}
         color="black"
@@ -69,12 +69,13 @@ const Navbar = ({
         <Link
           to="/"
           h="100%"
+          textDecoration="none"
           _hover={{ textDecoration: "none" }}
           display="flex"
           gap={4}
           alignItems="center"
         >
-          <Image src={penguin} h="125%" />
+          <Image src={penguin} h="125%" alt="OCF Logo" />
           <Text fontSize="xl" fontWeight="semibold" textDecoration="none">
             Open Computing Facility
           </Text>
@@ -86,7 +87,7 @@ const Navbar = ({
           display={{ base: "none", lg: "flex" }}
         >
           <NavbarButton>Staff Hours</NavbarButton>
-          <NavbarButton>Documentation</NavbarButton>
+          <NavbarButton href="/docs">Documentation</NavbarButton>
           <NavbarDropdown title="Services" width={250}>
             <NavbarDropdownLink>Computer Lab</NavbarDropdownLink>
             <NavbarDropdownLink>Printing</NavbarDropdownLink>

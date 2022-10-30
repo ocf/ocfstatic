@@ -6,6 +6,7 @@ import Layout from "~/components/Layout"
 import Navbar from "~/components/Navbar"
 import Sidebar from "~/components/Sidebar"
 import { OCFKeycloakToken } from "~/utils/keycloak"
+import { SEO } from "~/components/SEO"
 
 const AccountDashboardPage = () => {
   const { initialized, keycloak } = useKeycloak()
@@ -67,3 +68,5 @@ const AccountDashboardPage = () => {
 }
 
 export default AccountDashboardPage
+
+export const Head = () => <SEO />
