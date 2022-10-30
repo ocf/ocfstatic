@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ocfstatic-previews-service
+spec:
+  selector:
+    app: ocfstatic-previews
+  ports:
+    - port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ocfstatic-previews-deployment
+  labels:
+    app: ocfstatic-previews
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ocfstatic-previews
+  template:
+    metadata:
+      labels:
+        app: ocfstatic-previews
+    spec:
+      containers:
+        - name: ocfstatic-previews
+          image: "docker.ocf.berkeley.edu/ocfstatic-previews:latest"
+          resources:
+            limits:
+              memory: 256Mi
+              cpu: 500m
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /var/www/ocfstatic
+              name: ocfstatic-previews
+      volumes:
+        - name: ocfstatic-previews
+          persistentVolumeClaim:
+            claimName: ocfstatic-previews
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ocfstatic-previews-ingress
+spec:
+  rules:
+    - host: "*.new.ocf.berkeley.edu"
+      http:
+        paths:
+          - backend:
+              serviceName: ocfstatic-previews-service
+              servicePort: 80
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ocfstatic-previews
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 4Gi
+  storageClassName: managed-nfs-storage

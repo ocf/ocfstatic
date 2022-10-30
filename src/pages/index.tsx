@@ -5,8 +5,10 @@ import {
   Box,
   type BoxProps,
   Button,
+  Center,
   Flex,
   Grid,
+  Image,
   List,
   ListItem,
   Text,
@@ -17,6 +19,7 @@ import Layout from "~/components/Layout"
 import FullWidthBox from "~/components/FullWidthBox"
 import Link from "~/components/InternalLink"
 import { useRef, type ReactNode } from "react"
+import { SEO } from "~/components/SEO"
 
 const IndexPage = () => {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -26,6 +29,7 @@ const IndexPage = () => {
     <Layout>
       <Navbar intersectionElement={heroRef} />
       <FullWidthBox
+        bgColor="gray.200"
         bgImage="/assets/img/hero.jpg"
         bgSize="cover"
         bgPosition="center"
@@ -43,26 +47,42 @@ const IndexPage = () => {
             California, Berkeley students, faculty, and staff.
           </Text>
           <Flex gap={4} direction={{ base: "column", md: "row" }} mt={12}>
-            <Link to="/account/create">
-              <Button bg="white" w="100%">
-                Create Account
-              </Button>
-            </Link>
-            <Link to="/account/hosting">
-              <Button bg="white" w="100%">
-                Request Hosting
-              </Button>
-            </Link>
-            <Link to="/docs/printing">
-              <Button bg="white" w="100%">
-                How to Print
-              </Button>
-            </Link>
-            <Link to="/staff-hours">
-              <Button bg="white" w="100%">
-                Get Help
-              </Button>
-            </Link>
+            <Button
+              to="/account/create"
+              bg="white"
+              textDecoration="none"
+              _hover={{ textDecoration: "none" }}
+              as={Link}
+            >
+              Create Account
+            </Button>
+            <Button
+              to="/account/hosting"
+              bg="white"
+              textDecoration="none"
+              _hover={{ textDecoration: "none" }}
+              as={Link}
+            >
+              Request Hosting
+            </Button>
+            <Button
+              to="/docs/printing"
+              bg="white"
+              textDecoration="none"
+              _hover={{ textDecoration: "none" }}
+              as={Link}
+            >
+              How to Print
+            </Button>
+            <Button
+              to="/staff-hours"
+              bg="white"
+              textDecoration="none"
+              _hover={{ textDecoration: "none" }}
+              as={Link}
+            >
+              Get Help
+            </Button>
           </Flex>
         </Box>
       </FullWidthBox>
@@ -131,7 +151,57 @@ const IndexPage = () => {
             to ask questions or just to hang out!{" "}
           </Text>
         </HomeCard>
-        <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff"></HomeCard>
+        <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff!">
+          <Flex>
+            <Box flex={6}>
+              <Text>
+                Meetings 8pm every Wednesday at the lab and at{" "}
+                <Link to="https://ocf.io/meet">https://ocf.io/meet</Link>.
+              </Text>
+              <br />
+              <Text>
+                We meet every week to talk tech and work on cool projects. All
+                are welcome to join OCF staff, at any point in the semester!
+              </Text>
+              <br />
+              <Text>
+                <b>Sound interesting?</b>
+              </Text>
+              <br />
+              <UnorderedList>
+                <ListItem>
+                  Subscribe to our{" "}
+                  <Link to="https://ocf.io/announce">mailing list</Link> for
+                  meeting recaps
+                </ListItem>
+                <ListItem>
+                  Chat with us on <Link to="https://fco.slack.com/">Slack</Link>
+                  , <Link to="https://ocf.io/discord">Discord</Link>,{" "}
+                  <Link to="https://chat.ocf.berkeley.edu/">Matrix</Link>, or{" "}
+                  <Link to="https://new.ocf.berkeley.edu/docs/internal/contact/irc/">
+                    IRC
+                  </Link>
+                </ListItem>
+                <ListItem>
+                  Drop by and say hello, or{" "}
+                  <Link to="/docs/internal/contact">email the staff team</Link>
+                </ListItem>
+                <ListItem>
+                  See more ways to{" "}
+                  <Link to="/docs/staff/getinvolved">
+                    contribute and get involved
+                  </Link>
+                </ListItem>
+              </UnorderedList>
+            </Box>
+            <Center flex={2}>
+              <Image
+                src="/assets/img/penguin-sticker.png"
+                alt="Penguin next to server graphic"
+              />
+            </Center>
+          </Flex>
+        </HomeCard>
         <HomeCard gridArea="4 / 1 / 5 / 2" title="Stats"></HomeCard>
         <LinuxSysadminDecalCard />
       </Grid>
@@ -141,6 +211,8 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const Head = () => <SEO />
 
 const HomeCard = ({
   title,

@@ -5,7 +5,7 @@
       "type": "npm",
       "script": "develop",
       "problemMatcher": [],
-      "label": "npm: develop",
+      "label": "yarn: develop",
       "detail": "gatsby develop"
     }
   ]
