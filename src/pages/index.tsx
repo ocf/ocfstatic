@@ -29,6 +29,7 @@ const IndexPage = () => {
     <Layout>
       <Navbar intersectionElement={heroRef} />
       <FullWidthBox
+        bgColor="gray.200"
         bgImage="/assets/img/hero.jpg"
         bgSize="cover"
         bgPosition="center"
