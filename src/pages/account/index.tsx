@@ -21,9 +21,9 @@ const AccountDashboardPage = () => {
   return (
     <Layout>
       <Navbar />
-      <Box>
+      <Box position="relative" top={16}>
         <Sidebar />
-        <Box>
+        <Box display="inline-block">
           <Box h="20" />
           <Text color="gray.500" fontSize="1.5rem" fontWeight="medium">
             ACCOUNT
