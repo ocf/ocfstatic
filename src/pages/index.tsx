@@ -211,9 +211,18 @@ const StaffNewsCard = ({
     const currentUnixTime: number = Date.parse(currentDate.toDateString())
     const otherUnixTime: number = Date.parse(otherDate.toDateString())
     const differenceUnixTime: number = currentUnixTime - otherUnixTime
-    const difference: number = Date.parse(
+
+    let differenceMilliseconds: number = Date.parse(
       new Date(differenceUnixTime).toDateString()
     )
+    if (differenceMilliseconds < 0) {
+      console.error("otherDate newer than current date")
+    }
+
+    interface DateDuration {
+      durationString: string
+      durationMilliseconds: number
+    }
 
     const MINUTE_MILLISECONDS = 60 * 1000
     const HOUR_MILLISECONDS = 60 * MINUTE_MILLISECONDS
@@ -222,30 +231,46 @@ const StaffNewsCard = ({
     const MONTH_MILLISECONDS = 30 * DAY_MILLISECONDS
     const YEAR_MILLISECONDS = 365 * DAY_MILLISECONDS
 
+    const DURATIONS: DateDuration[] = [
+      {
+        durationString: "year",
+        durationMilliseconds: YEAR_MILLISECONDS,
+      },
+      {
+        durationString: "month",
+        durationMilliseconds: MONTH_MILLISECONDS,
+      },
+      {
+        durationString: "week",
+        durationMilliseconds: WEEK_MILLISECONDS,
+      },
+      {
+        durationString: "day",
+        durationMilliseconds: DAY_MILLISECONDS,
+      },
+    ]
+
     let datePartsAdded = 2
     const durationParts: string[] = []
-    const years: number = Math.floor(difference / YEAR_MILLISECONDS)
-    if (years > 0) {
-      durationParts.push(`${years} year${years > 1 ? "s" : ""}`)
-      --datePartsAdded
+    let dateDifferentIndex: number = 0
+    while (dateDifferentIndex < DURATIONS.length && datePartsAdded > 0) {
+      const currentDateDifference = DURATIONS[dateDifferentIndex]
+      const durationCount: number = Math.floor(
+        differenceMilliseconds / currentDateDifference.durationMilliseconds
+      )
+      if (durationCount > 0) {
+        differenceMilliseconds -=
+          durationCount * currentDateDifference.durationMilliseconds
+        durationParts.push(
+          `${durationCount} ${currentDateDifference.durationString}${
+            durationCount > 1 ? "s" : ""
+          }`
+        )
+        --datePartsAdded
+      }
+      ++dateDifferentIndex
     }
-    if (datePartsAdded <= 0) {
-      return durationParts.join(", ")
-    }
-    // skip time already counted by years above
-    const months: number =
-      Math.floor(difference / MONTH_MILLISECONDS) - 12 * years
-    if (months > 0) {
-      durationParts.push(`${months} month${months > 1 ? "s" : ""}`)
-      ++datePartsAdded
-    }
-    const weeks: number =
-      Math.floor(difference / WEEK_MILLISECONDS) - 52 * years - 4 * months
-    if (weeks > 0) {
-      durationParts.push(`${weeks} week${weeks > 1 ? "s" : ""}`)
-      ++datePartsAdded
-    }
-    return durationParts.join(", ")
+    return durationParts.join(", ") || "less than 1 day"
   }
 
   function generateBlogPosts(
