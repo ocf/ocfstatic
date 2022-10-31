@@ -376,7 +376,7 @@ const StaffNewsCard = ({
   }
   return (
     <HomeCard gridArea={gridArea} title="Staff News">
-      <Link to="https://www.ocf.berkeley.edu/announcements/" fontSize="lg">
+      <Link to="/announcements" fontSize="lg">
         More updates
       </Link>
       <br />
