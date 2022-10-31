@@ -50,13 +50,23 @@ const AccountDashboardPage = () => {
           <br />
           <Box id="email">
             <Text fontWeight="medium">Email</Text>
-            <Input value={profile.email} maxWidth="500" marginRight="10" />
+            <Input
+              value={profile.email}
+              maxWidth="500"
+              marginRight="10px"
+              marginBottom="5px"
+            />
             <Button bgColor="blue.200">Save</Button>
           </Box>
           <br />
           <Box id="password">
             <Text fontWeight="medium">Password</Text>
-            <Input type="password" maxWidth="500" marginRight="10" />
+            <Input
+              type="password"
+              maxWidth="500"
+              marginRight="10px"
+              marginBottom="5px"
+            />
             <Button bgColor="blue.200">Save</Button>
           </Box>
           <Box h="16" />
