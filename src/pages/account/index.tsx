@@ -29,12 +29,12 @@ const AccountDashboardPage = () => {
             ACCOUNT
           </Text>
           <br />
-          <Box>
+          <Box id="name">
             <Text fontWeight="medium">Name</Text>
             <Input value={profile.given_name} maxWidth="500" disabled={true} />
           </Box>
           <br />
-          <Box>
+          <Box id="username">
             <Text fontWeight="medium">OCF Username</Text>
             <Input
               value={profile.preferred_username}
@@ -48,13 +48,13 @@ const AccountDashboardPage = () => {
             <Input value="Personal Account" maxWidth="500" disabled={true} />
           </Box>
           <br />
-          <Box>
+          <Box id="email">
             <Text fontWeight="medium">Email</Text>
             <Input value={profile.email} maxWidth="500" marginRight="10" />
             <Button bgColor="blue.200">Save</Button>
           </Box>
           <br />
-          <Box>
+          <Box id="password">
             <Text fontWeight="medium">Password</Text>
             <Input type="password" maxWidth="500" marginRight="10" />
             <Button bgColor="blue.200">Save</Button>
