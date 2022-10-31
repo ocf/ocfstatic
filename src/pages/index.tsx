@@ -376,7 +376,9 @@ const StaffNewsCard = ({
   }
   return (
     <HomeCard gridArea={gridArea} title="Staff News">
-      <Text fontSize="lg">More updates</Text>
+      <Link to="https://www.ocf.berkeley.edu/announcements/" fontSize="lg">
+        More updates
+      </Link>
       <br />
       {generateBlogPosts(blogPosts, postCount)}
     </HomeCard>
