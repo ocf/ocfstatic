@@ -115,21 +115,18 @@ const IndexPage = () => {
         <StaffNewsCard gridArea="2 / 1 / 3 / 2" postCount={5}></StaffNewsCard>
         <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab"></HomeCard>
         <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us">
-          <Text fontSize="xl">Learn more about what we do!</Text>
-          <br></br>
+          <Text>Learn more about what we do!</Text>
+          <br />
           <Text>
-            {" "}
             The Open Computing Facility is an all-volunteer student organization
             located at the University of California, Berkeley. We&apos;re
-            passionate about open source and free software.{" "}
+            passionate about open source and free software.
           </Text>
-          <br></br>
+          <br />
           <Text>
-            {" "}
-            Our volunteers maintain services for the Berkeley community. Among
-            others, we offer:{" "}
+            Our volunteers maintain services for the Berkeley community.
           </Text>
-          <br></br>
+          <br />
           <UnorderedList>
             <ListItem>A spiffy computer lab in 171 MLK Student Union</ListItem>
             <ListItem>
@@ -140,15 +137,14 @@ const IndexPage = () => {
             <ListItem>
               Shell accounts on our powerful on-campus servers
             </ListItem>
-            <ListItem> High-performance computing on our GPU server</ListItem>
-            <ListItem> ...and lots more!</ListItem>
-          </UnorderedList>{" "}
-          <br></br>
+            <ListItem>High-performance computing on our GPU server</ListItem>
+            <ListItem>...and lots more!</ListItem>
+          </UnorderedList>
+          <br />
           <Text>
-            {" "}
-            We hold <Link to="/staff-hours/"> weekly staff hours </Link> to
-            provide assistance with account issues or with OCF services. Drop by
-            to ask questions or just to hang out!{" "}
+            We hold <Link to="/staff-hours">weekly staff hours</Link> to provide
+            assistance with account issues or with OCF services. Drop by to ask
+            questions or just to hang out!
           </Text>
         </HomeCard>
         <HomeCard gridArea="3 / 1 / 4 / 3" title="Join Staff!">
@@ -242,7 +238,7 @@ const HomeCard = ({
 const LinuxSysadminDecalCard = () => (
   <HomeCard gridArea="4 / 2 / 5 / 4" title="Linux Sysadmin DeCal">
     <Link to="https://decal.ocf.berkeley.edu/">
-      <Text fontSize="lg">See more</Text>
+      <Text>See more</Text>
     </Link>
     <br />
     <Text>
