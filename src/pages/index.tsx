@@ -378,7 +378,6 @@ const StaffNewsCard = ({
   const { data: blogPosts } = useApiRoute("/announce/blog") as {
     data?: BlogPost[]
   }
-  console.log(blogPosts)
   return (
     <HomeCard gridArea={gridArea} title="Staff News">
       <Text fontSize="lg">More updates</Text>
