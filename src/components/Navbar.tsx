@@ -3,11 +3,8 @@ import Link from "~/components/InternalLink"
 import NavbarButton from "~/components/NavbarButton"
 import NavbarDropdown from "~/components/NavbarDropdown"
 import NavbarDropdownLink from "~/components/NavbarDropdownLink"
-import { useKeycloak } from "@react-keycloak/web"
-import { OCFKeycloakToken } from "~/utils/keycloak"
 import { useEffect, useState, type RefObject } from "react"
-import { navigate } from "gatsby"
-
+import useAuth from "~/hooks/useAuth"
 import penguin from "~/images/penguin.svg"
 
 const Navbar = ({
@@ -40,7 +37,7 @@ const Navbar = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const { keycloak } = useKeycloak()
+  const { user, keycloak } = useAuth()
 
   return (
     <Box
@@ -124,16 +121,17 @@ const Navbar = ({
           </NavbarDropdown>
           <NavbarButton mr={4}>Contact Us</NavbarButton>
           {keycloak.authenticated ? (
-            <NavbarButton
-              fontWeight="medium"
-              px={4}
-              onClick={() => {
-                navigate("/account")?.catch(console.error)
-                // keycloak.logout().catch(console.error)
-              }}
-            >
-              {(keycloak.tokenParsed as OCFKeycloakToken).preferred_username}
-            </NavbarButton>
+            <NavbarDropdown title={user?.username ?? ""} width={150}>
+              <NavbarDropdownLink disabled>{user?.name}</NavbarDropdownLink>
+              <NavbarDropdownLink href="/account">Account</NavbarDropdownLink>
+              <NavbarDropdownLink
+                onClick={() => {
+                  keycloak.logout().catch(console.error)
+                }}
+              >
+                Log Out
+              </NavbarDropdownLink>
+            </NavbarDropdown>
           ) : (
             <NavbarButton
               variant="solid"
