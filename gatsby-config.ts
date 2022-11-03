@@ -2,6 +2,7 @@ import type { GatsbyConfig } from "gatsby"
 import { config as dotenv } from "dotenv"
 import { createProxyMiddleware } from "http-proxy-middleware"
 import type { Application as ExpressApp } from "express"
+import { API_HOST } from "./src/utils/api"
 
 dotenv({
   path: `.env.${process.env.NODE_ENV ?? "development"}`,
@@ -29,7 +30,7 @@ const config: GatsbyConfig = {
     app.use(
       "/api",
       createProxyMiddleware({
-        target: process.env.GATSBY_API_URL || "https://api.ocf.berkeley.edu",
+        target: API_HOST(),
         pathRewrite: {
           "^/api": "",
         },
