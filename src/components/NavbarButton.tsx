@@ -1,5 +1,10 @@
-import { Button, ButtonProps, forwardRef } from "@chakra-ui/react"
-import Link from "./InternalLink"
+import {
+  Button,
+  ButtonProps,
+  forwardRef,
+  Link as ChakraLink,
+} from "@chakra-ui/react"
+import InternalLink from "./InternalLink"
 
 export type NavbarButtonProps = {
   href?: string
@@ -16,8 +21,11 @@ const NavbarButton = forwardRef<NavbarButtonProps & ButtonProps, "button">(
         fontWeight="normal"
         px={3}
         ref={ref}
-        as={href ? Link : undefined}
+        as={
+          href ? (href.startsWith("/") ? InternalLink : ChakraLink) : undefined
+        }
         to={href}
+        href={href}
         {...rest}
       />
     )

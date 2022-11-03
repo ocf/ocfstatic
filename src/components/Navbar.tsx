@@ -84,7 +84,9 @@ const Navbar = ({
           display={{ base: "none", lg: "flex" }}
         >
           <NavbarButton>Staff Hours</NavbarButton>
-          <NavbarButton href="/docs">Documentation</NavbarButton>
+          <NavbarButton href="https://new.ocf.berkeley.edu/docs">
+            Documentation
+          </NavbarButton>
           <NavbarDropdown title="Services" width={250}>
             <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/lab/">
               Computer Lab
