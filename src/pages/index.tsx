@@ -112,7 +112,7 @@ const IndexPage = () => {
               ))}
           </List>
         </HomeCard>
-        <HomeCard gridArea="2 / 1 / 3 / 2" title="Staff News"></HomeCard>
+        <StaffNewsCard gridArea="2 / 1 / 3 / 2" postCount={5}></StaffNewsCard>
         <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab"></HomeCard>
         <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us">
           <Text>Learn more about what we do!</Text>
@@ -251,3 +251,136 @@ const LinuxSysadminDecalCard = () => (
     </Text>
   </HomeCard>
 )
+
+interface BlogPost {
+  id: string
+  published: string
+  updated: string
+  title: string
+  content: string
+  author_name: string
+  author_email: string
+  link: string
+}
+
+const StaffNewsCard = ({
+  gridArea,
+  // Maximum number of posts to show
+  postCount,
+}: {
+  gridArea: string
+  postCount: number
+}) => {
+  // function dateDifference(date1: Date, date2: Date): string {
+  //  const difference = date1.to - date2;
+  // }
+
+  function dateDuration(currentDate: Date, otherDate: Date): string {
+    const currentUnixTime: number = Date.parse(currentDate.toDateString())
+    const otherUnixTime: number = Date.parse(otherDate.toDateString())
+    const differenceUnixTime: number = currentUnixTime - otherUnixTime
+
+    let differenceMilliseconds: number = Date.parse(
+      new Date(differenceUnixTime).toDateString()
+    )
+    if (differenceMilliseconds < 0) {
+      console.error("otherDate newer than current date")
+    }
+
+    interface DateDuration {
+      durationString: string
+      durationMilliseconds: number
+    }
+
+    const MINUTE_MILLISECONDS = 60 * 1000
+    const HOUR_MILLISECONDS = 60 * MINUTE_MILLISECONDS
+    const DAY_MILLISECONDS = 24 * HOUR_MILLISECONDS
+    const WEEK_MILLISECONDS = 7 * DAY_MILLISECONDS
+    const MONTH_MILLISECONDS = 30 * DAY_MILLISECONDS
+    const YEAR_MILLISECONDS = 365 * DAY_MILLISECONDS
+
+    const DURATIONS: DateDuration[] = [
+      {
+        durationString: "year",
+        durationMilliseconds: YEAR_MILLISECONDS,
+      },
+      {
+        durationString: "month",
+        durationMilliseconds: MONTH_MILLISECONDS,
+      },
+      {
+        durationString: "week",
+        durationMilliseconds: WEEK_MILLISECONDS,
+      },
+      {
+        durationString: "day",
+        durationMilliseconds: DAY_MILLISECONDS,
+      },
+    ]
+
+    let datePartsAdded = 2
+    const durationParts: string[] = []
+    let dateDifferentIndex: number = 0
+    while (dateDifferentIndex < DURATIONS.length && datePartsAdded > 0) {
+      const currentDateDifference = DURATIONS[dateDifferentIndex]
+      const durationCount: number = Math.floor(
+        differenceMilliseconds / currentDateDifference.durationMilliseconds
+      )
+      if (durationCount > 0) {
+        differenceMilliseconds -=
+          durationCount * currentDateDifference.durationMilliseconds
+        durationParts.push(
+          `${durationCount} ${currentDateDifference.durationString}${
+            durationCount > 1 ? "s" : ""
+          }`
+        )
+        --datePartsAdded
+      }
+      ++dateDifferentIndex
+    }
+    return durationParts.join(", ") || "less than 1 day"
+  }
+
+  function generateBlogPosts(
+    blogPosts?: BlogPost[],
+    postCount?: number
+  ): ReactNode {
+    if (!blogPosts) {
+      return <Text>Error loading posts</Text>
+    }
+    if (!postCount) {
+      postCount = 5
+    }
+    const currentDate = new Date()
+    return (
+      <List spacing={3}>
+        {blogPosts.slice(0, postCount).map((post: BlogPost) => {
+          return (
+            <ListItem key={post.id}>
+              <Link color="teal.500" to={post.link}>
+                {post.title}
+              </Link>
+              <Text>
+                Last updated {dateDuration(currentDate, new Date(post.updated))}{" "}
+                ago
+              </Text>
+            </ListItem>
+          )
+        })}
+      </List>
+    )
+  }
+
+  const { data: blogPosts } = useApiRoute("/announce/blog") as {
+    data?: BlogPost[]
+  }
+  return (
+    <HomeCard gridArea={gridArea} title="Staff News">
+      <Link to="/announcements" fontSize="lg">
+        More updates
+      </Link>
+      <br />
+      {generateBlogPosts(blogPosts, postCount)}
+    </HomeCard>
+  )
+}
