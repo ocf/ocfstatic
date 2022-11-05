@@ -14,7 +14,7 @@ export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
       }
       return fetch(url).then((r) => r.json())
     },
-    refreshInterval: 3 * 1000, // 3 seconds
+    refreshInterval: 15 * 1000, // 15 seconds
   }
 
   return (
