@@ -11,7 +11,7 @@ interface LocationState {
 const CalNetAuthPage = ({ location }: PageProps<null, null, LocationState>) => {
   useEffect(() => {
     const next = location.state?.next || "/"
-    window.location.href = `${API_HOST()}/login/calnet?next=${encodeURIComponent(
+    window.location.href = `${API_HOST()}/auth/calnet?next=${encodeURIComponent(
       window.location.origin +
         "/auth/calnet/callback?next=" +
         encodeURIComponent(next)
