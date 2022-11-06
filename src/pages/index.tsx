@@ -320,7 +320,7 @@ const StaffNewsCard = ({
 
     let datePartsAdded = 2
     const durationParts: string[] = []
-    let dateDifferentIndex: number = 0
+    let dateDifferentIndex = 0
     while (dateDifferentIndex < DURATIONS.length && datePartsAdded > 0) {
       const currentDateDifference = DURATIONS[dateDifferentIndex]
       const durationCount: number = Math.floor(
