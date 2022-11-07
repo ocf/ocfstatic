@@ -37,15 +37,15 @@ module.exports = {
       ],
     },
     {
-      files: [".eslintrc.js", "lint-staged.config.js"],
+      files: [".eslintrc.*js", ".lintstagedrc.*js"],
       parser: "espree",
-      parserOptions: {
-        sourceType: "script",
-      },
       env: {
         node: true,
         es6: true,
         browser: false,
+      },
+      rules: {
+        "import/no-anonymous-default-export": "off",
       },
     },
     {
