@@ -8,7 +8,14 @@ const Sidebar = () => {
   if (!initialized) return null
   const profile = keycloak.tokenParsed as OCFKeycloakToken
   return (
-    <Box w="60" h="100vh" bgColor="white" display="inline-block">
+    <Box
+      w="60"
+      h="100vh"
+      bgColor="white"
+      display="inline-block"
+      position="relative"
+      top={16}
+    >
       <Box w="100%" px="2rem" mx="auto" h="100%" alignItems="center">
         <Box>
           <Text padding={1}>
