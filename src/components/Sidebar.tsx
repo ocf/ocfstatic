@@ -49,6 +49,11 @@ const Sidebar = () => {
                 Password
               </SidebarLink>
             </ListItem>
+            <ListItem>
+              <SidebarLink linkGroup="account" to="/account#printing-quota">
+                Printing Quota
+              </SidebarLink>
+            </ListItem>
           </List>
         </Box>
         <br />

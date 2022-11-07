@@ -8,11 +8,48 @@ import Sidebar from "~/components/Sidebar"
 import { OCFKeycloakToken } from "~/utils/keycloak"
 import { SEO } from "~/components/SEO"
 import { useState } from "react"
-import { useApiRoute } from "~/utils/api"
 
 const AccountDashboardPage = () => {
   const { initialized, keycloak } = useKeycloak()
   const [password, setPassword] = useState("")
+  const [pagesDaily, setPagesDaily] = useState("Loading...")
+  const [pagesSemesterly, setPagesSemesterly] = useState("Loading...")
+
+  fetch("/api/account/quota/paper", {
+    headers: {
+      Authorization: "Bearer " + keycloak.token,
+    },
+  })
+    .then((res) => {
+      res
+        .json()
+        .then((body) => {
+          if (body.daily !== undefined) {
+            setPagesDaily(body.daily + " pages remaining today")
+          } else {
+            setPagesDaily("Error; please try again")
+          }
+          if (body.semesterly !== undefined) {
+            setPagesSemesterly(
+              body.semesterly + " pages remaining this semester"
+            )
+          } else {
+            setPagesSemesterly("Error; please try again")
+          }
+        })
+        .catch((err) => {
+          console.error("Could not parse paper response; error:")
+          console.error(err)
+          setPagesDaily("Error; please try again")
+          setPagesSemesterly("Error; please try again")
+        })
+    })
+    .catch((err) => {
+      console.error("Could not get paper information; error:")
+      console.error(err)
+      setPagesDaily("Error; please try again")
+      setPagesSemesterly("Error; please try again")
+    })
 
   if (!keycloak.authenticated) {
     if (initialized) navigate("/")?.catch(console.error)
@@ -70,9 +107,6 @@ const AccountDashboardPage = () => {
               onClick={() => {
                 if (password.length == 0) return
 
-                console.log(keycloak)
-                console.log(profile)
-
                 // window.location.href =
                 // "https://api.ocf.berkeley.edu/login/calnet?next=http://localhost:8000"
 
@@ -109,6 +143,26 @@ const AccountDashboardPage = () => {
             >
               Save
             </Button>
+          </Box>
+          <br />
+          <Box id="printing-quota">
+            <Text fontWeight="medium">Printing Quota</Text>
+            <Input
+              value={pagesDaily}
+              maxWidth="500"
+              disabled={true}
+              marginBottom={2}
+            />
+            <Input value={pagesSemesterly} maxWidth="500" disabled={true} />
+          </Box>
+          <br />
+          <Box>
+            <p>Does anything not look right or do you have questions? </p>
+            <p>
+              Contact{" "}
+              <a href="mailto:help@ocf.berkeley.edu">help@ocf.berkeley.edu</a>{" "}
+              for support
+            </p>
           </Box>
           <Box h="16" />
         </Box>
