@@ -13,8 +13,7 @@ const Sidebar = () => {
       h="100vh"
       bgColor="white"
       display="inline-block"
-      position="relative"
-      top={16}
+      paddingTop={16}
     >
       <Box w="100%" px="2rem" mx="auto" h="100%" alignItems="center">
         <Box>
