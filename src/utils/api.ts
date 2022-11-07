@@ -2,6 +2,11 @@ import type { ConditionalPick, ValueOf } from "type-fest"
 import { paths } from "~/definitions/ocfapi"
 import useSWR, { SWRResponse } from "swr"
 
+// this needs to be computed once dotenv loads,
+// so unfortunately needs to be a method
+export const API_HOST = () =>
+  process.env.GATSBY_API_URL || "https://api.ocf.berkeley.edu"
+
 type HTTP2xxCodes = 200 | 201 | 202 | 203 | 204 | 205 | 206
 
 type ApiRouteResponse<Responses> = SWRResponse<

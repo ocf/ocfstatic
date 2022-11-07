@@ -1,27 +1,16 @@
-import { Button } from "@chakra-ui/react"
-import { ReactNode } from "react"
+import NavbarButton from "./NavbarButton"
 
-export type NavbarDropdownLinkProps = {
-  href?: string
-  children: ReactNode
-}
-
-const NavbarDropdownLink = ({ href, children }: NavbarDropdownLinkProps) => {
+const NavbarDropdownLink: typeof NavbarButton = (props) => {
   return (
-    <a href={href}>
-      <Button
-        w="100%"
-        p={0}
-        variant="ghost"
-        fontWeight="light"
-        color="gray.800"
-        _hover={{ color: "black", bg: "gray.100" }}
-        textAlign="left"
-        borderRadius={0}
-      >
-        {children}
-      </Button>
-    </a>
+    <NavbarButton
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      borderRadius={0}
+      w="100%"
+      _hover={{ bg: "gray.100", textDecoration: "none" }}
+      {...props}
+    />
   )
 }
 

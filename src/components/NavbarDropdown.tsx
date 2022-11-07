@@ -10,7 +10,7 @@ import { ReactNode } from "react"
 import NavbarButton from "./NavbarButton"
 
 export type NavbarDropdownProps = {
-  title: string
+  title: string | JSX.Element
   width?: number
   children: ReactNode
 }
@@ -20,7 +20,7 @@ const NavbarDropdown = ({ title, width, children }: NavbarDropdownProps) => {
     <Popover trigger="hover">
       <PopoverTrigger>
         <NavbarButton>
-          <Text>{title}</Text>
+          {typeof title === "string" ? <Text>{title}</Text> : title}
           <ChevronDownIcon ml={1} />
         </NavbarButton>
       </PopoverTrigger>

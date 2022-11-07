@@ -1,6 +1,10 @@
 public/
+static/docs/
 .cache/
 node_modules/
 .vscode/
 .yarn/
 .pnp.*
+
+!.eslintrc.*
+!.lintstagedrc.*

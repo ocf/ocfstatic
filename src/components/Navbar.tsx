@@ -3,11 +3,8 @@ import Link from "~/components/InternalLink"
 import NavbarButton from "~/components/NavbarButton"
 import NavbarDropdown from "~/components/NavbarDropdown"
 import NavbarDropdownLink from "~/components/NavbarDropdownLink"
-import { useKeycloak } from "@react-keycloak/web"
-import { OCFKeycloakToken } from "~/utils/keycloak"
 import { useEffect, useState, type RefObject } from "react"
-import { navigate } from "gatsby"
-
+import useAuth from "~/hooks/useAuth"
 import penguin from "~/images/penguin.svg"
 
 const Navbar = ({
@@ -40,7 +37,7 @@ const Navbar = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const { keycloak } = useKeycloak()
+  const { user, keycloak } = useAuth()
 
   return (
     <Box
@@ -87,17 +84,37 @@ const Navbar = ({
           display={{ base: "none", lg: "flex" }}
         >
           <NavbarButton>Staff Hours</NavbarButton>
-          <NavbarButton href="/docs">Documentation</NavbarButton>
+          <NavbarButton href="https://new.ocf.berkeley.edu/docs">
+            Documentation
+          </NavbarButton>
           <NavbarDropdown title="Services" width={250}>
-            <NavbarDropdownLink>Computer Lab</NavbarDropdownLink>
-            <NavbarDropdownLink>Printing</NavbarDropdownLink>
-            <NavbarDropdownLink>Personal Website Hosting</NavbarDropdownLink>
-            <NavbarDropdownLink>Group Website Hosting</NavbarDropdownLink>
-            <NavbarDropdownLink>SSH/SFTP (Shell)</NavbarDropdownLink>
-            <NavbarDropdownLink>Email Hosting</NavbarDropdownLink>
-            <NavbarDropdownLink>MySQL Database</NavbarDropdownLink>
-            <NavbarDropdownLink>Software Mirrors</NavbarDropdownLink>
-            <NavbarDropdownLink>High Performance Computing</NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/lab/">
+              Computer Lab
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/lab/printing">
+              Printing
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/web/">
+              Personal Website Hosting
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/webapps/">
+              Group Website Hosting
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/shell/">
+              SSH/SFTP (Shell)
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/vhost/mail/">
+              Email Hosting
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/mysql">
+              MySQL Database
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/mirrors">
+              Software Mirrors
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="https://new.ocf.berkeley.edu/docs/services/hpc/">
+              High Performance Computing
+            </NavbarDropdownLink>
           </NavbarDropdown>
           <NavbarDropdown title="About" width={150}>
             <NavbarDropdownLink>What We Do</NavbarDropdownLink>
@@ -106,16 +123,17 @@ const Navbar = ({
           </NavbarDropdown>
           <NavbarButton mr={4}>Contact Us</NavbarButton>
           {keycloak.authenticated ? (
-            <NavbarButton
-              fontWeight="medium"
-              px={4}
-              onClick={() => {
-                navigate("/account")?.catch(console.error)
-                // keycloak.logout().catch(console.error)
-              }}
-            >
-              {(keycloak.tokenParsed as OCFKeycloakToken).preferred_username}
-            </NavbarButton>
+            <NavbarDropdown title={user?.username ?? ""} width={150}>
+              <NavbarDropdownLink disabled>{user?.name}</NavbarDropdownLink>
+              <NavbarDropdownLink href="/account">Account</NavbarDropdownLink>
+              <NavbarDropdownLink
+                onClick={() => {
+                  keycloak.logout().catch(console.error)
+                }}
+              >
+                Log Out
+              </NavbarDropdownLink>
+            </NavbarDropdown>
           ) : (
             <NavbarButton
               variant="solid"
