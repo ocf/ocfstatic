@@ -9,6 +9,12 @@ import { OCFKeycloakToken } from "~/utils/keycloak"
 import { SEO } from "~/components/SEO"
 import { useState } from "react"
 
+interface OCFQuotaPaperAPIResponse {
+  user: string | undefined
+  daily: number | undefined
+  semesterly: number | undefined
+}
+
 const AccountDashboardPage = () => {
   const { initialized, keycloak } = useKeycloak()
   const [password, setPassword] = useState("")
@@ -17,21 +23,21 @@ const AccountDashboardPage = () => {
 
   fetch("/api/account/quota/paper", {
     headers: {
-      Authorization: "Bearer " + keycloak.token,
+      Authorization: "Bearer " + (keycloak.token || ""),
     },
   })
     .then((res) => {
       res
         .json()
-        .then((body) => {
+        .then((body: OCFQuotaPaperAPIResponse) => {
           if (body.daily !== undefined) {
-            setPagesDaily(body.daily + " pages remaining today")
+            setPagesDaily(`${body.daily} pages remaining today`)
           } else {
             setPagesDaily("Error; please try again")
           }
           if (body.semesterly !== undefined) {
             setPagesSemesterly(
-              body.semesterly + " pages remaining this semester"
+              `${body.semesterly} pages remaining this semester`
             )
           } else {
             setPagesSemesterly("Error; please try again")
@@ -161,7 +167,7 @@ const AccountDashboardPage = () => {
             <p>
               Contact{" "}
               <a href="mailto:help@ocf.berkeley.edu">help@ocf.berkeley.edu</a>{" "}
-              for support
+              for support.
             </p>
           </Box>
           <Box h="16" />
