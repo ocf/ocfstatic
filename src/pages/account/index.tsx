@@ -18,6 +18,7 @@ interface OCFQuotaPaperAPIResponse {
 const AccountDashboardPage = () => {
   const { initialized, keycloak } = useKeycloak()
   const [password, setPassword] = useState("")
+  const [passwordChangeMessage, setPasswordChangeMessage] = useState("")
   const [pagesDaily, setPagesDaily] = useState("Loading...")
   const [pagesSemesterly, setPagesSemesterly] = useState("Loading...")
 
@@ -101,54 +102,88 @@ const AccountDashboardPage = () => {
           <br />
           <Box id="password">
             <Text fontWeight="medium">Password</Text>
-            <Input
-              type="password"
-              maxWidth="500"
-              marginRight="10px"
-              marginBottom="5px"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <Button
-              bgColor="blue.200"
-              onClick={() => {
-                if (password.length == 0) return
+            {window.location.hash.indexOf("ocfapi_calnet_token") >= 0 ? (
+              <div>
+                <Input
+                  type="password"
+                  maxWidth="500"
+                  marginRight="10px"
+                  marginBottom="5px"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Button
+                  bgColor="blue.200"
+                  onClick={() => {
+                    if (password.length == 0) return
 
-                // window.location.href =
-                // "https://api.ocf.berkeley.edu/login/calnet?next=http://localhost:8000"
+                    const start = window.location.hash.indexOf(
+                      "ocfapi_calnet_token="
+                    )
+                    const end =
+                      window.location.hash.indexOf("&", start) >= 0
+                        ? window.location.hash.indexOf("&", start)
+                        : window.location.hash.length
+                    const token = window.location.hash.substring(
+                      start + 20,
+                      end
+                    )
 
-                /*
-                fetch("/api/login/calnet?next=http://localhost:8000").then(
-                  (res) => {
-                    console.log(res)
-                    res.body
-                      ?.getReader()
-                      .read()
-                      .then((body) => {
-                        console.log(new TextDecoder("utf-8").decode(body.value))
+                    console.log(token)
+
+                    fetch("/api/account/reset_password", {
+                      method: "POST",
+                      headers: {
+                        Authorization: "Bearer " + token,
+                      },
+                      body: JSON.stringify({
+                        account: profile.preferred_username,
+                        new_password: password,
+                      }),
+                    })
+                      .then((res) => {
+                        switch (res.status) {
+                          case 204:
+                            setPasswordChangeMessage(
+                              "Password changed successfully!"
+                            )
+                            break
+                          case 422:
+                            setPasswordChangeMessage("Password Invalid")
+                            break
+                          default:
+                            setPasswordChangeMessage("Error; please try again")
+                            break
+                        }
                       })
                       .catch((err) => {
+                        console.error("Could not change password; error:")
                         console.error(err)
+                        setPasswordChangeMessage("Error; please try again")
                       })
-                  }
-                )
-
-                fetch("/api/account/change-password", {
-                  method: "POST",
-                  headers: {
-                    Authorization: "Bearer " + keycloak.token,
-                  },
-                  body: JSON.stringify({
-                    account: profile.preferred_username,
-                    new_password: password,
-                  }),
-                }).then((res) => {
-                  // console.log(res)
-                })
-                */
-              }}
-            >
-              Save
-            </Button>
+                  }}
+                >
+                  Save
+                </Button>
+                <p>{passwordChangeMessage}</p>
+              </div>
+            ) : (
+              <div>
+                <Text marginBottom={2}>
+                  <i>
+                    To change your password, you first need to login with
+                    CalNet.
+                  </i>
+                </Text>
+                <Button
+                  bgColor="blue.200"
+                  onClick={() => {
+                    window.location.href = `https://api.ocf.berkeley.edu/auth/calnet?next=${window.location.href}`
+                  }}
+                >
+                  Login with CalNet
+                </Button>
+              </div>
+            )}
           </Box>
           <br />
           <Box id="printing-quota">
