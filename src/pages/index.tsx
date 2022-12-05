@@ -2,6 +2,7 @@ import Navbar from "~/components/Navbar"
 import Footer from "~/components/Footer"
 import { useApiRoute } from "~/utils/api"
 import {
+  AspectRatio,
   Box,
   type BoxProps,
   Button,
@@ -113,7 +114,24 @@ const IndexPage = () => {
           </List>
         </HomeCard>
         <StaffNewsCard gridArea="2 / 1 / 3 / 2" postCount={5}></StaffNewsCard>
-        <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab"></HomeCard>
+        <HomeCard gridArea="1 / 2 / 3 / 3" title="The Lab">
+          <Text>Located at 171 MLK Student Union</Text>
+          <br />
+          <Text>
+            It can be accessed through the main MLK building or via the tunnel
+            by the stairs between Upper and Lower Sproul. We&apos;re on the
+            first floor, past the Bank of the West. Just show your Cal ID at the
+            door!
+          </Text>
+          <br />
+          <AspectRatio ratio={16 / 14}>
+            <iframe
+              title="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1574.8126552732015!2d-122.26153176569379!3d37.869056698826505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857c25fd15163f%3A0xd8ee08380d3e2d14!2sASUC%20Student%20Union%3A%20Martin%20Luther%20King%20Jr.%20Building!5e0!3m2!1sen!2sus!4v1667781283356!5m2!1sen!2sus"
+            />
+          </AspectRatio>
+          <br />
+        </HomeCard>
         <HomeCard gridArea="1 / 3 / 4 / 4" title="About Us">
           <Text>Learn more about what we do!</Text>
           <br />
