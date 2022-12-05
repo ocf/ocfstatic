@@ -7,3 +7,6 @@
 
 # Suppress lockfile diffs by default
 yarn.lock -diff
+
+# Supress static compiled docs
+static/docs/** -diff -merge
