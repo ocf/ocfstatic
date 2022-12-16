@@ -134,6 +134,8 @@ const AccountDashboardPage = () => {
                       method: "POST",
                       headers: {
                         Authorization: "Bearer " + token,
+                        "Content-Type": "application/json",
+                        accept: "application/json",
                       },
                       body: JSON.stringify({
                         account: profile.preferred_username,
@@ -144,11 +146,20 @@ const AccountDashboardPage = () => {
                         switch (res.status) {
                           case 204:
                             setPasswordChangeMessage(
-                              "Password changed successfully!"
+                              "Password changed successfully! You will have to log in again to use your account."
                             )
                             break
-                          case 422:
-                            setPasswordChangeMessage("Password Invalid")
+                          case 500:
+                            res
+                              .json()
+                              .then((body: { detail: string }) => {
+                                setPasswordChangeMessage(body.detail)
+                              })
+                              .catch(() => {
+                                setPasswordChangeMessage(
+                                  "Error; please try again"
+                                )
+                              })
                             break
                           default:
                             setPasswordChangeMessage("Error; please try again")
