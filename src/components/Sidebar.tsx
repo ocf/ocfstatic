@@ -62,17 +62,34 @@ const Sidebar = () => {
           </Text>
           <List>
             <ListItem>
-              <SidebarLink linkGroup="hosting" to="/hosting#web-hosting">
+              <SidebarLink
+                linkGroup="hosting"
+                to="/account/hosting#web-hosting"
+              >
                 Web Hosting
               </SidebarLink>
             </ListItem>
             <ListItem>
-              <SidebarLink linkGroup="hosting" to="/hosting#app-hosting">
+              <SidebarLink
+                linkGroup="hosting"
+                to="/account/hosting#app-hosting"
+              >
                 App Hosting
               </SidebarLink>
             </ListItem>
             <ListItem>
-              <SidebarLink linkGroup="hosting" to="/hosting#mail-hosting">
+              <SidebarLink
+                linkGroup="hosting"
+                to="/account/hosting#automatic-deployments"
+              >
+                Automatic Deployments
+              </SidebarLink>
+            </ListItem>
+            <ListItem>
+              <SidebarLink
+                linkGroup="hosting"
+                to="/account/hosting#mail-hosting"
+              >
                 Mail Hosting
               </SidebarLink>
             </ListItem>
@@ -101,12 +118,18 @@ const Sidebar = () => {
               </SidebarLink>
             </ListItem>
             <ListItem>
-              <SidebarLink linkGroup="staff-tools" to="/staff-tools#monitoring">
+              <SidebarLink
+                linkGroup="staff-tools"
+                to="/account/staff-tools#monitoring"
+              >
                 Monitoring
               </SidebarLink>
             </ListItem>
             <ListItem>
-              <SidebarLink linkGroup="staff-tools" to="/staff-tools#short-urls">
+              <SidebarLink
+                linkGroup="staff-tools"
+                to="/account/staff-tools#short-urls"
+              >
                 Short URLs
               </SidebarLink>
             </ListItem>
@@ -121,13 +144,16 @@ const Sidebar = () => {
             <ListItem>
               <SidebarLink
                 linkGroup="staff-tools"
-                to="/staff-tools#hpc-requests"
+                to="/account/staff-tools#hpc-requests"
               >
                 HPC Requests
               </SidebarLink>
             </ListItem>
             <ListItem>
-              <SidebarLink linkGroup="staff-tools" to="/staff-tools#lab-map">
+              <SidebarLink
+                linkGroup="staff-tools"
+                to="/account/staff-tools#lab-map"
+              >
                 Lab Map
               </SidebarLink>
             </ListItem>
