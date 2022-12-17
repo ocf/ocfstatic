@@ -68,7 +68,7 @@ const AccountDashboardPage = () => {
   return (
     <Layout>
       <Navbar />
-      <Box>
+      <Box display="flex" alignItems="start">
         <Sidebar />
         <Box display="inline-block" marginLeft={5}>
           <Box h="20" />
@@ -107,8 +107,8 @@ const AccountDashboardPage = () => {
                 <Input
                   type="password"
                   maxWidth="500"
-                  marginRight="10px"
-                  marginBottom="5px"
+                  marginRight={10}
+                  marginBottom={5}
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <Button
