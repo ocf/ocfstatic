@@ -87,19 +87,21 @@ export function getSWRKeyForPath<
 }
 
 export function useApiRoute<
+  // Overload for paths that take parameters
   Path extends keyof ConditionalPick<
     paths,
+    // The path object has a `parameters` field
     { get: { parameters: object; responses: Record<number, object> } }
   >
 >(
   path: Path,
-  params: paths[Path]["get"] extends { parameters: infer Params }
-    ? Params
-    : "error"
+  params: paths[Path]["get"]["parameters"]
 ): ApiRouteResponse<paths[Path]["get"]["responses"]>
 export function useApiRoute<
+  // Overload for paths that do not take parameters
   Path extends keyof ConditionalPick<
     paths,
+    // The path object does not have a `parameters` field
     { get: { parameters?: never; responses: Record<number, object> } }
   >
 >(path: Path): ApiRouteResponse<paths[Path]["get"]["responses"]>
