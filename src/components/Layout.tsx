@@ -1,7 +1,13 @@
 import { ReactNode } from "react"
 import { Box } from "@chakra-ui/react"
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({
+  children,
+  maxW = "7xl",
+}: {
+  children: ReactNode
+  maxW?: string
+}) => {
   return (
     <Box
       w="100vw"
@@ -18,7 +24,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           xl: "100vh",
         }}
         w="100%"
-        maxW="7xl"
+        maxW={maxW}
         mx="auto"
         px="2rem"
       >
