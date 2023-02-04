@@ -1,0 +1,285 @@
+diff --git a/dist/components/index.d.ts b/dist/components/index.d.ts
+index 63bd0e5bcbc47a89a76c5f4cbef9681105f6a04c..ae5213498300dd2db53db43b914e0f366befed06 100644
+--- a/dist/components/index.d.ts
++++ b/dist/components/index.d.ts
+@@ -1655,12 +1655,12 @@ declare const components: {
+             };
+             stepper: {
+                 [x: string]: string | {
+-                    [x: string]: string;
++                    [x: string]: string | undefined;
+                     _dark?: undefined;
+                     opacity?: undefined;
+                     cursor?: undefined;
+                 } | {
+-                    [x: string]: string | {
++                    [x: string]: string | undefined | {
+                         [x: string]: string;
+                     };
+                     _dark: {
+@@ -1915,7 +1915,7 @@ declare const components: {
+             };
+             content: {
+                 [x: string]: string | {
+-                    [x: string]: string;
++                    [x: string]: string | undefined;
+                     outline?: undefined;
+                     boxShadow?: undefined;
+                 } | {
+@@ -2567,7 +2567,7 @@ declare const components: {
+             };
+             track: {
+                 [x: string]: string | string[] | {
+-                    [x: string]: string;
++                    [x: string]: string | undefined;
+                     boxShadow?: undefined;
+                     opacity?: undefined;
+                     cursor?: undefined;
+@@ -2583,7 +2583,7 @@ declare const components: {
+                     boxShadow?: undefined;
+                     _dark?: undefined;
+                 } | {
+-                    [x: string]: string | {
++                    [x: string]: string | undefined | {
+                         [x: string]: string;
+                     };
+                     _dark: {
+@@ -2879,7 +2879,7 @@ declare const components: {
+                 };
+                 tab: {
+                     [x: string]: string | {
+-                        [x: string]: string | {
++                        [x: string]: string | undefined | {
+                             [x: string]: string;
+                         };
+                         _dark: {
+@@ -2888,7 +2888,7 @@ declare const components: {
+                         borderColor: string;
+                         _active?: undefined;
+                     } | {
+-                        [x: string]: string | {
++                        [x: string]: string | undefined | {
+                             [x: string]: string;
+                         };
+                         _dark: {
+@@ -2967,7 +2967,7 @@ declare const components: {
+             "enclosed-colored": (props: _chakra_ui_styled_system.StyleFunctionProps) => {
+                 tab: {
+                     [x: string]: string | {
+-                        [x: string]: string;
++                        [x: string]: string | undefined;
+                         marginEnd?: undefined;
+                         _dark?: undefined;
+                         borderColor?: undefined;
+@@ -2980,7 +2980,7 @@ declare const components: {
+                         borderTopColor?: undefined;
+                         borderBottomColor?: undefined;
+                     } | {
+-                        [x: string]: string | {
++                        [x: string]: string | undefined | {
+                             [x: string]: string;
+                         };
+                         _dark: {
+@@ -3034,7 +3034,7 @@ declare const components: {
+             "solid-rounded": (props: _chakra_ui_styled_system.StyleFunctionProps) => {
+                 tab: {
+                     [x: string]: string | {
+-                        [x: string]: string;
++                        [x: string]: string | undefined;
+                         _dark?: undefined;
+                     } | {
+                         [x: string]: string | {
+diff --git a/dist/components/number-input.d.ts b/dist/components/number-input.d.ts
+index 05c1c5472632dbf39a8e7c2492be68a28a729c36..120f2d5560272f923825826b5f8747f340eaa5dd 100644
+--- a/dist/components/number-input.d.ts
++++ b/dist/components/number-input.d.ts
+@@ -11,12 +11,12 @@ declare const numberInputTheme: {
+         };
+         stepper: {
+             [x: string]: string | {
+-                [x: string]: string;
++                [x: string]: string | undefined;
+                 _dark?: undefined;
+                 opacity?: undefined;
+                 cursor?: undefined;
+             } | {
+-                [x: string]: string | {
++                [x: string]: string | undefined | {
+                     [x: string]: string;
+                 };
+                 _dark: {
+diff --git a/dist/components/popover.d.ts b/dist/components/popover.d.ts
+index 3bf5e548afd5d36fa88ac659622a210f612ea316..4c3f897a54ae7fc6ce63a06a7d2cf7fcd716cf5e 100644
+--- a/dist/components/popover.d.ts
++++ b/dist/components/popover.d.ts
+@@ -7,7 +7,7 @@ declare const popoverTheme: {
+         };
+         content: {
+             [x: string]: string | {
+-                [x: string]: string;
++                [x: string]: string | undefined;
+                 outline?: undefined;
+                 boxShadow?: undefined;
+             } | {
+diff --git a/dist/components/switch.d.ts b/dist/components/switch.d.ts
+index 90b204c98efdae169962142801c573571657de91..582be9e908428d8a0566ebc82d48db6ab7d71ad6 100644
+--- a/dist/components/switch.d.ts
++++ b/dist/components/switch.d.ts
+@@ -12,7 +12,7 @@ declare const switchTheme: {
+         };
+         track: {
+             [x: string]: string | string[] | {
+-                [x: string]: string;
++                [x: string]: string | undefined;
+                 boxShadow?: undefined;
+                 opacity?: undefined;
+                 cursor?: undefined;
+@@ -28,7 +28,7 @@ declare const switchTheme: {
+                 boxShadow?: undefined;
+                 _dark?: undefined;
+             } | {
+-                [x: string]: string | {
++                [x: string]: string | undefined | {
+                     [x: string]: string;
+                 };
+                 _dark: {
+diff --git a/dist/components/tabs.d.ts b/dist/components/tabs.d.ts
+index d75e8bb9206448a8de902edae5f23f1234731d14..5511a71765832c7d6c06f267d302b2076b264fc7 100644
+--- a/dist/components/tabs.d.ts
++++ b/dist/components/tabs.d.ts
+@@ -57,7 +57,7 @@ declare const tabsTheme: {
+             };
+             tab: {
+                 [x: string]: string | {
+-                    [x: string]: string | {
++                    [x: string]: string | undefined | {
+                         [x: string]: string;
+                     };
+                     _dark: {
+@@ -66,7 +66,7 @@ declare const tabsTheme: {
+                     borderColor: string;
+                     _active?: undefined;
+                 } | {
+-                    [x: string]: string | {
++                    [x: string]: string | undefined | {
+                         [x: string]: string;
+                     };
+                     _dark: {
+@@ -145,7 +145,7 @@ declare const tabsTheme: {
+         "enclosed-colored": (props: _chakra_ui_styled_system.StyleFunctionProps) => {
+             tab: {
+                 [x: string]: string | {
+-                    [x: string]: string;
++                    [x: string]: string | undefined;
+                     marginEnd?: undefined;
+                     _dark?: undefined;
+                     borderColor?: undefined;
+@@ -158,7 +158,7 @@ declare const tabsTheme: {
+                     borderTopColor?: undefined;
+                     borderBottomColor?: undefined;
+                 } | {
+-                    [x: string]: string | {
++                    [x: string]: string | undefined | {
+                         [x: string]: string;
+                     };
+                     _dark: {
+@@ -212,7 +212,7 @@ declare const tabsTheme: {
+         "solid-rounded": (props: _chakra_ui_styled_system.StyleFunctionProps) => {
+             tab: {
+                 [x: string]: string | {
+-                    [x: string]: string;
++                    [x: string]: string | undefined;
+                     _dark?: undefined;
+                 } | {
+                     [x: string]: string | {
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 267f546384aca1315d1ad7ec6fbda7d9962cf896..a5d1829ba5f4391554e46f04d17994b40f975ee4 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1620,12 +1620,12 @@ declare const theme: {
+                 };
+                 stepper: {
+                     [x: string]: string | {
+-                        [x: string]: string;
++                        [x: string]: string | undefined;
+                         _dark?: undefined;
+                         opacity?: undefined;
+                         cursor?: undefined;
+                     } | {
+-                        [x: string]: string | {
++                        [x: string]: string | undefined | {
+                             [x: string]: string;
+                         };
+                         _dark: {
+@@ -1880,7 +1880,7 @@ declare const theme: {
+                 };
+                 content: {
+                     [x: string]: string | {
+-                        [x: string]: string;
++                        [x: string]: string | undefined;
+                         outline?: undefined;
+                         boxShadow?: undefined;
+                     } | {
+@@ -2532,7 +2532,7 @@ declare const theme: {
+                 };
+                 track: {
+                     [x: string]: string | string[] | {
+-                        [x: string]: string;
++                        [x: string]: string | undefined;
+                         boxShadow?: undefined;
+                         opacity?: undefined;
+                         cursor?: undefined;
+@@ -2548,7 +2548,7 @@ declare const theme: {
+                         boxShadow?: undefined;
+                         _dark?: undefined;
+                     } | {
+-                        [x: string]: string | {
++                        [x: string]: string | undefined | {
+                             [x: string]: string;
+                         };
+                         _dark: {
+@@ -2844,7 +2844,7 @@ declare const theme: {
+                     };
+                     tab: {
+                         [x: string]: string | {
+-                            [x: string]: string | {
++                            [x: string]: string | undefined | {
+                                 [x: string]: string;
+                             };
+                             _dark: {
+@@ -2853,7 +2853,7 @@ declare const theme: {
+                             borderColor: string;
+                             _active?: undefined;
+                         } | {
+-                            [x: string]: string | {
++                            [x: string]: string | undefined | {
+                                 [x: string]: string;
+                             };
+                             _dark: {
+@@ -2932,7 +2932,7 @@ declare const theme: {
+                 "enclosed-colored": (props: _chakra_ui_styled_system.StyleFunctionProps) => {
+                     tab: {
+                         [x: string]: string | {
+-                            [x: string]: string;
++                            [x: string]: string | undefined;
+                             marginEnd?: undefined;
+                             _dark?: undefined;
+                             borderColor?: undefined;
+@@ -2945,7 +2945,7 @@ declare const theme: {
+                             borderTopColor?: undefined;
+                             borderBottomColor?: undefined;
+                         } | {
+-                            [x: string]: string | {
++                            [x: string]: string | undefined | {
+                                 [x: string]: string;
+                             };
+                             _dark: {
+@@ -2999,7 +2999,7 @@ declare const theme: {
+                 "solid-rounded": (props: _chakra_ui_styled_system.StyleFunctionProps) => {
+                     tab: {
+                         [x: string]: string | {
+-                            [x: string]: string;
++                            [x: string]: string | undefined;
+                             _dark?: undefined;
+                         } | {
+                             [x: string]: string | {

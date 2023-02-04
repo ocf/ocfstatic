@@ -1,4 +1,4 @@
 declare module "*.svg" {
-  declare const path: string
+  const path: string
   export default path
 }
