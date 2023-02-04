@@ -5,88 +5,117 @@
 
 export interface paths {
   "/": {
+    /** Root */
     get: operations["root__get"]
   }
   "/meetings/list": {
+    /** Get Meetings List */
     get: operations["get_meetings_list_meetings_list_get"]
   }
   "/meetings/next": {
+    /** Get Next Meeting */
     get: operations["get_next_meeting_meetings_next_get"]
   }
   "/meetings/current": {
+    /** Get Current Meeting */
     get: operations["get_current_meeting_meetings_current_get"]
   }
   "/lab/hours/today": {
+    /** Get Hours Today */
     get: operations["get_hours_today_lab_hours_today_get"]
   }
   "/lab/hours/{date}": {
+    /** Get Hours Date */
     get: operations["get_hours_date_lab_hours__date__get"]
   }
   "/lab/num_users": {
+    /** Get Num Users In Lab */
     get: operations["get_num_users_in_lab_lab_num_users_get"]
   }
   "/lab/staff": {
+    /** Get Staff In Lab */
     get: operations["get_staff_in_lab_lab_staff_get"]
   }
   "/lab/desktops": {
+    /** Desktop Usage */
     get: operations["desktop_usage_lab_desktops_get"]
   }
   "/session/log": {
     /**
-     * Primary API endpoint for session tracking.
+     * Log Session
+     * @description Primary API endpoint for session tracking.
      *
      * Desktops have a cronjob that calls this endpoint: https://git.io/vpIKX
      */
     post: operations["log_session_session_log_post"]
   }
   "/shorturls/bounce/{slug}": {
+    /** Bounce Shorturl */
     get: operations["bounce_shorturl_shorturls_bounce__slug__get"]
   }
   "/auth/calnet": {
+    /** Calnet Login */
     get: operations["calnet_login_auth_calnet_get"]
   }
   "/auth/calnet/callback": {
+    /** Calnet Login Callback */
     get: operations["calnet_login_callback_auth_calnet_callback_get"]
   }
   "/account/reset_password": {
+    /** Reset Password */
     post: operations["reset_password_account_reset_password_post"]
   }
   "/account/command": {
+    /** Run Command */
     post: operations["run_command_account_command_post"]
   }
   "/account/me": {
+    /** Get Account Info */
     get: operations["get_account_info_account_me_get"]
   }
   "/account/quota/paper": {
+    /** Get Paper Quota */
     get: operations["get_paper_quota_account_quota_paper_get"]
+    /** Add Paper Refund */
     post: operations["add_paper_refund_account_quota_paper_post"]
   }
   "/account/hosting/vhost": {
+    /** Request Vhost */
     post: operations["request_vhost_account_hosting_vhost_post"]
   }
   "/account/hosting/mail": {
+    /** Get Vhost Mail */
     get: operations["get_vhost_mail_account_hosting_mail_get"]
+    /** Vhost Mail Update */
     post: operations["vhost_mail_update_account_hosting_mail_post"]
   }
   "/account/hosting/mail/export": {
+    /** Vhost Mail Csv Export */
     get: operations["vhost_mail_csv_export_account_hosting_mail_export_get"]
   }
   "/account/hosting/mail/import": {
+    /** Vhost Mail Csv Import */
     post: operations["vhost_mail_csv_import_account_hosting_mail_import_post"]
   }
   "/account/register": {
+    /** Register Account */
     post: operations["register_account_account_register_post"]
   }
   "/account/register/status": {
+    /** Register Account Status */
     get: operations["register_account_status_account_register_status_get"]
   }
   "/announce/blog": {
+    /** Get Blog Posts */
     get: operations["get_blog_posts_announce_blog_get"]
   }
   "/staff_hours": {
+    /** Get Staff Hours */
     get: operations["get_staff_hours_staff_hours_get"]
   }
 }
+
+export type webhooks = Record<string, never>
 
 export interface components {
   schemas: {
@@ -358,29 +387,38 @@ export interface components {
     /** ValidationError */
     ValidationError: {
       /** Location */
-      loc: string[]
+      loc: (string | number)[]
       /** Message */
       msg: string
       /** Error Type */
       type: string
     }
   }
+  responses: never
+  parameters: never
+  requestBodies: never
+  headers: never
+  pathItems: never
 }
+
+export type external = Record<string, never>
 
 export interface operations {
   root__get: {
+    /** Root */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
-          "application/json": unknown
+          "application/json": Record<string, never>
         }
       }
     }
   }
   get_meetings_list_meetings_list_get: {
+    /** Get Meetings List */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["MeetingsListOutput"]
@@ -389,8 +427,9 @@ export interface operations {
     }
   }
   get_next_meeting_meetings_next_get: {
+    /** Get Next Meeting */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["MeetingOutput"]
@@ -399,8 +438,9 @@ export interface operations {
     }
   }
   get_current_meeting_meetings_current_get: {
+    /** Get Current Meeting */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["MeetingOutput"]
@@ -409,8 +449,9 @@ export interface operations {
     }
   }
   get_hours_today_lab_hours_today_get: {
+    /** Get Hours Today */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["HoursOutput"]
@@ -419,19 +460,20 @@ export interface operations {
     }
   }
   get_hours_date_lab_hours__date__get: {
+    /** Get Hours Date */
     parameters: {
       path: {
         date: string
       }
     }
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["HoursOutput"]
         }
       }
-      /** Validation Error */
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
@@ -440,8 +482,9 @@ export interface operations {
     }
   }
   get_num_users_in_lab_lab_num_users_get: {
+    /** Get Num Users In Lab */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["NumUsersOutput"]
@@ -450,8 +493,9 @@ export interface operations {
     }
   }
   get_staff_in_lab_lab_staff_get: {
+    /** Get Staff In Lab */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["StaffInLabOutput"]
@@ -460,8 +504,9 @@ export interface operations {
     }
   }
   desktop_usage_lab_desktops_get: {
+    /** Desktop Usage */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["DesktopUsageOutput"]
@@ -469,42 +514,44 @@ export interface operations {
       }
     }
   }
-  /**
-   * Primary API endpoint for session tracking.
-   *
-   * Desktops have a cronjob that calls this endpoint: https://git.io/vpIKX
-   */
   log_session_session_log_post: {
+    /**
+     * Log Session
+     * @description Primary API endpoint for session tracking.
+     *
+     * Desktops have a cronjob that calls this endpoint: https://git.io/vpIKX
+     */
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["LogSessionInput"]
+      }
+    }
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       204: never
-      /** Validation Error */
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
         }
       }
     }
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["LogSessionInput"]
-      }
-    }
   }
   bounce_shorturl_shorturls_bounce__slug__get: {
+    /** Bounce Shorturl */
     parameters: {
       path: {
         slug: string
       }
     }
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       308: {
         content: {
-          "application/json": unknown
+          "application/json": Record<string, never>
         }
       }
-      /** Validation Error */
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
@@ -513,22 +560,23 @@ export interface operations {
     }
   }
   calnet_login_auth_calnet_get: {
+    /** Calnet Login */
     parameters: {
-      query: {
+      query?: {
         next?: string
       }
       header: {
-        host?: string
+        host: string
       }
     }
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
-          "application/json": unknown
+          "application/json": Record<string, never>
         }
       }
-      /** Validation Error */
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
@@ -537,25 +585,26 @@ export interface operations {
     }
   }
   calnet_login_callback_auth_calnet_callback_get: {
+    /** Calnet Login Callback */
     parameters: {
       query: {
         ticket: string
       }
-      header: {
+      header?: {
         host?: string
       }
-      cookie: {
+      cookie?: {
         calnet_redirect_url?: string
       }
     }
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
-          "application/json": unknown
+          "application/json": Record<string, never>
         }
       }
-      /** Validation Error */
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
@@ -564,52 +613,55 @@ export interface operations {
     }
   }
   reset_password_account_reset_password_post: {
-    responses: {
-      /** Successful Response */
-      204: never
-      /** Bad Request */
-      400: unknown
-      /** Forbidden */
-      403: unknown
-      /** Validation Error */
-      422: {
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-      /** Internal Server Error */
-      500: unknown
-    }
+    /** Reset Password */
     requestBody: {
       content: {
         "application/json": components["schemas"]["ResetPasswordInput"]
       }
     }
+    responses: {
+      /** @description Successful Response */
+      204: never
+      /** @description Bad Request */
+      400: never
+      /** @description Forbidden */
+      403: never
+      /** @description Validation Error */
+      422: {
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+      /** @description Internal Server Error */
+      500: never
+    }
   }
   run_command_account_command_post: {
+    /** Run Command */
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["RunCommandInput"]
+      }
+    }
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["RunCommandOutput"]
         }
       }
-      /** Validation Error */
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
         }
       }
     }
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["RunCommandInput"]
-      }
-    }
   }
   get_account_info_account_me_get: {
+    /** Get Account Info */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["AccountInfoOutput"]
@@ -618,8 +670,9 @@ export interface operations {
     }
   }
   get_paper_quota_account_quota_paper_get: {
+    /** Get Paper Quota */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["PaperQuotaOutput"]
@@ -628,48 +681,51 @@ export interface operations {
     }
   }
   add_paper_refund_account_quota_paper_post: {
-    responses: {
-      /** Successful Response */
-      204: never
-      /** Validation Error */
-      422: {
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-    }
+    /** Add Paper Refund */
     requestBody: {
       content: {
         "application/json": components["schemas"]["PaperRefundInput"]
       }
     }
-  }
-  request_vhost_account_hosting_vhost_post: {
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       204: never
-      /** Bad Request */
-      400: unknown
-      /** Forbidden */
-      403: unknown
-      /** Validation Error */
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
         }
       }
-      /** Internal Server Error */
-      500: unknown
     }
+  }
+  request_vhost_account_hosting_vhost_post: {
+    /** Request Vhost */
     requestBody: {
       content: {
         "application/json": components["schemas"]["VHostRequestInput"]
       }
     }
+    responses: {
+      /** @description Successful Response */
+      204: never
+      /** @description Bad Request */
+      400: never
+      /** @description Forbidden */
+      403: never
+      /** @description Validation Error */
+      422: {
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+      /** @description Internal Server Error */
+      500: never
+    }
   }
   get_vhost_mail_account_hosting_mail_get: {
+    /** Get Vhost Mail */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["VHostMailOutput"]
@@ -678,101 +734,106 @@ export interface operations {
     }
   }
   vhost_mail_update_account_hosting_mail_post: {
-    responses: {
-      /** Successful Response */
-      204: never
-      /** Validation Error */
-      422: {
-        content: {
-          "application/json": components["schemas"]["HTTPValidationError"]
-        }
-      }
-    }
+    /** Vhost Mail Update */
     requestBody: {
       content: {
         "application/json": components["schemas"]["VHostMailUpdateInput"]
       }
     }
-  }
-  vhost_mail_csv_export_account_hosting_mail_export_get: {
     responses: {
-      /** Successful Response */
-      200: {
-        content: {
-          "application/json": unknown
-        }
-      }
-      /** Validation Error */
+      /** @description Successful Response */
+      204: never
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
         }
       }
     }
+  }
+  vhost_mail_csv_export_account_hosting_mail_export_get: {
+    /** Vhost Mail Csv Export */
     requestBody: {
       content: {
         "application/json": components["schemas"]["VHostMailExportInput"]
       }
     }
-  }
-  vhost_mail_csv_import_account_hosting_mail_import_post: {
     responses: {
-      /** Successful Response */
-      204: never
-      /** Validation Error */
+      /** @description Successful Response */
+      200: {
+        content: {
+          "application/json": Record<string, never>
+        }
+      }
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
         }
       }
     }
+  }
+  vhost_mail_csv_import_account_hosting_mail_import_post: {
+    /** Vhost Mail Csv Import */
     requestBody: {
       content: {
         "multipart/form-data": components["schemas"]["Body_vhost_mail_csv_import_account_hosting_mail_import_post"]
       }
     }
-  }
-  register_account_account_register_post: {
     responses: {
-      /** Successful Response */
-      200: {
-        content: {
-          "application/json": components["schemas"]["RegisterAccountOutput"]
-        }
-      }
-      /** Forbidden */
-      403: {
-        content: {
-          "application/json": components["schemas"]["RegisterAccountError"]
-        }
-      }
-      /** Validation Error */
+      /** @description Successful Response */
+      204: never
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
         }
       }
     }
+  }
+  register_account_account_register_post: {
+    /** Register Account */
     requestBody: {
       content: {
         "application/json": components["schemas"]["RegisterAccountInput"]
       }
     }
+    responses: {
+      /** @description Successful Response */
+      200: {
+        content: {
+          "application/json": components["schemas"]["RegisterAccountOutput"]
+        }
+      }
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["RegisterAccountError"]
+        }
+      }
+      /** @description Validation Error */
+      422: {
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"]
+        }
+      }
+    }
   }
   register_account_status_account_register_status_get: {
+    /** Register Account Status */
     parameters: {
       query: {
         task_id: string
       }
     }
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["RegisterAccountStatusOutput"]
         }
       }
-      /** Validation Error */
+      /** @description Validation Error */
       422: {
         content: {
           "application/json": components["schemas"]["HTTPValidationError"]
@@ -781,18 +842,20 @@ export interface operations {
     }
   }
   get_blog_posts_announce_blog_get: {
+    /** Get Blog Posts */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
-          "application/json": unknown
+          "application/json": Record<string, never>
         }
       }
     }
   }
   get_staff_hours_staff_hours_get: {
+    /** Get Staff Hours */
     responses: {
-      /** Successful Response */
+      /** @description Successful Response */
       200: {
         content: {
           "application/json": components["schemas"]["StaffHoursOutput"]
@@ -801,5 +864,3 @@ export interface operations {
     }
   }
 }
-
-export interface external {}

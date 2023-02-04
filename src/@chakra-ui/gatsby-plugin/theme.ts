@@ -40,3 +40,5 @@ const theme = {
 }
 
 export default extendTheme(theme)
+
+export { baseTheme } from "@chakra-ui/react"
