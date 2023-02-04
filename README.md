@@ -6,7 +6,7 @@ A new website for the OCF. Written in React with [Gatsby](https://www.gatsbyjs.c
 
 ### Dependencies
 
-- Node.js 16+ (https://nodejs.org/en/)
+- Node.js 18+ (https://nodejs.org/en/)
 - If using an Apple Silicon Mac (M1, M2, etc.), `vips` is required (can be installed through [Homebrew](https://brew.sh/) `brew install libvips`)
 - If using Windows, WSL is required (https://learn.microsoft.com/en-us/windows/wsl/install)
 
