@@ -68,7 +68,7 @@ The frontend for Prometheus is [Grafana][grafana], which displays statistics col
 - **[Desktops](https://ocf.io/desktopstats):** Displays usage information for lab computers (cyclone, acid, etc).
 - **[Printers](https://ocf.io/printerstats):** Displays printer usage and resource information.
 - **[Mirrors](https://ocf.io/mirrorstats):** Displays information about mirror staleness.
-- **[HPC](hhttps://ocf.io/hpcstats):** Displays usage information for the [HPC cluster](/docs/services/hpc).
+- **[HPC](https://ocf.io/hpcstats):** Displays usage information for the [HPC cluster](/docs/services/hpc).
 
 There are more dashboards available, which can be accessed by clicking the dropdown arrow on the top left of the Grafana page.
 
