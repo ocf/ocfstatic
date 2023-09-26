@@ -16,7 +16,7 @@ const Footer = () => {
             Board Meeting Minutes
           </a>
           <a href="/docs/">Official Documents</a>
-          <a href="/docs/privacy/">Privacy Policy</a>
+          <a href="https://ocf.berkeley.edu/docs/privacy/">Privacy Policy</a>
         </Flex>
         <Flex
           direction="column"
