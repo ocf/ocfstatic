@@ -1,6 +1,5 @@
 import { Text, Flex } from "@chakra-ui/react"
 import FullWidthBox from "~/components/FullWidthBox"
-import Link from "~/components/InternalLink"
 
 const Footer = () => {
   return (
@@ -12,16 +11,12 @@ const Footer = () => {
         gap={8}
       >
         <Flex flexDirection="column" gap={2}>
-          <Link to="https://ocf.io/donate">Donate to the OCF</Link>
-          <Link to="https://www.ocf.berkeley.edu/~staff/bod/">
+          <a href="https://ocf.io/donate">Donate to the OCF</a>
+          <a href="https://www.ocf.berkeley.edu/~staff/bod/">
             Board Meeting Minutes
-          </Link>
-          <Link to="https://www.ocf.berkeley.edu/docs/docs/">
-            Official Documents
-          </Link>
-          <Link to="https://www.ocf.berkeley.edu/docs/privacy/">
-            Privacy Policy
-          </Link>
+          </a>
+          <a href="/docs/">Official Documents</a>
+          <a href="https://ocf.berkeley.edu/docs/privacy/">Privacy Policy</a>
         </Flex>
         <Flex
           direction="column"

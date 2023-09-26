@@ -83,7 +83,9 @@ const Navbar = ({
           gap={2}
           display={{ base: "none", lg: "flex" }}
         >
-          <NavbarButton>Staff Hours</NavbarButton>
+          <NavbarButton href="https://www.ocf.berkeley.edu/staff-hours">
+            Staff Hours
+          </NavbarButton>
           <NavbarButton href="https://new.ocf.berkeley.edu/docs">
             Documentation
           </NavbarButton>
@@ -121,7 +123,12 @@ const Navbar = ({
             <NavbarDropdownLink>Officers</NavbarDropdownLink>
             <NavbarDropdownLink>Meet Our Staff</NavbarDropdownLink>
           </NavbarDropdown>
-          <NavbarButton mr={4}>Contact Us</NavbarButton>
+          <NavbarButton
+            mr={4}
+            href="https://new.ocf.berkeley.edu/docs/internal/contact/"
+          >
+            Contact Us
+          </NavbarButton>
           {keycloak.authenticated ? (
             <NavbarDropdown title={user?.username ?? ""} width={150}>
               <NavbarDropdownLink disabled>{user?.name}</NavbarDropdownLink>
