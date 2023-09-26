@@ -58,20 +58,20 @@ const IndexPage = () => {
               Create Account
             </Button>
             <Button
-              to="/docs/services/webapps/#requesting-app-hosting"
+              href="/docs/services/webapps/#requesting-app-hosting"
               bg="white"
               textDecoration="none"
               _hover={{ textDecoration: "none" }}
-              as={Link}
+              as="a"
             >
               Request Hosting
             </Button>
             <Button
-              to="/docs/services/lab/printing"
+              href="/docs/services/lab/printing"
               bg="white"
               textDecoration="none"
               _hover={{ textDecoration: "none" }}
-              as={Link}
+              as="a"
             >
               How to Print
             </Button>
