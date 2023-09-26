@@ -58,7 +58,7 @@ const IndexPage = () => {
               Create Account
             </Button>
             <Button
-              to="/account/hosting"
+              to="/docs/services/webapps/#requesting-app-hosting"
               bg="white"
               textDecoration="none"
               _hover={{ textDecoration: "none" }}
@@ -67,7 +67,7 @@ const IndexPage = () => {
               Request Hosting
             </Button>
             <Button
-              to="/docs/printing"
+              to="/docs/services/lab/printing"
               bg="white"
               textDecoration="none"
               _hover={{ textDecoration: "none" }}
