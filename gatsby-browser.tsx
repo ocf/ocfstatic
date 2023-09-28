@@ -1,6 +1,6 @@
 import { type GatsbyBrowser } from "gatsby"
-import { ReactKeycloakProvider } from "@react-keycloak/web"
-import keycloak from "~/utils/keycloak"
+import { AuthProvider } from "react-oidc-context"
+import keycloakConfig from "~/utils/keycloak"
 import { SWRConfig, SWRConfiguration } from "swr"
 import "~/styles/inter.css"
 
@@ -19,17 +19,7 @@ export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
 
   return (
     <SWRConfig value={options}>
-      <ReactKeycloakProvider
-        authClient={keycloak}
-        initOptions={{
-          promiseType: "native",
-          onLoad: "check-sso",
-          silentCheckSsoRedirectUri:
-            window.location.origin + "/silent-check-sso.html",
-        }}
-      >
-        {element}
-      </ReactKeycloakProvider>
+      <AuthProvider {...keycloakConfig}>{element}</AuthProvider>
     </SWRConfig>
   )
 }

@@ -299,7 +299,7 @@ const StaffNewsCard = ({
     const differenceUnixTime: number = currentUnixTime - otherUnixTime
 
     let differenceMilliseconds: number = Date.parse(
-      new Date(differenceUnixTime).toDateString()
+      new Date(differenceUnixTime).toDateString(),
     )
     if (differenceMilliseconds < 0) {
       console.error("otherDate newer than current date")
@@ -342,7 +342,7 @@ const StaffNewsCard = ({
     while (dateDifferentIndex < DURATIONS.length && datePartsAdded > 0) {
       const currentDateDifference = DURATIONS[dateDifferentIndex]
       const durationCount: number = Math.floor(
-        differenceMilliseconds / currentDateDifference.durationMilliseconds
+        differenceMilliseconds / currentDateDifference.durationMilliseconds,
       )
       if (durationCount > 0) {
         differenceMilliseconds -=
@@ -350,7 +350,7 @@ const StaffNewsCard = ({
         durationParts.push(
           `${durationCount} ${currentDateDifference.durationString}${
             durationCount > 1 ? "s" : ""
-          }`
+          }`,
         )
         --datePartsAdded
       }
@@ -361,7 +361,7 @@ const StaffNewsCard = ({
 
   function generateBlogPosts(
     blogPosts?: BlogPost[],
-    postCount?: number
+    postCount?: number,
   ): ReactNode {
     if (!blogPosts) {
       return <Text>Error loading posts</Text>

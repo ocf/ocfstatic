@@ -35,24 +35,24 @@ export function getSWRKeyForPath<
         responses: Record<number, object>
       }
     }
-  >
+  >,
 >(
   path: Path,
   params: paths[Path]["get"] extends { parameters: infer Params }
     ? Params
-    : "error"
+    : "error",
 ): string
 export function getSWRKeyForPath<
   Path extends keyof ConditionalPick<
     paths,
     { get: { parameters?: never; responses: Record<number, object> } }
-  >
+  >,
 >(path: Path): string
 export function getSWRKeyForPath<
   Path extends keyof ConditionalPick<
     paths,
     { get: { responses: Record<number, object> } }
-  >
+  >,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 >(path: Path, _params: any = {}): string {
   // FIXME(etw): I give up on typing params D:
@@ -66,7 +66,7 @@ export function getSWRKeyForPath<
     for (const param in params.path) {
       pathReplaced = pathReplaced.replaceAll(
         new RegExp(`\\{${param}\\}`),
-        params.path[param].toString()
+        params.path[param].toString(),
       )
     }
   }
@@ -79,7 +79,7 @@ export function getSWRKeyForPath<
         Object.entries(params.query).map(([key, value]): [string, string] => [
           key,
           value.toString(),
-        ])
+        ]),
       ).toString()
   }
 
@@ -92,10 +92,10 @@ export function useApiRoute<
     paths,
     // The path object has a `parameters` field
     { get: { parameters: object; responses: Record<number, object> } }
-  >
+  >,
 >(
   path: Path,
-  params: paths[Path]["get"]["parameters"]
+  params: paths[Path]["get"]["parameters"],
 ): ApiRouteResponse<paths[Path]["get"]["responses"]>
 export function useApiRoute<
   // Overload for paths that do not take parameters
@@ -103,18 +103,18 @@ export function useApiRoute<
     paths,
     // The path object does not have a `parameters` field
     { get: { parameters?: never; responses: Record<number, object> } }
-  >
+  >,
 >(path: Path): ApiRouteResponse<paths[Path]["get"]["responses"]>
 export function useApiRoute<
   Path extends keyof ConditionalPick<
     paths,
     { get: { responses: Record<number, object> } }
-  >
+  >,
 >(
   path: Path,
   params?: paths[Path]["get"] extends { parameters: infer Params }
     ? Params
-    : undefined
+    : undefined,
 ): SWRResponse {
   // typechecking this is annoying, so we give up instead :)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/no-explicit-any

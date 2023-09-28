@@ -11,7 +11,7 @@ export default {
   "*.{m,c,}{j,t}s?(x)": async (files) => {
     const filtered = await asyncFilter(
       files,
-      async (file) => !(await eslint.isPathIgnored(file))
+      async (file) => !(await eslint.isPathIgnored(file)),
     )
     if (filtered.length === 0) {
       return []

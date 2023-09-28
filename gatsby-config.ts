@@ -35,7 +35,7 @@ const config: GatsbyConfig = {
           "^/api": "",
         },
         changeOrigin: true,
-      })
+      }),
     )
   },
 }

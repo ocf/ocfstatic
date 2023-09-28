@@ -4,7 +4,7 @@ import NavbarButton from "~/components/NavbarButton"
 import NavbarDropdown from "~/components/NavbarDropdown"
 import NavbarDropdownLink from "~/components/NavbarDropdownLink"
 import { useEffect, useState, type RefObject } from "react"
-import useAuth from "~/hooks/useAuth"
+import useKeycloakAuth from "~/hooks/useKeycloakAuth"
 import penguin from "~/images/penguin.svg"
 
 const Navbar = ({
@@ -25,7 +25,7 @@ const Navbar = ({
       ([entry]) => setScrolling(!entry.isIntersecting),
       {
         threshold: [intersectionThreshold],
-      }
+      },
     )
 
     intersection.observe(intersectionElement.current)
@@ -37,7 +37,9 @@ const Navbar = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const { user, keycloak } = useAuth()
+  const { user, auth } = useKeycloakAuth()
+
+  console.log(auth)
 
   return (
     <Box
@@ -129,13 +131,13 @@ const Navbar = ({
           >
             Contact Us
           </NavbarButton>
-          {keycloak.authenticated ? (
+          {auth.isAuthenticated ? (
             <NavbarDropdown title={user?.username ?? ""} width={150}>
               <NavbarDropdownLink disabled>{user?.name}</NavbarDropdownLink>
               <NavbarDropdownLink href="/account">Account</NavbarDropdownLink>
               <NavbarDropdownLink
                 onClick={() => {
-                  keycloak.logout().catch(console.error)
+                  auth.signoutSilent().catch(console.error)
                 }}
               >
                 Log Out
@@ -153,7 +155,7 @@ const Navbar = ({
               h={8}
               px={4}
               onClick={() => {
-                keycloak.login().catch(console.error)
+                auth.signinRedirect().catch(console.error)
               }}
             >
               Log In

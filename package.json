@@ -26,15 +26,16 @@
     "@chakra-ui/system": "^2.6.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@react-keycloak/web": "^3.4.0",
     "framer-motion": "^10.16.4",
     "gatsby": "^5.12.5",
     "gatsby-plugin-emotion": "^8.12.0",
     "gatsby-source-filesystem": "^5.12.0",
     "gatsby-transformer-remark": "^6.12.0",
     "keycloak-js": "^22.0.3",
+    "oidc-client-ts": "^2.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-oidc-context": "^2.3.0",
     "swr": "^2.2.4",
     "type-fest": "^4.3.2"
   },
@@ -61,5 +62,5 @@
     "prettier": "3.0.3",
     "typescript": "5.2.2"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@3.6.3"
 }

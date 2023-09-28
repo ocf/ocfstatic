@@ -1536,7 +1536,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.0, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.23.1
   resolution: "@babel/runtime@npm:7.23.1"
   dependencies:
@@ -4195,36 +4195,6 @@ __metadata:
   version: 2.11.5
   resolution: "@popperjs/core@npm:2.11.5"
   checksum: fd7f9dca3fb716d7426332b6ee283f88d2724c0ab342fb678865a640bad403dfb9eeebd8204a406986162f7e2b33394f104320008b74d0e9066d7322f70ea35d
-  languageName: node
-  linkType: hard
-
-"@react-keycloak/core@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@react-keycloak/core@npm:3.2.0"
-  dependencies:
-    react-fast-compare: ^3.2.0
-  peerDependencies:
-    react: ">=16"
-  checksum: d83aa89c0a6047b1ae197ea49665a026fd3366cd978b7a7c224e600ded3d431251e7c5eb5232e95de0c83c98be9787b8ce48c98c1ad68a5a639ee1b7473c7cc8
-  languageName: node
-  linkType: hard
-
-"@react-keycloak/web@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "@react-keycloak/web@npm:3.4.0"
-  dependencies:
-    "@babel/runtime": ^7.9.0
-    "@react-keycloak/core": ^3.2.0
-    hoist-non-react-statics: ^3.3.2
-  peerDependencies:
-    keycloak-js: ">=9.0.2"
-    react: ">=16.8"
-    react-dom: ">=16.8"
-    typescript: ">=3.8"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 60eb281fe23e842b50b8b41a87ac8ca52e4cf64c41004123957b5f4cc46ab4a11e4c3452e608814486e06c41e9afe099642c9e999d08840be69ae261176ddfd3
   languageName: node
   linkType: hard
 
@@ -7066,6 +7036,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crypto-js@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "crypto-js@npm:4.1.1"
+  checksum: b3747c12ee3a7632fab3b3e171ea50f78b182545f0714f6d3e7e2858385f0f4101a15f2517e033802ce9d12ba50a391575ff4638c9de3dd9b2c4bc47768d5425
+  languageName: node
+  linkType: hard
+
 "crypto-random-string@npm:^2.0.0":
   version: 2.0.0
   resolution: "crypto-random-string@npm:2.0.0"
@@ -9152,7 +9129,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -10277,7 +10254,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.3.1":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -11415,6 +11392,13 @@ __metadata:
     object.assign: ^4.1.4
     object.values: ^1.1.6
   checksum: f4b05fa4d7b5234230c905cfa88d36dc8a58a6666975a3891429b1a8cdc8a140bca76c297225cb7a499fad25a2c052ac93934449a2c31a44fc9edd06c773780a
+  languageName: node
+  linkType: hard
+
+"jwt-decode@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "jwt-decode@npm:3.1.2"
+  checksum: 20a4b072d44ce3479f42d0d2c8d3dabeb353081ba4982e40b83a779f2459a70be26441be6c160bfc8c3c6eadf9f6380a036fbb06ac5406b5674e35d8c4205eeb
   languageName: node
   linkType: hard
 
@@ -13070,7 +13054,6 @@ __metadata:
     "@chakra-ui/system": ^2.6.1
     "@emotion/react": ^11.11.1
     "@emotion/styled": ^11.11.0
-    "@react-keycloak/web": ^3.4.0
     "@types/express": ^4.17.18
     "@types/node": ^18.11.9
     "@types/react": ^18.2.23
@@ -13095,15 +13078,27 @@ __metadata:
     husky: ^8.0.3
     keycloak-js: ^22.0.3
     lint-staged: ^14.0.1
+    oidc-client-ts: ^2.2.5
     openapi-typescript: ^6.7.0
     prettier: 3.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-oidc-context: ^2.3.0
     swr: ^2.2.4
     type-fest: ^4.3.2
     typescript: 5.2.2
   languageName: unknown
   linkType: soft
+
+"oidc-client-ts@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "oidc-client-ts@npm:2.2.5"
+  dependencies:
+    crypto-js: ^4.1.1
+    jwt-decode: ^3.1.2
+  checksum: 2b7055bddbc2b06390b364c52214d9169ee7c90a2b4e40bef907d0ab43bdc8f736805356f0fac3e422e5dfe973f6e666ecb2ee9f8a2ac031b8032ea8eb898704
+  languageName: node
+  linkType: hard
 
 "on-finished@npm:2.4.1":
   version: 2.4.1
@@ -14379,7 +14374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:3.2.2, react-fast-compare@npm:^3.2.0":
+"react-fast-compare@npm:3.2.2":
   version: 3.2.2
   resolution: "react-fast-compare@npm:3.2.2"
   checksum: 2071415b4f76a3e6b55c84611c4d24dcb12ffc85811a2840b5a3f1ff2d1a99be1020d9437ee7c6e024c9f4cbb84ceb35e48cf84f28fcb00265ad2dfdd3947704
@@ -14410,6 +14405,16 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
+"react-oidc-context@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "react-oidc-context@npm:2.3.0"
+  peerDependencies:
+    oidc-client-ts: ^2.2.1
+    react: ">=16.8.0"
+  checksum: da706d3b100d7690c2de2157771491a49639675b2f133534c208457cd06013542c547dd5ecc63af336587325c93b836258faf8418ca46d47a81eaf3914a51df9
   languageName: node
   linkType: hard
 
@@ -14885,7 +14890,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.4#~builtin<compat/resolve>":
   version: 1.22.6
-  resolution: "resolve@patch:resolve@npm%3A1.22.6#~builtin<compat/resolve>::version=1.22.6&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.6#~builtin<compat/resolve>::version=1.22.6&hash=c3c19d"
   dependencies:
     is-core-module: ^2.13.0
     path-parse: ^1.0.7
@@ -14898,7 +14903,7 @@ __metadata:
 
 "resolve@patch:resolve@^2.0.0-next.4#~builtin<compat/resolve>":
   version: 2.0.0-next.4
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -16490,11 +16495,11 @@ __metadata:
 
 "typescript@patch:typescript@5.2.2#~builtin<compat/typescript>":
   version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=701156"
+  resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 07106822b4305de3f22835cbba949a2b35451cad50888759b6818421290ff95d522b38ef7919e70fb381c5fe9c1c643d7dea22c8b31652a717ddbd57b7f4d554
+  checksum: 0f4da2f15e6f1245e49db15801dbee52f2bbfb267e1c39225afdab5afee1a72839cd86000e65ee9d7e4dfaff12239d28beaf5ee431357fcced15fb08583d72ca
   languageName: node
   linkType: hard
 
