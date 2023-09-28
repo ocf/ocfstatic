@@ -30,9 +30,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Check yarn lockfile
-        run: |
-          yarn dedupe --check
       - name: Install dependencies
         run: |
           yarn install --immutable

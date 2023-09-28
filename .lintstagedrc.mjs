@@ -20,5 +20,4 @@ export default {
   },
   "*.ts?(x)": () => "yarn tsc --noEmit",
   "*.({j,t}s?(x)|md?(x)|json|y?(a)ml)": "yarn prettier --write",
-  "yarn.lock": () => "yarn dedupe",
 }
