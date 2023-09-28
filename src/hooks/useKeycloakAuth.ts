@@ -1,8 +1,9 @@
 import { useAuth, type AuthContextProps } from "react-oidc-context"
 import { useEffect } from "react"
 import { OCFKeycloakToken } from "~/utils/keycloak"
+import { type IdTokenClaims } from "oidc-client-ts"
 
-interface User {
+interface OCFKeycloakUser {
   username: string
   name: string
   email: string
@@ -12,7 +13,7 @@ interface User {
 const useKeycloakAuth = ({
   requireLogin = false,
 }: { requireLogin?: boolean } = {}): {
-  user: User | undefined
+  user: OCFKeycloakUser | undefined
   auth: AuthContextProps
 } => {
   const auth = useAuth()
@@ -22,17 +23,20 @@ const useKeycloakAuth = ({
       auth.signinSilent().catch(console.error)
   }, [auth, auth.isAuthenticated, requireLogin])
 
-  const token = auth.user as OCFKeycloakToken | undefined
+  // eslint-disable-next-line
+  const userProfile: IdTokenClaims | undefined = auth.user?.profile
+
+  const user: OCFKeycloakUser | undefined = userProfile
+    ? {
+        username: userProfile.preferred_username ?? "",
+        name: userProfile.name ?? "",
+        email: userProfile.email ?? "",
+        raw: userProfile as OCFKeycloakToken,
+      }
+    : undefined
 
   return {
-    user: token
-      ? {
-          username: token.preferred_username,
-          name: token.name,
-          email: token.email,
-          raw: token,
-        }
-      : undefined,
+    user,
     auth,
   }
 }
