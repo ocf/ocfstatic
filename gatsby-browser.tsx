@@ -17,9 +17,14 @@ export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
     refreshInterval: 15 * 1000, // 15 seconds
   }
 
+  const config = {
+    ...keycloakConfig,
+    redirect_uri: window.location.origin,
+  } as typeof keycloakConfig
+
   return (
     <SWRConfig value={options}>
-      <AuthProvider {...keycloakConfig}>{element}</AuthProvider>
+      <AuthProvider {...config}>{element}</AuthProvider>
     </SWRConfig>
   )
 }
