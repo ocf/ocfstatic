@@ -39,8 +39,6 @@ const Navbar = ({
 
   const { user, auth } = useKeycloakAuth()
 
-  console.log(auth)
-
   return (
     <Box
       bgColor={scrolling ? "whiteAlpha.800" : "transparent"}
