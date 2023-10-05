@@ -29,7 +29,7 @@ const NavbarButton = forwardRef<NavbarButtonProps & ButtonProps, "button">(
         {...rest}
       />
     )
-  }
+  },
 )
 
 export default NavbarButton

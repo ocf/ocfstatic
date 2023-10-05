@@ -11,7 +11,7 @@ export default {
   "*.{m,c,}{j,t}s?(x)": async (files) => {
     const filtered = await asyncFilter(
       files,
-      async (file) => !(await eslint.isPathIgnored(file))
+      async (file) => !(await eslint.isPathIgnored(file)),
     )
     if (filtered.length === 0) {
       return []
@@ -20,5 +20,4 @@ export default {
   },
   "*.ts?(x)": () => "yarn tsc --noEmit",
   "*.({j,t}s?(x)|md?(x)|json|y?(a)ml)": "yarn prettier --write",
-  "yarn.lock": () => "yarn dedupe",
 }

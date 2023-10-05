@@ -5,7 +5,8 @@
   fill-opacity: 0;
   stroke-dasharray: 1294 1296;
   stroke-dashoffset: 1295;
-  animation: drawStroke 1000ms ease 0ms forwards,
+  animation:
+    drawStroke 1000ms ease 0ms forwards,
     fadeStroke 250ms linear 1500ms forwards,
     fillPath 250ms linear 1500ms forwards;
 }
@@ -13,7 +14,8 @@
   fill-opacity: 0;
   stroke-dasharray: 1053 1055;
   stroke-dashoffset: 1054;
-  animation: drawStroke 1000ms ease 250ms forwards,
+  animation:
+    drawStroke 1000ms ease 250ms forwards,
     fadeStroke 250ms linear 1500ms forwards,
     fillPath 250ms linear 1500ms forwards;
 }
@@ -21,7 +23,8 @@
   fill-opacity: 0;
   stroke-dasharray: 949 951;
   stroke-dashoffset: 950;
-  animation: drawStroke 1000ms ease 500ms forwards,
+  animation:
+    drawStroke 1000ms ease 500ms forwards,
     fadeStroke 250ms linear 1500ms forwards,
     fillPath 250ms linear 1500ms forwards;
 }

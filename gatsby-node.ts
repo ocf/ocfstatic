@@ -9,6 +9,19 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
       alias: {
         "~": path.resolve(__dirname, "/src"),
       },
+      fallback: {
+        assert: false,
+        crypto: false,
+        http: false,
+        https: false,
+        os: false,
+        path: false,
+        querystring: false,
+        stream: false,
+        url: false,
+        util: false,
+        zlib: false,
+      },
     },
   })
 }

@@ -14,7 +14,7 @@ const CalNetAuthPage = ({ location }: PageProps<null, null, LocationState>) => {
     window.location.href = `${API_HOST()}/auth/calnet?next=${encodeURIComponent(
       window.location.origin +
         "/auth/calnet/callback?next=" +
-        encodeURIComponent(next)
+        encodeURIComponent(next),
     )}`
     // we only want this to effect to run once on page load
     // eslint-disable-next-line react-hooks/exhaustive-deps

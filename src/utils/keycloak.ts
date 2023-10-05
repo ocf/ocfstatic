@@ -1,12 +1,12 @@
-import Keycloak, { type KeycloakTokenParsed } from "keycloak-js"
+import { type KeycloakTokenParsed } from "keycloak-js"
+import { type AuthProviderProps } from "react-oidc-context"
 
-const keycloak = new Keycloak({
-  realm: "ocf",
-  url: "https://auth.ocf.berkeley.edu/auth/",
-  clientId: "ocfstatic",
-})
+const keycloakConfig = {
+  authority: "https://auth.ocf.berkeley.edu/auth/realms/ocf",
+  client_id: "ocfstatic",
+} as AuthProviderProps
 
-export default keycloak
+export default keycloakConfig
 
 export interface OCFKeycloakToken extends KeycloakTokenParsed {
   auth_time: number

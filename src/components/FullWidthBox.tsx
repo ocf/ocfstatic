@@ -15,7 +15,7 @@ const FullWidthBox = forwardRef<BoxProps, "div">(
         </Box>
       </Box>
     )
-  }
+  },
 )
 
 export default FullWidthBox
