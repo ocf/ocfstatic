@@ -42,3 +42,11 @@ jobs:
       - name: Lint
         run: |
           yarn lint --max-warnings=0
+
+  transpire-ci:
+    uses: ocf/transpire-ci/.github/workflows/trigger.yml@master
+    needs: lint
+    with:
+      module_name: ocfstatic
+    secrets:
+      TRANSPIRE_CI_PAT: ${{ secrets.TRANSPIRE_CI_PAT }}
