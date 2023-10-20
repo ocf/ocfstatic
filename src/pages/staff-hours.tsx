@@ -33,6 +33,15 @@ function mapDays(weekDay: string) {
       return 7
   }
 }
+function giveEvent(event: Event) {
+  window.alert(
+    event.title?.toString() +
+      "\n" +
+      event.start?.toString() +
+      " - " +
+      event.end?.toString(),
+  )
+}
 
 function parseTime(time: string) {
   const hour = time.match(/\d+/g)
@@ -171,6 +180,7 @@ const StaffHoursPage = () => {
             eventPropGetter={eventPropGetter}
             events={staffHours}
             localizer={localizer}
+            onSelectEvent={giveEvent}
             views={[Views.WEEK, Views.DAY]}
             selectable
             scrollToTime={scrollToTime}
