@@ -46,6 +46,7 @@ jobs:
   transpire-ci:
     uses: ocf/transpire-ci/.github/workflows/trigger.yml@master
     needs: lint
+    if: success() && github.ref == 'refs/heads/master'
     with:
       module_name: ocfstatic
     secrets:
