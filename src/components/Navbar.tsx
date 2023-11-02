@@ -118,10 +118,14 @@ const Navbar = ({
               High Performance Computing
             </NavbarDropdownLink>
           </NavbarDropdown>
-          <NavbarDropdown title="About" width={150}>
+          <NavbarDropdown title="about" width={150}>
             <NavbarDropdownLink>What We Do</NavbarDropdownLink>
-            <NavbarDropdownLink>Officers</NavbarDropdownLink>
-            <NavbarDropdownLink>Meet Our Staff</NavbarDropdownLink>
+            <NavbarDropdownLink href="about/#officers">
+              Officers
+            </NavbarDropdownLink>
+            <NavbarDropdownLink href="about/#meetourstaff">
+              Meet Our Staff
+            </NavbarDropdownLink>
           </NavbarDropdown>
           <NavbarButton
             mr={4}
