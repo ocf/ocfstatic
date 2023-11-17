@@ -171,22 +171,58 @@ const StaffHoursPage = () => {
     path: { date: isoDate7.toString() },
   })
   weeks_Data.push(ocfHours(7, hours7))
-  /* let isoDate8 = moment().startOf("isoWeek").add(8, "days").format("YYYY-MM-DD")
-  const { data: hours8 } = useApiRoute("/lab/hours/{date}", {path : {date : isoDate8.toString()}});
-  weeks_Data.push(hours8)
-  let isoDate9 = moment().startOf("isoWeek").add(9, "days").format("YYYY-MM-DD")
-  const { data: hours9 } = useApiRoute("/lab/hours/{date}", {path : {date : isoDate9.toString()}});
-  weeks_Data.push(hours9)
-  let isoDate10 = moment().startOf("isoWeek").add(10, "days").format("YYYY-MM-DD")
-  const { data: hours10 } = useApiRoute("/lab/hours/{date}", {path : {date : isoDate10.toString()}});
-  weeks_Data.push(hours10)
-  let isoDate11 = moment().startOf("isoWeek").add(11, "days").format("YYYY-MM-DD")
-  const { data: hours11 } = useApiRoute("/lab/hours/{date}", {path : {date : isoDate11.toString()}});
-  weeks_Data.push(hours11)
-  let isoDate12 = moment().startOf("isoWeek").add(12, "days").format("YYYY-MM-DD")
-  const { data: hours12 } = useApiRoute("/lab/hours/{date}", {path : {date : isoDate12.toString()}});
-  weeks_Data.push(hours12) */
+  const isoDate8 = moment()
+    .startOf("isoWeek")
+    .add(8, "days")
+    .format("YYYY-MM-DD")
+  const { data: hours8 } = useApiRoute("/lab/hours/{date}", {
+    path: { date: isoDate8.toString() },
+  })
+  weeks_Data.push(ocfHours(8, hours8))
+  const isoDate9 = moment()
+    .startOf("isoWeek")
+    .add(9, "days")
+    .format("YYYY-MM-DD")
+  const { data: hours9 } = useApiRoute("/lab/hours/{date}", {
+    path: { date: isoDate9.toString() },
+  })
+  weeks_Data.push(ocfHours(10, hours9))
+  const isoDate10 = moment()
+    .startOf("isoWeek")
+    .add(10, "days")
+    .format("YYYY-MM-DD")
+  const { data: hours10 } = useApiRoute("/lab/hours/{date}", {
+    path: { date: isoDate10.toString() },
+  })
+  weeks_Data.push(ocfHours(10, hours10))
+  const isoDate11 = moment()
+    .startOf("isoWeek")
+    .add(11, "days")
+    .format("YYYY-MM-DD")
+  const { data: hours11 } = useApiRoute("/lab/hours/{date}", {
+    path: { date: isoDate11.toString() },
+  })
+  weeks_Data.push(ocfHours(11, hours11))
+  const isoDate12 = moment()
+    .startOf("isoWeek")
+    .add(12, "days")
+    .format("YYYY-MM-DD")
+  const { data: hours12 } = useApiRoute("/lab/hours/{date}", {
+    path: { date: isoDate12.toString() },
+  })
+  weeks_Data.push(ocfHours(12, hours12))
 
+  /* let OCF_hours = [] // React Hook "useApiRoute" may be executed more than once. Possibly because it is called in a loop. React Hooks must be called in the exact same order in every component render 
+  for (let i = 0; i < 21; i++) {
+    const isoDate12 = moment()
+    .startOf("isoWeek")
+    .add(i, "days")
+    .format("YYYY-MM-DD")
+    const { data: hours12 } = useApiRoute("/lab/hours/{date}", {
+    path: { date: isoDate12.toString() },
+    })
+    OCF_hours.push(ocfHours(i, hours12))
+  } */
   const { data: staff } = useApiRoute("/staff_hours")
   const staffHours =
     staff &&
