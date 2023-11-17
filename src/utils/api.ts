@@ -65,7 +65,7 @@ export function getSWRKeyForPath<
   if ("path" in params) {
     for (const param in params.path) {
       pathReplaced = pathReplaced.replaceAll(
-        new RegExp(`\\{${param}\\}`),
+        new RegExp(`\\{${param}\\}`, "g"),
         params.path[param].toString(),
       )
     }
